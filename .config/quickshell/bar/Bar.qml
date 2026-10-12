@@ -438,11 +438,8 @@ PanelWindow {
                 ? adapter.devices.values.filter(d => d.connected) : []
 
             visible: adapter !== null
+            // icon only: the connected glyph and accent say a device is on
             icon: !adapter || !adapter.enabled ? "󰂲" : connected.length > 0 ? "󰂱" : "󰂯"
-            // name only while something is connected
-            value: adapter && adapter.enabled && connected.length > 0
-                ? (n => n.length > 12 ? n.slice(0, 11) + "…" : n)(connected[0].name || "device")
-                : ""
             accent: adapter && adapter.enabled && connected.length > 0 ? Theme.accent
                   : adapter && adapter.enabled ? Theme.text
                   : Theme.textFaint
