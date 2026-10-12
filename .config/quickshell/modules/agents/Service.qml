@@ -62,6 +62,7 @@ Scope {
 
     // bring a session up: its terminal if it has one, else a new terminal on the kept session
     function open(s) {
+        if (s.job && s.host) s = { tmux: s.host, pid: 0 }
         if (s.tmux !== "") {
             // detached, so a shell restart never takes the terminal with it
             Quickshell.execDetached(["sh", "-c",
@@ -77,6 +78,12 @@ Scope {
         if (s.tmux === "") return
         Quickshell.execDetached(tmux(["kill-session", "-t", s.tmux]))
         scanSoon.restart()
+    }
+
+    // take a session off the resume list; its transcript stays
+    function forget(r) {
+        recent = recent.filter(x => x.sid !== r.sid)
+        Quickshell.execDetached(["python3", "-I", script, "hide", r.sid])
     }
 
     // the one that needs you: waiting longest, else the latest to finish

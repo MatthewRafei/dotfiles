@@ -60,6 +60,7 @@ modules/<id>/
 | key | meaning |
 |---|---|
 | `name`, `description`, `icon` | shown in Settings > Modules |
+| `art` | optional drawn icon used there instead of `icon` (`"clawd"`: widgets/Clawd.qml) |
 | `default` | on or off on a machine that has never chosen (cheap things on, things that run in the background off) |
 | `cost` | what it does in the background, shown next to the switch (omit if nothing) |
 | `credit` | where the idea or code came from: a link or a list of links, shown in Settings > Modules and the README |

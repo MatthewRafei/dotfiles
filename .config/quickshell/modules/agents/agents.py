@@ -5,6 +5,8 @@
   agents.py serve         stay up: a "scan" line on stdin answers with one JSON line
                           (what the bar uses; exits when stdin closes, i.e. with qs)
   agents.py recent        JSON list of recent sessions that aren't running (to resume)
+  agents.py hide SID      take SID off the recent list (transcript kept; list in
+                          ~/.local/state/quickshell/agents-hidden)
   agents.py focus PID     focus the terminal window that PID runs in (Hyprland or niri)
   agents.py attached NAME focus a terminal attached to kept session NAME (exit 1: none)
 
@@ -24,6 +26,9 @@ import subprocess
 import sys
 
 CLAUDE = os.environ.get("CLAUDE_CONFIG_DIR") or os.path.expanduser("~/.claude")
+# sessions taken off the resume list (one id a line); the transcripts stay
+HIDDEN = os.path.join(os.environ.get("XDG_STATE_HOME") or os.path.expanduser("~/.local/state"),
+                      "quickshell", "agents-hidden")
 TMUX = ["tmux", "-L", "claude"]
 TITLE_TAIL = 512 * 1024          # bytes of a transcript searched for its title
 
@@ -136,11 +141,12 @@ def scan():
             continue
         if s.get("procStart") and proc_start(pid) not in (None, str(s["procStart"])):
             continue                                    # the pid was reused
-        if s.get("kind") not in (None, "interactive"):
+        job = s.get("kind") == "bg"                     # a background job: runs under a session
+        if s.get("kind") not in (None, "interactive") and not job:
             continue                                    # skip `claude -p` runs and the like
         chain = ancestors(pid)
         pane = next((panes[p] for p in chain if p in panes), None)
-        if pane:
+        if pane and not job:
             seen_tmux.add(pane["session"])
         cwd = s.get("cwd") or ""
         out.append({
@@ -151,7 +157,10 @@ def scan():
             "status": s.get("status") or "unknown",
             "since": s.get("statusUpdatedAt") or s.get("updatedAt") or 0,
             "started": s.get("startedAt") or 0,
-            "tmux": pane["session"] if pane else "",
+            # a job is opened through the session it runs in, never stopped from here
+            "tmux": pane["session"] if pane and not job else "",
+            "host": pane["session"] if pane and job else "",
+            "job": job,
             "attached": pane["attached"] if pane else 1,
         })
     # kept sessions whose claude hasn't registered yet: Claude Code only writes its
@@ -174,7 +183,7 @@ def serve():
 
 def recent(limit=8):
     """Newest transcripts whose session isn't running: [{sid, cwd, title, mtime}]"""
-    running = set()
+    running = hidden()
     reg = os.path.join(CLAUDE, "sessions")
     try:
         for name in os.listdir(reg):
@@ -229,6 +238,24 @@ def recent(limit=8):
     print(json.dumps(out))
 
 
+def hidden():
+    try:
+        with open(HIDDEN) as f:
+            return {line.strip() for line in f if line.strip()}
+    except OSError:
+        return set()
+
+
+def hide(sid):
+    """Take a session off the resume list (its transcript is kept)."""
+    if sid in hidden():
+        return 0
+    os.makedirs(os.path.dirname(HIDDEN), exist_ok=True)
+    with open(HIDDEN, "a") as f:
+        f.write(sid + "\n")
+    return 0
+
+
 def attached(name):
     for line in run(TMUX + ["list-clients", "-t", name, "-F", "#{client_pid}"]).splitlines():
         if line.strip().isdigit() and focus(int(line)) == 0:
@@ -276,6 +303,8 @@ def main():
         return 0
     if len(sys.argv) == 3 and sys.argv[1] == "focus" and sys.argv[2].isdigit():
         return focus(int(sys.argv[2]))
+    if len(sys.argv) == 3 and sys.argv[1] == "hide" and re.fullmatch(r"[0-9a-f-]{36}", sys.argv[2]):
+        return hide(sys.argv[2])
     if len(sys.argv) == 3 and sys.argv[1] == "attached" and re.fullmatch(r"[A-Za-z0-9_.-]+", sys.argv[2]):
         return attached(sys.argv[2])
     print(__doc__, file=sys.stderr)

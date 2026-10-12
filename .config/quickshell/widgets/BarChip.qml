@@ -12,6 +12,7 @@ Item {
     id: chip
     property string label
     property string icon            // shown instead of `label` when set
+    property Component iconItem     // drawn icon, used instead of `icon` (tint it yourself)
     property string value
     property real gauge: -1
     property color accent: Theme.text
@@ -52,8 +53,14 @@ Item {
         anchors.centerIn: parent
         anchors.verticalCenterOffset: chip.gauge >= 0 ? -2 : 0
         spacing: 6
+        Loader {
+            active: chip.iconItem !== null
+            visible: active
+            anchors.verticalCenter: parent.verticalCenter
+            sourceComponent: chip.iconItem
+        }
         Text {
-            visible: chip.icon !== ""
+            visible: chip.icon !== "" && chip.iconItem === null
             anchors.verticalCenter: parent.verticalCenter
             text: chip.icon
             color: chip.accent === Theme.text ? Theme.textDim : chip.accent
@@ -61,7 +68,7 @@ Item {
             font.pixelSize: 14
         }
         Text {
-            visible: chip.label !== "" && chip.icon === ""
+            visible: chip.label !== "" && chip.icon === "" && chip.iconItem === null
             anchors.baseline: valueText.baseline
             text: chip.label
             color: Theme.textDim

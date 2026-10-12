@@ -56,7 +56,7 @@ Singleton {
         return Object.keys(manifests).sort((a, b) => manifests[a].name.localeCompare(manifests[b].name)).map(id => {
             const m = manifests[id]
             const need = (m.requires || {}).modules || []
-            return { id: id, name: m.name, description: m.description || "", icon: m.icon || "",
+            return { id: id, name: m.name, description: m.description || "", icon: m.icon || "", art: m.art || "",
                      cost: m.cost || "", credits: [].concat(m.credit || []), enabled: enabled(id), active: active(id),
                      missing: (missing[id] || []).concat(need.filter(n => !active(n)).map(n => "the " + (manifests[n] ? manifests[n].name : n) + " module")) }
         })

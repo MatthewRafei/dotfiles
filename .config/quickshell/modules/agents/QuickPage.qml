@@ -4,7 +4,7 @@ import qs
 import qs.widgets
 
 // Quick panel page (qs ipc call quick agents): sessions by state, start a
-// kept one in a folder, resume a recent one as kept.
+// kept one in a folder, resume a recent one as kept (or hide it from the list).
 Column {
     id: page
     property var service
@@ -83,8 +83,8 @@ Column {
             // kept sessions survive their terminal; the others end with it
             Text {
                 anchors.verticalCenter: parent.verticalCenter
-                text: ar.s.tmux !== "" ? (ar.s.attached > 0 ? "KEPT" : "KEPT · BG") : "TERMINAL"
-                color: ar.s.tmux !== "" ? Theme.accent : Theme.textFaint
+                text: ar.s.job ? "JOB" : ar.s.tmux !== "" ? (ar.s.attached > 0 ? "KEPT" : "KEPT · BG") : "TERMINAL"
+                color: ar.s.tmux !== "" || ar.s.job ? Theme.accent : Theme.textFaint
                 font.family: Theme.fontFamily
                 font.pixelSize: 8
                 font.letterSpacing: 1
@@ -192,13 +192,51 @@ Column {
     QuickLabel { visible: page.service.recent.length > 0; text: "RESUME AS KEPT" }
     Repeater {
         model: page.service.recent.slice(0, 5)
-        QuickRow {
+        // resume it, or take it off the list (click twice; the transcript stays)
+        Item {
+            id: rr
             required property var modelData
+            property bool armed: false
+            width: parent.width
             height: 30
-            icon: "󰑐"
-            label: modelData.title
-            detail: page.service.ago(modelData.mtime)
-            onClicked: { page.panel.close(); page.service.newSession(modelData.cwd, modelData.sid) }
+            QuickRow {
+                width: parent.width - hideBtn.width - 4
+                height: parent.height
+                icon: "󰑐"
+                label: rr.modelData.title
+                detail: page.service.ago(rr.modelData.mtime)
+                onClicked: { page.panel.close(); page.service.newSession(rr.modelData.cwd, rr.modelData.sid) }
+            }
+            Rectangle {
+                id: hideBtn
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                width: rr.armed ? hideText.implicitWidth + 12 : 22
+                height: 22
+                radius: Theme.radius
+                color: rr.armed ? Theme.alpha(Theme.danger, 0.15) : "transparent"
+                border.color: rr.armed || hideMouse.containsMouse ? Theme.danger : Theme.border
+                Text {
+                    id: hideText
+                    anchors.centerIn: parent
+                    text: rr.armed ? "HIDE?" : "󰅖"
+                    color: rr.armed || hideMouse.containsMouse ? Theme.danger : Theme.textDim
+                    font.family: rr.armed ? Theme.fontFamily : Theme.iconFont
+                    font.pixelSize: rr.armed ? 8 : 12
+                    font.bold: rr.armed
+                }
+                MouseArea {
+                    id: hideMouse
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        if (rr.armed) { rr.armed = false; page.service.forget(rr.modelData) }
+                        else { rr.armed = true; hideDisarm.restart() }
+                    }
+                }
+                Timer { id: hideDisarm; interval: 3000; onTriggered: rr.armed = false }
+            }
         }
     }
 }

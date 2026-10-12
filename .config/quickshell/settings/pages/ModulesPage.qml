@@ -87,8 +87,16 @@ Item {
                     border.color: m.active ? Theme.alpha(Theme.accent, 0.5) : Theme.border
                     opacity: blocked && !m.enabled ? 0.6 : 1
 
+                    // pixel art instead of the glyph (module.json "art")
+                    Clawd {
+                        visible: card.m.art === "clawd"
+                        x: 14 + (26 - width) / 2
+                        y: 13 + (20 - height) / 2
+                        color: card.m.active ? "#C15F3C" : Theme.textDim
+                    }
                     Text {
                         id: ic
+                        visible: card.m.art === ""
                         x: 14
                         y: 13
                         width: 26
