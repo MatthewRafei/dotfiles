@@ -176,7 +176,7 @@ binds {
     Mod+Shift+Slash 								{ show-hotkey-overlay; 			                   }
     Mod+Return   	hotkey-overlay-title="Terminal: alacritty"  		{ spawn "alacritty"; 	 		                   }
     Mod+D        	hotkey-overlay-title="Launcher: fuzzel"     		{ spawn "fuzzel"; 			                   }	
-    Mod+Shift+D  	hotkey-overlay-title="File Manager: Nautilus"  		{ spawn "nautilus";	 		                   }
+    Mod+Shift+D  	hotkey-overlay-title="File Manager: Abyss"  		{ spawn-sh "[ -x ~/.local/bin/abyss ] && exec ~/.local/bin/abyss || exec nautilus"; }
     Mod+Shift+L  	hotkey-overlay-title="Lock screen"       		{ spawn "qs" "ipc" "call" "lock" "lock";	   }
     Mod+N        	hotkey-overlay-title="Notifications"     		{ spawn "qs" "ipc" "call" "notifs" "toggle";	   }
     Mod+C        	hotkey-overlay-title="Calendar"          		{ spawn "qs" "ipc" "call" "calendar" "open";	   }

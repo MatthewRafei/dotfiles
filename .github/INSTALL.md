@@ -78,7 +78,9 @@ Optional: `tailscale` (VPN chip in the bar; once: `doas tailscale set --operator
 bar can connect/disconnect and pick exit nodes); `orca` (screen reader, Super+Alt+S); `brillo` (brightness keys use it when present and
 fall back to `brightnessctl`); `fprintd libfprint-udev` (fingerprint reader: unlocks the lock
 screen, managed in Settings > Fingerprint, which only shows up when a reader is found);
-`wf-recorder` (screen recorder chip and panel, hidden without it; Mod+Alt+R); `zathura
+`wf-recorder` (screen recorder chip and panel, hidden without it; Mod+Alt+R);
+[Abyss](https://github.com/MatthewRafei/Abyss) (the file browser on Mod+Shift+D; clone it and run
+`./install.sh`, which needs `rust cargo gtk4-devel`; without it the bind opens Nautilus); `zathura
 zathura-pdf-poppler` (PDF viewer, themed from the wallpaper). The shell
 is its own polkit agent (Auth.qml); if `polkit-gnome-authentication-agent-1` is installed niri
 starts it and it takes over instead.

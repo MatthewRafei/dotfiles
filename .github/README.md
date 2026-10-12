@@ -268,7 +268,7 @@ for the full tour.
 |---|---|
 | Mod+Return | Terminal (alacritty) |
 | Mod+D | Launcher (fuzzel) |
-| Mod+Shift+D | Files (Nautilus) |
+| Mod+Shift+D | Files ([Abyss](https://github.com/MatthewRafei/Abyss), else Nautilus) |
 | Mod+W | Chromium |
 | Mod+S | Settings |
 | Mod+C | Calendar |
