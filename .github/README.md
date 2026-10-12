@@ -7,6 +7,7 @@
   <br>
   <a href="INSTALL.md"><b>Install</b></a> ·
   <a href="#modules">Modules</a> ·
+  <a href="#files-abyss">Abyss</a> ·
   <a href="#keybinds">Keybinds</a> ·
   <a href="#credits">Credits</a> ·
   <a href="#under-the-hood">Under the hood</a>
@@ -198,6 +199,31 @@ transparent ones and checkerboards, scale pixel art without smoothing, and anima
 The lock screen uses PAM (password, or an enrolled fingerprint), shows the wallpaper blurred, a clock and a quote, and always locks
 before the laptop suspends.
 
+## Files: Abyss
+
+<p align="center">
+  <a href="https://github.com/MatthewRafei/Abyss"><img src="https://raw.githubusercontent.com/MatthewRafei/Abyss/main/docs/overview.png" alt="Abyss: the home folder in a grouped grid, with a sidebar of bookmarks, devices and network shares" width="88%"></a>
+</p>
+
+**[Abyss](https://github.com/MatthewRafei/Abyss)** is the file browser made for this desktop: a
+small GTK4 app in Rust that ports its logic from GNOME Files (Nautilus). It follows the
+wallpaper theme like everything else, and puts network shares, Tailscale peers and Syncthing
+folders right in the sidebar.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MatthewRafei/Abyss/main/docs/browse.gif" alt="Abyss: filtering the home folder, opening Documents, going up, typing a path, going back" width="88%">
+</p>
+
+- **Type to filter:** the first match is selected and Enter opens it; two or more letters also
+  search subfolders.
+- **File operations that ask first:** rename in place, batch rename with a live before → after
+  preview, and one-step undo. Pasting onto an existing name asks instead of overwriting.
+- **Archives:** Extract Here and Compress (zip, tar.gz, tar.xz, tar.zst, 7z).
+- **Network:** SMB shares, Tailscale peers and Syncthing folders in the sidebar.
+
+`./install.sh` in the Abyss repo installs it. See its [README](https://github.com/MatthewRafei/Abyss#readme)
+for the full tour.
+
 ## And the rest
 
 <p align="center"><img src="screenshots/powermenu.gif" alt="Power menu" width="80%"></p>
@@ -213,10 +239,12 @@ before the laptop suspends.
 - **Tailscale:** a bar chip and dropdown, plus a VPN section in Settings.
 - **Syncthing:** a bar chip. Click opens the web UI, starting Syncthing first if needed (dinit,
   OpenRC user services, or no service manager); right-click starts or stops it.
-- **Claude Code agents:** a bar chip that counts working sessions and turns red when one needs
-  you; its panel opens, stops, starts or resumes them. Sessions are kept: `claude` in a terminal
-  runs in a private tmux server, so closing the terminal (busy or idle) only detaches it and the
-  panel opens it again (`command claude` for a throwaway one).
+- **Claude Code agents:** a bar chip with Clawd, Claude Code's pixel critter, in Claude orange
+  whatever the wallpaper. It counts working sessions (background jobs included) and turns red
+  when one needs you; its panel opens, stops, starts or resumes them, and the ✕ on a resume entry
+  hides it (the transcript stays). Sessions are kept: `claude` in a terminal runs in a private
+  tmux server, so closing the terminal (busy or idle) only detaches it and the panel opens it
+  again (`command claude` for a throwaway one).
 - **Caffeine:** keeps the machine awake.
 - **Phone pushes** through [ntfy](https://ntfy.sh): while the screen is locked or you've been
   idle for 2 minutes, notifications, low battery, the charger and Tailscale dropping go to your
