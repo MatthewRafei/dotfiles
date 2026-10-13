@@ -13,6 +13,9 @@ import QtQuick.Window
 // A scene that asks for `glyphs` also gets (after fg; see shaders/donut.frag)
 //   vec2 cell; float glyphCount;   and   sampler2D atlas (binding 1):
 // the glyphs laid out once in the shell's font, one per cell, white on clear.
+// A scene that asks for the wallpaper gets sampler2D wall (binding 2), the
+// wallpaper cropped to the screen, and fog (binding 3), the same at a twelfth
+// of the size: sampled smoothly, a cheap blur (see shaders/rain.frag).
 Item {
     id: host
 
@@ -28,6 +31,10 @@ Item {
     property string glyphs: ""
     property string fontFamily: "monospace"
     readonly property bool hasAtlas: glyphs !== ""
+
+    // optional wallpaper textures; Screensaver.qml binds `wallpaper` to Theme
+    property bool useWallpaper: false
+    property string wallpaper: ""
     // one cell of the ASCII scenes' grid (13 px text, as in Screensaver.qml)
     readonly property real cellW: Math.max(1, probe.implicitWidth / 40)
     readonly property real cellH: Math.ceil(fm.height)
@@ -90,9 +97,40 @@ Item {
         visible: false
     }
 
+    // the wallpaper as it fills the screen. Never shown directly.
+    Image {
+        id: wallImage
+        visible: false
+        width: host.width
+        height: host.height
+        source: host.useWallpaper && host.wallpaper !== "" ? "file://" + host.wallpaper : ""
+        sourceSize: Qt.size(Math.max(1, host.width * Screen.devicePixelRatio), Math.max(1, host.height * Screen.devicePixelRatio))
+        fillMode: Image.PreserveAspectCrop
+        asynchronous: true
+        smooth: true
+    }
+    ShaderEffectSource {
+        id: wallSharp
+        sourceItem: host.useWallpaper ? wallImage : null
+        hideSource: true
+        live: true
+        textureSize: Qt.size(Math.max(1, host.width * Screen.devicePixelRatio), Math.max(1, host.height * Screen.devicePixelRatio))
+        smooth: true
+        visible: false
+    }
+    ShaderEffectSource {
+        id: wallFog
+        sourceItem: host.useWallpaper ? wallImage : null
+        hideSource: true
+        live: true
+        textureSize: Qt.size(Math.max(1, Math.round(host.width / 12)), Math.max(1, Math.round(host.height / 12)))
+        smooth: true
+        visible: false
+    }
+
     // made only once there is a shader: an empty fragmentShader falls back to
     // Qt's default one, which warns about a missing `source`. Shaders that
-    // don't declare the atlas members just ignore them.
+    // don't declare the atlas or wallpaper members just ignore them.
     Loader {
         anchors.fill: parent
         active: host.frag.toString() !== ""
@@ -109,6 +147,8 @@ Item {
             property size cell: Qt.size(host.cellW, host.cellH)
             property real glyphCount: Math.max(1, host.glyphs.length)
             property variant atlas: glyphAtlas
+            property variant wall: wallSharp
+            property variant fog: wallFog
         }
     }
 }

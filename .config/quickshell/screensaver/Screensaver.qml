@@ -91,6 +91,7 @@ Scope {
 
     function available(id) {
         const s = Scenes.get(id)
+        if (s.wallpaper && Theme.wallpaper === "") return false   // nothing to look through yet
         return !s.gif || haveGifs.indexOf(s.gif) >= 0
     }
 
@@ -175,6 +176,7 @@ Scope {
             property real nativeOpacity: 0
             property string nativeFrag: ""     // its .qsb for ShaderScene.qml (relative to this file)
             property string nativeGlyphs: ""   // and the glyphs for its atlas, if it draws text
+            property bool nativeWallpaper: false // and whether it samples the wallpaper
             property bool loading: false
             property string tTitle: ""
             property string tSub: ""
@@ -343,6 +345,7 @@ Scope {
                 nativeOpacity = ctx.native ? ctx.native.opacity : 0
                 nativeFrag = ctx.native && ctx.native.frag ? ctx.native.frag : ""
                 nativeGlyphs = ctx.native && ctx.native.glyphs ? ctx.native.glyphs : ""
+                nativeWallpaper = !!(ctx.native && ctx.native.wallpaper)
                 if (sceneTime > sceneLength) loadScene(pickScene(""))
             }
 
@@ -453,6 +456,8 @@ Scope {
                                 item.frag = Qt.binding(() => win.nativeFrag !== "" ? Qt.resolvedUrl(win.nativeFrag) : "")
                                 item.glyphs = Qt.binding(() => win.nativeGlyphs)
                                 item.fontFamily = Qt.binding(() => Theme.fontFamily)
+                                item.useWallpaper = Qt.binding(() => win.nativeWallpaper)
+                                item.wallpaper = Qt.binding(() => Theme.wallpaper)
                                 item.accent = Qt.binding(() => Theme.accent)
                                 item.accent2 = Qt.binding(() => Theme.accent2)
                                 item.bg = Qt.binding(() => Theme.bgPanel)
