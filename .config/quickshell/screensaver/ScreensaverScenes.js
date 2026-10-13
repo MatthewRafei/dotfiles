@@ -796,7 +796,8 @@ const shaderScenes = [
     // AM / PM drawn from the atlas
     shaderScene("clock", "Clock", "shaders/clock.frag.qsb", { glyphs: "AMP" }),
     shaderScene("embers", "Embers", "shaders/embers.frag.qsb"),
-    shaderScene("ink", "Ink", "shaders/ink.frag.qsb")
+    shaderScene("ink", "Ink", "shaders/ink.frag.qsb"),
+    shaderScene("starfield", "Starfield", "shaders/starfield.frag.qsb")
 ]
 
 // ================================================================== GIF scenes

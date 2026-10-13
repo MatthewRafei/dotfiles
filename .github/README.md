@@ -190,8 +190,8 @@ After a few idle minutes every monitor turns into animated ASCII art, each with 
   (northern lights over mountain ridges) and donut.c (the spinning ASCII torus, ray-marched on the GPU
   and printed in glyphs), all in the wallpaper's colours, and Rain on Glass (the wallpaper itself
   through a fogged window, drops sliding down it), a seven-segment Clock that drifts so nothing
-  burns in, Embers (sparks rising from an unseen fire) and Ink (smoke-like ink swirling in the
-  wallpaper's colours). Each one is a
+  burns in, Embers (sparks rising from an unseen fire), Ink (smoke-like ink swirling in the
+  wallpaper's colours) and Starfield (the old screensaver, flying through stars). Each one is a
   fragment shader in `screensaver/shaders/` run by `ShaderScene.qml`, which feeds it the time and
   the theme colours; adding one is a `.frag`, a `qsb` build and a `shaderScene()` line.
 
