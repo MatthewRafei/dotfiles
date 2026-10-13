@@ -795,7 +795,8 @@ const shaderScenes = [
     shaderScene("rain", "Rain on Glass", "shaders/rain.frag.qsb", { wallpaper: true }),
     // AM / PM drawn from the atlas
     shaderScene("clock", "Clock", "shaders/clock.frag.qsb", { glyphs: "AMP" }),
-    shaderScene("embers", "Embers", "shaders/embers.frag.qsb")
+    shaderScene("embers", "Embers", "shaders/embers.frag.qsb"),
+    shaderScene("ink", "Ink", "shaders/ink.frag.qsb")
 ]
 
 // ================================================================== GIF scenes
