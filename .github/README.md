@@ -189,8 +189,8 @@ After a few idle minutes every monitor turns into animated ASCII art, each with 
 - **Shader scenes:** Topography (a drifting contour map), Lava Lamp (cartoon wax blobs), Aurora
   (northern lights over mountain ridges) and donut.c (the spinning ASCII torus, ray-marched on the GPU
   and printed in glyphs), all in the wallpaper's colours, and Rain on Glass (the wallpaper itself
-  through a fogged window, drops sliding down it) and a seven-segment Clock that drifts so nothing
-  burns in. Each one is a
+  through a fogged window, drops sliding down it), a seven-segment Clock that drifts so nothing
+  burns in, and Embers (sparks rising from an unseen fire). Each one is a
   fragment shader in `screensaver/shaders/` run by `ShaderScene.qml`, which feeds it the time and
   the theme colours; adding one is a `.frag`, a `qsb` build and a `shaderScene()` line.
 
