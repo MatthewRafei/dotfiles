@@ -16,6 +16,8 @@ import QtQuick.Window
 // A scene that asks for the wallpaper gets sampler2D wall (binding 2), the
 // wallpaper cropped to the screen, and fog (binding 3), the same at a twelfth
 // of the size: sampled smoothly, a cheap blur (see shaders/rain.frag).
+// Any shader may also declare vec4 clock: hour (1-12), minute, second, pm
+// (see shaders/clock.frag).
 Item {
     id: host
 
@@ -40,6 +42,19 @@ Item {
     readonly property real cellH: Math.ceil(fm.height)
 
     property real time: 0
+
+    // the time of day, as the bar shows it (12-hour)
+    property vector4d clock: Qt.vector4d(12, 0, 0, 0)
+    Timer {
+        running: host.playing && host.visible
+        interval: 250
+        repeat: true
+        triggeredOnStart: true
+        onTriggered: {
+            const d = new Date(), h = d.getHours()
+            host.clock = Qt.vector4d(h % 12 === 0 ? 12 : h % 12, d.getMinutes(), d.getSeconds(), h >= 12 ? 1 : 0)
+        }
+    }
     FrameAnimation {
         running: host.playing && host.visible && host.width > 0
         property real pending: 0
@@ -149,6 +164,7 @@ Item {
             property variant atlas: glyphAtlas
             property variant wall: wallSharp
             property variant fog: wallFog
+            property vector4d clock: host.clock
         }
     }
 }

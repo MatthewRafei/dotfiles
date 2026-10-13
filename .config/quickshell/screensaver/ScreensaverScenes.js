@@ -792,7 +792,9 @@ const shaderScenes = [
     shaderScene("aurora", "Aurora", "shaders/aurora.frag.qsb"),
     // donut.c's brightness ramp
     shaderScene("donut", "donut.c", "shaders/donut.frag.qsb", { glyphs: ".,-~:;=!*#$@" }),
-    shaderScene("rain", "Rain on Glass", "shaders/rain.frag.qsb", { wallpaper: true })
+    shaderScene("rain", "Rain on Glass", "shaders/rain.frag.qsb", { wallpaper: true }),
+    // AM / PM drawn from the atlas
+    shaderScene("clock", "Clock", "shaders/clock.frag.qsb", { glyphs: "AMP" })
 ]
 
 // ================================================================== GIF scenes
