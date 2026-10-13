@@ -73,11 +73,14 @@ PanelWindow {
     readonly property var source: Pipewire.defaultAudioSource
     readonly property var audioNodes: Pipewire.nodes.values.filter(n => n.audio)
     function mediaClass(n) { return n.properties["media.class"] || "" }
-    readonly property var outputs: audioNodes.filter(n => mediaClass(n) === "Audio/Sink")
+    // smart filters (e.g. a speaker-correction filter-chain) sit in front of a real sink, so they are not offered
+    readonly property var outputs: audioNodes.filter(n => mediaClass(n) === "Audio/Sink"
+                                                          && String(n.properties["filter.smart"]) !== "true")
     readonly property var inputs: audioNodes.filter(n => mediaClass(n) === "Audio/Source")
     // apps playing, then apps recording (not PipeWire's own internal streams)
     readonly property var streams: audioNodes.filter(n => mediaClass(n) === "Stream/Output/Audio")
         .concat(audioNodes.filter(n => mediaClass(n) === "Stream/Input/Audio"))
+        .filter(n => String(n.properties["node.virtual"]) !== "true")
 
     // .audio is only live on tracked nodes
     PwObjectTracker { objects: root.mode === "audio" ? root.audioNodes : [] }

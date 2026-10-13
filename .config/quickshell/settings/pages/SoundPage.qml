@@ -33,12 +33,13 @@ Item {
         ? sink.audio.muted
         : false
 
-    // Physical / virtual output devices
+    // Physical / virtual output devices (smart filters sit in front of a real sink, so they're not listed)
     property var outputSinks:
         Pipewire.nodes.values.filter(
             n => n.isSink &&
                  !n.isStream &&
-                 n.audio
+                 n.audio &&
+                 String(n.properties["filter.smart"]) !== "true"
         )
 
     // Input side: default source and capture devices. media.class keeps out
@@ -62,10 +63,12 @@ Item {
                  (n.properties["media.class"] || "") === "Audio/Source"
         )
 
-    // Active application audio streams
+    // Active application audio streams (not virtual ones, e.g. a filter-chain's output into the speakers)
     property var appStreams:
         Pipewire.nodes.values.filter(
-            n => n.isStream && n.isSink
+            n => n.isStream && n.isSink &&
+                 n.audio &&     // only set once tracked, so the filter re-runs when properties arrive
+                 String(n.properties["node.virtual"]) !== "true"
         )
 
     Flickable {
