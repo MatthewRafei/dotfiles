@@ -803,6 +803,19 @@ const shaderScenes = [
     shaderScene("julia", "Julia", "shaders/julia.frag.qsb")
 ]
 
+// ================================================================== CRT
+// Not drawn itself: when the rotation (or a preview) picks it, Screensaver.qml
+// plays a random ASCII scene (one in the rotation) through the CRT glass of
+// shaders/crt.frag. It counts as a shader scene, so it is listed with them and
+// stays off on battery unless SHADERS ON BAT is set.
+const crtScene = {
+    id: "crt", name: "CRT", crt: true,
+    shader: true,      // a GPU pass every frame (kind() below)
+    colors: [],
+    init(ctx) { newLayers(ctx, 0) },
+    frame(ctx, t) { title(ctx, t, "", "", "#ffffff", 0, 99) }
+}
+
 // ================================================================== GIF scenes
 // Pre-rendered from screensaver/gifs by screensaver/gif2ascii.py; the engine
 // loads the converted frames into ctx.gif before init(). Each palette colour
@@ -869,7 +882,7 @@ const gifScenes = [
 ]
 
 // hand-drawn scenes
-const scenes = [halfLife, osScene, naruto, deathNote, gentoo, matrix].concat(shaderScenes, gifScenes)
+const scenes = [halfLife, osScene, naruto, deathNote, gentoo, matrix].concat(shaderScenes, [crtScene], gifScenes)
 
 function list() { return scenes.map(s => s.id) }
 function get(id) { return scenes.find(s => s.id === id) || scenes[0] }

@@ -279,9 +279,28 @@ Scope {
                 return pool[Math.floor(Math.random() * pool.length)]
             }
 
+            // a random ASCII scene for the CRT scene: one in the rotation (any if
+            // none is), not one another monitor shows or the last one here
+            function pickAscii() {
+                const ascii = Scenes.list().filter(i => root.available(i) && Scenes.kind(i) !== "shader")
+                const on = ascii.filter(i => Idle.sceneEnabled(i))
+                const ids = on.length ? on : ascii
+                const others = root.showingElsewhere(win)
+                const last = history.length ? history[history.length - 1] : ""
+                const fresh = ids.filter(i => others.indexOf(i) < 0 && i !== last)
+                const pool = fresh.length ? fresh : ids
+                return pool[Math.floor(Math.random() * pool.length)]
+            }
+
             function loadScene(id) {
                 // too small to draw yet: try again once the window has its size
                 if (grid.cols < 20 || grid.rows < 10) { prefer = id; startSoon.restart(); return }
+                // the CRT scene plays an ASCII scene through the CRT glass
+                crtWrap = Scenes.get(id).crt === true
+                if (crtWrap) {
+                    history = history.concat([id]).slice(-8)
+                    id = pickAscii()
+                }
                 currentId = id
                 const s = Scenes.get(id)
                 if (s.gif) {
@@ -358,9 +377,31 @@ Scope {
                 onTriggered: win.step(interval / 1000)
             }
 
+            // the CRT scene's glass over the ASCII scene it picked (loadScene)
+            property bool crtWrap: false
+            readonly property bool crtOn: crtWrap && win.currentId !== ""
+            property real crtTime: 0
+            FrameAnimation {
+                running: win.crtOn && root.active && !root.locked
+                property real pending: 0
+                onTriggered: {
+                    pending += frameTime
+                    if (pending < 1 / 30) return
+                    win.crtTime = (win.crtTime + Math.min(pending, 0.1)) % 10000
+                    pending = 0
+                }
+            }
+
             Rectangle {
                 id: backdrop
                 anchors.fill: parent
+                layer.enabled: win.crtOn
+                layer.effect: ShaderEffect {
+                    fragmentShader: Qt.resolvedUrl("shaders/crt.frag.qsb")
+                    onStatusChanged: if (status === ShaderEffect.Error) console.log("screensaver: crt shader:", log)
+                    property size size: Qt.size(width, height)
+                    property real time: win.crtTime
+                }
                 color: win.bg !== "" ? win.bg : "#050506"
                 Behavior on color { ColorAnimation { duration: 900; easing.type: Easing.InOutQuad } }
                 opacity: root.active ? 1 : 0
@@ -425,7 +466,11 @@ Scope {
                     // resized while showing: restart the same scene at the new size
                     // (not while the window is still being sized: a 0-wide grid would
                     // write a broken cache file)
-                    onColsChanged: if (root.active && win.scene && grid.cols >= 20 && grid.rows >= 10) win.loadScene(win.scene.id)
+                    onColsChanged: if (root.active && win.scene && grid.cols >= 20 && grid.rows >= 10) {
+                        const crt = win.crtWrap
+                        win.loadScene(win.scene.id)
+                        win.crtWrap = crt          // same scene, still behind the glass
+                    }
 
                     Item {
                         id: sceneLayer
@@ -565,7 +610,7 @@ Scope {
                     anchors.bottom: parent.bottom
                     anchors.margins: 18
                     visible: Idle.showName
-                    text: win.scene ? "// " + win.scene.name.toUpperCase() : ""
+                    text: win.scene ? "// " + (win.crtOn ? "CRT · " : "") + win.scene.name.toUpperCase() : ""
                     color: "#3a3a44"
                     font.family: Theme.fontFamily
                     font.pixelSize: 17

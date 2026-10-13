@@ -195,6 +195,8 @@ After a few idle minutes every monitor turns into animated ASCII art, each with 
   Julia-set fractal), and two old Windows classics, Starfield and Mystify. Each one is a
   fragment shader in `screensaver/shaders/` run by `ShaderScene.qml`, which feeds it the time and
   the theme colours; adding one is a `.frag`, a `qsb` build and a `shaderScene()` line.
+- **CRT:** listed with the shader scenes; when it comes up it plays a random ASCII scene on an old
+  monitor, with curved glass, scanlines, phosphor glow and a rolling bar.
 
 <p align="center"><img src="screenshots/matrix.webp" alt="The Matrix screensaver scene" width="90%"></p>
 
