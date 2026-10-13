@@ -784,7 +784,8 @@ function shaderScene(id, name, frag) {
 }
 
 const shaderScenes = [
-    shaderScene("topo", "Topography", "shaders/topo.frag.qsb")
+    shaderScene("topo", "Topography", "shaders/topo.frag.qsb"),
+    shaderScene("lavalamp", "Lava Lamp", "shaders/lavalamp.frag.qsb")
 ]
 
 // ================================================================== GIF scenes

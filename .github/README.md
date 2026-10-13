@@ -186,7 +186,8 @@ After a few idle minutes every monitor turns into animated ASCII art, each with 
   film's opening lines, then digital rain drawn by a shader).
 - **Scenes made from GIFs and logos:** Nintendo 64, Hack The Box, Emacs, Vim, Factorio, the Dark
   Souls bonfire and a Half-Life headcrab.
-- **Shader scenes:** Topography, a drifting contour map in the wallpaper's colours. Each one is a
+- **Shader scenes:** Topography (a drifting contour map) and Lava Lamp (cartoon wax blobs), both
+  in the wallpaper's colours. Each one is a
   fragment shader in `screensaver/shaders/` run by `ShaderScene.qml`, which feeds it the time and
   the theme colours; adding one is a `.frag`, a `qsb` build and a `shaderScene()` line.
 
