@@ -799,7 +799,8 @@ const shaderScenes = [
     shaderScene("ink", "Ink", "shaders/ink.frag.qsb"),
     shaderScene("starfield", "Starfield", "shaders/starfield.frag.qsb"),
     shaderScene("mystify", "Mystify", "shaders/mystify.frag.qsb"),
-    shaderScene("pond", "Moonlit Pond", "shaders/pond.frag.qsb")
+    shaderScene("pond", "Moonlit Pond", "shaders/pond.frag.qsb"),
+    shaderScene("julia", "Julia", "shaders/julia.frag.qsb")
 ]
 
 // ================================================================== GIF scenes
