@@ -5,7 +5,7 @@
 // frame() draws into ctx.layers (character grids, one per colour; spaces are
 // transparent so layers stack) and may set ctx.title / ctx.sub / ctx.titleColor
 // / ctx.titleOpacity / ctx.bg (backdrop colour) / ctx.floor ({ row, color }: backdrop
-// colour from that row down) / ctx.native ({ id, opacity, frag? }: a QML renderer drawn
+// colour from that row down) / ctx.native ({ id, opacity, frag?, glyphs? }: a QML renderer drawn
 // under the grid: "matrix", or with `frag` a shader run by ShaderScene.qml). ctx: { cols, rows, asp (cell height / width), os, logo }.
 
 // ------------------------------------------------------------------ grid
@@ -769,15 +769,17 @@ const matrix = {
 // Full-screen fragment shaders run by screensaver/ShaderScene.qml, which feeds
 // every one the same uniforms (size, time, the wallpaper's theme colours).
 // Adding one: write shaders/<id>.frag, bake it with qsb (command in the file),
-// add a shaderScene() line below.
-function shaderScene(id, name, frag) {
+// add a shaderScene() line below. opts.glyphs: characters ShaderScene.qml lays
+// out into a glyph atlas for ASCII-style shaders (shaders/donut.frag).
+function shaderScene(id, name, frag, opts) {
+    opts = opts || {}
     return {
-        id: id, name: name, frag: frag,
+        id: id, name: name, frag: frag, glyphs: opts.glyphs || "",
         shader: true,      // drawn on the GPU every frame (kind() below)
         colors: [],
         init(ctx) { newLayers(ctx, 0) },
         frame(ctx, t) {
-            ctx.native = { id: id, frag: this.frag, opacity: 1 }
+            ctx.native = { id: id, frag: this.frag, glyphs: this.glyphs, opacity: 1 }
             title(ctx, t, "", "", "#ffffff", 0, 99)
         }
     }
@@ -786,7 +788,9 @@ function shaderScene(id, name, frag) {
 const shaderScenes = [
     shaderScene("topo", "Topography", "shaders/topo.frag.qsb"),
     shaderScene("lavalamp", "Lava Lamp", "shaders/lavalamp.frag.qsb"),
-    shaderScene("aurora", "Aurora", "shaders/aurora.frag.qsb")
+    shaderScene("aurora", "Aurora", "shaders/aurora.frag.qsb"),
+    // donut.c's brightness ramp
+    shaderScene("donut", "donut.c", "shaders/donut.frag.qsb", { glyphs: ".,-~:;=!*#$@" })
 ]
 
 // ================================================================== GIF scenes

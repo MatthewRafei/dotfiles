@@ -174,6 +174,7 @@ Scope {
             property string nativeId: ""       // QML renderer under the grid (ctx.native)
             property real nativeOpacity: 0
             property string nativeFrag: ""     // its .qsb for ShaderScene.qml (relative to this file)
+            property string nativeGlyphs: ""   // and the glyphs for its atlas, if it draws text
             property bool loading: false
             property string tTitle: ""
             property string tSub: ""
@@ -341,6 +342,7 @@ Scope {
                 nativeId = ctx.native ? ctx.native.id : ""
                 nativeOpacity = ctx.native ? ctx.native.opacity : 0
                 nativeFrag = ctx.native && ctx.native.frag ? ctx.native.frag : ""
+                nativeGlyphs = ctx.native && ctx.native.glyphs ? ctx.native.glyphs : ""
                 if (sceneTime > sceneLength) loadScene(pickScene(""))
             }
 
@@ -449,6 +451,8 @@ Scope {
                                 item.playing = Qt.binding(() => root.active && !root.locked)
                                 if (!("frag" in item)) return
                                 item.frag = Qt.binding(() => win.nativeFrag !== "" ? Qt.resolvedUrl(win.nativeFrag) : "")
+                                item.glyphs = Qt.binding(() => win.nativeGlyphs)
+                                item.fontFamily = Qt.binding(() => Theme.fontFamily)
                                 item.accent = Qt.binding(() => Theme.accent)
                                 item.accent2 = Qt.binding(() => Theme.accent2)
                                 item.bg = Qt.binding(() => Theme.bgPanel)
