@@ -797,7 +797,8 @@ const shaderScenes = [
     shaderScene("clock", "Clock", "shaders/clock.frag.qsb", { glyphs: "AMP" }),
     shaderScene("embers", "Embers", "shaders/embers.frag.qsb"),
     shaderScene("ink", "Ink", "shaders/ink.frag.qsb"),
-    shaderScene("starfield", "Starfield", "shaders/starfield.frag.qsb")
+    shaderScene("starfield", "Starfield", "shaders/starfield.frag.qsb"),
+    shaderScene("mystify", "Mystify", "shaders/mystify.frag.qsb")
 ]
 
 // ================================================================== GIF scenes
