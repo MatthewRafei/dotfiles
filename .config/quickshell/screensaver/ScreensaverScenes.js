@@ -5,8 +5,8 @@
 // frame() draws into ctx.layers (character grids, one per colour; spaces are
 // transparent so layers stack) and may set ctx.title / ctx.sub / ctx.titleColor
 // / ctx.titleOpacity / ctx.bg (backdrop colour) / ctx.floor ({ row, color }: backdrop
-// colour from that row down) / ctx.native ({ id, opacity }: a QML renderer drawn
-// under the grid, e.g. "matrix"). ctx: { cols, rows, asp (cell height / width), os, logo }.
+// colour from that row down) / ctx.native ({ id, opacity, frag? }: a QML renderer drawn
+// under the grid: "matrix", or with `frag` a shader run by ShaderScene.qml). ctx: { cols, rows, asp (cell height / width), os, logo }.
 
 // ------------------------------------------------------------------ grid
 function Grid(c, r) {
@@ -765,6 +765,28 @@ const matrix = {
     }
 }
 
+// ================================================================== SHADER scenes
+// Full-screen fragment shaders run by screensaver/ShaderScene.qml, which feeds
+// every one the same uniforms (size, time, the wallpaper's theme colours).
+// Adding one: write shaders/<id>.frag, bake it with qsb (command in the file),
+// add a shaderScene() line below.
+function shaderScene(id, name, frag) {
+    return {
+        id: id, name: name, frag: frag,
+        shader: true,      // drawn on the GPU every frame (kind() below)
+        colors: [],
+        init(ctx) { newLayers(ctx, 0) },
+        frame(ctx, t) {
+            ctx.native = { id: id, frag: this.frag, opacity: 1 }
+            title(ctx, t, "", "", "#ffffff", 0, 99)
+        }
+    }
+}
+
+const shaderScenes = [
+    shaderScene("topo", "Topography", "shaders/topo.frag.qsb")
+]
+
 // ================================================================== GIF scenes
 // Pre-rendered from screensaver/gifs by screensaver/gif2ascii.py; the engine
 // loads the converted frames into ctx.gif before init(). Each palette colour
@@ -831,7 +853,7 @@ const gifScenes = [
 ]
 
 // hand-drawn scenes
-const scenes = [halfLife, osScene, naruto, deathNote, gentoo, matrix].concat(gifScenes)
+const scenes = [halfLife, osScene, naruto, deathNote, gentoo, matrix].concat(shaderScenes, gifScenes)
 
 function list() { return scenes.map(s => s.id) }
 function get(id) { return scenes.find(s => s.id === id) || scenes[0] }

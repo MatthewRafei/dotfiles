@@ -173,6 +173,7 @@ Scope {
             property var floor: null           // and below a row (ctx.floor: { row, color })
             property string nativeId: ""       // QML renderer under the grid (ctx.native)
             property real nativeOpacity: 0
+            property string nativeFrag: ""     // its .qsb for ShaderScene.qml (relative to this file)
             property bool loading: false
             property string tTitle: ""
             property string tSub: ""
@@ -339,6 +340,7 @@ Scope {
                 floor = ctx.floor || null
                 nativeId = ctx.native ? ctx.native.id : ""
                 nativeOpacity = ctx.native ? ctx.native.opacity : 0
+                nativeFrag = ctx.native && ctx.native.frag ? ctx.native.frag : ""
                 if (sceneTime > sceneLength) loadScene(pickScene(""))
             }
 
@@ -436,11 +438,22 @@ Scope {
                             y: -grid.y
                             width: backdrop.width
                             height: backdrop.height
-                            active: win.nativeId === "matrix"
-                            source: Qt.resolvedUrl("MatrixRain.qml")
+                            // the Matrix has its own renderer; every other scene's shader
+                            // runs in the generic host
+                            active: win.nativeId !== ""
+                            source: win.nativeId === "matrix" ? Qt.resolvedUrl("MatrixRain.qml")
+                                  : win.nativeId !== "" ? Qt.resolvedUrl("ShaderScene.qml") : ""
                             opacity: win.nativeOpacity
                             Behavior on opacity { NumberAnimation { duration: 150 } }
-                            onLoaded: item.playing = Qt.binding(() => root.active && !root.locked)
+                            onLoaded: {
+                                item.playing = Qt.binding(() => root.active && !root.locked)
+                                if (!("frag" in item)) return
+                                item.frag = Qt.binding(() => win.nativeFrag !== "" ? Qt.resolvedUrl(win.nativeFrag) : "")
+                                item.accent = Qt.binding(() => Theme.accent)
+                                item.accent2 = Qt.binding(() => Theme.accent2)
+                                item.bg = Qt.binding(() => Theme.bgPanel)
+                                item.fg = Qt.binding(() => Theme.text)
+                            }
                         }
 
                         Repeater {
