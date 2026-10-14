@@ -29,8 +29,8 @@ Scope {
     property bool available: false        // claude is installed
     property string claudeBin: ""
     property var sessions: []             // agents.py scan
-    property var recent: []               // agents.py recent (while the dropdown is open)
-    property var projects: []             // folders Claude knows (~/.claude.json)
+    property var convos: []               // agents.py list: every saved conversation
+    property var known: []                // folders Claude knows (~/.claude.json)
     property bool fast: false             // the dropdown is open: poll faster
     property var sync: ({})               // claude-sync.py status
     property bool syncing: false
@@ -40,6 +40,40 @@ Scope {
     readonly property var busy: sessions.filter(s => s.status === "busy")
     readonly property var idle: sessions.filter(s => s.status !== "waiting" && s.status !== "busy")
     readonly property var resumable: idle.filter(s => s.status !== "view")
+
+    // the dropdown's one list: idle sessions that still run, then every saved
+    // conversation that doesn't, newest first. Nothing leaves it unless deleted.
+    readonly property var library: {
+        const live = new Set(sessions.map(s => s.sid).filter(x => x))
+        const running = idle.map(s => ({ kind: "live", s: s, sid: s.sid, cwd: s.cwd || "", title: s.title,
+                                         prompt: "", when: s.since }))
+        const saved = convos.filter(c => !live.has(c.sid))
+            .map(c => ({ kind: "saved", c: c, sid: c.sid, cwd: c.cwd, title: c.title,
+                         prompt: c.prompt, when: c.mtime, found: c.found }))
+        return running.concat(saved)
+    }
+
+    // a project is a folder: Claude Code keys every conversation by the folder it
+    // ran in (a copied or moved folder starts a new history). Home, the folders
+    // Claude knows, and any folder with a conversation; busiest recently first.
+    readonly property var projects: {
+        const by = {}
+        const add = (dir, when, n) => {
+            if (!dir) return
+            const p = by[dir] || (by[dir] = { dir: dir, count: 0, when: 0 })
+            p.count += n
+            p.when = Math.max(p.when, when || 0)
+        }
+        add(home, 0, 0)
+        for (const d of known) add(d, 0, 0)
+        for (const s of sessions) add(s.cwd, s.since, 0)
+        for (const c of convos) add(c.cwd, c.mtime, 1)
+        const found = new Set(convos.filter(c => c.found).map(c => c.cwd).concat(sessions.map(s => s.cwd), [home]))
+        return Object.values(by)
+            .filter(p => p.count > 0 || found.has(p.dir) || knownFound.has(p.dir))
+            .sort((a, b) => b.when - a.when || a.dir.localeCompare(b.dir))
+    }
+    property var knownFound: new Set()    // folders from ~/.claude.json that still exist
 
     readonly property string script: Quickshell.shellPath("modules/agents/agents.py")
     readonly property string syncScript: Quickshell.shellPath("modules/agents/claude-sync.py")
@@ -91,10 +125,12 @@ Scope {
         scanSoon.restart()
     }
 
-    // take a session off the resume list; its transcript stays
-    function forget(r) {
-        recent = recent.filter(x => x.sid !== r.sid)
-        Quickshell.execDetached(["python3", "-I", script, "hide", r.sid])
+    // move a saved conversation to the Trash (never one that's running)
+    function remove(c) {
+        if (sessions.some(s => s.sid === c.sid)) return
+        convos = convos.filter(x => x.sid !== c.sid)
+        Quickshell.execDetached(["python3", "-I", script, "delete", c.sid])
+        listSoon.restart()
     }
 
     // the one that needs you: waiting longest, else the latest to finish
@@ -110,9 +146,13 @@ Scope {
         if (scan.running) scan.write("scan\n")
         else if (root.available) scan.running = true
     }
+    function listConvos() {
+        if (scan.running) scan.write("list\n")
+        else if (root.available) scan.running = true
+    }
     function refreshMore() {
         refresh()
-        if (!recentProc.running) recentProc.running = true
+        listConvos()
         projectsFile.reload()
         if (!syncStatus.running) syncStatus.running = true
     }
@@ -149,9 +189,9 @@ Scope {
         running: root.available
         onTriggered: {
             root.refresh()
-            // the resume list too while it's on screen, so sessions removed
-            // elsewhere (the `claude agents` view, another machine) drop off
-            if (root.fast && ++ticks % 4 === 0 && !recentProc.running) recentProc.running = true
+            // the conversations too while they're on screen (new ones, titles,
+            // another machine's through sync)
+            if (root.fast && ++ticks % 4 === 0) root.listConvos()
         }
     }
     // a session registered or gone: rescan now rather than on the next tick
@@ -162,25 +202,20 @@ Scope {
         onCountChanged: if (root.available) scanSoon.restart()
     }
     Timer { id: scanSoon; interval: 800; onTriggered: root.refresh() }
+    Timer { id: listSoon; interval: 800; onTriggered: root.listConvos() }
 
     Process {
         id: scan
         command: ["python3", "-I", root.script, "serve"]
         stdinEnabled: true
-        onStarted: write("scan\n")
+        onStarted: { write("scan\n"); if (root.fast) write("list\n") }
         stdout: SplitParser {
             onRead: line => {
-                try { root.sessions = JSON.parse(line) } catch (e) {}
-            }
-        }
-    }
-
-    Process {
-        id: recentProc
-        command: ["python3", "-I", root.script, "recent"]
-        stdout: StdioCollector {
-            onStreamFinished: {
-                try { root.recent = JSON.parse(text) } catch (e) {}
+                try {
+                    const v = JSON.parse(line)
+                    if (Array.isArray(v)) root.sessions = v
+                    else if (v && Array.isArray(v.convos)) root.convos = v.convos
+                } catch (e) {}
             }
         }
     }
@@ -196,7 +231,7 @@ Scope {
         id: syncProc
         command: ["python3", "-I", root.syncScript, "sync", "-q"]
         onRunningChanged: root.syncing = running
-        onExited: { syncStatus.running = true; if (root.fast) recentProc.running = true }
+        onExited: { syncStatus.running = true; if (root.fast) root.listConvos() }
     }
 
     Process {
@@ -215,9 +250,19 @@ Scope {
         path: root.home + "/.claude.json"
         onLoaded: {
             try {
-                const p = Object.keys(JSON.parse(text()).projects || {})
-                root.projects = p.filter(d => d !== root.home).sort()
+                root.known = Object.keys(JSON.parse(text()).projects || {})
+                knownCheck.running = true
             } catch (e) {}
+        }
+    }
+
+    // which of those folders still exist (a deleted folder with no conversations
+    // isn't a project any more)
+    Process {
+        id: knownCheck
+        command: ["sh", "-c", 'for d; do [ -d "$d" ] && printf "%s\\n" "$d"; done', "sh"].concat(root.known)
+        stdout: StdioCollector {
+            onStreamFinished: root.knownFound = new Set(text.split("\n").filter(x => x))
         }
     }
 }

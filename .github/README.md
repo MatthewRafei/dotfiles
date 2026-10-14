@@ -253,8 +253,13 @@ for the full tour.
   OpenRC user services, or no service manager); right-click starts or stops it.
 - **Claude Code agents:** a bar chip with Clawd, Claude Code's pixel critter, in Claude orange
   whatever the wallpaper. It counts working sessions (background jobs included) and turns red
-  when one needs you; its panel opens, stops, starts or resumes them, and the ✕ on a resume entry
-  hides it (the transcript stays). Sessions are kept: `claude` in a terminal runs in a private
+  when one needs you. Its panel has a search field on top (type `~/folder` to start a session
+  there), the sessions that need you or are working, PROJECTS (each folder Claude Code has been
+  used in: click to filter, + to start a kept session there) and one SESSIONS list: idle running
+  sessions plus every saved conversation, which stays until you delete it (two clicks; it goes to
+  the Trash, and sync deletes it on the other machines too). `cleanupPeriodDays` in
+  `~/.claude/settings.json` is raised so Claude Code doesn't delete old transcripts itself after
+  30 days. Sessions are kept: `claude` in a terminal runs in a private
   tmux server, so closing the terminal (busy or idle) only detaches it and the panel opens it
   again (`command claude` for a throwaway one). A `claude agents` view left open in a kept
   session is shown as a view, not a session.

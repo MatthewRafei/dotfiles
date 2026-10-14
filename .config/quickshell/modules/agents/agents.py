@@ -2,11 +2,12 @@
 """Claude Code sessions for the bar's agents chip (Agents.qml).
 
   agents.py scan          JSON list of running sessions on stdout
-  agents.py serve         stay up: a "scan" line on stdin answers with one JSON line
-                          (what the bar uses; exits when stdin closes, i.e. with qs)
-  agents.py recent        JSON list of recent sessions that aren't running (to resume)
-  agents.py hide SID      take SID off the recent list (transcript kept; list in
-                          ~/.local/state/quickshell/agents-hidden)
+  agents.py serve         stay up: a "scan" line on stdin answers with the scan, a "list"
+                          line with {"convos": [...]}, one JSON line each (what the bar
+                          uses; exits when stdin closes, i.e. with qs)
+  agents.py convos        JSON list of every saved conversation, newest first
+  agents.py delete SID    move conversation SID (transcript + its folder) to the Trash;
+                          refused while it runs
   agents.py focus PID     focus the terminal window that PID runs in (Hyprland or niri)
   agents.py attached NAME focus a terminal attached to kept session NAME (exit 1: none)
 
@@ -26,11 +27,10 @@ import subprocess
 import sys
 
 CLAUDE = os.environ.get("CLAUDE_CONFIG_DIR") or os.path.expanduser("~/.claude")
-# sessions taken off the resume list (one id a line); the transcripts stay
-HIDDEN = os.path.join(os.environ.get("XDG_STATE_HOME") or os.path.expanduser("~/.local/state"),
-                      "quickshell", "agents-hidden")
+TRASH = os.path.join(os.environ.get("XDG_DATA_HOME") or os.path.expanduser("~/.local/share"), "Trash")
 TMUX = ["tmux", "-L", "claude"]
 TITLE_TAIL = 512 * 1024          # bytes of a transcript searched for its title
+HEAD_LINES = 200                 # records read from a transcript's start for its cwd and prompt
 
 
 def run(cmd):
@@ -68,10 +68,11 @@ def proc_start(pid):
 _titles = {}                     # transcript path -> (size searched up to, title found), for serve
 
 
-def title(cwd, sid):
+def title(cwd, sid, path=None):
     """The newest ai-title / custom title in the session's transcript."""
-    proj = re.sub(r"[^A-Za-z0-9]", "-", cwd)
-    path = os.path.join(CLAUDE, "projects", proj, f"{sid}.jsonl")
+    if path is None:
+        proj = re.sub(r"[^A-Za-z0-9]", "-", cwd)
+        path = os.path.join(CLAUDE, "projects", proj, f"{sid}.jsonl")
     seen, found = _titles.get(path, (0, ""))
     try:
         with open(path, "rb") as f:
@@ -208,81 +209,152 @@ def serve():
     for line in sys.stdin:
         if line.strip() == "scan":
             print(json.dumps(scan()), flush=True)
+        elif line.strip() == "list":
+            print(json.dumps({"convos": convos()}), flush=True)
 
 
-def recent(limit=8):
-    """Newest transcripts whose session isn't running: [{sid, cwd, title, mtime}]"""
-    running = hidden()
+def running_sids():
+    """Session ids with a live claude process."""
+    out = set()
     reg = os.path.join(CLAUDE, "sessions")
     try:
-        for name in os.listdir(reg):
-            if name.endswith(".json"):
+        names = os.listdir(reg)
+    except OSError:
+        return out
+    for name in names:
+        if name.endswith(".json"):
+            try:
+                with open(os.path.join(reg, name)) as f:
+                    s = json.load(f)
+                if os.path.exists(f"/proc/{int(s['pid'])}"):
+                    out.add(s.get("sessionId"))
+            except (OSError, ValueError, KeyError, TypeError):
+                pass
+    return out
+
+
+def _prompt_text(rec):
+    """The words of a user record, "" for tool results, commands and other plumbing."""
+    if rec.get("type") != "user" or rec.get("isMeta") or rec.get("isSidechain"):
+        return ""
+    content = (rec.get("message") or {}).get("content")
+    if isinstance(content, list):
+        content = " ".join(c.get("text", "") for c in content
+                           if isinstance(c, dict) and c.get("type") == "text")
+    if not isinstance(content, str):
+        return ""
+    content = content.strip()
+    if not content or content.startswith("<"):        # <command-name>, <local-command-stdout>, ...
+        return ""
+    return " ".join(content.split())[:300]
+
+
+_heads = {}                      # transcript path -> (cwd, first prompt), for serve
+
+
+def head(path):
+    """(cwd, first prompt) from the start of a transcript."""
+    if path in _heads and _heads[path][1]:
+        return _heads[path]
+    cwd, prompt = "", ""
+    try:
+        with open(path, "rb") as f:
+            for _ in range(HEAD_LINES):
+                line = f.readline()
+                if not line:
+                    break
                 try:
-                    with open(os.path.join(reg, name)) as f:
-                        s = json.load(f)
-                    if os.path.exists(f"/proc/{int(s['pid'])}"):
-                        running.add(s.get("sessionId"))
-                except (OSError, ValueError, KeyError, TypeError):
-                    pass
+                    rec = json.loads(line)
+                except ValueError:
+                    continue
+                if not isinstance(rec, dict):
+                    continue
+                cwd = cwd or rec.get("cwd") or ""
+                prompt = prompt or _prompt_text(rec)
+                if cwd and prompt:
+                    break
     except OSError:
         pass
+    _heads[path] = (cwd, prompt)
+    return cwd, prompt
+
+
+def convos():
+    """Every saved conversation: [{sid, cwd, title, prompt, mtime, found}], newest first.
+    Transcripts without a single message (opened and quit, or the title-only stubs
+    Claude Code leaves for named agents) aren't conversations."""
     files = []
     root = os.path.join(CLAUDE, "projects")
     try:
-        for d in os.listdir(root):
-            full = os.path.join(root, d)
-            if not os.path.isdir(full):
-                continue
-            for f in os.listdir(full):
-                if f.endswith(".jsonl") and f[:-6] not in running:
-                    p = os.path.join(full, f)
-                    try:
-                        files.append((os.path.getmtime(p), p))
-                    except OSError:
-                        pass
+        dirs = os.listdir(root)
     except OSError:
-        pass
+        dirs = []
+    for d in dirs:
+        full = os.path.join(root, d)
+        try:
+            names = os.listdir(full)
+        except OSError:
+            continue
+        for f in names:
+            if f.endswith(".jsonl") and re.fullmatch(r"[0-9a-f-]{36}", f[:-6]):
+                p = os.path.join(full, f)
+                try:
+                    files.append((os.path.getmtime(p), p))
+                except OSError:
+                    pass
     out = []
     for mtime, p in sorted(files, reverse=True):
         sid = os.path.basename(p)[:-6]
-        cwd = ""
-        try:
-            with open(p, "rb") as f:          # the first records carry the cwd
-                for _ in range(40):
-                    line = f.readline()
-                    if not line:
-                        break
-                    m = re.search(rb'"cwd"\s*:\s*"((?:[^"\\]|\\.)*)"', line)
-                    if m:
-                        cwd = json.loads(b'"' + m.group(1) + b'"')
-                        break
-        except (OSError, ValueError):
+        cwd, prompt = head(p)
+        if not cwd:
             continue
-        t = title(cwd, sid) if cwd else ""
-        if not cwd or not t or not os.path.isdir(cwd):
-            continue                          # no conversation worth resuming
-        out.append({"sid": sid, "cwd": cwd, "title": t, "mtime": int(mtime * 1000)})
-        if len(out) >= limit:
-            break
-    print(json.dumps(out))
+        t = title(cwd, sid, p)
+        out.append({"sid": sid, "cwd": cwd, "title": t or prompt, "prompt": prompt,
+                    "mtime": int(mtime * 1000), "found": os.path.isdir(cwd)})
+    return out
 
 
-def hidden():
+def _trash(path):
+    """Move path into the XDG Trash (restorable from a file manager)."""
+    import shutil
+    import time
+    from urllib.parse import quote
+    files, info = os.path.join(TRASH, "files"), os.path.join(TRASH, "info")
+    os.makedirs(files, exist_ok=True)
+    os.makedirs(info, exist_ok=True)
+    base = name = os.path.basename(path)
+    n = 1
+    while os.path.lexists(os.path.join(files, name)) or os.path.lexists(os.path.join(info, name + ".trashinfo")):
+        n += 1
+        name = f"{base}.{n}"
+    with open(os.path.join(info, name + ".trashinfo"), "x") as f:
+        f.write(f"[Trash Info]\nPath={quote(os.path.abspath(path))}\n"
+                f"DeletionDate={time.strftime('%Y-%m-%dT%H:%M:%S')}\n")
+    shutil.move(path, os.path.join(files, name))
+
+
+def delete(sid):
+    """Trash a conversation: its transcript, the folder beside it (subagents, tool output)
+    and side copies of the transcript (<sid>.orphaned-*.jsonl, sync's <sid>.jsonl.conflict-*)."""
+    if sid in running_sids():
+        print("agents.py: that session is running; stop it first", file=sys.stderr)
+        return 1
+    root = os.path.join(CLAUDE, "projects")
+    found = 0
     try:
-        with open(HIDDEN) as f:
-            return {line.strip() for line in f if line.strip()}
+        dirs = os.listdir(root)
     except OSError:
-        return set()
-
-
-def hide(sid):
-    """Take a session off the resume list (its transcript is kept)."""
-    if sid in hidden():
-        return 0
-    os.makedirs(os.path.dirname(HIDDEN), exist_ok=True)
-    with open(HIDDEN, "a") as f:
-        f.write(sid + "\n")
-    return 0
+        dirs = []
+    for d in dirs:
+        try:
+            names = os.listdir(os.path.join(root, d))
+        except OSError:
+            continue
+        for name in names:
+            if name == sid or name.startswith(sid + "."):
+                _trash(os.path.join(root, d, name))
+                found += 1
+    return 0 if found else 1
 
 
 def attached(name):
@@ -327,13 +399,13 @@ def main():
     if len(sys.argv) >= 2 and sys.argv[1] == "serve":
         serve()
         return 0
-    if len(sys.argv) >= 2 and sys.argv[1] == "recent":
-        recent()
+    if len(sys.argv) >= 2 and sys.argv[1] == "convos":
+        print(json.dumps(convos()))
         return 0
     if len(sys.argv) == 3 and sys.argv[1] == "focus" and sys.argv[2].isdigit():
         return focus(int(sys.argv[2]))
-    if len(sys.argv) == 3 and sys.argv[1] == "hide" and re.fullmatch(r"[0-9a-f-]{36}", sys.argv[2]):
-        return hide(sys.argv[2])
+    if len(sys.argv) == 3 and sys.argv[1] == "delete" and re.fullmatch(r"[0-9a-f-]{36}", sys.argv[2]):
+        return delete(sys.argv[2])
     if len(sys.argv) == 3 and sys.argv[1] == "attached" and re.fullmatch(r"[A-Za-z0-9_.-]+", sys.argv[2]):
         return attached(sys.argv[2])
     print(__doc__, file=sys.stderr)

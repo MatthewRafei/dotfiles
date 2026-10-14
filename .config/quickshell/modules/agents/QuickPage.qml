@@ -3,44 +3,115 @@ import Quickshell
 import qs
 import qs.widgets
 
-// Quick panel page (qs ipc call quick agents): sessions by state, start a
-// kept one in a folder, resume a recent one as kept (or hide it from the list).
+// Quick panel page (qs ipc call quick agents): search on top, sessions that need
+// you or are working, projects (folders) to start in or filter by, then every
+// session: the idle ones still running and all saved conversations, which only
+// leave the list when deleted (to the Trash). Sync at the bottom.
 Column {
     id: page
     property var service
     property var panel
 
-    // a Claude Code session: status, title, folder · age, kept or not, stop
-    component AgentRow: Rectangle {
-        id: ar
-        property var s
+    property string project: ""           // filter: only this folder's sessions
+    readonly property string query: search.text.trim()
+    // "~/x" or "/x" typed: offer to start a session there
+    readonly property bool queryIsPath: /^[~\/]/.test(query)
+    readonly property string queryDir: query.replace(/^~(?=\/|$)/, service.home)
+
+    function matches(it) {
+        if (project !== "" && it.cwd !== project) return false
+        if (query === "") return true
+        const hay = (it.title + " " + (it.prompt || "") + " " + service.pretty(it.cwd || "")).toLowerCase()
+        return query.toLowerCase().split(/\s+/).every(w => hay.indexOf(w) >= 0)
+    }
+    // folder name, with its parent when two projects share a name (~/x/compiler-tutor, ~/compiler-tutor)
+    function baseName(dir) { return dir.split("/").filter(x => x).pop() || dir }
+    readonly property var dupNames: {
+        const seen = {}, dup = {}
+        for (const p of service.projects) { const b = baseName(p.dir); if (seen[b]) dup[b] = true; seen[b] = true }
+        return dup
+    }
+    function projectName(dir) {
+        if (dir === service.home) return "~  home"
+        const b = baseName(dir)
+        return dupNames[b] ? b + "  ·  " + service.pretty(dir.slice(0, dir.length - b.length - 1)) : b
+    }
+
+    readonly property var shown: service.library.filter(matches)
+    readonly property var shownProjects: service.projects.filter(p => query === "" || queryIsPath
+        || (projectName(p.dir) + " " + service.pretty(p.dir)).toLowerCase().indexOf(query.toLowerCase()) >= 0)
+
+    // two-click button: icon, then a red word to confirm within 3 s
+    component ConfirmButton: Rectangle {
+        id: cb
+        property string icon
+        property string confirm
         property bool armed: false
-        readonly property color tint: s.status === "waiting" ? Theme.danger
-            : s.status === "busy" ? Theme.accent : s.status === "new" ? Theme.text : Theme.textDim
-            // `claude agents` and other subcommands: kept, but not a session
+        signal confirmed()
+
+        width: armed ? cbText.implicitWidth + 12 : 22
+        height: 22
+        radius: Theme.radius
+        color: armed ? Theme.alpha(Theme.danger, 0.15) : "transparent"
+        border.color: armed || cbMouse.containsMouse ? Theme.danger : Theme.border
+        Text {
+            id: cbText
+            anchors.centerIn: parent
+            text: cb.armed ? cb.confirm : cb.icon
+            color: cb.armed || cbMouse.containsMouse ? Theme.danger : Theme.textDim
+            font.family: cb.armed ? Theme.fontFamily : Theme.iconFont
+            font.pixelSize: cb.armed ? 8 : 12
+            font.bold: cb.armed
+        }
+        MouseArea {
+            id: cbMouse
+            anchors.fill: parent
+            hoverEnabled: true
+            cursorShape: Qt.PointingHandCursor
+            onClicked: {
+                if (cb.armed) { cb.armed = false; cb.confirmed() }
+                else { cb.armed = true; cbDisarm.restart() }
+            }
+        }
+        Timer { id: cbDisarm; interval: 3000; onTriggered: cb.armed = false }
+    }
+
+    // one session: a running one (status, kept or not, stop) or a saved
+    // conversation (resume as kept, delete)
+    component SessionRow: Rectangle {
+        id: sr
+        property var it                   // library item, or {kind: "live", s} for the live lists
+        readonly property bool live: it.kind === "live"
+        readonly property var s: live ? it.s : null
+        readonly property string status: live ? s.status : "saved"
+        readonly property bool openable: live || it.found
+        readonly property color tint: status === "waiting" ? Theme.danger
+            : status === "busy" ? Theme.accent : live ? Theme.text : Theme.textFaint
 
         width: parent ? parent.width : 0
         height: 40
         radius: Theme.radius
-        color: arMouse.containsMouse ? Theme.bgCard : "transparent"
+        color: srMouse.containsMouse && sr.openable ? Theme.bgCard : "transparent"
 
         Rectangle {
             width: 2
             height: parent.height - 12
             anchors.verticalCenter: parent.verticalCenter
-            color: ar.tint
-            visible: ar.s.status === "waiting" || ar.s.status === "busy"
+            color: sr.tint
+            visible: sr.status === "waiting" || sr.status === "busy"
         }
 
-        // status dot, pulsing while it works
+        // filled dot: running (pulsing while it works); ring: saved
         Rectangle {
             id: dot
             x: 14
             anchors.verticalCenter: parent.verticalCenter
             width: 8; height: 8; radius: 4
-            color: ar.tint
+            color: sr.live ? sr.tint : "transparent"
+            border.color: sr.tint
+            border.width: sr.live ? 0 : 1
             SequentialAnimation on opacity {
-                running: ar.s.status === "busy"
+                running: sr.status === "busy"
                 loops: Animation.Infinite
                 NumberAnimation { to: 0.25; duration: 700; easing.type: Easing.InOutSine }
                 NumberAnimation { to: 1; duration: 700; easing.type: Easing.InOutSine }
@@ -56,17 +127,18 @@ Column {
             Text {
                 width: parent.width
                 elide: Text.ElideRight
-                text: ar.s.title
-                color: ar.s.status === "waiting" ? Theme.danger : Theme.text
+                text: sr.it.title || "Untitled"
+                color: sr.status === "waiting" ? Theme.danger : sr.openable ? Theme.text : Theme.textDim
                 font.family: Theme.fontFamily
                 font.pixelSize: 11
             }
             Text {
                 width: parent.width
                 elide: Text.ElideMiddle
-                text: (ar.s.status === "waiting" ? "NEEDS YOU" : ar.s.status === "busy" ? "WORKING"
-                       : ar.s.status === "new" ? "NEW" : ar.s.status === "view" ? "VIEW" : "IDLE")
-                    + " " + page.service.ago(ar.s.since) + "  ·  " + page.service.pretty(ar.s.cwd || "")
+                text: (sr.status === "waiting" ? "NEEDS YOU " : sr.status === "busy" ? "WORKING "
+                       : sr.status === "new" ? "NEW " : sr.status === "view" ? "VIEW " : sr.live ? "RUNNING " : "")
+                    + page.service.ago(sr.live ? sr.s.since : sr.it.when) + "  ·  "
+                    + (sr.openable ? page.service.pretty(sr.it.cwd || "") : "FOLDER GONE  " + page.service.pretty(sr.it.cwd))
                 color: Theme.textFaint
                 font.family: Theme.fontFamily
                 font.pixelSize: 8
@@ -83,56 +155,58 @@ Column {
 
             // kept sessions survive their terminal; the others end with it
             Text {
+                visible: sr.live
                 anchors.verticalCenter: parent.verticalCenter
-                text: ar.s.job ? "JOB" : ar.s.tmux !== "" ? (ar.s.attached > 0 ? "KEPT" : "KEPT · BG") : "TERMINAL"
-                color: ar.s.tmux !== "" || ar.s.job ? Theme.accent : Theme.textFaint
+                text: !sr.live ? "" : sr.s.job ? "JOB" : sr.s.tmux !== "" ? (sr.s.attached > 0 ? "KEPT" : "KEPT · BG") : "TERMINAL"
+                color: sr.live && (sr.s.tmux !== "" || sr.s.job) ? Theme.accent : Theme.textFaint
                 font.family: Theme.fontFamily
                 font.pixelSize: 8
                 font.letterSpacing: 1
             }
-            Rectangle {
-                visible: ar.s.tmux !== ""
-                width: ar.armed ? stopText.implicitWidth + 12 : 22
-                height: 22
-                radius: Theme.radius
-                color: ar.armed ? Theme.alpha(Theme.danger, 0.15) : "transparent"
-                border.color: ar.armed || stopMouse.containsMouse ? Theme.danger : Theme.border
-                Text {
-                    id: stopText
-                    anchors.centerIn: parent
-                    text: ar.armed ? "STOP?" : "󰅖"
-                    color: ar.armed || stopMouse.containsMouse ? Theme.danger : Theme.textDim
-                    font.family: ar.armed ? Theme.fontFamily : Theme.iconFont
-                    font.pixelSize: ar.armed ? 8 : 12
-                    font.bold: ar.armed
-                }
-                MouseArea {
-                    id: stopMouse
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: {
-                        if (ar.armed) { ar.armed = false; page.service.stop(ar.s) }
-                        else { ar.armed = true; disarm.restart() }
-                    }
-                }
-                Timer { id: disarm; interval: 3000; onTriggered: ar.armed = false }
+            ConfirmButton {
+                visible: sr.live && sr.s.tmux !== ""
+                icon: "󰅖"
+                confirm: "STOP?"
+                onConfirmed: page.service.stop(sr.s)
+            }
+            ConfirmButton {
+                visible: !sr.live
+                icon: "󰆴"
+                confirm: "DELETE?"
+                onConfirmed: page.service.remove(sr.it.c)
             }
         }
 
         MouseArea {
-            id: arMouse
+            id: srMouse
             anchors.fill: parent
             z: -1
             hoverEnabled: true
-            cursorShape: Qt.PointingHandCursor
-            onClicked: { page.panel.close(); page.service.open(ar.s) }
+            cursorShape: sr.openable ? Qt.PointingHandCursor : Qt.ArrowCursor
+            onClicked: {
+                if (!sr.openable) return
+                page.panel.close()
+                if (sr.live) page.service.open(sr.s)
+                else page.service.newSession(sr.it.cwd, sr.it.sid)
+            }
         }
+    }
+
+    // a slim scroll bar for the lists that scroll
+    component ScrollHint: Rectangle {
+        property Flickable view
+        visible: view.contentHeight > view.height
+        x: view.width - 3
+        y: view.y + view.visibleArea.yPosition * view.height
+        width: 2
+        height: view.visibleArea.heightRatio * view.height
+        radius: 1
+        color: Theme.border
     }
 
     // live updates while it's open
     Binding { target: page.service; property: "fast"; value: true }
-    Component.onCompleted: service.refreshMore()
+    Component.onCompleted: { service.refreshMore(); search.focusInput() }
 
     width: parent.width
     spacing: 4
@@ -146,101 +220,185 @@ Column {
 
     Rectangle { width: parent.width; height: 1; color: Theme.border }
 
+    // ------------------------------------------------ search
+    HudField {
+        id: search
+        width: parent.width
+        input.anchors.leftMargin: 30
+        // the field's own placeholder hides on focus, and this one is focused on open
+        Text {
+            x: 10
+            anchors.verticalCenter: parent.verticalCenter
+            text: "󰍉"
+            color: search.input.activeFocus ? Theme.accent : Theme.textFaint
+            font.family: Theme.iconFont
+            font.pixelSize: 13
+        }
+        Text {
+            visible: search.text === ""
+            x: 30
+            anchors.verticalCenter: parent.verticalCenter
+            text: "search sessions…  or ~/folder to start one"
+            color: Theme.textFaint
+            font.family: Theme.fontFamily
+            font.pixelSize: 11
+        }
+        // enter: start in a typed folder, else open the first match
+        onAccepted: {
+            if (page.queryIsPath) {
+                const d = page.queryDir
+                text = ""
+                page.panel.close()
+                page.service.newSession(d, "")
+            } else if (page.shown.length > 0) {
+                const it = page.shown[0]
+                if (it.kind === "live") { page.panel.close(); page.service.open(it.s) }
+                else if (it.found) { page.panel.close(); page.service.newSession(it.cwd, it.sid) }
+            }
+        }
+    }
+    QuickRow {
+        visible: page.queryIsPath
+        height: 30
+        icon: "󰐕"
+        label: "New session in " + page.service.pretty(page.queryDir)
+        detail: "ENTER"
+        onClicked: { const d = page.queryDir; search.text = ""; page.panel.close(); page.service.newSession(d, "") }
+    }
+
+    // ------------------------------------------------ live
+    QuickLabel { visible: page.service.waiting.length > 0; text: "NEEDS YOU"; color: Theme.danger }
+    Repeater { model: page.service.waiting; SessionRow { required property var modelData; it: ({ kind: "live", s: modelData, title: modelData.title, cwd: modelData.cwd }) } }
+    QuickLabel { visible: page.service.busy.length > 0; text: "WORKING" }
+    Repeater { model: page.service.busy; SessionRow { required property var modelData; it: ({ kind: "live", s: modelData, title: modelData.title, cwd: modelData.cwd }) } }
+
+    // ------------------------------------------------ projects
+    QuickLabel { visible: page.shownProjects.length > 0; text: "PROJECTS  ·  CLICK TO FILTER, + TO START" }
+    Item {
+        visible: page.shownProjects.length > 0
+        width: parent.width
+        height: projView.height
+        Flickable {
+            id: projView
+            width: parent.width
+            height: Math.min(projCol.implicitHeight, 5 * 30)
+            contentHeight: projCol.implicitHeight
+            clip: true
+            boundsBehavior: Flickable.StopAtBounds
+            Column {
+                id: projCol
+                width: projView.width
+                Repeater {
+                    model: page.shownProjects
+                    Item {
+                        id: pr
+                        required property var modelData
+                        readonly property bool here: page.project === modelData.dir
+                        width: projCol.width
+                        height: 30
+                        QuickRow {
+                            width: parent.width - plus.width - 6
+                            height: parent.height
+                            icon: pr.here ? "󰉖" : "󰉋"
+                            active: pr.here
+                            label: page.projectName(pr.modelData.dir)
+                            detail: pr.modelData.count > 0 ? String(pr.modelData.count) : ""
+                            onClicked: page.project = pr.here ? "" : pr.modelData.dir
+                        }
+                        Rectangle {
+                            id: plus
+                            anchors.right: parent.right
+                            anchors.rightMargin: 4
+                            anchors.verticalCenter: parent.verticalCenter
+                            width: 22; height: 22
+                            radius: Theme.radius
+                            color: plusMouse.containsMouse ? Theme.alpha(Theme.accent, 0.15) : "transparent"
+                            border.color: plusMouse.containsMouse ? Theme.accent : Theme.border
+                            Text {
+                                anchors.centerIn: parent
+                                text: "󰐕"
+                                color: plusMouse.containsMouse ? Theme.accent : Theme.textDim
+                                font.family: Theme.iconFont
+                                font.pixelSize: 12
+                            }
+                            MouseArea {
+                                id: plusMouse
+                                anchors.fill: parent
+                                hoverEnabled: true
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: { page.panel.close(); page.service.newSession(pr.modelData.dir, "") }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ScrollHint { view: projView }
+    }
+
+    // ------------------------------------------------ sessions
+    Item {
+        width: parent.width
+        height: sessLabel.implicitHeight
+        QuickLabel {
+            id: sessLabel
+            text: "SESSIONS  ·  " + page.shown.length
+                + (page.project !== "" ? "  ·  " + page.projectName(page.project).toUpperCase() : "")
+        }
+        // clear the project filter
+        Text {
+            visible: page.project !== ""
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            text: "SHOW ALL  ✕"
+            color: clearMouse.containsMouse ? Theme.accent : Theme.textFaint
+            font.family: Theme.fontFamily
+            font.pixelSize: 9
+            font.letterSpacing: 2
+            MouseArea {
+                id: clearMouse
+                anchors.fill: parent
+                anchors.margins: -4
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
+                onClicked: page.project = ""
+            }
+        }
+    }
     Text {
-        visible: page.service.sessions.length === 0
-        text: "NOTHING RUNNING"
+        visible: page.shown.length === 0
+        text: page.service.library.length === 0 ? "NO SESSIONS YET" : "NOTHING MATCHES"
         color: Theme.textFaint
         font.family: Theme.fontFamily
         font.pixelSize: 9
         font.letterSpacing: 2
-        topPadding: 6
+        topPadding: 4
+        bottomPadding: 4
     }
-
-    QuickLabel { visible: page.service.waiting.length > 0; text: "NEEDS YOU"; color: Theme.danger }
-    Repeater { model: page.service.waiting; AgentRow { required property var modelData; s: modelData } }
-    QuickLabel { visible: page.service.busy.length > 0; text: "WORKING" }
-    Repeater { model: page.service.busy; AgentRow { required property var modelData; s: modelData } }
-    QuickLabel { visible: page.service.idle.length > 0; text: "IDLE" }
-    Repeater { model: page.service.idle; AgentRow { required property var modelData; s: modelData } }
-
-    QuickLabel { text: "NEW KEPT SESSION  ·  SURVIVES CLOSING" }
-    Repeater {
-        // home, the folders Claude knows, and wherever sessions run now
-        model: [page.service.home].concat(page.service.projects)
-            .concat(page.service.sessions.map(x => x.cwd))
-            .filter((d, i, a) => d && a.indexOf(d) === i)
-        QuickRow {
-            required property string modelData
-            height: 30
-            icon: "󰐕"
-            label: page.service.pretty(modelData)
-            onClicked: { page.panel.close(); page.service.newSession(modelData, "") }
-        }
-    }
-    HudField {
-        id: agentDir
+    Item {
+        visible: page.shown.length > 0
         width: parent.width
-        placeholder: "other folder…  (enter to start)"
-        onAccepted: {
-            let d = text.trim().replace(/^~(?=\/|$)/, page.service.home)
-            if (d === "") return
-            text = ""
-            page.panel.close()
-            page.service.newSession(d, "")
-        }
-    }
-
-    QuickLabel { visible: page.service.recent.length > 0; text: "RESUME AS KEPT" }
-    Repeater {
-        model: page.service.recent.slice(0, 5)
-        // resume it, or take it off the list (click twice; the transcript stays)
-        Item {
-            id: rr
-            required property var modelData
-            property bool armed: false
+        height: sessView.height
+        Flickable {
+            id: sessView
             width: parent.width
-            height: 30
-            QuickRow {
-                width: parent.width - hideBtn.width - 4
-                height: parent.height
-                icon: "󰑐"
-                label: rr.modelData.title
-                detail: page.service.ago(rr.modelData.mtime)
-                onClicked: { page.panel.close(); page.service.newSession(rr.modelData.cwd, rr.modelData.sid) }
-            }
-            Rectangle {
-                id: hideBtn
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
-                width: rr.armed ? hideText.implicitWidth + 12 : 22
-                height: 22
-                radius: Theme.radius
-                color: rr.armed ? Theme.alpha(Theme.danger, 0.15) : "transparent"
-                border.color: rr.armed || hideMouse.containsMouse ? Theme.danger : Theme.border
-                Text {
-                    id: hideText
-                    anchors.centerIn: parent
-                    text: rr.armed ? "HIDE?" : "󰅖"
-                    color: rr.armed || hideMouse.containsMouse ? Theme.danger : Theme.textDim
-                    font.family: rr.armed ? Theme.fontFamily : Theme.iconFont
-                    font.pixelSize: rr.armed ? 8 : 12
-                    font.bold: rr.armed
+            height: Math.min(sessCol.implicitHeight, 9 * 40)
+            contentHeight: sessCol.implicitHeight
+            clip: true
+            boundsBehavior: Flickable.StopAtBounds
+            Column {
+                id: sessCol
+                width: sessView.width
+                Repeater {
+                    model: page.shown
+                    SessionRow { required property var modelData; it: modelData }
                 }
-                MouseArea {
-                    id: hideMouse
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: {
-                        if (rr.armed) { rr.armed = false; page.service.forget(rr.modelData) }
-                        else { rr.armed = true; hideDisarm.restart() }
-                    }
-                }
-                Timer { id: hideDisarm; interval: 3000; onTriggered: rr.armed = false }
             }
         }
+        ScrollHint { view: sessView }
     }
 
+    // ------------------------------------------------ sync
     // claude-sync.py: only once its staging folder exists
     QuickLabel {
         visible: page.service.syncEnabled

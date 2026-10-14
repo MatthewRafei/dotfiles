@@ -82,5 +82,6 @@
       "**Org-specific CLIs**: None configured"
     ]
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "cleanupPeriodDays": 36500
 }
