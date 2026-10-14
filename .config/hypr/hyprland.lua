@@ -159,7 +159,7 @@ end)
 -- Apps and shell
 hl.bind(mainMod .. " + Return",      exec("alacritty"), { description = "Terminal" })
 hl.bind(mainMod .. " + D",           exec("fuzzel"), { description = "App launcher" })
-hl.bind(mainMod .. " + SHIFT + D",   exec("nautilus"), { description = "File manager" })
+hl.bind(mainMod .. " + SHIFT + D",   exec("[ -x " .. bin .. "abyss ] && exec " .. bin .. "abyss || exec nautilus"), { description = "File manager" })
 hl.bind(mainMod .. " + W",           exec(bin .. "chromium"), { description = "Browser" })
 hl.bind(mainMod .. " + SHIFT + L",   exec("qs ipc call lock lock"), { description = "Lock screen" })
 hl.bind(mainMod .. " + N",           exec("qs ipc call notifs toggle"), { description = "Notifications" })

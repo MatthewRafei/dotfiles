@@ -166,7 +166,7 @@ environment {
 // ── Cursor ────────────────────────────────────────────────────────────────────
 
 cursor {
-    xcursor-theme "Accent-b"
+    xcursor-theme "Accent-a"
     xcursor-size 24
 }
 
