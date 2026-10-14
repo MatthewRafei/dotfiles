@@ -3,10 +3,12 @@
 # so everything shares one Emacs. The real binary still runs for starting
 # daemons, batch jobs, terminal frames, test configs and --version; set
 # EMACS_STANDALONE=1 to force a separate Emacs.
-# PGTK build: native Wayland. Never force GDK_BACKEND=x11 here; PGTK hands
-# GTK the Wayland display name, the X11 backend can't open it, and GTK
-# exits the whole daemon.
 real=/usr/bin/emacs
+# GTK/X11 build: has to use XWayland (on Wayland GTK exits the daemon at the
+# first frame). PGTK build: native Wayland; never force GDK_BACKEND=x11 there,
+# PGTK hands GTK the Wayland display name, the X11 backend can't open it, and
+# GTK exits the whole daemon. Both fail as "Connection refused".
+grep -aq -- --with-pgtk "$real" || export GDK_BACKEND=x11 DISPLAY="${DISPLAY:-:0}"
 [ -n "$EMACS_STANDALONE" ] && exec "$real" "$@"
 for a; do
     case $a in

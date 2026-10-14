@@ -19,4 +19,4 @@ Exec=emacsclient -c -n -a ""
 
 [Desktop Action standalone]
 Name=Standalone Emacs (no daemon)
-Exec=env EMACS_STANDALONE=1 /usr/bin/emacs %F
+Exec=env EMACS_STANDALONE=1 emacs %F
