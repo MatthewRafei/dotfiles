@@ -17,7 +17,13 @@ import QtQuick.Window
 // wallpaper cropped to the screen, and fog (binding 3), the same at a twelfth
 // of the size: sampled smoothly, a cheap blur (see shaders/rain.frag).
 // Any shader may also declare vec4 clock: hour (1-12), minute, second, pm
-// (see shaders/clock.frag).
+// (see shaders/clock.frag), and float seed: 0..1, new each time a scene
+// starts, for choices that should differ between showings (shaders/invaders.frag).
+// A scene that asks for `state` gets a first pass: the same shader runs on a
+// 128 x 1 strip with float statePass = 1 (size still the screen's), and the
+// main pass (statePass = 0) reads that strip as sampler2D state (binding 4,
+// nearest, one texel per index). For things worth working out once per frame
+// rather than once per pixel, like a game's history (shaders/invaders.frag).
 Item {
     id: host
 
@@ -33,6 +39,7 @@ Item {
     property string glyphs: ""
     property string fontFamily: "monospace"
     readonly property bool hasAtlas: glyphs !== ""
+    property bool useState: false
 
     // optional wallpaper textures; Screensaver.qml binds `wallpaper` to Theme
     property bool useWallpaper: false
@@ -42,6 +49,9 @@ Item {
     readonly property real cellH: Math.ceil(fm.height)
 
     property real time: 0
+    // a fresh random number for every scene this host starts
+    property real seed: Math.random()
+    onFragChanged: seed = Math.random()
 
     // the time of day, as the bar shows it (12-hour)
     property vector4d clock: Qt.vector4d(12, 0, 0, 0)
@@ -143,6 +153,40 @@ Item {
         visible: false
     }
 
+    // the state pass: the same shader on a 128 x 1 strip. Never shown directly.
+    Loader {
+        id: statePass
+        width: 128
+        height: 1
+        visible: false
+        active: host.useState && host.frag.toString() !== ""
+        sourceComponent: ShaderEffect {
+            fragmentShader: host.frag
+            property size size: Qt.size(host.width, host.height)
+            property real time: host.time
+            property color accent: host.accent
+            property color accent2: host.accent2
+            property color bg: host.bg
+            property color fg: host.fg
+            property size cell: Qt.size(host.cellW, host.cellH)
+            property real glyphCount: Math.max(1, host.glyphs.length)
+            property vector4d clock: host.clock
+            property real seed: host.seed
+            property real statePass: 1
+            property variant atlas: glyphAtlas
+            property variant state: glyphAtlas      // not read in this pass
+        }
+    }
+    ShaderEffectSource {
+        id: stateTex
+        sourceItem: host.useState ? statePass.item : null
+        hideSource: true
+        live: true
+        textureSize: Qt.size(128, 1)
+        smooth: false
+        visible: false
+    }
+
     // made only once there is a shader: an empty fragmentShader falls back to
     // Qt's default one, which warns about a missing `source`. Shaders that
     // don't declare the atlas or wallpaper members just ignore them.
@@ -162,9 +206,12 @@ Item {
             property size cell: Qt.size(host.cellW, host.cellH)
             property real glyphCount: Math.max(1, host.glyphs.length)
             property variant atlas: glyphAtlas
+            property variant state: stateTex
+            property real statePass: 0
             property variant wall: wallSharp
             property variant fog: wallFog
             property vector4d clock: host.clock
+            property real seed: host.seed
         }
     }
 }

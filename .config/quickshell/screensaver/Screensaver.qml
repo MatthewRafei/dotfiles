@@ -177,6 +177,7 @@ Scope {
             property string nativeFrag: ""     // its .qsb for ShaderScene.qml (relative to this file)
             property string nativeGlyphs: ""   // and the glyphs for its atlas, if it draws text
             property bool nativeWallpaper: false // and whether it samples the wallpaper
+            property bool nativeState: false   // and whether it wants a state pass
             property bool loading: false
             property string tTitle: ""
             property string tSub: ""
@@ -365,6 +366,7 @@ Scope {
                 nativeFrag = ctx.native && ctx.native.frag ? ctx.native.frag : ""
                 nativeGlyphs = ctx.native && ctx.native.glyphs ? ctx.native.glyphs : ""
                 nativeWallpaper = !!(ctx.native && ctx.native.wallpaper)
+                nativeState = !!(ctx.native && ctx.native.state)
                 if (sceneTime > sceneLength) loadScene(pickScene(""))
             }
 
@@ -502,6 +504,7 @@ Scope {
                                 item.glyphs = Qt.binding(() => win.nativeGlyphs)
                                 item.fontFamily = Qt.binding(() => Theme.fontFamily)
                                 item.useWallpaper = Qt.binding(() => win.nativeWallpaper)
+                                item.useState = Qt.binding(() => win.nativeState)
                                 item.wallpaper = Qt.binding(() => Theme.wallpaper)
                                 item.accent = Qt.binding(() => Theme.accent)
                                 item.accent2 = Qt.binding(() => Theme.accent2)

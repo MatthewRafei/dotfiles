@@ -192,7 +192,8 @@ After a few idle minutes every monitor turns into animated ASCII art, each with 
   through a fogged window, drops sliding down it), a seven-segment Clock that drifts so nothing
   burns in, Embers (sparks rising from an unseen fire), Ink (smoke-like ink swirling in the
   wallpaper's colours), Moonlit Pond (drops rippling a lake under the moon), Julia (a morphing
-  Julia-set fractal), and two old Windows classics, Starfield and Mystify. Each one is a
+  Julia-set fractal), Space Invaders (attract mode, playing itself; keep an eye on the mystery
+  ship), and two old Windows classics, Starfield and Mystify. Each one is a
   fragment shader in `screensaver/shaders/` run by `ShaderScene.qml`, which feeds it the time and
   the theme colours; adding one is a `.frag`, a `qsb` build and a `shaderScene()` line.
 - **CRT:** listed with the shader scenes; when it comes up it plays a random ASCII scene on an old

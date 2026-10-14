@@ -5,7 +5,7 @@
 // frame() draws into ctx.layers (character grids, one per colour; spaces are
 // transparent so layers stack) and may set ctx.title / ctx.sub / ctx.titleColor
 // / ctx.titleOpacity / ctx.bg (backdrop colour) / ctx.floor ({ row, color }: backdrop
-// colour from that row down) / ctx.native ({ id, opacity, frag?, glyphs?, wallpaper? }: a QML renderer drawn
+// colour from that row down) / ctx.native ({ id, opacity, frag?, glyphs?, wallpaper?, state? }: a QML renderer drawn
 // under the grid: "matrix", or with `frag` a shader run by ShaderScene.qml). ctx: { cols, rows, asp (cell height / width), os, logo }.
 
 // ------------------------------------------------------------------ grid
@@ -771,16 +771,17 @@ const matrix = {
 // Adding one: write shaders/<id>.frag, bake it with qsb (command in the file),
 // add a shaderScene() line below. opts.glyphs: characters ShaderScene.qml lays
 // out into a glyph atlas for ASCII-style shaders (shaders/donut.frag);
-// opts.wallpaper: the shader samples the wallpaper (shaders/rain.frag).
+// opts.wallpaper: the shader samples the wallpaper (shaders/rain.frag);
+// opts.state: a first pass of the shader on a 128 x 1 strip (shaders/invaders.frag).
 function shaderScene(id, name, frag, opts) {
     opts = opts || {}
     return {
-        id: id, name: name, frag: frag, glyphs: opts.glyphs || "", wallpaper: !!opts.wallpaper,
+        id: id, name: name, frag: frag, glyphs: opts.glyphs || "", wallpaper: !!opts.wallpaper, state: !!opts.state,
         shader: true,      // drawn on the GPU every frame (kind() below)
         colors: [],
         init(ctx) { newLayers(ctx, 0) },
         frame(ctx, t) {
-            ctx.native = { id: id, frag: this.frag, glyphs: this.glyphs, wallpaper: this.wallpaper, opacity: 1 }
+            ctx.native = { id: id, frag: this.frag, glyphs: this.glyphs, wallpaper: this.wallpaper, state: this.state, opacity: 1 }
             title(ctx, t, "", "", "#ffffff", 0, 99)
         }
     }
@@ -800,7 +801,9 @@ const shaderScenes = [
     shaderScene("starfield", "Starfield", "shaders/starfield.frag.qsb"),
     shaderScene("mystify", "Mystify", "shaders/mystify.frag.qsb"),
     shaderScene("pond", "Moonlit Pond", "shaders/pond.frag.qsb"),
-    shaderScene("julia", "Julia", "shaders/julia.frag.qsb")
+    shaderScene("julia", "Julia", "shaders/julia.frag.qsb"),
+    // digits and SCORE from the atlas; now and then Clawd stands in for the mystery ship
+    shaderScene("invaders", "Space Invaders", "shaders/invaders.frag.qsb", { glyphs: "0123456789SCORE", state: true })
 ]
 
 // ================================================================== CRT
