@@ -17,6 +17,7 @@ Column {
         property bool armed: false
         readonly property color tint: s.status === "waiting" ? Theme.danger
             : s.status === "busy" ? Theme.accent : s.status === "new" ? Theme.text : Theme.textDim
+            // `claude agents` and other subcommands: kept, but not a session
 
         width: parent ? parent.width : 0
         height: 40
@@ -64,7 +65,7 @@ Column {
                 width: parent.width
                 elide: Text.ElideMiddle
                 text: (ar.s.status === "waiting" ? "NEEDS YOU" : ar.s.status === "busy" ? "WORKING"
-                       : ar.s.status === "new" ? "NEW" : "IDLE")
+                       : ar.s.status === "new" ? "NEW" : ar.s.status === "view" ? "VIEW" : "IDLE")
                     + " " + page.service.ago(ar.s.since) + "  ·  " + page.service.pretty(ar.s.cwd || "")
                 color: Theme.textFaint
                 font.family: Theme.fontFamily
@@ -137,7 +138,7 @@ Column {
     spacing: 4
 
     QuickHead {
-        title: "// CLAUDE CODE  ·  " + page.service.sessions.length + " RUNNING"
+        title: "// CLAUDE CODE  ·  " + page.service.sessions.filter(x => x.status !== "view").length + " RUNNING"
         showToggle: false
         showRescan: true
         onRescan: page.service.refreshMore()
@@ -238,5 +239,25 @@ Column {
                 Timer { id: hideDisarm; interval: 3000; onTriggered: rr.armed = false }
             }
         }
+    }
+
+    // claude-sync.py: only once its staging folder exists
+    QuickLabel {
+        visible: page.service.syncEnabled
+        text: "SYNC  ·  " + ((page.service.sync.peers || []).map(p => p.host.toUpperCase()).join(", ")
+                          || "NO OTHER MACHINE YET")
+    }
+    QuickRow {
+        visible: page.service.syncEnabled
+        width: parent.width
+        height: 30
+        icon: "󰓦"
+        busy: page.service.syncing
+        label: page.service.syncing ? "Syncing…"
+            : page.service.sync.lastPull ? "Synced " + page.service.ago(page.service.sync.lastPull) + " ago"
+            : "Never synced"
+        detail: (page.service.sync.conflicts ? page.service.sync.conflicts + " CONFLICT" + (page.service.sync.conflicts > 1 ? "S  ·  " : "  ·  ") : "")
+            + (page.service.sync.pending ? page.service.sync.pending + " TO PUSH" : "SYNC NOW")
+        onClicked: page.service.syncNow()
     }
 }

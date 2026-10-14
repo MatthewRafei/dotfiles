@@ -255,7 +255,18 @@ for the full tour.
   when one needs you; its panel opens, stops, starts or resumes them, and the ✕ on a resume entry
   hides it (the transcript stays). Sessions are kept: `claude` in a terminal runs in a private
   tmux server, so closing the terminal (busy or idle) only detaches it and the panel opens it
-  again (`command claude` for a throwaway one).
+  again (`command claude` for a throwaway one). A `claude agents` view left open in a kept
+  session is shown as a view, not a session.
+  - **Session sync** between machines (`modules/agents/claude-sync.py`): transcripts, auto-memory,
+    plans, tasks and prompt history travel through a Syncthing folder, `~/Sync/claude`. Set it up
+    once per machine: `python3 ~/.config/quickshell/modules/agents/claude-sync.py init`, then share
+    `~/Sync/claude` in Syncthing with your other machines (same path on each). Claude Code's
+    `SessionStart` hook pulls and `SessionEnd` pushes (see `~/.claude/settings.json`), the bar
+    syncs every 10 minutes, and the agents panel gets a SYNC row (click to sync now;
+    `qs ipc call agents sync`). Each machine writes only its own subfolder; home paths are
+    rewritten, so different usernames work. When a session moved on in two places, the other
+    copy lands beside it as `<id>.jsonl.conflict-<host>` (`claude-sync.py conflicts` lists them).
+    Settings, skills and plugins are not synced.
 - **Caffeine:** keeps the machine awake.
 - **Phone pushes** through [ntfy](https://ntfy.sh): while the screen is locked or you've been
   idle for 2 minutes, notifications, low battery, the charger and Tailscale dropping go to your
@@ -305,6 +316,7 @@ These features started from other people's work. Thank you!
 | Lens | [lunanoir21/scribe-omarchy](https://github.com/lunanoir21/scribe-omarchy), OCR by [tesseract](https://github.com/tesseract-ocr/tesseract) |
 | Beam | [TouchWorkStation/Omarchy-Beam-](https://github.com/TouchWorkStation/Omarchy-Beam-), QR codes by [segno](https://github.com/heuer/segno) (vendored, BSD) |
 | Claude Code agents chip | [grivera82/omarchy-agents](https://github.com/grivera82/omarchy-agents) |
+| Claude Code session sync | [tawanorg/claude-sync](https://github.com/tawanorg/claude-sync) |
 | Speaker calibration | [thefreshoffice/omarchy-speaker-calibrator](https://github.com/thefreshoffice/omarchy-speaker-calibrator) (ported to OpenRC) |
 | Music EQ | [EasyEffects](https://github.com/wwmm/easyeffects) |
 | Noise suppression | [NoiseTorch-ng](https://github.com/noisetorch/NoiseTorch) and [RNNoise](https://github.com/xiph/rnnoise) |

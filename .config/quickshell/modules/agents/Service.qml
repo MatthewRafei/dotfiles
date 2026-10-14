@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
+import Qt.labs.folderlistmodel
 import qs
 
 // Claude Code sessions, for the bar's agents chip and its dropdown
@@ -17,6 +18,11 @@ import qs
 //   qs ipc call agents panel      open the dropdown
 //   qs ipc call agents next       open the session that needs you (or the newest)
 //   qs ipc call agents start DIR  start a kept session in DIR
+//   qs ipc call agents sync       sync sessions with your other machines now
+//
+// Sync (claude-sync.py) runs from Claude Code's SessionStart / SessionEnd
+// hooks and every 10 minutes from here, only once its staging folder
+// (~/Sync/claude, shared with Syncthing) exists.
 Scope {
     id: root
 
@@ -26,12 +32,17 @@ Scope {
     property var recent: []               // agents.py recent (while the dropdown is open)
     property var projects: []             // folders Claude knows (~/.claude.json)
     property bool fast: false             // the dropdown is open: poll faster
+    property var sync: ({})               // claude-sync.py status
+    property bool syncing: false
+    readonly property bool syncEnabled: sync.enabled === true
 
     readonly property var waiting: sessions.filter(s => s.status === "waiting")
     readonly property var busy: sessions.filter(s => s.status === "busy")
     readonly property var idle: sessions.filter(s => s.status !== "waiting" && s.status !== "busy")
+    readonly property var resumable: idle.filter(s => s.status !== "view")
 
     readonly property string script: Quickshell.shellPath("modules/agents/agents.py")
+    readonly property string syncScript: Quickshell.shellPath("modules/agents/claude-sync.py")
     readonly property string conf: Quickshell.shellPath("modules/agents/tmux.conf")
     readonly property string terminal: Quickshell.env("TERMINAL") || "alacritty"
     readonly property string home: Quickshell.env("HOME")
@@ -89,7 +100,7 @@ Scope {
     // the one that needs you: waiting longest, else the latest to finish
     function next() {
         const pick = waiting.slice().sort((a, b) => a.since - b.since)[0]
-            || idle.slice().sort((a, b) => b.since - a.since)[0]
+            || resumable.slice().sort((a, b) => b.since - a.since)[0]
         if (pick) open(pick)
     }
 
@@ -103,6 +114,12 @@ Scope {
         refresh()
         if (!recentProc.running) recentProc.running = true
         projectsFile.reload()
+        if (!syncStatus.running) syncStatus.running = true
+    }
+
+    // pull the other machines' sessions in, push ours out
+    function syncNow() {
+        if (root.available && root.syncEnabled && !syncProc.running) syncProc.running = true
     }
 
     IpcHandler {
@@ -110,6 +127,7 @@ Scope {
         function panel(): void { Quickshell.execDetached(["qs", "ipc", "call", "quick", "agents"]) }
         function next(): void { root.next() }
         function start(dir: string): void { root.newSession(dir || root.home, "") }
+        function sync(): void { root.syncNow() }
     }
 
     Process {
@@ -119,16 +137,29 @@ Scope {
             onStreamFinished: {
                 root.claudeBin = text.trim()
                 root.available = root.claudeBin !== ""
-                if (root.available) root.refresh()
+                if (root.available) { root.refresh(); syncStatus.running = true }
             }
         }
     }
 
     Timer {
+        property int ticks: 0
         interval: root.fast ? 1500 : 4000
         repeat: true
         running: root.available
-        onTriggered: root.refresh()
+        onTriggered: {
+            root.refresh()
+            // the resume list too while it's on screen, so sessions removed
+            // elsewhere (the `claude agents` view, another machine) drop off
+            if (root.fast && ++ticks % 4 === 0 && !recentProc.running) recentProc.running = true
+        }
+    }
+    // a session registered or gone: rescan now rather than on the next tick
+    FolderListModel {
+        folder: "file://" + root.home + "/.claude/sessions"
+        nameFilters: ["*.json"]
+        showDirs: false
+        onCountChanged: if (root.available) scanSoon.restart()
     }
     Timer { id: scanSoon; interval: 800; onTriggered: root.refresh() }
 
@@ -150,6 +181,30 @@ Scope {
         stdout: StdioCollector {
             onStreamFinished: {
                 try { root.recent = JSON.parse(text) } catch (e) {}
+            }
+        }
+    }
+
+    Timer {
+        interval: 600000
+        repeat: true
+        running: root.syncEnabled
+        onTriggered: root.syncNow()
+    }
+
+    Process {
+        id: syncProc
+        command: ["python3", "-I", root.syncScript, "sync", "-q"]
+        onRunningChanged: root.syncing = running
+        onExited: { syncStatus.running = true; if (root.fast) recentProc.running = true }
+    }
+
+    Process {
+        id: syncStatus
+        command: ["python3", "-I", root.syncScript, "status"]
+        stdout: StdioCollector {
+            onStreamFinished: {
+                try { root.sync = JSON.parse(text) } catch (e) {}
             }
         }
     }

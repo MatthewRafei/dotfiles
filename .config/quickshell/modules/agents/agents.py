@@ -114,8 +114,26 @@ def tmux_panes():
     for line in run(TMUX + ["list-panes", "-a", "-F", fmt]).splitlines():
         f = line.split("\t")
         if len(f) == 5 and f[0].isdigit():
-            panes[int(f[0])] = {"session": f[1], "attached": int(f[2] or 0), "created": int(f[3] or 0), "cwd": f[4]}
+            panes[int(f[0])] = {"pid": int(f[0]), "session": f[1], "attached": int(f[2] or 0),
+                                "created": int(f[3] or 0), "cwd": f[4]}
     return panes
+
+
+def argv(pid):
+    try:
+        with open(f"/proc/{pid}/cmdline", "rb") as f:
+            return [a.decode("utf-8", "replace") for a in f.read().split(b"\0") if a]
+    except OSError:
+        return []
+
+
+def proc_state(pid):
+    """R/S/Z/... from /proc/PID/stat, "" when it's gone."""
+    try:
+        with open(f"/proc/{pid}/stat") as f:
+            return f.read().rsplit(")", 1)[1].split()[0]
+    except (OSError, IndexError):
+        return ""
 
 
 def scan():
@@ -164,13 +182,24 @@ def scan():
             "attached": pane["attached"] if pane else 1,
         })
     # kept sessions whose claude hasn't registered yet: Claude Code only writes its
-    # registry entry once past the start screen (e.g. the "trust this folder?" prompt)
+    # registry entry once past the start screen (e.g. the "trust this folder?" prompt).
+    # A pane running a subcommand (`claude agents`, the sessions view) never registers:
+    # it's listed as a view, not a session, so it can't sit there as "New session"
     for p in panes.values():
-        if p["session"] not in seen_tmux:
-            seen_tmux.add(p["session"])
-            out.append({"pid": 0, "sid": "", "cwd": p["cwd"], "title": "New session", "status": "new",
-                        "since": p["created"] * 1000, "started": p["created"] * 1000,
-                        "tmux": p["session"], "attached": p["attached"]})
+        if p["session"] in seen_tmux:
+            continue
+        state = proc_state(p["pid"])
+        if state in ("", "Z", "X"):
+            continue                                     # claude already exited
+        seen_tmux.add(p["session"])
+        args = argv(p["pid"])
+        sub = args[1] if len(args) > 1 and not args[1].startswith("-") else ""
+        name, status = "New session", "new"
+        if sub:
+            name, status = ("Agents view" if sub == "agents" else "claude " + sub), "view"
+        out.append({"pid": 0, "sid": "", "cwd": p["cwd"], "title": name, "status": status,
+                    "since": p["created"] * 1000, "started": p["created"] * 1000,
+                    "tmux": p["session"], "host": "", "job": False, "attached": p["attached"]})
     out.sort(key=lambda x: x["started"])
     return out
 
