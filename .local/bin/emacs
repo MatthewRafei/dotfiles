@@ -3,8 +3,9 @@
 # so everything shares one Emacs. The real binary still runs for starting
 # daemons, batch jobs, terminal frames, test configs and --version; set
 # EMACS_STANDALONE=1 to force a separate Emacs.
-# GTK/X11 build: it has to use XWayland.
-export GDK_BACKEND=x11 DISPLAY="${DISPLAY:-:0}"
+# PGTK build: native Wayland. Never force GDK_BACKEND=x11 here; PGTK hands
+# GTK the Wayland display name, the X11 backend can't open it, and GTK
+# exits the whole daemon.
 real=/usr/bin/emacs
 [ -n "$EMACS_STANDALONE" ] && exec "$real" "$@"
 for a; do

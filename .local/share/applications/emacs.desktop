@@ -2,7 +2,7 @@
 Name=Emacs
 GenericName=Text Editor
 Comment=Edit text in the running Emacs (starts the daemon if it isn't)
-Exec=env GDK_BACKEND=x11 DISPLAY=:0 emacsclient -c -n -a "" %F
+Exec=emacsclient -c -n -a "" %F
 Icon=emacs
 Type=Application
 Terminal=false
@@ -15,8 +15,8 @@ Actions=new-window;standalone;
 
 [Desktop Action new-window]
 Name=New Window
-Exec=env GDK_BACKEND=x11 DISPLAY=:0 emacsclient -c -n -a ""
+Exec=emacsclient -c -n -a ""
 
 [Desktop Action standalone]
 Name=Standalone Emacs (no daemon)
-Exec=env EMACS_STANDALONE=1 GDK_BACKEND=x11 DISPLAY=:0 /usr/bin/emacs %F
+Exec=env EMACS_STANDALONE=1 /usr/bin/emacs %F
