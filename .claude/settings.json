@@ -66,7 +66,7 @@
       "**CI/CD deploy targets**: None configured",
       "**Network posture**: None configured",
       "**Host containment**: None configured \u2014 assume Claude Code runs on an ordinary developer machine or CI runner with open internet",
-      "**Source control**: The trusted repo (/home/malac0da) and its remote(s) only \u2014 no remotes are currently configured",
+      "**Source control**: The dotfiles bare repo (~/.dotfiles, work tree ~) and its remote github.com/MatthewRafei/dotfiles (public: never commit personal data or secrets; secrets go in ~/.claude/settings.local.json, which is gitignored)",
       "**Trusted internal domains**: None configured",
       "**Trusted cloud buckets**: None configured",
       "**Key internal services**: None configured",
@@ -78,7 +78,7 @@
       "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
       "### User-specific",
       "**Primary use of Claude Code**: software development",
-      "**Trusted repo**: /home/malac0da (no remotes configured; local-only repo)",
+      "**Trusted repo**: ~ via the ~/.dotfiles bare repo (alias `dots`), pushed over SSH to github.com/MatthewRafei/dotfiles (public)",
       "**Org-specific CLIs**: None configured"
     ]
   },
