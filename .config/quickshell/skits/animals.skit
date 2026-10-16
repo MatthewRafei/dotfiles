@@ -1,0 +1,654 @@
+# Animals.
+# Format: README.md in this folder.
+
+# a dog wants to play
+@doggo
+700 | U・ᴥ・U
+600 | U・ᴥ・U ?
+500 | U・ᴥ・U ⚾
+type 60 | U・ᴥ・U«          »⚾
+1500 sparkle | U^ᴥ^U fetched it!
+
+# dog zoomies
+@zoomies
+type 50 | «                  »U・ᴥ・U
+erase 50 | «                  »U・ᴥ・U
+1400 dim | U-ᴥ-U *pant pant*
+
+# dog sees a squirrel
+@squirrel
+800 | U・ᴥ・U
+500 | U・ᴥ・U   🐿
+500 danger | U°ᴥ°U !! 🐿
+1500 dim | U・ᴥ・U ...it got away.
+
+# dog tail wag
+@wag
+repeat 4
+  250 | U・ᴥ・U{ﾉ|ゞ}
+end
+1400 sparkle | U^ᴥ^U good boy!
+
+# who's a good boy
+@goodboy
+800 | ( ・_・) who's a good boy?
+600 | U°ᴥ°U me?
+600 | U°ᴥ°U ME?!
+1500 sparkle | U^ᴥ^U ♥ ♥ ♥
+
+# cat knocks a cup off the table
+@cupcat
+700 | (=^･ω･^=) 🥛
+600 | (=^･ω･^=)ノ🥛
+600 | (=^･ω･^=)ノ  🥛
+600 danger | (=^･ω･^=)    *crash*
+1500 dim | (=^-ω-^=) no regrets.
+
+# cat sits in a box
+@catbox
+800 | ( ・_・) a new cat bed!
+800 | (=^･ω･^=) ▢
+1500 | (=^･ω･^=)▢ the box is better.
+
+# cat loaf
+@catloaf
+800 | (=^･ω･^=)
+800 | (=^-ω-^=)
+1500 sparkle | ▭(=^-ω-^=)▭ loaf mode.
+
+# cat on the keyboard
+@catkeys
+800 | ( ・_・)⌨ typing
+600 | (=^･ω･^=)⌨
+type 60 | «jjjjjjjjjjjjjjjkkkkkk;;;;»
+1500 dim | (=^･ω･^=) sent to the boss.
+
+# cat at 3 am
+@catsprint
+800 dim | ☾ 3 AM
+type 40 | «                 »ε=ε=(=^･ω･^=)
+1500 dim | ( -_-) ...why.
+
+# cat ignores you
+@catignore
+800 | ( ・_・) here kitty
+800 | (=^･ω･^=) ...
+800 | ( ・_・) kitty?
+1500 dim | (=^-ω-^=) ...no.
+
+# cat purrs
+@purr
+repeat 4
+  300 | (=^-ω-^=) prr{|r|rr}
+end
+1400 sparkle | (=^-ω-^=) ♥
+
+# hamster wheel
+@hamster
+repeat 4
+  250 | (・ω・){◐|◓|◑|◒}
+end
+1400 | (・ω・) *stuffs cheeks*
+
+# bunny hops
+@bunny
+500 | (・x・)
+400 | ⌒(・x・)
+400 |   ⌒(・x・)
+400 |     ⌒(・x・)
+1400 sparkle |       (・x・) binky!
+
+# a bird sings
+@birdsong
+600 | (・θ・)
+600 | (・θ・) ♪
+600 | (・θ・) ♪ ♫
+1500 sparkle | (・θ・) ♪ ♫ ♪ tweet!
+
+# a duck
+@duck
+700 | (・⊝・)
+600 | (・⊝・) quack
+600 | (・⊝・) quack quack
+1500 dim | (・⊝・) ...got any grapes?
+
+# ducklings in a row
+@ducklings
+type 150 | «  (・⊝・)(・⊝・)(・⊝・)»(・⊝・)
+1500 sparkle | a mama and her babies ♥
+
+# penguin slides
+@penguin
+600 | (・▽・)
+500 | (・▽・) ⇘
+type 50 | «            »(・▽・)≡
+1500 sparkle | (・▽・) wheee!
+
+# owl
+@owl
+800 | (◉Θ◉)
+800 | (◉Θ◉) hoo?
+600 | (◎Θ◎) ↻
+1500 dim | (◉Θ◉) hoo.
+
+# frog
+@frog
+800 | (・Θ・) ribbit
+500 | (・Θ・)━━━━━━ 🪰
+500 | (・Θ・) *gulp*
+1500 sparkle | (・Θ・) ribbit!
+
+# fish bowl
+@fishbowl
+repeat 3
+  400 | ( ><(((°>    )
+  400 | (    <°)))><  )
+end
+1400 dim | ( ><(((°> ) ...what was i doing?
+
+# shark
+@shark
+600 | ≈≈≈≈≈≈≈≈≈≈
+600 | ≈≈≈≈▲≈≈≈≈≈
+600 | ≈≈≈≈≈≈▲≈≈≈
+800 danger | ≈≈≈≈≈≈≈≈▲≈ dun dun
+1500 danger | dun dun dun dun DUN
+
+# octopus
+@octopus
+800 | (◕‿◕)ζζζ
+800 | (◕‿◕)ζζζ 8 arms!
+800 | (◕‿◕)ζζζ 8 high fives!
+1500 dim | (◕‿◕) *ink*
+
+# crab
+@crab
+repeat 4
+  300 | {(V)(°,,,,°)(V)|  (V)(°,,,,°)(V)}
+end
+1500 sparkle | (V)(°,,,,°)(V) crab rave ♪
+
+# snail race
+@snailrace
+600 | _@_y  _@_y
+600 | ._@_y  _@_y
+600 | ._@_y  ._@_y
+600 | .._@_y  ._@_y
+1500 dim | ...still going.
+
+# turtle
+@turtle
+800 | (・_・)▭
+800 | ( ・_・)▭ slow...
+800 | ( ・_・)▭ steady...
+1500 sparkle | ( ^_^)▭ wins the race!
+
+# bear
+@bear
+800 | ʕ•ᴥ•ʔ
+600 | ʕ•ᴥ•ʔ🍯
+600 | ʕ˘ᴥ˘ʔ🍯 *nom*
+1500 sparkle | ʕ^ᴥ^ʔ honey!
+
+# bear hibernates
+@hibernate
+800 | ʕ•ᴥ•ʔ winter?
+800 | ʕ-ᴥ-ʔ zZ
+800 dim | ʕ-ᴥ-ʔ zZz (3 months)
+1500 | ʕ•ᴥ•ʔ is it spring? 🌸
+
+# koala
+@koala
+800 | ʕ •ᴥ• ʔ🌿
+800 | ʕ -ᴥ- ʔ🌿 zZ
+1500 dim | ʕ -ᴥ- ʔ 22 hours of sleep. goals.
+
+# panda
+@panda
+800 | ⊂(◉‿◉)つ
+800 | ⊂(◉‿◉)つ🎋
+800 | ⊂(◉‿◉)つ *rolls*
+1500 sparkle | ⊂(◉‿◉)つ bamboo ♥
+
+# sloth
+@sloth
+1200 | ( ・_・)
+1200 | ( ・_・)ノ
+1200 | ( ・_・)ノ h
+1200 | ( ・_・)ノ hel
+1500 dim | ( ・_・)ノ hello. (one hour)
+
+# monkey
+@monkey
+800 | (@・ω・@)
+800 | (@・ω・@)🍌
+1500 sparkle | (@^ω^@) ook!
+
+# see no evil
+@seenoevil
+800 | 🙈
+800 | 🙉
+800 | 🙊
+1500 dim | ( ・_・) ...the monkeys know.
+
+# elephant
+@elephant
+800 | (◕(' 人 ')◕)
+800 | (◕(' 人 ')◕) 🥜
+1500 sparkle | (◕(' 人 ')◕) never forgets.
+
+# giraffe
+@giraffe
+800 | ( ・_・)
+800 | ( ・_・) | |
+1500 | ( ・_・) | | | | tall.
+
+# lion
+@lion
+700 | ( ಠ_ಠ)🦁
+700 danger | ( ಠ_ಠ)🦁 ROAR
+1500 | ( ・_・)🦁 ...he just wants pets.
+
+# tiger
+@tiger
+800 | (=ↀωↀ=)
+1500 danger | (=ↀωↀ=) rawr.
+
+# wolf howl
+@howl
+800 dim | ☾
+800 dim | ☾  (ᵔᴥᵔ)
+1500 dim | ☾  (ᵔᴥᵔ) awooooo
+
+# fox
+@fox
+800 | (^・ω・^ )
+800 | (^・ω・^ ) what does the fox say?
+1500 dim | (^・ω・^ ) ring-ding-ding-ding-dingeringeding!
+
+# raccoon
+@raccoon
+800 | (◕ᴥ◕)🗑
+800 | (◕ᴥ◕)🗑 *rummage*
+1500 sparkle | (◕ᴥ◕)🍕 trash panda feast!
+
+# hedgehog
+@hedgehog
+800 | (・ω・)⋀⋀⋀
+800 | ( ・_・)ノ pet?
+1500 danger | (`ω´)⋀⋀⋀ *spiky*
+
+# axolotl
+@axolotl
+800 | ξ(｡◕ᴗ◕｡)ξ
+1500 sparkle | ξ(｡◕ᴗ◕｡)ξ smiles forever.
+
+# capybara
+@capybara
+800 | (・ᴥ・)
+800 | (・ᴥ・)🍊
+800 | (・ᴥ・)🍊🐦
+1500 sparkle | (・ᴥ・) everyone's friend.
+
+# goose
+@goose
+800 | (・⊝・) honk.
+600 | (・⊝・)🔑 *steals keys*
+1500 danger | (・⊝・) HONK HONK
+
+# pigeon
+@pigeon
+600 | (・⊝・)
+500 | (・⊝・) *bob*
+500 | (・⊝・) *bob bob*
+1500 dim | (・⊝・) ...french fry?
+
+# crow
+@crow
+800 | (◣θ◢) caw
+800 | (◣θ◢)✨ found something shiny
+1500 sparkle | (◣θ◢) gift for you. ♥
+
+# parrot
+@parrot
+800 | (・θ・) hello!
+800 | (・θ・) HELLO!
+1500 dim | (・θ・) pretty bird. pretty bird.
+
+# flamingo
+@flamingo
+800 | (・θ・)|
+800 | (・θ・)|  one leg
+1500 sparkle | (・θ・)| balance.
+
+# chicken crosses the road
+@chicken
+800 | 🐔 ═══════
+type 100 | «═══»🐔═══
+1500 | 🐔 ...to get to the other side.
+
+# cow
+@cow
+800 | (◕ᴥ◕) moo
+1500 | (◕ᴥ◕)🥛 moo.
+
+# sheep counting
+@countsheep
+600 | 🐑 1
+600 | 🐑🐑 2
+600 | 🐑🐑🐑 3
+700 dim | ( -_-) zZ
+1500 dim | ( -_-) zZz
+
+# pig
+@pig
+800 | (・ε・)
+800 | (・ε・) oink
+1500 sparkle | (・ε・)🌧 muddy ♥
+
+# horse
+@horse
+type 80 | «              »🐎
+1500 | 🐎 neigh!
+
+# unicorn
+@unicorn
+800 accent2 | 🦄
+800 accent2 | 🦄 ✧ ✧
+1500 accent2 sparkle | 🦄 ✧ ✧ ✧ magical.
+
+# dragon
+@dragon
+800 | (∩ᄑ_ᄑ)⊃
+800 danger | (∩ᄑ_ᄑ)⊃━🔥
+1500 danger | (∩ᄑ_ᄑ)⊃━🔥🔥🔥
+
+# bee
+@bee
+repeat 3
+  300 | 🐝 {bzz|  bzz|    bzz}
+end
+800 | 🐝🌼
+1500 sparkle | 🐝🍯 busy bee.
+
+# butterfly
+@butterfly
+500 | Ƹ̵̡Ӝ̵̨̄Ʒ
+500 |    Ƹ̵̡Ӝ̵̨̄Ʒ
+500 |  Ƹ̵̡Ӝ̵̨̄Ʒ
+500 |     Ƹ̵̡Ӝ̵̨̄Ʒ 🌸
+1500 sparkle | ( ・_・) a butterfly ♥
+
+# ladybug
+@ladybug
+800 | ( ・_・)☝
+800 | ( ・_・)☝🐞
+1500 sparkle | ( ^_^) make a wish.
+
+# spider
+@spider
+800 | /╲/\╭(ఠఠ益ఠఠ)╮/\╱\
+800 danger | ( °ロ°) SPIDER
+1500 dim | ( ・_・)🫙 ...outside you go.
+
+# ant march
+@ants
+type 100 | «. . . . . . . . . »🍞
+1500 | ( ・_・) the ants have a plan.
+
+# mosquito
+@mosquito
+600 dim | ( -_-) zZ
+600 | ( -_-) zZ  ...bzzzz
+600 danger | ( °_°) bzzzzz
+600 | ( `ー´)👏
+1500 dim | ( ・_・) missed. bzzzz.
+
+# fly
+@fly
+repeat 3
+  300 | ( ・_・) {✕ |  ✕|   ✕}
+end
+1500 dim | ( ಠ_ಠ) it's on the ceiling now.
+
+# worm
+@worm
+600 | ~
+600 | ~~
+600 | ~~~
+1500 | ~~~(・_・) hi!
+
+# whale
+@whale
+800 | ≈≈≈≈≈≈≈≈
+800 | ≈≈ ⌒⌒ ≈≈≈
+800 | ≈ ⌒⌒⌒⌒ ≈≈ .:
+1500 sparkle | 🐋 ♪ whale song
+
+# dolphin
+@dolphin
+500 | ≈≈≈≈≈≈≈≈≈≈
+500 | ≈≈≈≈ ⌒ ≈≈≈≈
+500 | ≈≈≈ ⌒ ⌒ ≈≈≈
+1500 sparkle | 🐬 *eee eee*
+
+# jellyfish
+@jellyfish
+repeat 3
+  400 | ⌓
+  400 | ⌓ ⦚
+end
+1500 dim | ⌓ drifting...
+
+# starfish
+@starfish
+800 | ★
+1500 | ★ i'm patrick. ( ・_・)
+
+# seal
+@seal
+800 | (・ω・)
+800 | (・ω・)⚽
+1500 sparkle | (・ω・)⚽ arf arf! 👏
+
+# otters hold hands
+@otters
+800 | (・ᴥ・)  (・ᴥ・)
+800 | (・ᴥ・)ノヽ(・ᴥ・)
+1500 sparkle | (・ᴥ・)人(・ᴥ・) so they don't drift. ♥
+
+# beaver
+@beaver
+800 | (・ㅅ・)🪵
+800 | (・ㅅ・)🪵🪵
+1500 sparkle | (・ㅅ・) ▓▓▓ dam!
+
+# deer
+@deer
+800 | ( ・_・) 🦌
+800 | ( ・_・) 🦌 ...
+1500 dim | ( ・_・)     ...gone.
+
+# moose
+@moose
+800 | Ψ(・_・)Ψ
+1500 | Ψ(・_・)Ψ moose.
+
+# snake
+@hiss
+800 | ~~~~(・ε・)
+800 | ~~~~(・ε・)~ sss
+1500 | ~~~~(・ε・)~ boop.
+
+# gecko
+@gecko
+800 | ( ・_・) a gecko on the wall
+1500 | (・ω・)ノ 🦎 high five
+
+# chameleon
+@chameleon
+600 | 🦎
+600 accent2 | 🦎
+600 dim | 🦎
+1500 | ( ・_・) where'd it go?
+
+# pug
+@pug
+800 | U◕ᴥ◕U
+800 | U◕ᴥ◕U *snort*
+1500 sparkle | U◕ᴥ◕U snorf snorf ♥
+
+# corgi
+@corgi
+type 80 | «            »U・ᴥ・U
+1500 sparkle | U・ᴥ・U smol legs. big heart.
+
+# shiba
+@shiba
+800 | U・ω・U
+800 | U・ω・U much wow
+1500 sparkle | U・ω・U such skit. very bar.
+
+# dog in the rain
+@puddle
+800 dim | ☁ rain
+800 | U・ᴥ・U ☁
+600 | U・ᴥ・U 💦
+1500 dim | U-ᴥ-U *shakes on you*
+
+# the vet
+@vet
+800 | U・ᴥ・U 🚗 car ride!
+800 | U・ᴥ・U 🏥
+1500 danger | U°ᴥ°U BETRAYAL.
+
+# bath time
+@bath
+800 | ( ・_・) bath time!
+600 | (=^･ω･^=)!!
+type 40 | «                »ε=ε=(=^･ω･^=)
+1500 dim | ( ・_・) ...next time.
+
+# laser pointer
+@laser
+repeat 4
+  250 | (=^･ω･^=) {•  |  • |    •|  • }
+end
+1500 dim | (=^･ω･^=) where did it go?!
+
+# the cat brings a gift
+@gift
+800 | (=^･ω･^=)
+800 | (=^･ω･^=) 🐭
+1500 dim | ( ・_・) ...thank you?
+
+# the fish wants food
+@feedme
+800 | ><(((°> o
+800 | ><(((°> o o
+1500 sparkle | ><(((°> *glub*
+
+# ant colony
+@antfarm
+800 | ▒▒╱▒▒╲▒▒
+800 | ▒╱▒▒╲▒▒╱
+1500 | ( ・_・) they're building a city.
+
+# bat
+@bat
+800 dim | ☾ /^v^\
+800 dim | ☾   /^v^\
+1500 dim | ☾ ...eek eek.
+
+# raven, nevermore
+@nevermore
+800 dim | (◣θ◢) ...
+1500 dim | (◣θ◢) nevermore.
+
+# rooster
+@rooster
+800 | ☀ 5 AM
+800 accent2 | (・θ・) COCK-A-DOODLE
+1500 dim | ( x_x) ...it's sunday.
+
+# hamster cheeks
+@cheeks
+600 | (・ω・)🌻
+600 | (・ω・)🌻🌻
+600 | (・ω・)🌻🌻🌻
+1500 sparkle | (◕ω◕) *full cheeks*
+
+# guinea pig
+@guineapig
+800 | (・ㅅ・)
+800 | (・ㅅ・) wheek!
+1500 sparkle | (・ㅅ・) WHEEK WHEEK! 🥬
+
+# the dog and the mailman
+@mailman
+800 | U・ᴥ・U
+600 | U・ᴥ・U 📮
+600 danger | U°ᴥ°U WOOF WOOF
+1500 dim | U・ᴥ・U protected the house again.
+
+# cat in the sun
+@sunbeam
+800 | ☀ ░░░
+800 | ☀ ░(=^-ω-^=)░
+1500 sparkle | ☀ cat.exe is sleeping.
+
+# frog in a hat
+@froghat
+800 | (・Θ・)
+800 | (・Θ・)🎩
+1500 sparkle | (・Θ・)🎩 dapper.
+
+# owl does a head turn
+@owlturn
+500 | (◉Θ◉)
+500 | (◉Θ  )
+500 | (    )
+500 | (  Θ◉)
+1500 | (◉Θ◉) 360.
+
+# fireflies
+@firefly
+500 dim | .
+500 accent2 | ✧ .
+500 accent2 | . ✧ .
+1500 accent2 sparkle | ✧ . ✧ . ✧ summer night
+
+# lobster
+@lobster
+800 | (V)(°,,°)(V)
+1500 | (V)(°,,°)(V) pinch pinch
+
+# platypus
+@platypus
+800 | (・⊝・)ᓚ
+1500 | (・⊝・)ᓚ perry the platypus?!
+
+# chick hatches
+@hatch
+800 | 🥚
+600 | 🥚 *crack*
+600 | 🥚 *crack crack*
+1500 sparkle | 🐣 peep!
+
+# grumpy cat
+@grumpy
+800 | (=ಠᆽಠ=)
+1500 | (=ಠᆽಠ=) no.
+
+# the dog dreams
+@dogdream
+800 | U-ᴥ-U zZ
+800 | U-ᴥ-U zZ ...wf
+800 | U-ᴥ-U zZ ...wf wf
+1500 sparkle | U-ᴥ-U chasing dream squirrels.
+
+# sneaky cat
+@sneaky
+type 120 | «          »(=^･ω･^=)
+800 | (=^･ω･^=) 🍗
+1500 dim | (=^･ω･^=)🍗 ...what chicken?

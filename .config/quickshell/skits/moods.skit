@@ -1,0 +1,672 @@
+# Moods, reactions and little kaomoji gags.
+# Format: README.md in this folder.
+
+# happy hop
+@hop
+400 | ( ^_^)
+400 | ⌒( ^_^)⌒
+400 | ( ^_^)
+400 | ⌒( ^o^)⌒
+1400 sparkle | ( ^▽^) yay!
+
+# a hug
+@hug
+700 | ( ・_・)   ( ・_・)
+600 | ( ・_・)つ ⊂( ・_・)
+600 | (つ ・_・)つ⊂(・_・ ⊂)
+1500 sparkle | (づ￣ ³￣)づ ♥
+
+# self-hug
+@selfhug
+800 | ( ・_・)
+800 | (っ˘▽˘)っ
+1500 sparkle | ⊂(˘▽˘⊂) you're doing great.
+
+# blushes
+@blush
+800 | ( ・_・)
+800 | ( ・/_/・)
+1500 sparkle | (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄) h-hi
+
+# thinks hard
+@thinking
+800 | ( ・_・)
+800 | ( ・_・)?
+800 | (・_・ヾ)
+800 | ( -_-)ゞ hmm...
+1500 sparkle | ( °o°)💡 got it!
+
+# confused
+@confused
+800 | (・_・)
+800 | (・_・)?
+800 | (・・)??
+1500 dim | (⊙_☉) ...what?
+
+# double take
+@doubletake
+800 | ( ・_・)    →
+400 | (    ・_・)
+400 | ( ・_・)
+600 | ( °_°)!!
+1500 | ( °_°) wait, what?
+
+# side-eye
+@sideeye
+800 | ( ・_・)
+800 | ( ¬_¬)
+1500 dim | ( ¬_¬) ...i saw that.
+
+# lenny
+@lenny
+800 | ( ・_・)
+1500 sparkle | ( ͡° ͜ʖ ͡°)
+
+# disapproval
+@disapprove
+1000 | ( ・_・)
+1500 dim | ಠ_ಠ
+
+# deal with it
+@dealwithit
+600 | ( •_•)
+600 | ( •_•)>⌐■-■
+800 | (⌐■_■)
+1500 sparkle | (⌐■_■) deal with it.
+
+# takes off sunglasses
+@unshades
+600 | (⌐■_■)
+600 | ( •_•)>⌐■-■
+800 | ( •_•)
+1500 dim | ( •_•) ...it's dark in here.
+
+# crying
+@cry
+800 | ( ・_・)
+800 | ( ;_;)
+800 | ( T_T)
+1500 dim | ( ╥﹏╥) ...it's fine.
+
+# happy tears
+@happytears
+800 | ( ;_;)
+800 | ( ;▽;)
+1500 sparkle | ( ;▽;) i'm so proud!
+
+# angry
+@angry
+600 | ( ・_・)
+600 | ( `_´)
+600 danger | ( `皿´)
+1500 danger | ( ╬ಠ益ಠ) GRRR
+
+# calms down
+@calm
+600 danger | ( `皿´)
+800 | ( -_-) breathe in...
+800 | ( -_-) breathe out...
+1500 sparkle | ( ˘▽˘) better.
+
+# panic
+@panic2
+400 danger | (°ロ°)
+400 danger | (°ロ°;)
+400 danger | ヽ(°ロ°;)ﾉ
+400 danger | ヽ(;°ロ°)ﾉ
+1500 | ( -_-) ...false alarm.
+
+# scared
+@scared
+800 | ( ・_・)
+600 | ( °_°)
+600 | (((°_°)))
+1500 dim | (((;°Д°))) what was that?
+
+# hides
+@hide
+800 | ( ・_・)
+600 | ( ・_・)|
+600 | (・_|
+600 | |
+1500 dim | |_・) ...is it gone?
+
+# peek from a wall
+@wallpeek
+800 | |
+800 | |・)
+800 | |・ω・)
+1500 sparkle | |・ω・)ノ hi.
+
+# sleepy blinking
+@blink
+800 | ( ・_・)
+200 | ( -_-)
+800 | ( ・_・)
+200 | ( -_-)
+800 | ( ・_・)
+1500 dim | ( -_-) ...zZ
+
+# bored
+@bored
+1000 | ( ・_・)
+1000 | ( -_-)
+1000 | ( ._.)
+1500 dim | ( ._.) ...
+
+# excited
+@excited
+400 | ( ・o・)
+400 | ( °o°)
+400 accent2 | \( °o°)/
+1500 accent2 sparkle | \(✧o✧)/ !!!
+
+# celebrate
+@celebrate
+600 | ( ^_^)
+500 accent2 | \( ^▽^)/ 🎉
+500 accent2 | 🎉 \( ^▽^)/
+1500 accent2 sparkle | 🎊 \( ^▽^)/ 🎉
+
+# fist pump
+@fistpump
+600 | ( `ー´)
+600 | ( `ー´)ง
+1500 accent2 sparkle | ( `ー´)9 yes!
+
+# facepalm
+@facepalm
+800 | ( ・_・)
+800 | ( ・_・)ノ
+1500 dim | (－‸ლ)
+
+# sigh
+@sigh
+800 | ( ・_・)
+800 | ( -_-)
+1500 dim | ( -_-) *sigh*
+
+# smug
+@smug
+800 | ( ・_・)
+1500 | ( ￣ー￣)
+
+# wink
+@wink
+800 | ( ・_・)
+400 | ( ・_-)
+1500 sparkle | ( ・_-)☆
+
+# kiss
+@kiss
+800 | ( ・_・)
+800 | ( ˘ ³˘)
+1500 sparkle | ( ˘ ³˘)♥
+
+# heart eyes
+@hearteyes
+800 | ( ・_・)
+1500 sparkle | ( ♥_♥)
+
+# star eyes
+@stareyes
+800 | ( ・_・)
+1500 accent2 sparkle | ( ✧_✧)
+
+# dizzy
+@dizzy
+repeat 3
+  300 | ( @_@){ ⁎| ✧| ⁎}
+end
+1500 dim | ( x_x) the room is spinning.
+
+# dead inside
+@deadinside
+800 | ( ・_・)
+800 | ( ・_・) fine.
+1500 dim | ( ・_・) everything's fine. ☕🔥
+
+# this is fine
+@thisisfine
+800 | ( ・_・)☕
+600 danger | 🔥( ・_・)☕🔥
+1500 danger | 🔥🔥( ・_・)☕🔥🔥 this is fine.
+
+# flex
+@flex
+800 | ( ・_・)
+600 | ᕦ( ・_・)ᕤ
+1500 sparkle | ᕦ( `ー´)ᕤ strong.
+
+# shy wave
+@shywave
+800 | ( ・_・)
+800 | ( ・_・)ノ
+1500 | ( ・_・)ﾉ ...h-hi
+
+# bow
+@bow
+800 | ( ・_・)
+800 | m(_ _)m
+1500 sparkle | m(_ _)m thank you!
+
+# salute
+@salute
+800 | ( ・_・)
+1500 sparkle | ( ・_・)ゞ o7
+
+# o7
+@o7
+1500 | o7
+
+# point and laugh
+@laugh
+600 | ( ^▽^)
+500 | ( ^▽^)☝
+500 | (≧▽≦) haha
+1500 sparkle | (≧▽≦) HAHAHA
+
+# giggle
+@giggle
+600 | ( ・_・)
+600 | ( ^ω^)
+1500 sparkle | ( ^ω^) hehe
+
+# evil laugh
+@evil
+600 | ( ・_・)
+600 | ( ¬‿¬)
+600 danger | ( ¬‿¬) muahaha
+1500 danger | ψ( `∇´)ψ MUAHAHAHA
+
+# evil plan
+@evilplan
+800 | ( ¬‿¬) my evil plan:
+800 | ( ¬‿¬) step 1: steal cookies
+1500 dim | ( ¬‿¬) step 2: share cookies.
+
+# flowers
+@flowers
+800 | ( ・_・)
+800 | ( ・_・)ノ🌷
+1500 sparkle | ( ^_^)ノ🌷 for you!
+
+# gift
+@present
+800 | ( ・_・)🎁
+800 | ( ・_・)ノ🎁
+1500 sparkle | ( ^_^) for you! (it's a rock)
+
+# wave goodbye
+@bye
+800 | ( ・_・)
+800 | ( ^_^)ノ
+800 | ( ^_^)ノ bye!
+1500 dim |          ...
+
+# hello there
+@hellothere
+800 | ( ・_・)
+1500 sparkle | ( ¬‿¬)ノ hello there.
+
+# nod
+@nod
+300 | ( ・_・)
+300 | ( ._.)
+300 | ( ・_・)
+300 | ( ._.)
+1500 | ( ・_・)b agreed.
+
+# headshake
+@headshake
+300 | (・_・ )
+300 | ( ・_・)
+300 | (・_・ )
+300 | ( ・_・)
+1500 dim | ( -_-) nope.
+
+# thumbs up
+@thumbsup
+800 | ( ・_・)
+1500 sparkle | ( ^_^)b
+
+# thumbs down
+@thumbsdown
+800 | ( ・_・)
+1500 dim | ( -_-)p
+
+# ok hand
+@okhand
+800 | ( ・_・)
+1500 | ( ^_^)👌
+
+# finger guns
+@fingerguns
+800 | ( ・_・)
+600 | ( ¬‿¬)☞
+1500 sparkle | ☜( ¬‿¬)☞ ayyy
+
+# clapping
+@clap
+repeat 3
+  300 | ( ^_^){ノ|ノ👏}
+end
+1500 sparkle | ( ^_^)👏 bravo!
+
+# slow clap
+@slowclap
+800 | ( ・_・)
+1000 | ( ・_・)👏
+1000 | ( ・_・)👏
+1000 | ( ・_・)👏
+1500 dim | ( ・_・) ...well done.
+
+# drum roll
+@drumroll
+repeat 6
+  150 | ( ・_・){♫|♪} drrr
+end
+600 accent2 | ( ・_・) *ba dum tss*
+1500 sparkle | ( ¬‿¬)
+
+# ta-da
+@tada
+800 | ( ・_・)
+800 | ( ・_・)ノ ta...
+1500 accent2 sparkle | \( ^▽^)/ ...DA!
+
+# magic trick
+@magic
+800 | ( ・_・)🎩
+800 | ( ・_・)🎩✨
+1500 sparkle | ( ^_^)🎩🐇 ta-da!
+
+# juggling
+@juggle
+repeat 3
+  300 | ( ・_・) {●  ●  ●|  ● ●  ●|●  ●   ●}
+end
+1500 sparkle | ( ^_^) ●●● ta-da!
+
+# whistle
+@whistle
+800 | ( ・3・)
+800 | ( ・3・) ♪
+1500 | ( ・3・) ♪♫ ~
+
+# humming
+@hum
+repeat 3
+  400 | ( ˘ω˘) {♪|♫|♪~}
+end
+1500 sparkle | ( ˘ω˘) mmm~
+
+# daydream
+@daydream
+800 | ( ・_・)
+800 | ( ・_・) ☁
+800 | ( ・_・) ☁ 🏝
+1500 dim | ( ・_・) ...back to work.
+
+# deep thought
+@deepthought
+800 | ( ・_・)
+800 | ( ・_・) what if
+1000 | ( ・_・) we're all just
+1500 dim | ( ・_・) ...nah.
+
+# epiphany
+@epiphany
+800 | ( ・_・)
+600 | ( °o°)
+1500 accent2 sparkle | ( °o°)💡 EUREKA!
+
+# overthinking
+@overthink
+600 | ( ・_・) did i lock the door?
+600 | ( ・_・) did i turn off the oven?
+600 | ( °_°) did i say something weird?
+1500 dim | ( x_x) in 2014?
+
+# motivated
+@motivated
+800 | ( `ー´)
+1500 accent2 sparkle | ( `ー´)9 let's go!
+
+# unmotivated
+@meh
+800 | ( ・_・)
+1500 dim | ( -_-) meh.
+
+# grateful
+@grateful
+800 | ( ・_・)
+1500 sparkle | ( ˘▽˘) thanks for being here.
+
+# encouragement
+@youcan
+800 | ( ・_・) hey.
+800 | ( ・_・) you can do it.
+1500 sparkle | ( ^_^)b i believe in you.
+
+# hydrate reminder
+@hydrate
+800 | ( ・_・)💧
+1500 sparkle | ( ^_^)💧 drink some water!
+
+# posture check
+@posture
+800 | ( ・_・)
+800 | ( ・_・) posture check!
+1500 sparkle | ( ・_・)| straighten up.
+
+# eye break
+@eyebreak
+800 | ( ・_・) screen time...
+800 | ( -_-) look away
+800 | ( -_-) 20 seconds
+1500 sparkle | ( ・_・) refreshed.
+
+# stretch break
+@stretchbreak
+600 | ( ・_・)
+600 | \( ・_・)/
+600 | ( ・_・)>
+600 | <( ・_・)
+1500 sparkle | ( ^_^) better.
+
+# chilling
+@chill
+800 | ( ˘_˘)
+1500 sparkle | ( ˘_˘)🎧 chillin'.
+
+# vibing
+@vibe
+repeat 4
+  300 | {( ˘▽˘)|(˘▽˘ )} ♪
+end
+1500 sparkle | ( ˘▽˘) vibes.
+
+# sweat
+@sweat
+800 | ( ・_・)
+800 | ( ・_・;)
+1500 | ( ・_・;;) ...heh.
+
+# nervous laugh
+@nervous
+800 | ( ^_^;)
+800 | ( ^_^;) ha...
+1500 | ( ^_^;) ha ha...
+
+# shocked
+@shocked
+600 | ( ・_・)
+1500 danger | Σ(°ロ°)
+
+# speechless
+@speechless
+800 | ( ・_・)
+800 | ( ・_・) ...
+1500 | ( ・_・) . . .
+
+# loading brain
+@brainload
+800 | ( ・_・)
+gen progress 5
+1500 dim | ( ・_・) 404: thought not found.
+
+# reboot brain
+@brainreboot
+800 | ( @_@)
+800 dim | ( -_-) rebooting...
+1500 sparkle | ( ・_・) ok. hi.
+
+# glitch
+@glitch
+300 | ( ・_・)
+200 accent2 | ( ▓_▓)
+200 | ( ・_・)
+200 accent2 | ( ・_░)
+1500 | ( ・_・) ...you didn't see that.
+
+# tiny
+@tiny
+800 | ( ・_・)
+800 | (・_・)
+800 | (･_･)
+1500 | (･･) smol.
+
+# big
+@big
+800 | ( ・_・)
+800 | (  ・ _ ・  )
+1500 | (   ・  _  ・   ) BIG.
+
+# mustache
+@mustache
+800 | ( ・_・)
+1500 sparkle | ( ・﹏・) ...distinguished.
+
+# bubbles
+@bubbles
+500 | ( ・o・) ∘
+500 | ( ・o・) ∘ ○
+500 | ( ・o・) ∘ ○ ◯
+1500 sparkle | ( ^_^) *pop*
+
+# balloon
+@balloon
+800 | ( ・_・)🎈
+800 | ( ・_・) 🎈
+800 | ( ・_・)  ⇡🎈
+1500 dim | ( ;_;) ...bye, balloon.
+
+# paper airplane
+@paperplane
+600 | ( ・_・)✈
+type 70 | ( ・_・)ノ«             »✈
+1500 sparkle | ✈ ...so far!
+
+# bubblegum
+@gum
+600 | ( ・ε・)
+600 | ( ・ε・)○
+600 | ( ・ε・)◯
+600 danger | ( x_x) *pop*
+1500 | ( ・_・) ...in my hair.
+
+# mic drop
+@micdrop
+800 | ( ⌐■_■)🎤
+800 | ( ⌐■_■)ノ🎤
+1500 sparkle | ( ⌐■_■)   🎤 *thud*
+
+# drama
+@drama
+800 | ( ・_・)
+800 | ( °o°)
+1500 dim | (ノ°ο°)ノ the DRAMA.
+
+# fan
+@fan
+800 | ( ・_・)
+1500 sparkle | ( ・_・)ノ🪭 *flutter*
+
+# pout
+@pout
+800 | ( ・_・)
+1500 | ( ・ε・) hmph.
+
+# ugh
+@ugh
+800 | ( ・_・)
+1500 dim | (－_－) ugh.
+
+# sparkles
+@sparkle
+500 accent2 | ✧
+500 accent2 | ✧ ✧
+500 accent2 | ✧ ✧ ✧
+1500 sparkle | ( ^_^) ✧ shiny.
+
+# rainbow
+@rainbow
+800 | ☁ ☀
+800 | ☁ 🌈 ☀
+1500 sparkle | ( ^_^)🌈 pretty.
+
+# the void stares back
+@void
+1000 dim | ( ・_・)  ...
+1000 dim | ( ・_・)  ...  ( ・_・)
+1500 dim | ( °_°)  ...  ( ・_・)
+
+# mirror face
+@mirrorface
+800 | ( ・_・)
+800 | (・_・ )
+1500 | ( ・_・)(・_・ ) twins.
+
+# boop
+@boop
+800 | ( ・_・)
+600 | ( ・_・)☝
+1500 sparkle | ( ・ε・) boop!
+
+# meow back
+@meowback
+800 | (=^･ω･^=) meow
+800 | ( ・_・) meow
+1500 sparkle | (=^･ω･^=) ...meow? ♥
+
+# lucky
+@lucky
+800 | ( ・_・)🍀
+1500 accent2 sparkle | ( ^_^)🍀 feeling lucky!
+
+# dice
+@dice
+repeat 4
+  200 | ( ・_・)🎲 {⚀|⚃|⚁|⚄}
+end
+1500 accent2 sparkle | ( ^_^)🎲 {?⚀|⚁|⚂|⚃|⚄|⚅}!
+
+# coin flip
+@coin
+repeat 4
+  200 | ( ・_・)ノ {◐|◑}
+end
+1500 sparkle | ( ・_・) {?heads|tails}!
+
+# magic 8-ball
+@eightball
+800 | ( ・_・)🎱 will it work?
+800 | ( ・_・)🎱 *shake*
+1500 accent2 | 🎱 {?yes|no|ask again later|signs point to yes|very doubtful|without a doubt}
+
+# fortune cookie
+@fortunecookie
+800 | ( ・_・)🥠
+600 | ( ・_・)🥠 *crack*
+1500 dim | "{?you will debug something today.|help, i'm trapped in a cookie factory.|a nap is in your future.|that wasn't chicken.}"

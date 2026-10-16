@@ -1,0 +1,275 @@
+Try harder.
+	-- Offensive Security
+%
+Enumeration is key.
+	-- Every CTF writeup
+%
+Enumerate, enumerate, enumerate.
+	-- Every OSCP student
+%
+If you're stuck, you haven't enumerated enough.
+	-- Hacking proverb
+%
+Always check the source code of the page.
+	-- Every web CTF
+%
+It's always the version number.
+	-- Hack The Box forums
+%
+Read the room. No, really, read the room.
+	-- TryHackMe
+%
+The flag is in the last place you look.
+	-- CTF wisdom
+%
+Rabbit holes are just enumeration with extra steps.
+	-- Unknown
+%
+Take notes. Future you will be confused.
+	-- Every pentester
+%
+If it's not in your notes, it didn't happen.
+	-- Pentest wisdom
+%
+Scope first. Hack second.
+	-- Every ethical hacker
+%
+Hack the box, not the planet.
+	-- Unknown
+%
+Learn, hack, repeat.
+	-- Unknown
+%
+Every expert was once a beginner who didn't quit.
+	-- Unknown
+%
+Don't learn to hack. Hack to learn.
+	-- Unknown
+%
+The quieter you become, the more you can hear.
+	-- Kali Linux motto
+%
+Security is a process, not a product.
+	-- Bruce Schneier
+%
+Amateurs hack systems; professionals hack people.
+	-- Bruce Schneier
+%
+Anyone can design a cipher that they themselves cannot break.
+	-- Schneier's law
+%
+Complexity is the worst enemy of security.
+	-- Bruce Schneier
+%
+The only truly secure system is one that is powered off.
+	-- Gene Spafford
+%
+Passwords are like underwear: change them often, don't share them.
+	-- Unknown
+%
+Hackers are breaking the systems for profit. Before, it was about intellectual curiosity.
+	-- Kevin Mitnick
+%
+My crime is that of curiosity.
+	-- The Mentor, The Hacker Manifesto
+%
+We exist without skin color, without nationality, without religious bias.
+	-- The Mentor
+%
+This is our world now... the world of the electron and the switch.
+	-- The Mentor
+%
+You may stop this individual, but you can't stop us all.
+	-- The Mentor, 1986
+%
+A hacker is someone who enjoys playful cleverness.
+	-- Richard Stallman
+%
+The best way to learn is to break things. In a lab.
+	-- Unknown
+%
+Hack ethically. Report responsibly.
+	-- Bug bounty wisdom
+%
+It's not a bug, it's an undocumented feature.
+	-- Unknown
+%
+Trust, but verify.
+	-- Russian proverb
+%
+Never trust user input.
+	-- Every security course
+%
+Default credentials: the oldest trick in the book.
+	-- Unknown
+%
+admin:admin. You'd be surprised.
+	-- Every pentest report
+%
+The S in IoT stands for security.
+	-- Unknown
+%
+Patch your stuff.
+	-- Every sysadmin
+%
+Security through obscurity is no security at all.
+	-- Kerckhoffs's principle, loosely
+%
+A system should be secure even if everything about it, except the key, is public.
+	-- Auguste Kerckhoffs
+%
+Root is a state of mind.
+	-- Unknown
+%
+whoami
+	-- Every shell, after getting in
+%
+uid=0(root) gid=0(root) groups=0(root)
+	-- The best line in any CTF
+%
+id. id. id. Still not root.
+	-- Every privesc attempt
+%
+Got user. The night is young.
+	-- CTF players
+%
+Rooted. Time to read the writeup and see the intended way.
+	-- Every HTB player
+%
+The intended path was easier. It always is.
+	-- Every writeup
+%
+I spent six hours on a rabbit hole and I'd do it again.
+	-- Every CTF player
+%
+Real hackers read the manual. Eventually.
+	-- Unknown
+%
+The box was easy. I was hard.
+	-- Unknown
+%
+Never send a boy to do a woman's job.
+	-- Kate Libby, Hackers
+%
+They're trashing our rights! Trashing!
+	-- Hackers (1995)
+%
+Hack the planet! Hack the planet!
+	-- Hackers (1995)
+%
+Crash and Burn.
+	-- Hackers (1995)
+%
+I'm in.
+	-- Every hacker movie
+%
+We're in.
+	-- Every hacker movie, also
+%
+Give a man a fish and he eats for a day. Teach him to phish and... wait.
+	-- Unknown
+%
+The world itself's just one big hoax.
+	-- Elliot Alderson, Mr. Robot
+%
+Is any of it real?
+	-- Elliot Alderson, Mr. Robot
+%
+I wanted to save the world.
+	-- Elliot Alderson, Mr. Robot
+%
+We are fsociety. We are finally free.
+	-- Mr. Robot
+%
+Hello, friend? That's lame. Maybe I should give you a name.
+	-- Elliot Alderson, Mr. Robot
+%
+Too many secrets.
+	-- Sneakers (1992)
+%
+No more secrets.
+	-- Sneakers (1992)
+%
+Shall we play a game?
+	-- WarGames (1983)
+%
+I'm not a hacker. I'm a security researcher.
+	-- Every hacker, on LinkedIn
+%
+Knowledge is power. Guard it well.
+	-- Unknown
+%
+Hackers don't break in. They log in.
+	-- Unknown
+%
+Curiosity is not a crime.
+	-- Unknown
+%
+Stay curious. Stay legal.
+	-- Unknown
+%
+Sleep is for the patched.
+	-- Unknown
+%
+The internet is a series of tubes.
+	-- Ted Stevens
+%
+On the internet, nobody knows you're a dog.
+	-- Peter Steiner, The New Yorker
+%
+Information is not knowledge.
+	-- Albert Einstein (attributed)
+%
+The first rule of the lab: it's your lab.
+	-- Unknown
+%
+Learning hacking without a lab is like learning to swim without water.
+	-- Unknown
+%
+CTF: capture the flag, lose the weekend.
+	-- Unknown
+%
+One more room, then I'll sleep.
+	-- Every TryHackMe user
+%
+My streak is longer than my attention span.
+	-- TryHackMe users
+%
+The best payload is a good night's sleep.
+	-- Unknown
+%
+Hint: it's in the room description.
+	-- TryHackMe
+%
+The answer was in the task text. It always is.
+	-- TryHackMe
+%
+Your first box is the hardest. Then it's the second one.
+	-- Unknown
+%
+First blood is temporary. Learning is forever.
+	-- Unknown
+%
+Don't compare your day 1 to someone's day 1000.
+	-- Unknown
+%
+Every flag was once a "how does this even work?"
+	-- Unknown
+%
+An exploit is just a bug with ambition.
+	-- Unknown
+%
+Logs never lie. People delete them, though.
+	-- Unknown
+%
+Defense wins championships. Blue team represent.
+	-- Unknown
+%
+Red team, blue team, all team purple team.
+	-- Unknown
+%
+The attacker only has to be right once. The defender has to be right every time.
+	-- Security proverb
+%
+Cybersecurity is a team sport.
+	-- Unknown

@@ -1,0 +1,597 @@
+# Food, drinks, seasons and holidays.
+# Format: README.md in this folder.
+
+# tea time
+@tea
+800 | ( ・_・)🫖
+600 | ( ・_・)🫖 ~
+600 | ( ˘▽˘)っ旦 ~
+1500 sparkle | ( ˘ω˘) ...perfect steep.
+
+# tea too hot
+@hottea
+600 | ( ・_・)っ旦
+500 danger | ( >_<)っ旦 HOT
+1500 dim | ( ・_・)っ旦 *blows for 20 minutes*
+
+# espresso
+@espresso
+600 | ( -_-)☕
+400 | ( ・_・)☕
+300 accent2 | ( °_°)☕
+1500 accent2 sparkle | (ﾟ∀ﾟ)☕ I CAN HEAR COLORS
+
+# boba
+@boba
+800 | ( ・_・)🧋
+600 | ( ・_・)🧋 *slurp*
+1500 sparkle | ( ^_^)🧋 ...the pearl got stuck.
+
+# smoothie
+@smoothie
+repeat 3
+  250 | [{◐|◓|◑}] *whirr*
+end
+1500 sparkle | ( ^_^)🥤 fruit!
+
+# soda
+@soda
+600 | ( ・_・)🥤
+500 | ( ・_・)🥤 *psst*
+500 danger | ( °o°)🥤💦
+1500 dim | ( ・_・) ...shook it.
+
+# ice cream
+@icecream
+800 | ( ・_・)🍦
+800 | ( ^_^)🍦 *lick*
+800 | ( °_°)  🍦⇣
+1500 dim | ( ;_;)  ▁🍦 ...
+
+# brain freeze
+@brainfreeze
+800 | ( ・_・)🍧
+600 | ( ^_^)🍧 *gulp*
+1500 danger | ( >_<)❄ BRAIN FREEZE
+
+# cake
+@cakeslice
+800 | ( ・_・)🎂
+800 | ( ・_・)🔪🎂
+1500 sparkle | ( ^_^)🍰 the biggest slice.
+
+# cookies
+@cookies
+800 | ( ・_・)🍪🍪🍪
+800 | ( ・_・)🍪🍪
+800 | ( ・_・)🍪
+1500 dim | ( ・_・) ...who ate the cookies?
+
+# cookie monster
+@omnomnom
+600 | (◉◉)🍪
+repeat 3
+  250 | (◉◉) {om|nom|om nom}
+end
+1500 sparkle | (◉◉) cookie!
+
+# donut
+@donut
+800 | ( ・_・)🍩
+1500 sparkle | ( ¬‿¬)🍩 mmm, donut.
+
+# sushi
+@sushi
+type 120 | «          »🍣🍣🍣
+800 | ( ・_・)🥢🍣
+1500 sparkle | ( ˘▽˘)🍣 oishii!
+
+# wasabi
+@wasabi
+800 | ( ・_・)🥢🟢
+600 | ( ・_・) *gulp*
+1500 danger | ( ಥ﹏ಥ)🔥 WASABI
+
+# hot sauce
+@hotsauce
+800 | ( ¬‿¬)🌶 not spicy.
+600 | ( ¬‿¬)🌶 *bite*
+600 danger | ( °ロ°)🔥
+1500 danger | (ﾉಥ益ಥ)ﾉ🥛 MILK
+
+# tacos
+@taco
+800 | ( ・_・)🌮
+600 | ( ^_^)🌮 *crunch*
+1500 dim | ( ・_・)🌮 ...it all fell out.
+
+# burger
+@burger
+600 | ( ・_・)🍔
+600 | ( ・o・)🍔
+1500 sparkle | ( ˘▽˘)🍔 *nom* ok, that's good.
+
+# fries
+@fries
+800 | ( ・_・)🍟
+800 | ( ¬‿¬)🍟 one more...
+1500 dim | ( ・_・)  ...all gone.
+
+# hot dog
+@hotdog
+800 | ( ・_・)🌭
+1500 dim | ( ・_・)🌭 is it a sandwich?
+
+# spaghetti
+@pasta
+800 | ( ・_・)🍝
+600 | ( ・_・)🍝 *slurp*
+1500 dim | ( ・_・)🍝 ...my shirt.
+
+# soup
+@soup
+800 | ( ・_・)🍲
+600 | ( ˘ω˘)🥄
+1500 sparkle | ( ˘ω˘) warm.
+
+# pancakes
+@pancakes
+600 | ( ・_・)🥞
+600 | ( ・_・)🥞 *flip*
+600 | ( ・_・)  🥞⇡
+1500 dim | ( ・_・)    ...on the ceiling.
+
+# waffles
+@waffles
+800 | ( ・_・)🧇
+1500 sparkle | ( ^_^)🧇 grid of joy.
+
+# cereal
+@cereal
+800 | ( ・_・)🥣 cereal
+800 | ( ・_・)🥛 ...
+1500 dim | ( ・_・) no milk. dry cereal it is.
+
+# avocado
+@avocado
+800 | ( ・_・)🥑 not ripe
+800 | ( ・_・)🥑 not ripe
+800 | ( ・_・)🥑 not ripe
+1500 dim | ( ;_;)🥑 rotten.
+
+# banana
+@banana
+800 | ( ・_・)🍌
+1500 | ( ・_・)🍌 for scale.
+
+# apple a day
+@apple
+800 | ( ・_・)🍎
+1500 sparkle | ( ^_^)🍎 keeps the doctor away.
+
+# watermelon
+@watermelon
+800 | ( ・_・)🍉
+600 | ( ^_^)🍉 *chomp*
+1500 | ( ・3・) *ptoo* seeds.
+
+# lemon
+@lemon
+800 | ( ・_・)🍋
+600 | ( ・_・)🍋 *bite*
+1500 | (>﹏<) sour!
+
+# popcorn kernels
+@kernels
+600 | ⋅ ⋅ ⋅
+400 | ⋅ ⋅ ✿
+400 | ✿ ⋅ ✿
+400 | ✿ ✿ ✿
+1500 sparkle | ( ^_^)🍿 pop pop!
+
+# cheese
+@cheese
+800 | ( ・_・)🧀
+1500 sparkle | ( ⌐■_■)🧀 grate.
+
+# bread rising
+@bread
+600 | ( ・_・) ▭
+600 | ( ・_・) ▬
+600 | ( ・_・) ▆
+1500 sparkle | ( ^_^)🍞 risen!
+
+# oven timer
+@timer
+600 | ⏲ 3
+600 | ⏲ 2
+600 | ⏲ 1
+600 accent2 | ⏲ DING
+1500 sparkle | ( ^_^)🧁 ready!
+
+# smoke alarm
+@smokealarm
+600 | ( ・_・)🍳
+500 danger | 🚨 BEEP BEEP BEEP
+600 | ( >_<)🧺 *fans alarm*
+1500 dim | ( ・_・) dinner's ready.
+
+# food photo
+@foodphoto
+800 | ( ・_・)🍜
+800 | ( ・_・)📷🍜 angle...
+800 | ( ・_・)📷🍜 lighting...
+1500 dim | ( ・_・)🍜 ...it's cold now.
+
+# chopsticks
+@chopsticks
+800 | ( ・_・)🥢 ●
+600 | ( ・_・)🥢●
+600 | ( ・_・)🥢  ⇣●
+1500 dim | ( -_-) fork, please.
+
+# spring
+@spring
+600 | ❄ → 🌱
+600 | 🌱🌷
+600 | 🌷🌸🌼
+1500 sparkle | ( ^_^)🌸 spring!
+
+# allergies
+@allergies
+600 | ( ・_・)🌼
+500 | ( °o°)🌼 ah...
+500 danger | ( >O<) CHOO!
+1500 dim | ( ;_;) pollen season.
+
+# summer heat
+@heat
+800 | ☀ ( ・_・)
+800 | ☀ ( -_-;)
+1500 danger | ☀☀ ( x_x;) melting...
+
+# fan in summer
+@deskfan
+repeat 3
+  300 | ( ˘▽˘){✢|✣|✤} ≋
+end
+1500 sparkle | ( ˘▽˘) aaaaaah. *robot voice*
+
+# fireworks
+@fireworks
+500 | ⇡
+500 accent2 | ✺
+500 accent2 | ✺ ✹
+500 accent2 | ✺ ✹ ✸
+1500 accent2 sparkle | ( °o°) ✺ ✹ ✸ ooooh!
+
+# autumn leaves
+@autumn
+500 | 🍂
+500 |   🍁
+500 |  🍂  🍁
+500 | 🍂 🍁 🍂 🍁
+1500 sparkle | ( ^_^)🍂 *crunch crunch*
+
+# leaf pile jump
+@leafpile
+600 | ( ・_・) 🍂🍂🍂
+500 | ( ・o・)⇡
+500 | 🍂🍁🍂🍁🍂
+1500 sparkle | 🍂( ^_^)🍂 wheee!
+
+# pumpkin spice
+@pumpkinspice
+800 | 🍂 september
+800 | ( ・_・)☕🎃
+1500 sparkle | ( ⌐■_■)☕ pumpkin spice everything.
+
+# winter coziness
+@cozy
+800 | ❄ ❄ ❄
+800 | ( ˘▽˘)🧣
+1500 sparkle | ( ˘▽˘)☕🔥 cozy.
+
+# snowball fight
+@snowball
+600 | ( `ー´)⚪
+type 50 | ( `ー´)ノ«          »⚪
+1500 dim | ( x_x)❄ direct hit.
+
+# snow angel
+@snowangel
+800 | ( ・_・) ❄
+600 | \( -_-)/ *swish*
+1500 sparkle | ❄ 👼 ❄
+
+# building a snowman
+@snowman
+600 | ⚪
+600 | ⚪⚪
+600 | ⛄
+1500 sparkle | ⛄🥕 his name is frosty.
+
+# icicles
+@icicle
+800 | ▼▼▼▼▼
+800 | ( ・_・) ▼▼▼▼▼
+1500 dim | ( °_°) ▼▼▼▼ ...one less.
+
+# new year's
+@newyear
+500 | 10...
+500 | 3...
+500 | 2...
+500 | 1...
+1500 accent2 sparkle | 🎆 HAPPY NEW YEAR! 🎆
+
+# new year's resolution
+@resolution
+800 | ( `ー´)📝 this year: gym!
+800 dim | january 2
+1500 dim | ( -_-)🛋 ...next year.
+
+# valentine's
+@valentine
+800 | ( ・_・)💌
+800 | ( ⁄⁄•⁄ω⁄•⁄⁄ )💌
+1500 sparkle | ( ^_^)♥ happy valentine's!
+
+# St. Patrick's
+@stpatrick
+800 | ( ・_・)🍀
+800 | ( ・_・)🌈
+1500 accent2 sparkle | ( ^_^)🪙 pot of gold!
+
+# Easter egg hunt
+@easter
+800 | ( ・_・)🧺
+600 | ( ・_・)🔍
+600 | ( °o°)🥚
+1500 sparkle | ( ^_^)🐣 found one!
+
+# April fools
+@aprilfools
+800 | ( ・_・) your bar is broken!
+800 | ( °_°) what?!
+1500 sparkle | ( ¬‿¬) april fools.
+
+# Halloween costume
+@costume
+800 | ( ・_・) halloween costume?
+600 | (👻) boo!
+1500 dim | (👻) ...it's a bedsheet.
+
+# trick or treat
+@trickortreat
+800 | 🚪 *knock knock*
+800 | (🎃) trick or treat!
+1500 sparkle | ( ^_^)🍬 here you go!
+
+# jack-o-lantern
+@jackolantern
+800 | ( ・_・)🎃
+800 | ( ・_・)🔪🎃
+1500 sparkle | ( ^_^)🎃 he's smiling!
+
+# candy haul
+@candy
+800 | ( ・_・)🍬
+800 | ( ・_・)🍬🍫🍭
+1500 dim | ( x_x)🍬🍫🍭 too much candy.
+
+# Thanksgiving
+@thanksgiving
+800 | ( ・_・)🦃
+800 | ( ・_・)🥧
+800 | ( x_x) food coma
+1500 sparkle | ( ˘▽˘) thankful.
+
+# Christmas tree
+@xmastree
+600 |     ✦
+600 |    🎄
+600 |    🎄🎁
+1500 sparkle | ( ^_^)🎄🎁 merry christmas!
+
+# Christmas lights tangled
+@lights
+800 | ( ・_・) christmas lights
+800 | ( ・_・) ∞∞∞∞∞
+1500 dim | ( x_x) ∞∞∞∞∞ one bulb is out.
+
+# Santa
+@santa
+800 dim | ☾ 🛷🦌🦌🦌
+800 | ( -_-) zZ
+1500 sparkle | ( °o°)🎁 he came!
+
+# ugly sweater
+@sweater
+800 | ( ・_・)🧶
+1500 sparkle | ( ^_^)🦌 the ugliest sweater. perfect.
+
+# hot cocoa
+@cocoa
+800 | ( ・_・)☕
+600 | ( ・_・)☕ + marshmallows
+1500 sparkle | ( ˘▽˘)☕ ...all marshmallows.
+
+# gingerbread
+@gingerbread
+800 | ( ・_・)🍪
+600 | ( ・_・)🍪 *bite*
+1500 dim | (✕‿✕) not the gumdrop buttons!
+
+# new year: the ball drops
+@balldrop
+500 | ●
+500 |  ⇣
+500 |   ●
+1500 accent2 sparkle | ✧ 🎉 ✧
+
+# the 4 seasons
+@fourseasons
+500 | 🌸
+500 | ☀
+500 | 🍂
+500 | ❄
+1500 sparkle | ( ^_^) a year goes by.
+
+# rainy day reading
+@rainyday
+600 | ☁ ' ' '
+600 | ☁ ' ' ' ( ˘▽˘)📖
+1500 sparkle | ( ˘▽˘)📖☕ perfect.
+
+# rainbow after rain
+@afterrain
+600 | ☁ ' ' '
+600 | ☁ ☀
+1500 accent2 sparkle | 🌈 ( ^_^)
+
+# fog
+@fog
+800 dim | ░░░░░░░░
+800 dim | ░░( ・_・)░░
+1500 dim | ░░░░░░░░ ...hello?
+
+# hail
+@hail
+500 | ☁ • • •
+500 danger | ☁ • • • ( >_<)
+1500 dim | ( ・_・) ...my car.
+
+# tornado
+@tornado
+repeat 3
+  300 | {🌪   |  🌪 |   🌪}  🐄
+end
+1500 dim | 🌪🐄 ...the cow is fine.
+
+# sunrise
+@sunrise
+600 | ▁▁▁▁▁▁▁▁
+600 | ▁▁▁◠▁▁▁▁
+600 accent2 | ▁▁▁☀▁▁▁▁
+1500 sparkle | ( ^_^) a new day.
+
+# sunset
+@sunset
+600 accent2 | ▁▁▁☀▁▁▁▁
+600 | ▁▁▁◠▁▁▁▁
+600 dim | ▁▁▁▁▁▁▁▁
+1500 dim | ( ˘_˘)☾ good night, sun.
+
+# full moon
+@fullmoon
+800 dim | ☾
+800 dim | ◐
+800 | 🌕
+1500 sparkle | ( ・_・)🌕 so bright.
+
+# moon phases
+@phases
+400 dim | 🌑
+400 | 🌒
+400 | 🌓
+400 | 🌔
+400 | 🌕
+1500 sparkle | ( ・_・) a whole month.
+
+# eclipse
+@eclipse
+600 | ☀
+600 | ☀●
+600 dim | ●
+1500 sparkle | ( ⌐■_■) eclipse glasses on.
+
+# heatwave fridge
+@fridgehead
+800 | ☀ ( x_x)
+800 | ( ˘▽˘)❄🚪 *head in fridge*
+1500 sparkle | ( ˘▽˘)❄ i live here now.
+
+# lemonade stand
+@lemonade
+800 | ( ^_^)🍋 lemonade, 50¢!
+800 | ( ・_・)🍋 ...
+1500 sparkle | ( ^_^)🪙 first customer!
+
+# farmers market
+@market
+800 | ( ・_・)🧺 farmers market
+800 | ( ・_・)🍅🥕🌽
+1500 dim | ( ・_・)🧺 $40 on jam.
+
+# berries
+@berrypicking
+600 | ( ・_・)🫐
+600 | ( ・_・)🫐🫐
+600 | ( ¬‿¬)🫐 *eats*
+1500 dim | ( ・_・)🧺 ...the basket is empty.
+
+# camping marshmallow
+@marshmallow
+600 | ( ・_・)🔥 ⚪
+600 | ( ・_・)🔥 🟡
+600 danger | ( ・_・)🔥 ⚫
+1500 | ( ¬‿¬) i like them burnt.
+
+# barbecue
+@bbq
+800 | ( ・_・)🍖
+600 | ( ・_・)🍖 *sizzle*
+1500 sparkle | ( ^_^)🍖 grill master.
+
+# pizza slice
+@pizzaslice
+800 | ( ・_・)🍕
+600 | ( ・_・)🍕 *stretch*
+1500 | ( ・_・)🍕━━━━━ cheese pull!
+
+# pineapple pizza
+@pineapple
+800 | ( ・_・)🍕🍍
+1500 danger | ( ಠ_ಠ) ...we need to talk.
+
+# cupcake
+@cupcake
+800 | ( ・_・)🧁
+1500 sparkle | ( ^_^)🧁 frosting first.
+
+# picky eater
+@vegetables
+800 | ( ・_・)🥦
+800 | ( ・_・)🥦 → 🐕
+1500 dim | U・ᴥ・U 🥦 ...no thanks.
+
+# diet
+@diet
+800 | ( ・_・)🥗 healthy now
+800 | ( ・_・)🥗 ...
+1500 dim | ( ¬‿¬)🍕 cheat day. every day.
+
+# hungry
+@hungry
+800 | ( ・_・)
+800 dim | *grumble*
+1500 | ( ・_・)🍔 lunch?
+
+# food coma
+@foodcoma
+800 | ( ^_^)🍽 delicious!
+800 | ( -_-)🍽
+1500 dim | ( -_-) zZ ...too much.
+
+# the last slice
+@lastslice
+800 | ( ・_・)🍕 ( ・_・)
+800 | ( ¬_¬)🍕 (¬_¬ )
+1500 sparkle | ( ・_・)🔪 ...half each.
+
+# chef's kiss
+@chefskiss
+800 | ( ・_・)🍝
+800 | ( ˘ ³˘)👌
+1500 sparkle | ( ˘ ³˘)👌 *mwah* perfecto.

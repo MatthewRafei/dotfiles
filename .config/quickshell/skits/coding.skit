@@ -1,0 +1,736 @@
+# Programming: bugs, builds, reviews and the rest of the job.
+# Format: README.md in this folder.
+
+# works on my machine
+@worksonmine
+700 | ( ・_・) it crashed?
+900 | ( ・_・)⌨ ./run
+700 | ( ・_・) runs fine here.
+1600 sparkle | ( ¬‿¬) works on my machine™
+
+# off by one
+@offbyone
+800 | for (i = 0; i <= n; i++)
+700 danger | segfault (core dumped)
+900 | ( ಠ_ಠ) ...<=
+1400 sparkle | ( ^_^)b i < n. classic.
+
+# rubber duck debugging
+@rubberduck
+700 | ( ・_・) 🦆
+1000 | ( ・_・) so first it reads the file,
+1000 | ( ・_・) then it parses... oh.
+800 | ( °o°) OH.
+1500 sparkle | ( ^_^) thanks, duck. 🦆
+
+# git push --force
+@forcepush
+800 | $ git push --force
+600 danger | (°ロ°) wait, which branch?
+900 danger | + 3f2a1c...b7e9d0 main (forced update)
+1600 dim | ( ;_;) ...i'll update my résumé
+
+# merge conflict
+@mergeconflict
+700 | $ git merge feature
+900 danger | CONFLICT (content): Merge conflict in everything
+600 | <<<<<<< HEAD
+600 | =======
+600 | >>>>>>> feature
+1500 dim | ( x_x) i'll just keep both
+
+# missing semicolon
+@semicolon
+800 | ( ・_・)⌨ make
+900 danger | 247 errors.
+900 | ( ・_・) ...one missing ;
+1500 sparkle | ( ^_^)b 0 errors.
+
+# compiling
+@compiling
+repeat 3
+  400 | ( ・_・)⚔ compiling{.|..|...}
+  400 | (・_・ )⚔ compiling{...|.|..}
+end
+1400 dim | xkcd 303 says this is fine.
+
+# stack overflow copy-paste
+@stackoverflow
+700 | ( ・_・) how do i...
+800 | ( ・_・)🔍 stackoverflow
+900 dim | "marked as duplicate"
+900 | ( ¬_¬) copy... paste...
+1500 sparkle | ( ^_^) it works. don't ask why.
+
+# it's always DNS
+@dns
+700 | ( ・_・) site's down
+700 | ( ・_・) network's fine?
+700 | ( ・_・) server's fine?
+900 | ( ಠ_ಠ) ...
+1600 accent2 sparkle | it's always DNS.
+
+# 99 bugs
+@99bugs
+1000 | 99 little bugs in the code,
+1000 | 99 little bugs...
+900 | take one down, patch it around,
+1600 danger | 127 little bugs in the code.
+
+# deploys on friday
+@fridaydeploy
+700 | ( ・_・) it's 4:59 on friday
+700 | ( ¬‿¬) quick deploy?
+600 | $ ./deploy prod
+800 danger | ▓▒░ PagerDuty ░▒▓
+1500 danger | (ﾉಥ益ಥ)ﾉ weekend cancelled
+
+# TODO from 2014
+@todo
+900 | // TODO: fix this later
+800 dim | git blame: 2014-03-02
+700 | ( ・_・) who wrote this?
+900 | git blame: you
+1400 | ( ˘︹˘ ) ...later it is.
+
+# recursion
+@recursion
+600 | recurse(
+600 |  recurse(
+600 |   recurse(
+600 |    recurse(
+800 danger | RecursionError: max depth exceeded
+1300 | ( ・_・) needed a base case.
+
+# null pointer
+@nullpointer
+800 | ( ・_・) obj.name
+900 danger | NullPointerException
+800 | ( ¬_¬) obj?.name
+1300 sparkle | ( ^_^) undefined. close enough.
+
+# regex
+@regex
+800 | ( ・_・) i'll use a regex
+900 | ^(?:[a-z0-9!#$%&'*+/=?^_`~-]+)@(?:\w+\.)+$
+700 dim | now i have two problems.
+1300 | ( x_x)
+
+# tabs vs spaces
+@tabsspaces
+700 | ( `ー´) tabs.
+700 | (`ー´ ) spaces.
+600 danger | ( `ー´)⚔(`ー´ )
+1600 dim | ...the formatter decides. peace.
+
+# code review nitpicks
+@codereview
+700 | ( ・_・) PR #418 ready
+800 | 💬 nit: trailing space
+800 | 💬 nit: rename x
+800 | 💬 nit: whole approach
+1500 dim | ( ;_;) "LGTM after changes"
+
+# coffee to code
+@coffeetocode
+600 | ( -_-)
+500 | ( -_-)っ旦
+500 | ( °_°)っ旦
+repeat 3
+  200 | ( °▽°)⌨{ tap| tap tap| tap tap tap}
+end
+1300 sparkle | ☕ → ⌨ → 💾
+
+# segfault
+@segfault
+700 | $ ./a.out
+900 danger | Segmentation fault (core dumped)
+700 | $ gdb ./a.out core
+900 | #0 0x0000000000000000 in ?? ()
+1500 | ( ・_・) very helpful, thanks.
+
+# leap year bug
+@leapyear
+800 | ( ・_・) date + 1 year
+900 danger | Feb 29 → Feb 29?
+900 | ( ಠ_ಠ) time zones next...
+1500 dim | ( x_x) i hate time.
+
+# the unicorn ticket
+@estimate
+700 | PM: how long?
+700 | ( ・_・) two days.
+800 dim | ...two weeks later...
+1500 | ( ・_・) two more days.
+
+# hello world
+@helloworld
+type 80 | $ «echo "hello, world"»
+700 | hello, world
+1300 sparkle | ( ^_^)ノ it's alive!
+
+# infinite loop
+@infiniteloop
+repeat 3
+  300 | while (true) {
+  300 |   ( ・_・)↻
+  300 | }
+end
+800 danger | ^C
+1300 | ( -_-) i'll add a break.
+
+# undefined is not a function
+@undefinedfn
+800 | > [] + {}
+800 | '[object Object]'
+800 | > {} + []
+800 | 0
+1500 danger | (ノಠ益ಠ)ノ javascript.
+
+# floating point
+@floatingpoint
+900 | > 0.1 + 0.2
+900 | 0.30000000000000004
+900 | ( ಠ_ಠ)
+1400 sparkle | ( ・_・) close enough for floats.
+
+# it compiled the first time
+@firsttry
+800 | ( ・_・)⌨ make
+800 | 0 errors, 0 warnings.
+900 | ( °_°) ...that's suspicious.
+1500 dim | ( ¬_¬) what did i break?
+
+# rewrite it in rust
+@rewriterust
+800 | ( ・_・) it's 10 lines of C
+800 | 🦀 rewrite it in rust?
+800 | ( -_-)⌨ fighting the borrow checker
+800 dim | ...3 weeks later...
+1500 sparkle | ( ^_^) memory safe. 4000 lines.
+
+# borrow checker
+@borrowck
+800 | ( ・_・) let a = &mut x;
+800 | ( ・_・) let b = &x;
+1100 danger | error[E0502]: cannot borrow `x`
+1400 | ( ;_;) just let me have it.
+
+# lost in node_modules
+@nodemodules
+800 | $ npm install
+700 | added 1,342 packages
+700 | 47 vulnerabilities
+900 | node_modules: 1.4 GB
+1500 dim | ( x_x) for left-pad.
+
+# the build is green
+@greenbuild
+500 | CI ● running
+500 | CI ● running.
+500 | CI ● running..
+1500 accent2 sparkle | CI ✓ passed (ﾉ◕ヮ◕)ﾉ
+
+# the build is red
+@redbuild
+500 | CI ● running
+500 | CI ● running.
+900 danger | CI ✗ failed: flaky test
+800 | ( ¬_¬) re-run
+1500 accent2 sparkle | CI ✓ passed. never mind.
+
+# legacy code
+@legacy
+800 | ( ・_・) opening legacy.c
+900 | 14,000 lines. one function.
+800 dim | // do not touch. it works.
+1500 | ( ・_・) ...closing legacy.c
+
+# the "quick fix"
+@quickfix
+700 | ( ・_・) quick fix, 5 min
+700 dim | 1 hour
+700 dim | 3 hours
+900 dim | rewrote the module
+1400 | ( x_x) quick fix done.
+
+# documentation
+@docs
+800 | ( ・_・) let's read the docs
+900 dim | "TODO: write docs"
+900 | ( ಠ_ಠ) ...
+1400 | ( ・_・) reading the source it is.
+
+# naming things
+@naming
+700 | ( ・_・) what to call it...
+500 | data
+500 | data2
+500 | dataNew
+500 | dataFinal
+1500 dim | dataFinalFinal_v3
+
+# cache invalidation
+@cache
+800 | ( ・_・) why is it old?
+800 | ( ・_・) ctrl+shift+R
+900 | ( ・_・) still old.
+1500 sparkle | ( ^_^) oh, the CDN. ✓
+
+# the senior dev glance
+@seniordev
+900 | ( ・_・) been stuck 3 hours
+700 | senior: (•_•)
+700 | senior: (•_•)☝ line 42
+1500 | ( °_°) ...how.
+
+# python indentation
+@indent
+800 | ( ・_・) if x:
+800 | ( ・_・) print(x)
+900 danger | IndentationError
+1400 | ( ・_・)⇥ four spaces. fine.
+
+# sql injection, little bobby tables
+@bobbytables
+900 | name: Robert'); DROP TABLE Students;--
+800 danger | DROP TABLE
+900 | ( °_°) little bobby tables...
+1500 dim | ( -_-) sanitize your inputs.
+
+# kills the wrong process
+@kill9
+800 | $ kill -9 4213
+700 | ( ・_・) bye, frozen app.
+800 danger | (°ロ°) that was the editor.
+1400 dim | ( ;_;) unsaved...
+
+# git log archaeology
+@gitlog
+900 | $ git log --oneline
+500 dim | a1b2c3 fix
+500 dim | d4e5f6 fix again
+500 dim | 0a9b8c real fix
+500 dim | 7f6e5d wip
+1400 | ( ・_・) great history.
+
+# the 10x developer
+@tenx
+700 | (⌐■_■) 10x developer
+800 | (⌐■_■)⌨⌨⌨ 10,000 lines
+900 | ( ・_・) reviewing...
+1400 dim | (x_x) 10x the bugs.
+
+# it's a feature
+@feature
+800 | user: it's broken
+800 | ( ・_・) that's... intended.
+900 | ( ¬‿¬) it's a feature.
+1300 | ( ・_・)📝 adds to docs
+
+# writes a test
+@test
+800 | ( ・_・) writing a test
+800 | assert add(2, 2) == 4
+800 accent2 | ✓ 1 passed
+1400 sparkle | ( ^_^) 100% coverage of one line.
+
+# race condition
+@race
+800 | ( ・_・) thread 1: x++
+800 | ( ・_・) thread 2: x++
+900 danger | x == 1
+1500 | ( ಠ_ಠ) i'll add a lock. eventually.
+
+# deadlock
+@deadlock
+800 | thread A waits for B
+800 | thread B waits for A
+1000 dim | ( -_-) ...
+1000 dim | ( -_-) ...
+1400 danger | ( x_x) forever.
+
+# tries a new framework
+@framework
+800 | ( ・_・) new JS framework!
+800 | ( ・_・)⌨ npm create...
+800 dim | ...it's deprecated.
+1500 | ( ;_;) newer framework!
+
+# the stand-up meeting
+@standup
+800 | yesterday: debugging
+800 | today: debugging
+800 | blockers: the bug
+1400 dim | ( -_-) 45 min "stand-up"
+
+# commits secrets
+@secrets
+900 | $ git commit -am "config"
+800 | $ git push
+900 danger | (°ロ°) .env was in there
+1500 | ( ;_;)⌨ rotating every key...
+
+# whiteboard interview
+@interview
+800 | invert a binary tree
+800 | ( °_°)✎ on a whiteboard?
+900 | ( ・_・)✎ draws a tree
+1500 dim | ( ・_・) ...upside down. done.
+
+# the happy path
+@happypath
+800 | ( ^_^) works with normal input
+800 | user: types 🥔 in the date
+900 danger | 500 Internal Server Error
+1400 | ( ・_・) ...edge cases.
+
+# 404
+@notfound
+900 | GET /keys
+900 danger | 404 Not Found
+1500 | ( ・_・) ...the keys are lost too.
+
+# 418
+@teapot
+900 | GET /coffee
+900 accent2 | 418 I'm a teapot
+1500 sparkle | ( ˘▽˘)っ旦 tea it is.
+
+# the programmer's sleep schedule
+@nightowl
+700 | ( -_-) 11 PM: bed soon
+700 | ( ・_・)⌨ 1 AM: one bug
+700 | ( °_°)⌨ 3 AM: found it
+800 | ( ^▽^)⌨ 4 AM: fixed!
+1400 dim | ( x_x) 9 AM: meeting
+
+# segfault in prod, works in debug
+@heisenbug
+800 | ( ・_・) bug in release
+800 | ( ・_・) build debug...
+800 | ( ・_・) no bug.
+1400 dim | heisenbug: watching it fixes it.
+
+# printf debugging
+@printf
+600 | printf("here\n");
+600 | printf("here 2\n");
+600 | printf("HERE?!\n");
+900 | here
+900 | here 2
+1500 danger | ( ಠ_ಠ) never reached HERE?!
+
+# vim vs emacs
+@editorwar
+700 | ( `ー´) vim!
+700 | (`ー´ ) emacs!
+700 | ( ・_・) nano.
+1500 dim | ( `ー´)(`ー´ ) ...get out.
+
+# emacs pinky
+@emacspinky
+800 | C-x C-f
+800 | C-c C-c
+800 | M-x butterfly
+1500 dim | ( ;_;) my pinky...
+
+# the linter
+@linter
+800 | ( ・_・) save
+900 dim | ⚠ 312 warnings
+800 | ( ¬_¬) // eslint-disable
+1400 sparkle | ( ^_^) 0 warnings.
+
+# kubernetes
+@k8s
+800 | ( ・_・) it's one script
+800 | ( ・_・) put it in a container
+800 | ( ・_・) then kubernetes...
+800 | 47 yaml files later
+1500 dim | ( x_x) it's still one script.
+
+# yaml indentation
+@yaml
+800 | key:
+800 |   - value
+800 |  - other
+900 danger | yaml: line 3: bad indentation
+1400 | ( ;_;) it's one space.
+
+# microservices
+@microservices
+800 | ( ・_・) monolith is slow
+900 | ( ・_・) split into 40 services
+900 danger | 40 network calls per click
+1500 | ( ・_・) ...the monolith wasn't so bad.
+
+# blockchain it
+@blockchain
+800 | boss: put it on the blockchain
+800 | ( ・_・) it's a todo list.
+800 | boss: ...and AI.
+1500 dim | ( -_-) of course.
+
+# monday morning code
+@monday
+800 | ( -_-) monday
+800 | ( -_-)⌨ git pull
+900 danger | 2,481 files changed
+1400 dim | ( x_x) back to bed.
+
+# copilot autocomplete
+@autocomplete
+800 | ( ・_・) // sort the list
+900 | ...47 lines suggested
+800 | ( °_°) it imports numpy?
+1500 | ( ・_・) tab tab tab. sure.
+
+# the bug fix that creates two bugs
+@hydra
+800 | ( ・_・) fixed 1 bug
+800 danger | 2 new bugs
+800 | ( ・_・) fixed those
+800 danger | 4 new bugs
+1500 dim | ( x_x) it's a hydra.
+
+# memory leak
+@memleak
+type 300 | RAM [«▮▮▮▮▮▮▮▮▮▮»]
+800 danger | OOM killer: chose violence
+1400 | ( ・_・) forgot a free().
+
+# hex colors
+@hexcolors
+700 | ( ・_・) #ff0000
+700 | ( ・_・) #fe0000
+700 | ( ・_・) #ff0001
+1500 dim | ( ・_・) ...client: "more red"
+
+# man pages
+@manpage
+800 | $ man tar
+900 dim | 1,240 lines of options
+800 | ( ・_・) tar -xzvf?
+1500 sparkle | ( ^_^) defused the bomb.
+
+# exit codes
+@exitcode
+800 | $ ./script.sh
+800 | $ echo $?
+800 danger | 1
+1500 | ( ・_・) nothing printed. nice.
+
+# the one-liner
+@oneliner
+800 | ( ¬‿¬) did it in one line
+900 | cat f|awk '{..}'|sed|tr|xargs
+900 | ( ・_・) what does it do?
+1400 dim | ( ¬‿¬) ...no idea anymore.
+
+# technical debt
+@techdebt
+800 | ( ・_・) just a hack for now
+900 dim | ...5 years later...
+900 | the hack runs the company
+1400 dim | ( x_x) don't touch it.
+
+# localhost
+@localhost
+900 | there's no place like
+1500 accent2 sparkle | 127.0.0.1 ♥
+
+# coding at 2x speed
+@typing
+type 50 | ( ・_・)⌨ «asdfjkl; qwerty uiop»
+1400 | ( ・_・) ...wrong window.
+
+# fizzbuzz
+@fizzbuzz
+400 | 1
+400 | 2
+400 accent2 | Fizz
+400 | 4
+400 accent2 | Buzz
+400 accent2 | Fizz
+1300 sparkle | ( ^_^) hired!
+
+# binary joke
+@binary
+900 | there are 10 kinds of people:
+900 | those who know binary
+1500 | and those who don't. ( ¬‿¬)
+
+# the off-by-one kinds
+@binary2
+900 | there are 2 hard things:
+700 | 1. cache invalidation
+700 | 2. naming things
+1500 danger | 3. off-by-one errors
+
+# "it's just a small change"
+@smallchange
+800 | PM: tiny change, just a button
+800 | ( ・_・) sure
+800 dim | touches: db, api, ui, auth
+1500 dim | ( x_x) "tiny"
+
+# a real bug, a moth
+@moth
+800 | ( ・_・) relay 70 stuck
+900 | ( °_°)🔍 ...a moth?
+1500 sparkle | first actual case of bug being found.
+
+# the green checkmark
+@unittest
+500 accent2 | ✓
+500 accent2 | ✓ ✓
+500 accent2 | ✓ ✓ ✓
+500 danger | ✓ ✓ ✓ ✗
+1500 | ( ・_・) so close.
+
+# ascii art
+@asciiart
+800 | ( ・_・) making ascii art
+800 | ( ・_・)✎ ¯\_(ツ)_/¯
+1300 | ( ¬‿¬) masterpiece.
+
+# hard-coded password
+@password
+900 | password = "hunter2"
+800 | ( ・_・) it shows as *******
+1500 dim | ( ¬‿¬) see? totally safe.
+
+# sudo make me a sandwich
+@sandwich
+800 | $ make me a sandwich
+800 danger | what? make it yourself.
+800 | $ sudo make me a sandwich
+1500 sparkle | okay. ( ・_・)っ🥪
+
+# ship it
+@shipit
+700 | tests: some
+700 | docs: none
+700 | review: skipped
+1500 accent2 sparkle | 🐿 ship it!
+
+# README driven
+@readme
+800 | ( ・_・) writes README
+800 | ## Features
+800 | - blazing fast 🚀
+1500 dim | ( ・_・) ...now to write the code.
+
+# stares at error
+@stare
+1500 | ( ・_・) error...
+1500 | ( ・_・) error...
+1500 dim | ( ・_・) staring harder.
+1300 | ( ・_・) oh. typo.
+
+# the cleanup branch
+@refactor
+800 | ( ・_・) just refactoring
+800 dim | +2,431 −2,428
+800 | ( ・_・) behavior: unchanged
+1500 sparkle | ( ^_^) 3 lines shorter!
+
+# uses ChatGPT for code
+@llmcode
+800 | ( ・_・) write me a parser
+800 | 🤖 here you go!
+900 danger | uses a library that doesn't exist
+1500 | ( ・_・) ...confidently.
+
+# commit message
+@commitmsg
+type 90 | $ git commit -m "«asdf»"
+1400 dim | ( ¬‿¬) future me's problem.
+
+# dependency hell
+@dephell
+800 | A needs B 1.x
+800 | C needs B 2.x
+800 | D needs A and C
+1500 danger | ( x_x) ...dependency hell
+
+# hard to reproduce
+@repro
+800 | user: it broke
+800 | ( ・_・) steps?
+800 | user: i clicked it
+1500 dim | ( ・_・) ...which "it"?
+
+# code golf
+@codegolf
+800 | ( ・_・) 120 chars
+800 | ( ・_・) 80 chars
+800 | ( ・_・) 41 chars
+1500 sparkle | ( ⌐■_■) unreadable. perfect.
+
+# binary search the bug
+@bisect
+700 | $ git bisect start
+500 | good... bad... good...
+500 | bad... good... bad...
+1100 accent2 | first bad commit: a7c3e1
+1500 dim | ( ・_・) ...it's mine.
+
+# stack trace
+@stacktrace
+500 dim | at a (x.js:1)
+500 dim | at b (y.js:2)
+500 dim | at c (z.js:3)
+500 dim | ... 214 more
+1500 | ( @_@) i'll read the first one.
+
+# localhost works, prod doesn't
+@envdiff
+800 | dev: ✓
+800 | staging: ✓
+800 danger | prod: ✗
+1500 | ( ・_・) ...prod is "special".
+
+# uptime
+@uptime
+900 | $ uptime
+900 accent2 | up 487 days
+900 | ( ・_・) don't reboot it.
+1400 dim | nobody knows if it'll come back.
+
+# the light theme
+@lighttheme
+700 | ( ・_・) light theme?
+600 | ☀ ☀ ☀
+700 danger | (>_<) MY EYES
+1400 sparkle | ( ^_^)☾ dark theme. safe.
+
+# keyboard shortcut muscle memory
+@ctrls
+700 | ( ・_・)⌨ :w
+700 | ( ・_・)⌨ :w in a browser
+700 | ( ・_・)⌨ ctrl+s in a terminal
+1500 dim | ( -_-) everything is vim.
+
+# 100% CPU from one tab
+@onetab
+800 | ( ・_・) why's the fan loud?
+800 | top: chromium 380%
+900 | ( ಠ_ಠ) one tab. a recipe.
+1500 dim | ( -_-) it had 40 trackers.
+
+# rm the wrong folder
+@rmrf
+800 | $ rm -rf ./build /
+900 danger | (°ロ°) THE SPACE
+800 | ^C ^C ^C
+1500 dim | ( ;_;) ...backups exist, right?
+
+# sleeps on the problem
+@sleepon
+800 | ( ・_・) can't solve it
+900 | ( -_-) zZ
+900 | ( -_-) zZz
+800 | ( °o°)!
+1500 sparkle | ( ^_^)💡 solved it in a dream.

@@ -1,0 +1,708 @@
+# Video games.
+# Format: README.md in this folder.
+
+# Tetris: the long piece finally shows up
+@tetris
+500 | ▢▢▢▢▢▢▢▢▢ ▢
+500 | ( ・_・) need an I piece...
+400 | ▖ ▘ ▚ S Z S Z
+900 | ( ಠ_ಠ) S. Z. S.
+500 accent2 | ████ !!
+1500 accent2 sparkle | T E T R I S ✧
+
+# Mario: jumps, hits a block
+@mario
+500 | ( ・_・) [?]
+400 | ( ・o・)↑[?]
+400 accent2 | ( ・_・) [■] ◎
+1400 sparkle | ◎ +1 coin ♪ bling!
+
+# Mario: the princess
+@castle
+700 | ( ・_・) 🏰 princess?
+900 | ( ・_・) 🍄 "thank you mario!"
+1500 dim | "but our princess is in another castle!"
+
+# Sonic: gotta go fast
+@sonic
+type 70 | «                    »≡ε≡ε(ﾟ∀ﾟ)
+900 accent2 | ≡ε≡ε(ﾟ∀ﾟ) gotta go fast!
+1400 dim | ...too slow!
+
+# Zelda: it's dangerous to go alone
+@dangerous
+800 | ( ・_・) a cave
+900 | ( ˘ω˘)ノ⚔ old man:
+1500 sparkle | "it's dangerous to go alone! take this."
+
+# Zelda: hey, listen
+@navi
+600 accent2 | ✧ hey!
+600 accent2 | ✧ listen!
+600 accent2 | ✧ hey! listen!
+1400 dim | ( ಠ_ಠ) ...navi, please.
+
+# Zelda: breaks the pots
+@pots
+400 | ( ・_・)ノ ⚱⚱⚱
+400 | ( ・_・)ノ ✕⚱⚱
+400 | ( ・_・)ノ ✕✕⚱
+400 | ( ・_・)ノ ✕✕✕
+1400 sparkle | ( ^_^) 1 rupee. worth it.
+
+# Zelda: cuccos
+@cucco
+700 | ( ・_・) 🐔
+600 | ( ¬‿¬)ノ⚔ 🐔
+600 | ( ¬‿¬)ノ⚔ 🐔🐔🐔
+700 danger | 🐔🐔🐔🐔🐔🐔 (°ロ°)
+1500 dim | ( x_x) never hit a cucco.
+
+# Minecraft: creeper
+@creeper
+700 | ( ・_・)⛏
+600 | ( ・_・)⛏ ...ssss
+500 danger | ( °_°)⛏ SSSSSS
+400 danger | 💥
+1500 dim | ( x_x) ...my house.
+
+# Minecraft: first night
+@firstnight
+700 | ( ・_・)🌳 punch tree
+700 | ( ・_・)🪵 punch tree
+700 dim | ☾ night falls
+800 | ( ;_;)🧱 hides in a dirt hut
+1400 | ( -_-) zZ ...the hut is home now.
+
+# Minecraft: diamonds
+@diamonds
+erase 140 | ( ・_・)⛏«▒▒▒▒▒▒▒»
+500 accent2 | ( °o°)⛏ ◆
+1300 accent2 sparkle | ( ^_^) DIAMONDS!
+900 danger | ...lava.
+
+# Minecraft: the sheep
+@sheep
+700 | ( ・_・) 🐑
+700 | ( ・_・)✂ 🐑
+900 | ( ・_・)  🐏
+1400 sparkle | ( ^_^) wool! (sorry, sheep)
+
+# Portal: the cake
+@cake
+800 | ( ・_・) ◯ ◯
+800 | ( ・_・) test chamber 19
+900 accent2 | 🎂 ...cake?
+1500 dim | the cake is a lie.
+
+# Portal: thinking with portals
+@portal
+600 accent2 | ( ・_・)  ◯
+600 | ◯ ( ・_・)
+600 accent2 | ( ・_・)  ◯
+1400 sparkle | ( ⌐■_■) now you're thinking with portals.
+
+# Half-Life 3
+@hl3
+800 | Half-Life 1 ✓
+800 | Half-Life 2 ✓
+800 | Half-Life 2: Ep 2 ✓
+900 dim | Half-Life 3 ...
+1500 dim | ( ;_;) gaben can't count to 3.
+
+# StarCraft: not enough minerals
+@minerals
+900 | ( ・_・) build a barracks
+1500 danger | you require more minerals.
+
+# Warcraft: peon
+@peon
+800 | ( ・_・) peon!
+800 | ( -_-) work work.
+800 | ( ・_・) peon! peon!
+1500 | ( ಠ_ಠ) me not that kind of orc!
+
+# WoW: Leeroy Jenkins
+@leeroy
+800 | ( ・_・) ok, here's the plan...
+900 | ( ・_・) 32.3% chance of—
+900 accent2 | LEEEEEROY
+1500 danger | JENKINS! ( x_x)( x_x)( x_x)
+
+# Pokémon: wild encounter
+@pokemon
+500 | ( ・_・) tall grass...
+400 | ▒▒▒▒▒▒▒▒
+800 accent2 | a wild ϞϞ(๑⚈ ․̫ ⚈๑) appeared!
+900 | ( `ー´)ノ◓ go!
+600 | ◓ ...
+600 | ◓ ... ...
+1500 accent2 sparkle | gotcha! ✧
+
+# Pokémon: Magikarp uses splash
+@magikarp
+800 | ><(((°> MAGIKARP used SPLASH!
+1500 dim | but nothing happened.
+
+# Pokémon: the bike
+@bike
+800 | ( ・_・) professor oak:
+1000 dim | "there's a time and place for everything!"
+1300 dim | "but not now."
+
+# Pokémon: Pikachu
+@pikachu
+800 | ϞϞ(๑⚈ ․̫ ⚈๑)
+800 | ϞϞ(๑⚈ ․̫ ⚈๑) pika?
+500 accent2 | ϞϞ(๑⚈ ․̫ ⚈๑) ⚡
+1400 accent2 sparkle | ϞϞ(๑⚈ ․̫ ⚈๑)⚡ PIKACHUUU!
+
+# Street Fighter: hadouken
+@hadouken
+500 | ( `ー´)
+500 | ( `ー´)⊃
+type 50 accent2 | ( `ロ´)⊃«             »◉
+1300 accent2 sparkle | HADOUKEN!
+
+# Mortal Kombat: finish him
+@finishhim
+700 danger | FINISH HIM!
+600 | ( `ー´) ↓↘→
+900 danger | ( `ロ´)⊃ ⚡⚡⚡
+1500 danger | FATALITY
+
+# Konami code
+@konami
+type 220 | «↑↑↓↓←→←→BA»
+1500 accent2 sparkle | +30 lives ✧
+
+# Doom: rips and tears
+@doom
+600 | ( ಠ_ಠ)╾━
+500 danger | ( ಠ益ಠ)╾━ BOOM
+500 danger | ( ಠ益ಠ)╾━ BOOM BOOM
+1500 danger | rip and tear, until it is done.
+
+# Doom on everything
+@doomanything
+700 | ( ・_・) fridge: runs doom
+700 | ( ・_・) calculator: runs doom
+700 | ( ・_・) pregnancy test: runs doom
+1500 | ( ・_・)🔬 potato: porting...
+
+# Metroid: the morph ball
+@morphball
+700 | ( ・_・)
+400 | ( ・_・)↓
+400 | ◉
+type 90 | ◉«          »
+1300 sparkle | ◉ ...the speedrun begins.
+
+# Castlevania: what is a man
+@castlevania
+800 | ( ・_・)⚔ dracula!
+800 danger | "what is a man?"
+1100 danger | "a miserable little pile of secrets!"
+1400 | ( ・_・)⚔ enough talk! have at you!
+
+# Final Fantasy: the victory fanfare
+@fanfare
+500 | ( `ー´)⚔ ✗ goblin
+500 | ♪ da da da daaa
+500 | ♪ da da da daaa
+1400 accent2 sparkle | ♪ da da DAAA! +12 exp
+
+# Final Fantasy VII: one-winged angel
+@sephiroth
+900 dim | ♪ sephiroth...
+900 dim | ♪ SEPHIROTH...
+1500 danger | ( ¬‿¬)⚔ ...i will never be a memory.
+
+# Kingdom Hearts plot
+@kingdomhearts
+800 | ( ・_・) KH plot:
+700 | heartless, nobodies,
+700 | somebodies, replicas,
+800 | 358/2 days, re:coded,
+1500 dim | ( @_@) ...my heart hurts.
+
+# GTA: wasted
+@wasted
+800 | ( ⌐■_■)🚗 ...
+600 | ( ⌐■_■)🚗💨 ★★★
+600 danger | ( ⌐■_■)🚗💥 ★★★★★
+1500 danger | W A S T E D
+
+# GTA: mission passed
+@respect
+900 | ( ⌐■_■) mission complete
+1400 accent2 sparkle | mission passed! respect +
+
+# Elden Ring: try jumping
+@eldenmessage
+800 | ( ・_・) a message on the ground
+900 dim | "try jumping"
+700 | ( ・_・)↑
+700 danger | ( °_°)↓ ...↓ ...↓
+1500 danger | Y O U   D I E D
+
+# Elden Ring: Malenia
+@malenia
+800 | ( `ー´)⚔ round 47
+800 danger | "i am malenia, blade of miquella"
+500 danger | ( x_x) waterfowl dance
+1500 dim | ( ・_・) round 48...
+
+# Elden Ring: Let me solo her
+@soloher
+800 | ( ;_;) can't beat her...
+800 | summon: Let Me Solo Her 🏺
+900 accent2 | 🏺⚔⚔ ...
+1500 accent2 sparkle | GREAT ENEMY FELLED. thank you, jar.
+
+# Dark Souls: estus
+@estus
+700 danger | ( >_<) HP ▮▯▯▯▯
+600 | ( ・_・)🧪 *glug*
+600 accent2 | ( ・_・) HP ▮▮▮▯▯
+900 danger | ( x_x) got hit while drinking.
+1300 danger | Y O U   D I E D
+
+# Dark Souls: Siegmeyer napping
+@siegmeyer
+800 | ( -_-) hmm...
+900 | ( -_-) mmmmm...
+1500 dim | catarina knight, deep in thought.
+
+# Dark Souls: amazing chest ahead
+@mimic
+800 | ( ・_・) a chest!
+800 | ( ・_・)ノ ▣
+600 danger | ▣ ▼▼▼ CHOMP
+1500 danger | ( x_x) it had legs.
+
+# Bloodborne: the ladder
+@ladder
+800 | ( ・_・) a shortcut!
+800 | ( ・_・)⇣ unlocked.
+1500 sparkle | ( ^_^) safe. i'm never leaving this lamp.
+
+# Hollow Knight: silksong
+@silksong
+800 | ( ・_・) silksong news?
+800 dim | ...
+800 dim | ... ...
+1500 sparkle | ( ;▽;) it's out. it's REAL.
+
+# Hollow Knight: the knight
+@hollowknight
+700 | (◕‿◕) ⌐
+700 | (◕‿◕)⌐ *nail*
+1400 dim | ...no cost too great.
+
+# Celeste: strawberries
+@celeste
+500 | ( ・_・)↗ dash
+500 | ( ・_・)↗ dash
+500 danger | ( x_x) spikes
+600 dim | deaths: 2,184
+1500 accent2 sparkle | ( ^_^)🍓 got it!
+
+# Stardew: the farm
+@stardew
+600 | ( ・_・)🌱
+600 | ( ・_・)🌱🌱🌱
+600 | ( ・_・)🌿🌿🌿
+700 | ( ・_・)🍓🍓🍓
+1500 sparkle | ( -_-) day 1: 2 AM. passed out again.
+
+# Stardew: Pierre's
+@pierre
+800 | ( ・_・)🛒 pierre's
+800 | ( ・_・)🛒 joja mart
+1500 dim | ( -_-) the community center weeps.
+
+# Animal Crossing: Tom Nook
+@nook
+800 | (•ᴥ•) yes, yes!
+800 | (•ᴥ•) your house is done
+900 | (•ᴥ•) that'll be 98,000 bells
+1500 dim | ( ;_;) the loan is eternal.
+
+# Among Us: sus
+@sus
+800 | ( ・_・) red was in electrical
+800 | ( ・_・) red vented!
+900 danger | ( ¬_¬) red is sus.
+1500 dim | red was not the impostor. ඞ
+
+# Among Us: emergency
+@emergency
+600 danger | ⚠ EMERGENCY MEETING
+800 | ( ・_・) who called it?
+1500 | ( ・_・) me. i forgot my task.
+
+# Fortnite dance
+@default
+repeat 3
+  300 | ┏(・o・)┛
+  300 | ┗(・o・)┓
+end
+1400 | ( ・_・) the default dance.
+
+# Halo: Master Chief
+@chief
+800 | ( ▀̿Ĺ̯▀̿) chief
+900 | "wake me when you need me."
+1400 sparkle | ( ▀̿Ĺ̯▀̿) finishing the fight.
+
+# Mass Effect: Shepard's favorite store
+@citadel
+900 | ( ・_・) i'm commander shepard,
+1500 | and this is my favorite store on the citadel.
+
+# Skyrim: arrow to the knee
+@arrowknee
+800 | ( ・_・)⚔ i used to be an adventurer
+800 | like you,
+1500 danger | then i took an arrow in the knee. ( >_<)
+
+# Fallout: war never changes
+@war
+900 dim | war.
+900 dim | war never changes.
+1500 accent2 | ( ・_・)👍 vault-tec approved
+
+# Oblivion: stop right there
+@stopright
+900 danger | STOP! you violated the law!
+800 | ( ・_・)🍎 i took an apple.
+1500 danger | pay the court a fine or serve your sentence!
+
+# Witcher: wind's howling
+@witcher
+800 | ( ಠ_ಠ) hmm.
+800 | ( ಠ_ಠ) wind's howling.
+1500 dim | ( ಠ_ಠ)⚔ toss a coin to your witcher ♪
+
+# Cyberpunk: wake up samurai
+@samurai
+900 | ( ⌐■_■) wake the f up, samurai.
+1500 danger | we have a city to burn.
+
+# Overwatch: it's high noon
+@highnoon
+800 | ( ・_・)🤠 it's high noon...
+400 danger | ✕
+400 danger | ✕ ✕
+1400 danger | ✕ ✕ ✕ play of the game.
+
+# Team Fortress 2: the spy
+@spy
+800 | ( ・_・) a teammate
+800 | ( ¬‿¬) ...
+700 danger | ( ¬‿¬)🔪 *backstab*
+1500 dim | ( x_x) spy's sappin' my sentry!
+
+# Counter-Strike: rush B
+@rushb
+600 | ( `ー´) rush B
+500 | ε=ε=( `ー´) ...
+500 | ε=ε=ε=( `ー´) cyka...
+1500 danger | ( x_x) the bomb has been defused.
+
+# Minesweeper
+@minesweeper
+500 | ▢▢▢▢▢
+500 | 1 2 ▢▢▢
+500 | 1 2 1 1 ▢
+900 | ( ・_・) 50/50...
+1500 danger | 💣 ( x_x)
+
+# Snake
+@snake
+type 120 | «■■■■■■■■»◼  ●
+700 | ■■■■■■■■■◼●
+1500 sparkle | ( ^_^) +1. getting long.
+
+# Space Invaders
+@invaders
+500 | 👾 👾 👾 👾
+500 |  👾 👾 👾 👾
+500 |   👾 👾 👾
+500 accent2 |   👾 👾 ✕
+1400 sparkle | ▲ +50
+
+# Pong
+@pong
+repeat 2
+  250 | |    ●      |
+  250 | |      ●    |
+  250 | |        ●  |
+  250 | |      ●    |
+  250 | |    ●      |
+  250 | |  ●        |
+end
+1300 | ( ・_・) pong. undefeated.
+
+# Frogger
+@frogger
+500 | ═══🚗═══🚙════
+500 | ( ・_・)🐸 ...
+500 | ══🚗═══🚙═══🐸═
+1500 sparkle | 🐸 made it across!
+
+# Galaga
+@galaga
+600 | ▲ ✧ ✧ ✧
+500 | ▲ |
+500 accent2 | ▲    ✕
+1400 sparkle | ▲ ▲ dual fighter!
+
+# Q*bert
+@qbert
+700 | ( ・_・) hop
+700 | ( ・_・) hop hop
+900 danger | @!#?@!
+1400 dim | q*bert has feelings.
+
+# Dig Dug
+@digdug
+600 | ( ・_・)~ ◎
+600 | ( ・_・)~~ ◯
+600 | ( ・_・)~~~ O
+600 accent2 | 💥
+1400 sparkle | ( ^_^) pumped.
+
+# Sims: plumbob
+@sims
+800 accent2 | ◆
+800 | ( ・_・) sul sul!
+800 | ( ・_・) ...the pool has no ladder
+1500 dim | ( ¬‿¬) totally an accident.
+
+# Sims: rosebud
+@rosebud
+type 120 | «rosebud;!;!;!;!;!;!»
+1500 accent2 sparkle | §999,999 ( ⌐■_■)
+
+# Civilization: one more turn
+@oneturn
+700 | ( ・_・) one more turn
+700 | ( ・_・) one more turn
+700 dim | ( -_-) one more turn
+800 dim | ☀ the sun is up
+1500 | ( x_x) gandhi nuked me.
+
+# RimWorld
+@rimworld
+800 | ( ・_・) colonist mood: ok
+800 | ( ・_・) ate without table
+900 danger | mental break: berserk
+1500 dim | ( x_x) the colony is a war crime now.
+
+# Dwarf Fortress
+@dwarffortress
+800 | ☺ ☺ ☺ ≈≈≈
+800 | ☺ dug too deep
+900 danger | ☺ !FUN!
+1500 dim | losing is fun.
+
+# Factorio: the spaghetti
+@spaghetti
+800 | ( ・_・) clean main bus
+800 | ( ・_・) one quick fix...
+900 dim | ≈≈≈╪═╬╦╩╬═≈≈
+1500 | ( ・_・) spaghetti. it works.
+
+# Factorio: biters
+@biters
+gen belt ⚙
+900 danger | 🐛🐛🐛 biters!
+1500 sparkle | ( ⌐■_■) more turrets.
+
+# Terraria: the guide
+@guide
+800 | ( ・_・) guide, help
+800 | ( ・_・) i need to...
+1500 dim | 🔥 the guide voodoo doll. sorry.
+
+# Undertale: spare
+@spare
+700 | * froggit attacks!
+700 | ( ・_・) [ACT] [MERCY]
+800 accent2 | * you spared froggit.
+1500 sparkle | ( ^_^) pacifist route ♥
+
+# Undertale: Sans
+@sans
+800 | ( ¬‿¬) heya.
+800 | ( ¬‿¬) you've been busy, huh?
+1500 dim | ( ¬‿¬) ...ketchup?
+
+# Undertale: annoying dog
+@annoyingdog
+800 | (・ω・)🐕
+800 | (・ω・)🐕 *absorbs artifact*
+1500 dim | * the dog absorbed the legendary artifact.
+
+# Earthbound
+@earthbound
+800 | ( ・_・) mom!
+800 | ( ・_・) phone rang.
+1500 | ( ・_・)☎ "it's dad. you should save."
+
+# Doki Doki
+@doki
+700 | ( ^_^) just monika
+700 | ( ^_^) just monika
+700 danger | ( ^_^) just monika
+1500 danger | ( ^_^) j̶u̶s̶t̶ ̶m̶o̶n̶i̶k̶a̶
+
+# Persona: the velvet room
+@velvetroom
+800 | ( ・_・) ♪ ...
+900 | ( ´ー`) welcome to the velvet room.
+1500 dim | ( ・_・) ...igor has such a long nose.
+
+# Persona 5: take your heart
+@phantom
+800 accent2 | ♠ calling card
+900 | ( ⌐■_■) take your heart.
+1500 accent2 sparkle | ( ⌐■_■) it's showtime!
+
+# Metal Gear: snake?
+@snaaake
+800 | ( ・_・)📻 otacon?
+800 | ( ・_・)📻 colonel?
+900 danger | snake? SNAAAAAKE!
+1500 dim | ( x_x) game over.
+
+# Monkey Island
+@insultsword
+900 | "you fight like a dairy farmer!"
+1100 | ( ¬‿¬) "how appropriate. you fight like a cow."
+1400 sparkle | ✧ round won.
+
+# Monkey Island: look behind you
+@threeheadedmonkey
+800 | ( ・_・) look behind you!
+800 | ( °_°) a three-headed monkey!
+1400 | ( ・_・) ...he fell for it.
+
+# Kirby: inhales
+@kirby
+600 | (つ˘ω˘)つ
+600 | (つ°o°)つ ≡≡ 🍎
+600 | ( ˘ω˘ ) ...
+1400 sparkle | ( ^ω^ ) ♪ poyo!
+
+# Donkey Kong: barrels
+@donkeykong
+600 | 🦍 ◯
+600 | 🦍  ◯
+600 | 🦍     ◯
+600 |  ( ・_・)↑◯
+1400 sparkle | ( ^_^) jumpman!
+
+# Mario Kart: blue shell
+@blueshell
+600 | ( ⌐■_■)🏎 1st place
+600 | ( ⌐■_■)🏎 final lap
+600 danger | 🔵 ...
+600 danger | 🔵💥
+1500 dim | ( x_x)🏎 8th place.
+
+# Smash: the final destination
+@smash
+800 | ( `ー´) no items
+800 | ( `ー´) fox only
+1500 accent2 sparkle | final destination.
+
+# Game Boy
+@gameboy
+800 | ┌─────┐
+800 | │Nintendo®│ *ding*
+1500 sparkle | ( ^_^) batteries: AA × 4
+
+# loading screen tips
+@tip
+900 dim | TIP: you can avoid dying
+1300 dim | by not taking damage.
+
+# the save point
+@savepoint
+700 | ( ・_・) ✦
+700 | ( ・_・)ノ✦
+900 accent2 | saving... do not turn off.
+1400 sparkle | ( ^_^)b game saved.
+
+# press start
+@pressstart
+repeat 3
+  500 | PRESS START
+  500 |
+end
+1300 | ( ・_・)ノ ▶
+
+# speedrun
+@speedrun
+700 | ( ⌐■_■) 0:00.00
+700 | ( ⌐■_■) wrong warp
+700 | ( ⌐■_■) clip through wall
+900 accent2 | 4:58.27 WR
+1500 dim | ( ・_・) chat: "fake"
+
+# low HP music
+@lowhp
+repeat 4
+  300 danger | ♥ beep
+  300 | ♥
+end
+1400 | ( ・_・)🍖 *eats wall chicken*
+
+# the grind
+@grind
+repeat 3
+  400 | ( ・_・)⚔ slime
+end
+800 accent2 | LEVEL UP! 4 → 5
+1500 dim | ( -_-) 95 more levels.
+
+# side quest
+@sidequest
+800 | NPC: find my 10 chickens
+800 | ( ・_・) the world is ending
+1500 | ( ・_・) ...okay, chickens first.
+
+# inventory management
+@inventory
+800 | ( ・_・) inventory full
+800 | 🗡🗡🗡🛡🧪🧪🍎🍎🦴🪨
+1400 | ( ・_・) can't drop the rock.
+
+# the escort mission
+@escort
+800 | ( ・_・) protect the npc
+800 | npc: walks into fire
+800 | npc: walks into fire
+1500 danger | MISSION FAILED ( ಠ益ಠ)
+
+# achievement unlocked
+@achievement
+600 | ( ・_・) opens settings
+1500 accent2 sparkle | 🏆 achievement: you found settings!
+
+# the boss's second phase
+@phase2
+700 | ( ^_^) boss down!
+700 danger | boss: "now... my true form"
+700 danger | ███ HP x3 ███
+1500 | ( ;_;) of course.
+
+# Tetris 99
+@topout
+500 | ▇▇▇▇▇▇▇▇
+500 | ▇▇▇▇▇▇▇▇▇▇
+500 danger | ▇▇▇▇▇▇▇▇▇▇▇▇ TOP OUT
+1400 dim | ( x_x) 49th of 99.

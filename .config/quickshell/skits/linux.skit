@@ -1,0 +1,678 @@
+# Linux, the terminal, and running your own machines.
+# Format: README.md in this folder.
+
+# I use arch btw
+@btw
+800 | ( ・_・) hi, nice to meet you
+900 | ( ¬‿¬) i use arch, btw.
+1400 dim | ( ・_・) ...nobody asked.
+
+# pacman -Syu breaks it
+@syu
+800 | $ sudo pacman -Syu
+gen progress 6
+900 danger | ( °_°) no display.
+1500 | ( ・_・)⌨ reading the arch news. after.
+
+# chimera: a different libc
+@chimera
+800 | ( ・_・) building from source
+800 danger | error: needs glibc
+900 | ( ¬_¬) musl, my old friend
+1500 sparkle | ( ^_^)⌨ patched. upstreaming it.
+
+# the year of the linux desktop
+@yearofdesktop
+800 | ( ・_・)📅 2010: year of linux desktop
+700 | ( ・_・)📅 2015: this year!
+700 | ( ・_・)📅 2020: for sure
+1500 sparkle | ( ^_^) it's been mine for years.
+
+# chmod 777
+@chmod777
+800 | permission denied
+800 | ( ¬_¬) $ chmod -R 777 /
+1000 danger | (°ロ°) ...
+1500 dim | ( ;_;) reinstalling.
+
+# tar flags
+@tar
+900 | $ tar -
+600 | ( ・_・) -xvzf? -cvf?
+600 | ( °_°) -zxcvbnm?
+1400 | ( ・_・)📖 man tar. again.
+
+# ls in the wrong dir
+@sl
+800 | $ sl
+repeat 3
+  250 | {      ====  ________|    ====  ________|  ====  ________}
+end
+1300 | ( ・_・) ...i meant ls.
+
+# the kernel compiles
+@kernel
+800 | $ make menuconfig
+800 | ( ・_・) 18,000 options
+800 | $ make -j16
+gen progress 8
+1500 sparkle | ( ^_^) it boots! (on the 3rd try)
+
+# kernel panic
+@panic
+700 | ( ・_・) new kernel!
+900 danger | Kernel panic - not syncing
+800 | ( ・_・) old kernel, grub menu
+1400 | ( -_-) keep two kernels.
+
+# grub rescue
+@grubrescue
+900 | grub rescue> _
+800 | ( °_°) where am i?
+800 | grub rescue> ls
+1500 dim | ( x_x) (hd0) (hd0,gpt1) ...help.
+
+# the OOM killer
+@oomkiller
+700 | ( ・_・) RAM 15.8 / 16 GB
+700 danger | OOM killer ⚔
+700 | ( °_°) it took... firefox
+1400 dim | ( ;_;) 300 tabs, gone.
+
+# systemd jokes (from a systemd-free desk)
+@nosystemd
+800 | ( ・_・) init: openrc
+800 | someone: what about systemd?
+900 | ( ¬‿¬) rc-service ... start
+1500 dim | ( ・_・) we don't say its name here.
+
+# rc-update
+@openrc
+800 | $ rc-update add sshd default
+800 | * service sshd added
+1400 sparkle | ( ^_^)b boring. reliable.
+
+# zombie processes
+@zombie
+800 | $ ps aux | grep Z
+800 | <defunct> <defunct>
+900 danger | ( °_°) zombies...
+1500 | ( ・_・)⚔ kill the parent.
+
+# fork bomb
+@forkbomb
+900 | $ :()\{ :|:& };:
+400 | ( ・_・)( ・_・)
+400 | ( ・_・)( ・_・)( ・_・)( ・_・)
+400 danger | ( ・_・)( ・_・)( ・_・)( ・_・)( ・_・)( ・_・)
+1500 dim | ( x_x) ulimit exists for a reason.
+
+# the dotfiles
+@dotfiles
+800 | ( ・_・) git status
+800 | modified: .bashrc .vimrc ...
+800 | ( ・_・) where did i put that alias?
+1500 dim | ( -_-) 400 lines of .zshrc.
+
+# the hidden file
+@dotfile
+800 | $ ls
+800 | ( ・_・) nothing here?
+800 | $ ls -a
+1500 | ( °_°) . .. .config .cache .secret
+
+# cd ..
+@cdup
+400 | $ cd ..
+400 | $ cd ..
+400 | $ cd ..
+400 | $ cd ..
+1300 | ( ・_・) $ cd ~. oh.
+
+# the man in the middle
+@pipe
+1600 | cat file | grep | sort | uniq | wc
+1400 sparkle | ( ^_^) the unix way.
+
+# useless use of cat
+@uselesscat
+900 | $ cat file | grep foo
+900 | ( ¬_¬) useless use of cat
+1500 | ( ・_・) i like cats. ( =^･ω･^=)
+
+# wifi on linux
+@wifidriver
+800 | ( ・_・) new laptop!
+800 danger | wifi: no device found
+800 | ( ・_・)⌨ ethernet. firmware.
+1500 sparkle | ( ^_^) wifi works! (until suspend)
+
+# suspend and resume
+@suspend
+800 | ( -_-) suspend
+900 dim | ...
+800 | ( °_°) resume?
+900 danger | black screen.
+1500 | ( ・_・) ctrl+alt+F2. ok.
+
+# nvidia
+@nvidia
+800 | ( ・_・) new driver
+800 danger | black screen
+800 | ( ・_・) old driver
+800 danger | black screen
+1500 dim | linus: (╯°□°)╯ 🖕
+
+# dual boot
+@dualboot
+800 | ( ・_・) windows update
+900 danger | grub: gone
+900 | ( ಠ_ಠ) every time.
+1400 | ( ・_・)⌨ chroot. reinstall grub.
+
+# reading the arch wiki
+@archwiki
+800 | ( ・_・) how do i...
+800 | 📖 wiki.archlinux.org
+900 | ( ・_・) not on arch, but
+1500 sparkle | ( ^_^) the wiki knows.
+
+# disk full
+@diskfull
+800 | $ df -h
+900 danger | / 100% used
+800 | $ du -sh * | sort -h
+1500 | ( °_°) ~/.cache: 42G
+
+# dd to the wrong disk
+@dd
+900 | $ dd if=distro.iso of=/dev/sda
+900 danger | (°ロ°) sda was my drive
+1500 dim | ( ;_;) dd = disk destroyer
+
+# lsblk check first
+@lsblk
+800 | $ lsblk
+800 | sda 1T · sdb 16G
+900 | ( ・_・) sdb. checked twice.
+1400 sparkle | ( ^_^)b of=/dev/sdb ✓
+
+# ssh into the wrong server
+@ssh
+800 | $ ssh prod
+800 | ( ・_・) $ sudo reboot
+900 danger | (°ロ°) ...that was prod.
+1500 dim | ( ;_;) "scheduled maintenance"
+
+# the cron job
+@cron
+900 | * * * * * ./backup.sh
+900 | ( ・_・) every minute?
+1500 dim | ( x_x) disk full of backups.
+
+# vi keys everywhere
+@hjkl
+400 | ( ・_・) h
+400 | (・_・ ) j
+400 | ( ・_・) k
+400 | (  ・_・) l
+1400 sparkle | ( ^_^) no arrow keys needed.
+
+# terminal colors
+@colors
+600 | \e[31m( ・_・)
+600 accent2 | \e[32m( ・_・)
+600 dim | \e[34m( ・_・)
+1400 | ( ・_・) \e[0m reset.
+
+# nano for once
+@nano
+800 | ( ・_・) $ nano file
+800 | ^O write out · ^X exit
+1500 | ( ・_・) ...it's actually nice.
+
+# a new distro every week
+@distrohop
+500 | ( ・_・) arch
+500 | ( ・_・) fedora
+500 | ( ・_・) void
+500 | ( ・_・) nixos
+500 | ( ・_・) gentoo
+1500 dim | ( -_-) distro-hopping again.
+
+# nixos
+@nixos
+800 | ( ・_・) declarative config!
+900 | ( ・_・) one line in config.nix...
+900 dim | building 412 derivations
+1500 | ( ・_・) reproducible. slowly.
+
+# the terminal font
+@font
+800 | ( ・_・) new nerd font
+800 | ( ・_・) icons: □ □ □
+900 | ( ಠ_ಠ) tofu.
+1400 sparkle | ( ^_^)  fc-cache -fv
+
+# htop
+@htop
+600 | CPU [|||||     ] 50%
+600 | CPU [||||||||  ] 80%
+600 danger | CPU [||||||||||] 100%
+1500 | ( ・_・) it's htop using it.
+
+# sudo !!
+@sudobang
+800 | $ apt install vim
+800 danger | Permission denied
+800 | $ sudo !!
+1400 sparkle | ( ¬‿¬) fine. please.
+
+# the sudoers file
+@sudoers
+800 | $ sudo cat /secret
+900 danger | user is not in the sudoers file.
+1500 dim | this incident will be reported. (°_°)
+
+# the root prompt
+@rootprompt
+800 | user@box:~$
+900 | ( ⌐■_■) $ su -
+1500 danger | root@box:~# with great power...
+
+# reboot to fix
+@reboot
+800 | ( ・_・) it's weird
+800 | ( ・_・) $ reboot
+900 dim | ...
+1400 sparkle | ( ^_^) fixed. don't know why.
+
+# the swap file
+@swap
+800 | RAM: full
+800 | swap: filling...
+900 dim | ( -_-) everything... is... slow
+1500 | ( ・_・) more RAM. or fewer tabs.
+
+# a kernel module
+@modprobe
+800 | $ modprobe something
+800 danger | FATAL: Module not found
+1400 | ( ・_・) is it a typo or a dream?
+
+# mounted the wrong thing
+@mount
+800 | $ mount /dev/sdb1 /mnt
+800 | $ ls /mnt
+1400 | ( ・_・) ...my 2009 homework.
+
+# the fstab mistake
+@fstab
+800 | ( ・_・) edits fstab
+800 | $ reboot
+900 danger | emergency mode
+1500 | ( ;_;) one typo in a UUID.
+
+# the bash history
+@history
+800 | $ history | wc -l
+800 | 48,213
+1500 | ( ・_・) history | grep "how to"
+
+# ctrl-r
+@ctrlr
+800 | (reverse-i-search)`ssh':
+900 | ssh -p 2222 user@that-box
+1400 sparkle | ( ^_^) ctrl+r saves lives.
+
+# exiting less
+@less
+800 | ( ・_・) $ less log
+800 | ( ・_・) ESC ESC
+800 | ( °_°) ^C ^C
+1400 | ( ・_・) q. oh right, q.
+
+# man in the terminal
+@whoami
+900 | $ whoami
+900 | malac0da
+1500 dim | ( ・_・) deep question, really.
+
+# echo in the void
+@devnull
+900 | $ echo "my feelings" > /dev/null
+1500 dim | ( -_-) heard and handled.
+
+# /dev/random
+@devrandom
+900 | $ cat /dev/urandom
+400 accent2 | ▓¥ÿ§ð╬ÆÐ¿¬
+400 accent2 | ╬ÆÐ¿¬▓¥ÿ§ð
+900 danger | ( °_°) terminal is broken
+1400 | ( ・_・) $ reset
+
+# compiling on a laptop
+@laptopfan
+800 | $ make -j8
+600 | 🌀
+600 | 🌀🌀
+600 danger | 🌀🌀🌀 FWOOOOO
+1500 dim | ( -_-) it can fly now.
+
+# swap esc and caps
+@capslock
+800 | ( ・_・) caps lock?
+900 | ( ¬‿¬) no. that's escape now.
+1500 sparkle | ( ^_^) setxkbmap -option caps:escape
+
+# tiling window manager
+@tiling
+500 | ┌──┬──┐
+500 | ├──┼──┤
+500 | ├─┬┼──┤
+1400 | ( ・_・) 47 terminals. 0 problems.
+
+# the floating window
+@floating
+800 | ( ・_・) one floating window
+900 | ( ¬_¬) it's the file picker.
+1500 dim | ( -_-) it always is.
+
+# hyprland animations
+@animations
+600 | ⟨ window ⟩
+600 | ⟨⟨ window ⟩⟩
+600 | ⟨⟨⟨ window ⟩⟩⟩
+1500 sparkle | ( ⌐■_■) bouncy.
+
+# unix time
+@epoch
+900 | $ date +%s
+900 | 1792108800
+1500 dim | ( ・_・) seconds since 1970. neat.
+
+# y2k38
+@y2k38
+800 | 2038-01-19 03:14:07
+800 danger | 1901-12-13 20:45:52
+1500 dim | ( °_°) 32-bit time, see you soon.
+
+# the dot
+@sourcebashrc
+800 | ( ・_・) edits .bashrc
+800 | ( ・_・) alias doesn't work?
+1400 | ( ・_・) $ source ~/.bashrc. oh.
+
+# the vim exit (again)
+@exitvim
+800 | how to exit vim
+900 dim | 2.6 million views
+1500 | ( ・_・) :q. you're welcome.
+
+# emacs as an os
+@emacsos
+800 | ( ・_・) emacs: mail
+800 | ( ・_・) emacs: music
+800 | ( ・_・) emacs: calendar
+1500 dim | ( ・_・) just needs a good editor.
+
+# the package that's 10 years old
+@debianstable
+800 | ( ・_・) $ apt install vim
+800 | installing vim 7.0
+1500 dim | ( ・_・) debian stable. very stable.
+
+# flatpak
+@flatpak
+800 | ( ・_・) flatpak install calc
+800 | downloading runtime: 2.1 GB
+1500 | ( ・_・) ...for a calculator.
+
+# the gentoo compile again
+@gentoo2
+800 | ( ・_・) emerge firefox
+800 dim | 3h 18m
+800 | ( ・_・)📖 reads a novel
+1500 sparkle | ( ^_^) -O3 -march=native. 2% faster.
+
+# gentoo USE flags
+@useflags
+800 | USE="-X -gtk qt5 wayland"
+800 | ( ・_・) one more flag...
+1500 dim | ( x_x) rebuilding everything.
+
+# the init freedom
+@initfreedom
+800 | ( ・_・) PID 1:
+1500 sparkle | ( ⌐■_■) dinit.
+
+# chimera's apk
+@apk
+800 | $ apk add -u
+gen progress 5
+1400 sparkle | ( ^_^)b OK: 1.2 GiB in 912 packages
+
+# ricing screenshots
+@unixporn
+800 | ( ・_・) new rice!
+800 | ( ・_・)📸 neofetch
+800 | ( ・_・) r/unixporn
+1500 accent2 sparkle | ▲ 4.2k  (ﾉ◕ヮ◕)ﾉ
+
+# neofetch
+@neofetch
+500 |    /\      OS: chimera
+500 |   /  \     WM: hyprland
+500 |  / /\ \    shell: bash
+1400 | ( ¬‿¬) obligatory.
+
+# the terminal is the IDE
+@terminalide
+800 | ( ・_・) IDE?
+900 | ( ・_・) vim + tmux + gcc
+1500 sparkle | ( ⌐■_■) the whole OS is my IDE.
+
+# tmux prefix
+@tmux
+800 | ( ・_・) C-b
+800 | ( ・_・) C-a?
+800 | ( ・_・) C-b C-a C-b
+1400 dim | ( x_x) nested tmux.
+
+# screen session from 2019
+@screen
+800 | $ screen -ls
+800 | 3 sessions: 2019, 2021, 2023
+1500 | ( ・_・) ...what's in 2019?
+
+# chown
+@chown
+800 | $ chown me:me everything
+800 | ( ・_・) ...
+1400 sparkle | ( ⌐■_■) mine now.
+
+# the shebang
+@shebang
+800 | $ ./script
+900 danger | exec format error
+800 | ( ・_・) #!/bin/sh
+1400 sparkle | ( ^_^) bang!
+
+# alias for everything
+@alias
+600 | alias g=git
+600 | alias v=nvim
+600 | alias please=sudo
+1400 | ( ¬‿¬) $ please reboot
+
+# log files
+@journal
+800 | $ tail -f /var/log/messages
+400 dim | ...
+400 dim | ...
+400 dim | ...
+1500 | ( -_-) watching logs is my tv.
+
+# the backup
+@backup
+800 | ( ・_・) backups?
+800 | ( ・_・) it's on the NAS.
+800 | ( ・_・) the NAS backs up to?
+1500 dim | ( ・_・) ...the NAS.
+
+# 3-2-1 backups
+@321
+800 | 3 copies
+800 | 2 media
+800 | 1 offsite
+1500 sparkle | ( ^_^) sleep well tonight.
+
+# zfs scrub
+@scrub
+800 | $ zpool scrub tank
+gen progress 6
+1500 accent2 sparkle | 0 errors. ( ^_^)b
+
+# the homelab electric bill
+@homelab
+800 | ( ・_・) one little server
+800 | ( ・_・) four servers
+800 | ( ・_・) a rack
+1500 dim | ( ・_・)⚡ the power bill: ↑
+
+# proxmox
+@proxmox
+800 | ( ・_・) spin up a VM
+800 | ( ・_・) and a container
+800 | ( ・_・) and 14 more
+1500 | ( ・_・) to run pi-hole.
+
+# self-hosting
+@selfhost
+800 | ( ・_・) self-host everything!
+800 | ( ・_・) git, photos, calendar
+900 dim | 3 AM: something's down
+1500 | ( -_-) i am the cloud now.
+
+# letsencrypt renewal
+@certexpired
+800 | ( ・_・) site's down?
+900 danger | certificate expired
+800 | ( ・_・) certbot renew
+1400 sparkle | ( ^_^) good for 90 days.
+
+# port forwarding
+@portforward
+800 | ( ・_・) open port 25565
+800 | ( ・_・) for minecraft
+1500 dim | ( ・_・) ...and now 400 bots.
+
+# IPv6
+@ipv6
+800 | 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+900 | ( °_°)
+1500 | ( ・_・) i'll just use the name.
+
+# ping
+@ping
+500 | 64 bytes: time=12 ms
+500 | 64 bytes: time=11 ms
+500 danger | Request timeout
+500 | 64 bytes: time=13 ms
+1400 | ( ・_・) one lost packet. suspicious.
+
+# traceroute
+@traceroute
+400 | 1  router
+400 | 2  isp
+400 | 3  * * *
+400 | 4  * * *
+1400 | ( ・_・) the packet went on a journey.
+
+# wireguard
+@wireguard
+800 | $ wg-quick up home
+800 | ( ・_・) handshake...
+1400 accent2 sparkle | ( ⌐■_■) home, from anywhere.
+
+# the uptime kuma
+@monitoring
+800 | 🟢 git · 🟢 nas · 🟢 dns
+900 danger | 🟢 git · 🔴 nas · 🟢 dns
+1500 | ( ・_・)🏃 coming, nas!
+
+# raspberry pi
+@pi
+800 | ( ・_・) raspberry pi!
+800 | ( ・_・) it runs... a fan.
+1500 | ( ・_・) project #47, in a drawer.
+
+# the sd card
+@sdcard
+800 | ( ・_・) pi won't boot
+800 danger | sd card: corrupted
+1500 | ( ;_;) the 4th one this year.
+
+# printer
+@printer
+800 | ( ・_・) $ lp file.pdf
+800 | CUPS: printing...
+900 danger | PC LOAD LETTER
+1500 dim | ( ಠ_ಠ) what does that mean?!
+
+# bluetooth on linux
+@bluez
+800 | $ bluetoothctl
+800 | [bluetooth]# connect ...
+900 danger | Failed to connect
+800 | ( ・_・) power off. power on.
+1400 sparkle | ( ^_^) Connection successful
+
+# pipewire
+@pipewire
+800 | ( ・_・) no sound
+800 | pulse? alsa? jack?
+900 | ( ・_・) pipewire: all of them.
+1400 sparkle | ( ^_^)♪ sound!
+
+# the wayland screen share
+@screenshare
+800 | ( ・_・) screen share
+900 dim | sharing: a black rectangle
+800 | ( ・_・) xdg-desktop-portal...
+1400 sparkle | ( ^_^) there it is.
+
+# xorg
+@xorg
+800 | ( ・_・) xorg.conf
+800 | Section "Device"
+800 | ( °_°) 1998 called
+1400 | ( ・_・) wayland it is.
+
+# clipboard
+@clipboard
+800 | ( ・_・) ctrl+c in one app
+800 | ( ・_・) ctrl+v in another
+900 dim | (nothing)
+1400 | ( ・_・) wl-copy to the rescue.
+
+# the update notification
+@updates
+800 | 🔔 412 updates available
+800 | ( ・_・) later.
+800 | 🔔 518 updates available
+1400 | ( -_-)⌨ fine. updating.
+
+# installs arch, the hard way
+@archinstall
+800 | ( ・_・) arch install
+800 | ( ・_・) partition, format, mount
+800 | ( ・_・) pacstrap, chroot, grub
+1500 sparkle | ( ⌐■_■) i use arch now. btw.
+
+# linux from scratch
+@lfs
+800 | ( ・_・) linux from scratch
+800 dim | step 1 of 640
+900 | ( -_-) step 312
+1500 sparkle | ( ^_^) a login prompt! mine!

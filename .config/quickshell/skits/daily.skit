@@ -1,0 +1,658 @@
+# Everyday life: mornings, chores, errands, weather.
+# Format: README.md in this folder.
+
+# alarm clock snooze
+@snooze
+600 danger | ⏰ BEEP BEEP
+500 | ( -_-)ノ *snooze*
+800 dim | ( -_-) zZ
+600 danger | ⏰ BEEP BEEP
+500 | ( -_-)ノ *snooze*
+1500 danger | ( °_°) ...i'm late.
+
+# morning stretch
+@stretch
+700 | ( -_-)
+600 | \( -_-)/
+600 | \( °o°)/ *yaaawn*
+1500 sparkle | ( ^_^) good morning, world.
+
+# brushing teeth
+@toothbrush
+repeat 4
+  250 | ( ・_・){🪥  | 🪥}
+end
+1400 sparkle | ( ^▽^) ✧ sparkly.
+
+# shower singing
+@shower
+800 | ( ・_・)🚿
+800 | ( ˘o˘)🚿 ♪
+800 | ( ˘O˘)🚿 ♪♫ BOHEMIAN
+1500 dim | ( ・_・)🚿 ...neighbors knocked.
+
+# making the bed
+@makebed
+800 | ( ・_・) ▱▱▱▱
+800 | ( ・_・)ノ ▭▭▭▭
+1500 sparkle | ( ^_^) ▬▬▬▬ adulting.
+
+# breakfast
+@breakfast
+800 | ( ・_・)🍳
+600 | ( ・_・)🍳 *sizzle*
+600 | ( ・_・)🍳🍞
+1500 sparkle | ( ˘▽˘) most important meal.
+
+# toast burned
+@burnttoast
+800 | ( ・_・)🍞 toaster...
+800 | ( ・_・)🍞 ...
+800 danger | ( °_°)⬛ *smoke*
+1500 dim | ( -_-)⬛ it's "well done".
+
+# lost keys
+@keys
+700 | ( ・_・) keys?
+600 | ( ・_・)🔍 pocket?
+600 | ( ・_・)🔍 table?
+600 | ( ・_・)🔍 fridge?
+1500 dim | ( ¬_¬)🔑 in my hand. the whole time.
+
+# lost phone, while on the phone
+@phone
+800 | ( ・_・)📱 "where's my phone?"
+900 | ( ・_・)📱 ...
+1500 dim | ( -_-)📱 oh.
+
+# missed the bus
+@bus
+type 60 | 🚌«              »
+type 40 | «         »ε=ε=( >_<)
+1500 dim | ( ;_;) next bus: 40 min.
+
+# traffic jam
+@traffic
+800 | 🚗🚗🚗🚗🚗( ・_・)🚗
+800 | 🚗🚗🚗🚗🚗( -_-)🚗
+800 dim | 🚗🚗🚗🚗🚗( x_x)🚗
+1500 | ( ・_・) moved 2 meters.
+
+# rain without an umbrella
+@umbrella
+800 | ☁ ( ・_・)
+600 | ☁ ' ' ' ( °_°)
+600 | ☁ ' ' ' ' ( ;_;)
+1500 dim | ( ;_;)☂ bought one. sun came out.
+
+# sunny day
+@sunny
+800 | ☀ ( ・_・)
+800 | ☀ ( ^_^)
+1500 sparkle | ☀ (⌐■_■) nice day.
+
+# snow day
+@snow
+500 | ❄
+500 | ❄  ❄
+500 | ❄ ❄  ❄ ❄
+800 | ( ・_・) ⛄
+1500 sparkle | ( ^_^)⛄ snow day!
+
+# windy
+@windy
+800 | ( ・_・)☂
+600 | ( °_°)☂ ≋≋
+600 | ( °o°)  ≋≋≋☂
+1500 dim | ( ;_;) ...goodbye, umbrella.
+
+# thunderstorm
+@thunder
+800 dim | ☁☁☁
+400 accent2 | ☁⚡☁
+600 danger | ( °_°) BOOM
+1500 dim | ( ・_・)🛋 cozy indoors.
+
+# laundry
+@laundry
+repeat 3
+  400 | ( ・_・)[{◐|◓|◑}]
+end
+800 | ( ・_・)🧦
+1500 dim | ( ・_・)🧦 ...where's the other one?
+
+# folding laundry
+@folding
+800 | ( ・_・) 👕👖👕👖👕
+800 | ( -_-) 👕👖👕👖👕👕👖
+1500 dim | ( -_-) the chair holds them now.
+
+# dishes
+@dishes
+800 | ( ・_・)🍽🍽🍽
+600 | ( ・_・)🧽🍽🍽
+600 | ( ・_・)🧽🍽
+1500 sparkle | ( ^_^) clean! (until dinner)
+
+# vacuum
+@vacuum
+type 70 | ( ・_・)ᕗ«         »
+800 | ( ・_・)🧦 *SHHLUP*
+1500 dim | ( ;_;) that was a sock.
+
+# grocery list
+@groceries
+800 | ( ・_・)📝 milk, eggs, bread
+800 | ( ・_・)🛒
+1500 dim | ( ・_・)🛒 bought: chips, candles, plant.
+
+# self checkout
+@selfcheckout
+800 | ( ・_・)🛒 *beep*
+800 danger | unexpected item in bagging area
+800 | ( ・_・) *moves item*
+1500 danger | unexpected item in bagging area
+
+# the queue
+@queue
+700 | ( ・_・)( ・_・)( ・_・)( ・_・)
+700 | ( ・_・) switch lanes
+800 | ( ・_・)( ・_・)( ・_・)( -_-)
+1500 dim | ( -_-) the old lane moved.
+
+# cooking dinner
+@cooking
+800 | ( ・_・)🔪🥕
+600 | ( ・_・)🍲
+600 | ( ・_・)🍲 *stir*
+1500 sparkle | ( ^_^)🍲 dinner's ready!
+
+# recipe intro
+@recipe
+800 | ( ・_・) recipe: pancakes
+800 dim | "it was a crisp autumn day,
+800 dim | my grandmother..."
+1500 dim | ( ¬_¬) *scroll scroll scroll*
+
+# pizza delivery
+@pizza
+700 | ( ・_・)📱 order pizza
+700 | ( ・_・) ...
+700 | 🛎 *ding dong*
+1500 sparkle | ( ^▽^)🍕 PIZZA!
+
+# leftovers
+@leftovers
+800 | ( ・_・) fridge
+800 | ( ・_・)📦 mystery container
+800 | ( °_°)📦 *opens*
+1500 danger | ( x_x) it has evolved.
+
+# midnight snack
+@midnightsnack
+800 dim | ☾ ( ・_・)
+600 | ( ・_・) *fridge light*
+1500 | ( ¬‿¬)🍰 shh.
+
+# plants
+@plants
+600 | ( ・_・)🌱
+600 | ( ・_・)💧🌱
+600 | ( ・_・) 🌿
+1500 sparkle | ( ^_^)🪴 she's thriving.
+
+# dead plant
+@deadplant
+800 | ( ・_・)🌵 hard to kill, they said
+800 | ( ・_・)🥀
+1500 dim | ( ;_;) i killed a cactus.
+
+# nap time
+@nap
+800 | ( ・_・) 10 min nap
+800 dim | ( -_-) zZ
+800 dim | ( -_-) zZz
+800 | ( °_°)!
+1500 danger | ( °_°) 3 hours?!
+
+# can't sleep
+@insomnia
+800 dim | ( ・_・) 1 AM
+800 dim | ( ・_・) 2 AM
+800 dim | ( ・_・) what if...
+1500 dim | ( ・_・) remembering something from 2012.
+
+# the 5 more minutes
+@fivemore
+800 | ( -_-) 5 more minutes
+800 | ( -_-) 5 more minutes
+800 | ( -_-) 5 more minutes
+1500 danger | ( °_°) it's noon.
+
+# gym
+@gym
+800 | ( ・_・)🏋 day 1
+800 | ( >_<)🏋 *grunt*
+800 | ( x_x)
+1500 dim | ( ・_・) day 2: everything hurts.
+
+# jogging
+@jog
+type 120 | «          »ε=┌( ・_・)┘
+800 | ( x_x) *wheeze*
+1500 dim | ( ・_・) 400 meters. a personal best.
+
+# yoga
+@yoga
+800 | ( ・_・)
+800 | ( ・_・)ノ⌒
+800 | ⌒( -_-)⌒
+1500 sparkle | ( ˘▽˘) namaste.
+
+# stepping on lego
+@lego
+800 | ( ・_・)
+600 danger | ( °ロ°) ▪ LEGO
+1500 danger | (ノಥ益ಥ)ノ *hops*
+
+# stub toe
+@stubtoe
+600 | ( ・_・)
+500 danger | ( >_<) *thunk*
+1500 danger | ( ;_;) the table moved. i swear.
+
+# walk into a room, forget why
+@forgot
+800 | ( ・_・) going to the kitchen
+800 | ( ・_・)🚪
+800 | ( ・_・) ...
+1500 dim | ( ・_・) why am i here?
+
+# doorbell, hides
+@doorbell
+600 | 🛎 *ding dong*
+600 | ( °_°)
+800 | ( ;_;)🛋 *hides*
+1500 dim | ( ・_・) a package. phew.
+
+# package delivery
+@package
+800 | 📦 out for delivery
+800 | 📦 out for delivery
+800 | 📦 delivered!
+1500 dim | ( ・_・) ...to who?
+
+# unboxing
+@unboxing
+600 | ( ・_・)📦
+600 | ( ・_・)✂📦
+600 | ( °o°) 📦📦
+1500 | ( ・_・) a box in a box in a box.
+
+# assembling furniture
+@ikea
+800 | ( ・_・)🔧 step 1
+800 | ( ・_・)🔧 step 14
+800 | ( ・_・) 4 screws left over
+1500 dim | ( ・_・) it's sturdy. probably.
+
+# hanging a picture
+@crooked
+800 | ( ・_・)🖼
+800 | ( ・_・)🖼 /
+800 | ( ・_・)🖼 \
+1500 | ( -_-)🖼 | good enough.
+
+# taking out the trash
+@trash
+800 | ( ・_・)🗑 full
+800 | ( ・_・)🗑 pushes it down
+800 | ( ・_・)🗑 pushes it down more
+1500 dim | ( -_-)🗑 jenga champion.
+
+# laundromat
+@spin
+repeat 5
+  250 | [{◐|◓|◑|◒}]
+end
+1400 | ( ・_・) hypnotic.
+
+# hiccups
+@hiccups
+600 | ( ・_・)
+400 | ( °_°) *hic*
+600 | ( ・_・)
+400 | ( °_°) *hic*
+1500 | ( ・_・)🥛 drinks upside down.
+
+# sneeze
+@sneeze
+500 | ( ・_・)
+500 | ( °o°) ah...
+500 | ( °O°) ah...
+500 | ( °O°) AH...
+1500 | ( ・_・) ...it went away.
+
+# sneeze for real
+@achoo
+500 | ( °o°) ah...
+500 | ( °O°) AH...
+800 danger | ( >O<) CHOO!
+1500 sparkle | ( ・_・) bless me.
+
+# yawn contagion
+@yawn
+800 | ( ・o・) *yawn*
+800 | ( ・_・)
+1500 dim | ( ・o・) ...now you're yawning too.
+
+# the mirror
+@mirror
+800 | ( ・_・) | ( ・_・)
+800 | ( ^_^) | ( ^_^)
+1500 sparkle | ( ⌐■_■) | ( ⌐■_■) looking good.
+
+# bad hair day
+@hairday
+800 | ( ・_・) hair, please
+800 | (≋ ・_・≋)
+1500 dim | (≋ ・_・≋) hat it is. 🧢
+
+# haircut
+@haircut
+800 | ( ・_・) "just a trim"
+800 | ( ・_・)✂
+1500 dim | ( °_°) ...that's not a trim.
+
+# texting back
+@text
+800 | ( ・_・)📱 "hey"
+800 | ( ・_・)📱 typing...
+800 | ( ・_・)📱 typing...
+1500 dim | ( ・_・)📱 "hey"
+
+# group chat
+@groupchat
+500 | 💬 3
+500 | 💬 47
+500 | 💬 213
+1500 dim | ( @_@) they planned a trip without me.
+
+# the phone call
+@phonecall
+800 | 📱 incoming call...
+800 | ( °_°) a CALL?
+800 | ( ;_;)📱 *lets it ring*
+1500 | ( ・_・)💬 "hey did you call?"
+
+# voicemail
+@voicemail
+800 | 📱 1 new voicemail
+1500 dim | ( ・_・) ...i'll never listen to it.
+
+# WiFi password
+@wifipass
+800 | guest: wifi password?
+800 | ( ・_・) it's on the router
+800 | 7Gk#2xQ!pL9$mW4z
+1500 dim | ( ・_・) ...i'll type it.
+
+# low battery phone
+@phonebattery
+600 | 📱 20%
+600 | 📱 10%
+600 danger | 📱 1%
+1500 dim | ( ;_;)📱 ...the cable is in the other room.
+
+# charging cable too short
+@cable
+800 | ( ・_・)📱🔌
+800 | ( ・_・)  📱🔌
+1500 dim | ( -_-) on the floor, then.
+
+# headphones tangled
+@tangled
+800 | ( ・_・)🎧
+800 | ( ・_・) ∞∞∞∞
+1500 dim | ( x_x) ∞∞∞∞∞∞∞
+
+# library
+@library
+800 | ( ・_・)📚
+800 | ( ・_・)📚 shh...
+1500 sparkle | ( ˘▽˘)📖 one more chapter.
+
+# book: one more chapter
+@onechapter
+700 | ( ・_・)📖 ch. 4
+700 | ( ・_・)📖 ch. 9
+700 dim | ( ・_・)📖 ch. 17
+1500 dim | ☀ ( x_x)📖 sunrise.
+
+# tv: next episode
+@nextepisode
+600 | ( ・_・)📺 ep. 1
+600 | ( ・_・)📺 next episode in 5...
+600 | ( ・_・)📺 ep. 6
+1500 dim | 📺 are you still watching?
+
+# remote
+@remote
+800 | ( ・_・) remote?
+800 | ( ・_・)🛋 *digs*
+1500 | ( ・_・)🪙 found: 3 coins, a fry, remote.
+
+# choosing what to watch
+@choosing
+600 | ( ・_・)📺 scroll
+600 | ( ・_・)📺 scroll
+600 | ( ・_・)📺 scroll
+1500 dim | ( -_-) 40 min. watched the office again.
+
+# movie popcorn
+@popcorn
+700 | ( ・_・)🍿
+600 | ( ・_・)🍿 *crunch*
+600 | ( °o°)🍿 PLOT TWIST
+1500 | ( ・_・) ...popcorn's gone.
+
+# cinema
+@cinema
+800 | ( ・_・)🎬 lights down
+800 | ( ・_・) *phone rings*
+1500 dim | (¬_¬) ...it's mine.
+
+# birthday
+@birthday
+600 | 🎂
+600 | 🎂 🕯
+800 | ♪ happy birthday to you ♪
+1500 accent2 sparkle | ( ^▽^)🎉 make a wish!
+
+# party
+@party
+600 | ┏(・o・)┛
+600 | ┗(・o・)┓
+600 | ┏(・o・)┛ 🎉
+1500 sparkle | ( ^_^)🎉 party!
+
+# introvert at party
+@introvert
+800 | ( ・_・)🎉 party...
+800 | ( ・_・)🐕 found the dog
+1500 sparkle | ( ^_^)🐕 best friend.
+
+# small talk
+@smalltalk
+800 | "nice weather, huh?"
+800 | ( ・_・) "yeah..."
+800 | ( ・_・) ...
+1500 dim | ( ・_・) "...you too!"
+
+# you too
+@youtoo
+800 | waiter: enjoy your meal!
+800 | ( ・_・) you too!
+1500 dim | ( -_-) ...replays it for 10 years.
+
+# the wave back
+@wave
+800 | someone: (・_・)ノ
+800 | ( ^_^)ノ
+1500 dim | ( ;_;)ノ ...they waved at the person behind me.
+
+# pushing a pull door
+@pulldoor
+600 | ( ・_・)🚪 PULL
+600 | ( ・_・)→🚪
+600 danger | ( ・_・)🚪 *bonk*
+1500 | ( -_-)←🚪 ...pull.
+
+# wrong name
+@name
+800 | ( ^_^)ノ hi, mike!
+800 | ( ・_・) ...i'm dave.
+1500 dim | ( x_x) worked together 3 years.
+
+# elevator silence
+@elevator
+800 | ( ・_・)( ・_・) 🛗
+800 | ( ・_・)( ・_・) 🛗 ...
+1500 dim | ( ・_・)( ・_・) 🛗 ... ... ♪
+
+# bank
+@atm
+800 | ( ・_・)🏧
+800 | balance: $4.20
+1500 dim | ( ;_;) payday is friday.
+
+# payday
+@payday
+800 | ( ・_・)💸 payday!
+600 | rent ⇠💸
+600 | bills ⇠💸
+1500 dim | ( ・_・)🪙 ...payday.
+
+# taxes
+@taxes
+800 | ( ・_・)📝 taxes
+800 | ( @_@)📝 form 1040-SR schedule C
+1500 dim | ( x_x) i owe $3.
+
+# dentist
+@dentist
+800 | dentist: do you floss?
+800 | ( ・_・) ...yes.
+1500 dim | dentist: (¬_¬)
+
+# doctor
+@doctor
+800 | ( ・_・) googled symptoms
+800 | ( °_°) it's... everything
+1500 sparkle | doctor: drink water. ( ・_・)
+
+# water
+@water
+800 | ( ・_・)💧 drink water
+800 | ( ・_・)💧 drink water
+1500 sparkle | ( ^_^)🥤 hydrated!
+
+# moving house
+@moving
+600 | ( ・_・)📦
+600 | ( ・_・)📦📦📦
+600 | ( ;_;)📦📦📦📦📦📦
+1500 dim | ( x_x) where did all this stuff come from?
+
+# neighbors drilling
+@drilling
+800 | ( ・_・)☕ quiet sunday
+800 danger | BRRRRRRRRRR
+1500 dim | ( ಠ_ಠ) every sunday.
+
+# picnic
+@picnic
+800 | ( ・_・)🧺
+800 | ( ^_^)🧺🥪
+600 | 🐜🐜🐜🧺
+1500 dim | ( ・_・) they were invited, i guess.
+
+# beach
+@beach
+800 | ( ・_・)🏖
+800 | ( ⌐■_■)🏖
+1500 dim | ( ・_・)🦀 sand. everywhere.
+
+# camping
+@camping
+800 | ( ・_・)⛺
+800 | ( ・_・)🔥 marshmallow
+800 danger | ( °_°)🔥🔥 *on fire*
+1500 sparkle | ( ^_^) perfect s'more.
+
+# road trip
+@roadtrip
+type 100 | 🚗«             »
+800 | ( ・_・) are we there yet?
+1500 dim | ( ・_・) 6 more hours.
+
+# airport
+@airport
+800 | ( ・_・)✈ gate 12
+800 | ( ・_・)✈ gate changed: 47
+type 50 | «          »ε=ε=( >_<)
+1500 sparkle | ( x_x) made it.
+
+# jet lag
+@jetlag
+800 | ( ・_・) 3 PM
+800 dim | ( -_-) zZ
+800 | ( °_°) 3 AM
+1500 dim | ( ・_・) awake. forever.
+
+# hotel
+@hotel
+800 | ( ・_・)🏨
+800 | ( ・_・)🛏 *flops*
+1500 sparkle | ( ˘▽˘) tiny shampoo ♥
+
+# postcard
+@postcard
+800 | ( ・_・)✉ wish you were here
+1500 sparkle | ( ^_^)✉ *stamp*
+
+# monday
+@mondayagain
+800 | ( -_-)📅 monday
+1500 dim | ( -_-) again.
+
+# friday feeling
+@fridayfeel
+800 | ( ・_・)📅 friday
+1500 sparkle | \( ^▽^)/ *finally*
+
+# weekend plans
+@weekend
+800 | ( ・_・) weekend plans:
+800 | ( ・_・) 1. be productive
+1500 dim | ( -_-)🛋 2. this instead.
+
+# spring cleaning
+@springclean
+600 | ( ・_・)🧹
+600 | ( ・_・)🧹 ✧
+600 | ( ・_・)📦 old photos?
+1500 dim | ( ・_・)📷 ...4 hours of nostalgia.
+
+# the to-do list
+@todolist
+800 | ( ・_・)📝 to-do:
+800 | ☐ make a to-do list
+800 | ☑ make a to-do list
+1500 sparkle | ( ^_^) productive day.
+
+# calendar reminder
+@reminder
+800 | 🔔 reminder: drink water
+800 | 🔔 reminder: stretch
+1500 | ( ・_・) reminder: ignore reminders.

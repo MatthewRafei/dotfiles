@@ -1,0 +1,616 @@
+# Space, robots, magic, monsters and the movies.
+# Format: README.md in this folder.
+
+# rocket launch
+@liftoff
+500 | 🚀 T-3
+500 | 🚀 T-2
+500 | 🚀 T-1
+400 accent2 | 🚀 ignition 🔥
+type 60 accent2 | 🔥«            »🚀
+1500 accent2 sparkle | liftoff! ✧
+
+# astronaut floats
+@astronaut
+repeat 3
+  500 | {( ・_・)🪐|  ( ・_・)🪐| ( ・_・) 🪐}
+end
+1500 dim | ( ・_・) houston, i'm just vibing.
+
+# houston, we have a problem
+@houston
+800 | ( ・_・)📻 houston...
+800 danger | ( °_°)📻 we have a problem.
+1500 | ( ・_・)🔧 duct tape it is.
+
+# moon landing
+@moonlanding
+800 | 🚀 ☾
+800 | ( ・_・) ☾ one small step
+1500 sparkle | ( ^_^)🏳 ☾ one giant leap.
+
+# UFO abduction
+@ufo
+700 | 🛸
+600 | 🛸
+600 | 🛸 ⁞ (°_°)
+600 accent2 | 🛸 ⁞
+1500 dim | ...the cow was spared. 🐄
+
+# alien says hi
+@alien
+800 | 👽
+800 | 👽 take me to your leader
+1500 dim | ( ・_・) ...he's on vacation.
+
+# ET phone home
+@phonehome
+800 | (◉_◉)☝
+1500 sparkle | (◉_◉)☝✧ phone... home.
+
+# black hole
+@blackhole
+500 | ✧ ✧ ✧ ●
+500 | ✧ ✧●
+500 | ✧●
+500 | ●
+1500 dim | ...even the stars.
+
+# shooting star
+@shootingstar
+type 50 accent2 | «                  »✧
+800 | ( ・_・) make a wish!
+1500 sparkle | ( ˘▽˘) wished for more RAM.
+
+# constellation
+@constellation
+600 | ✦      ✦
+600 | ✦  ✦   ✦
+600 | ✦──✦───✦
+1500 sparkle | ( ・_・) ...it's a cat.
+
+# Star Wars: I am your father
+@father
+800 | ( ・_・)⚔ you killed my father!
+900 danger | (▼皿▼) no. i am your father.
+1500 danger | ( °ロ°) NOOOOOOO
+
+# Star Wars: lightsaber
+@lightsaber
+600 | ( `ー´)╾
+type 60 accent2 | ( `ー´)╾«━━━━━━━━━»
+1500 accent2 sparkle | ( `ー´)╾━━━━━━━━━ *vwoom*
+
+# Star Wars: these aren't the droids
+@droids
+800 | trooper: let me see your ID.
+800 | ( ¬‿¬)ノ~
+1500 | these aren't the droids you're looking for.
+
+# Star Wars: it's a trap
+@trap
+1500 danger | (°ロ°) IT'S A TRAP!
+
+# Star Wars: high ground
+@highground
+800 | ( `ー´)⚔ it's over, anakin!
+1500 sparkle | ( `ー´)⚔ i have the high ground.
+
+# Star Wars: hello there / general kenobi
+@kenobi
+800 | ( ¬‿¬)ノ hello there.
+1500 danger | (◣_◢) general kenobi!
+
+# Star Wars: R2-D2
+@r2d2
+800 | [◎]
+800 | [◎] beep boop
+1500 sparkle | [◎] *excited whistling*
+
+# Star Wars: Yoda
+@yoda
+800 | (◕ ‿ ◕)
+1500 | (◕ ‿ ◕) do or do not. there is no try.
+
+# Star Trek: beam me up
+@beammeup
+800 | ( ・_・)📟 beam me up
+500 accent2 | ( ⁞_⁞ )
+500 accent2 | ⁞ ⁞ ⁞
+1500 dim | ...
+
+# Star Trek: make it so
+@makeitso
+800 | ( ・_・) captain?
+1500 sparkle | ( ಠ_ಠ)☝ make it so.
+
+# Star Trek: he's dead, Jim
+@deadjim
+800 | ( x_x)
+1500 dim | ( ・_・) he's dead, jim.
+
+# Star Trek: live long
+@vulcan
+800 | ( ・_・)
+1500 sparkle | ( ・_・)🖖 live long and prosper.
+
+# Hitchhiker's: 42
+@fortytwo
+800 | ( ・_・) the answer to life,
+800 | the universe,
+800 | and everything...
+1500 accent2 sparkle | 42.
+
+# Hitchhiker's: towel
+@towel
+800 | ( ・_・) don't panic.
+1500 sparkle | ( ・_・)🧺 always know where your towel is.
+
+# Dune: spice
+@spice
+800 | ( ・_・)≈≈≈ desert
+800 danger | ≈≈≈∿∿∿≈≈ sandworm
+1500 | ( ・_・) the spice must flow.
+
+# Dune: fear is the mind-killer
+@fear
+1000 dim | ( -_-) i must not fear.
+1500 dim | ( -_-) fear is the mind-killer.
+
+# Terminator
+@terminator
+800 | [▀̿Ĺ̯▀̿]
+1500 danger | [▀̿Ĺ̯▀̿] i'll be back.
+
+# Blade Runner: tears in rain
+@tearsinrain
+1000 dim | ( ・_・) all those moments
+1500 dim | ( ・_・) will be lost, like tears in rain.
+
+# 2001: HAL
+@hal
+800 danger | ( ◉ )
+800 | ( ・_・) open the pod bay doors, HAL.
+1000 danger | ( ◉ ) i'm sorry, dave.
+1500 danger | ( ◉ ) i'm afraid i can't do that.
+
+# Alien: chestburster
+@chestburster
+800 | ( ・_・)🍝
+600 | ( °_°)
+600 danger | ( °ロ°) *cough*
+1500 danger | ( x_x) 👾 hello.
+
+# Predator
+@predator
+800 | ( ・_・)🌴
+800 accent2 | ( ・_・)🌴 ⦿⦿
+1500 danger | ( °_°) ...get to the choppa!
+
+# Back to the Future
+@88mph
+type 50 | «            »🚗⚡
+600 accent2 | ⚡⚡ 88 mph ⚡⚡
+1500 accent2 sparkle | 🔥🔥 ...great scott!
+
+# Doctor Who: TARDIS
+@tardis
+800 | ▯
+800 dim | ▯ vworp...
+800 dim |   vworp...
+1500 | ( ・_・) bigger on the inside.
+
+# Doctor Who: Daleks
+@exterminate
+800 danger | ▙▟ EXTERMINATE!
+1500 | ( ・_・)🪜 ...stairs.
+
+# Robot dance
+@robot
+repeat 3
+  300 | [▢_▢]{┐|┘}
+  300 | {└|┌}[▢_▢]
+end
+1500 sparkle | [▢_▢] beep boop ♪
+
+# Robot gains feelings
+@robotfeelings
+800 | [▢_▢] i am a robot.
+800 | [▢_▢] i feel... nothing.
+800 | [▢_▢]💧 ...what is this?
+1500 sparkle | [▢‿▢] i feel... joy?
+
+# Wall-E
+@walle
+800 | [◉ ◉]▆
+800 | [◉ ◉]▆ eee-vah?
+1500 sparkle | [◉ ◉]🌱 ...a plant!
+
+# Bender
+@bender
+800 | [▀▄▀] bite my shiny
+1500 | [▀▄▀] metal... you know the rest.
+
+# Baymax
+@baymax
+800 | (•—•)
+1500 sparkle | (•—•) on a scale of 1 to 10, how is your pain?
+
+# cyborg upgrade
+@cyborg
+800 | ( ・_・)
+800 accent2 | ( ・_◉) installing...
+1500 accent2 sparkle | ( ◉_◉) upgrade complete.
+
+# AI takes over (it's nice)
+@aitakeover
+800 | 🤖 i am taking over.
+800 | ( °_°) oh no.
+800 | 🤖 i have scheduled your naps.
+1500 sparkle | ( ˘▽˘) oh. ok.
+
+# wizard casts a spell
+@wizard
+800 | (∩｀-´)⊃
+800 accent2 | (∩｀-´)⊃━☆ﾟ.*
+1500 accent2 sparkle | (∩｀-´)⊃━☆ﾟ.*･｡ﾟ ✧ abracadabra
+
+# wizard's spell backfires
+@backfire
+800 | (∩｀-´)⊃━☆
+600 danger | 💥
+1500 | (∩°o°)⊃ ...i'm a frog now. 🐸
+
+# Harry Potter: wingardium
+@leviosa
+800 | ( ・_・)🪄 wingardium leviosaaa
+800 | ( ¬_¬) it's leviOsa.
+1500 sparkle | 🪶 ⇡ ...it floats!
+
+# Harry Potter: you're a wizard
+@yourewizard
+800 | ( ・_・) a letter?
+1500 accent2 sparkle | (ʘ‿ʘ) you're a wizard, harry.
+
+# Harry Potter: sorting hat
+@sortinghat
+800 | ( ・_・)🎩
+800 dim | 🎩 hmm... difficult...
+1500 accent2 sparkle | 🎩 {?GRYFFINDOR|SLYTHERIN|RAVENCLAW|HUFFLEPUFF}!
+
+# Lord of the Rings: you shall not pass
+@shallnotpass
+800 | (ò_ó)🪄 ...
+800 danger | 🔥👹🔥
+1500 accent2 | (ò_ó)🪄 YOU SHALL NOT PASS!
+
+# Lord of the Rings: one does not simply
+@mordor
+1500 | ( ಠ_ಠ) one does not simply walk into mordor.
+
+# Lord of the Rings: precious
+@precious
+800 | ( ◉_◉)💍
+800 | ( ◉_◉)💍 my...
+1500 dim | ( ◉_◉)💍 my precioussss.
+
+# Lord of the Rings: second breakfast
+@secondbreakfast
+800 | ( ^_^)🍳 breakfast!
+800 | ( ^_^)🥐 second breakfast?
+1500 sparkle | ( ^_^)🍰 elevenses! luncheon! ♪
+
+# Lord of the Rings: eagles
+@eagles
+800 | ( ・_・)💍🌋 long walk...
+1500 dim | ( ・_・) ...why not the eagles?
+
+# Game of Thrones: winter is coming
+@winter
+800 | ❄
+800 | ❄ ❄
+1500 dim | ( ಠ_ಠ) winter is coming.
+
+# GoT: hold the door
+@holddoor
+800 | ( >_<)🚪 hold the door
+800 | ( >_<)🚪 hold door
+1500 dim | ( ;_;)🚪 hodor.
+
+# vampire
+@vampire
+800 | (◣_◢)
+800 | (◣_◢) i vant to suck
+1500 dim | (◣_◢)🧃 ...your juice box.
+
+# werewolf
+@werewolf
+800 | ( ・_・) ☾
+600 | ( °_°) 🌕
+1500 danger | (ᵒ̤̑ ₀̑ ᵒ̤̑)🌕 AWOOOO
+
+# zombie walk
+@zombiewalk
+type 250 | «     »[x_x]ノ
+1500 danger | [x_x]ノ braaains...
+
+# ghost
+@ghost
+800 | ( ・_・)
+600 | ( ・_・) 👻
+600 danger | ( °ロ°) 👻 BOO
+1500 dim | 👻 ...sorry. i'm new at this.
+
+# skeleton
+@skeleton
+800 | 💀
+800 | 💀 *rattle*
+1500 sparkle | 💀🎺 doot doot!
+
+# witch
+@witch
+type 80 | «            »🧹(¬‿¬)
+800 | (¬‿¬)🧪 bubble bubble
+1500 dim | (¬‿¬)🐸 toil and trouble.
+
+# potion
+@potion
+800 | ( ・_・)⚗
+800 accent2 | ( ・_・)⚗ *bubble*
+800 | ( ・_・)⚗ *glug*
+1500 | ( °o°) ...i can see sounds.
+
+# dragon hoard
+@hoard
+800 | (∩ᄑ_ᄑ)⊃💰
+800 | (∩ᄑ_ᄑ)⊃💰💰💰
+1500 dim | (∩ᄑ_ᄑ)⊃ ...mine.
+
+# knight
+@knight
+800 | ⚔[ ・_・]🛡
+800 | ⚔[ ・_・]🛡 for honor!
+1500 dim | [ ・_・] ...the armor is heavy.
+
+# Monty Python: 'tis but a scratch
+@scratch
+800 | [ ・_・] 'tis but a scratch.
+800 | your arm's off!
+1500 dim | [ ・_・] i've had worse.
+
+# Monty Python: nobody expects
+@inquisition
+800 | ( ・_・) i didn't expect—
+1500 danger | NOBODY EXPECTS THE SPANISH INQUISITION!
+
+# Monty Python: ni
+@ni
+800 | [ ・_・] we are the knights
+800 | [ ・_・] who say...
+1500 danger | NI!
+
+# Monty Python: coconuts
+@coconuts
+repeat 4
+  250 | ( ・_・)🥥 *clop*
+end
+1500 dim | ( ・_・)🥥 ...it's only a model.
+
+# Princess Bride
+@inigo
+800 | ( `ー´)⚔ hello.
+800 | ( `ー´)⚔ my name is inigo montoya.
+1500 | ( `ー´)⚔ prepare to die.
+
+# Princess Bride: inconceivable
+@inconceivable
+1500 danger | (°ロ°) INCONCEIVABLE!
+
+# Ghostbusters
+@ghostbusters
+800 | 📞 who you gonna call?
+1500 accent2 sparkle | ( ⌐■_■) GHOSTBUSTERS!
+
+# Jurassic Park
+@jurassic
+800 | ( ・_・)🥤
+600 | ( ・_・)🥤 ⁘
+600 | ( °_°)🥤 ⁘ ⁘
+1500 danger | ( °ロ°) 🦖
+
+# Jurassic Park: life finds a way
+@lifefindsaway
+1500 | ( ¬‿¬) life, uh, finds a way.
+
+# Indiana Jones: the boulder
+@boulder
+600 | ( ・_・)🗿
+type 50 | «             »ε=ε=( >_<)  ●
+1500 sparkle | ( ^_^)🎩 made it!
+
+# Indiana Jones: snakes
+@snakes
+1500 | ( -_-) snakes. why'd it have to be snakes?
+
+# The Shining
+@heresjohnny
+800 | 🚪
+600 danger | 🚪 *chop*
+1500 danger | 🚪( ◉_◉) here's johnny!
+
+# Jaws
+@jaws
+600 | ≈≈≈≈▲≈≈≈≈
+1500 | ( ・_・) we're gonna need a bigger boat.
+
+# Titanic
+@titanic
+800 | \( ˘▽˘)/ i'm the king of the world!
+800 | 🧊
+1500 dim | ( ・_・) there was room on the door.
+
+# The Matrix: red pill
+@redpill
+800 | ( ⌐■_■) 💊 💊
+800 | ( ・_・) red or blue?
+1500 sparkle | ( ・_・) ...is there a purple one?
+
+# The Matrix: dodge
+@dodge
+600 | ( ・_・)  ← ← ←
+600 | ( ・_・)⇙
+600 | (    ・_・)⇙⇙
+1500 accent2 sparkle | ( ⌐■_■) whoa.
+
+# The Matrix: spoon
+@nospoon
+800 | ( ・_・)🥄
+1500 dim | there is no spoon.
+
+# The Avengers: assemble
+@assemble
+600 | ( `ー´)
+600 | ( `ー´)( `ー´)
+600 | ( `ー´)( `ー´)( `ー´)
+1500 accent2 sparkle | avengers... assemble.
+
+# Thanos snap
+@snap
+800 | ( ಠ_ಠ)💎
+600 | ( ಠ_ಠ)👌
+600 accent2 | *snap*
+1500 dim | ( ・_・)... i don't feel so good.
+
+# I am Groot
+@groot
+800 | (・ω・)🌱
+800 | (・ω・)🌱 i am groot.
+1500 sparkle | (・ω・)🌿 i am groot!
+
+# Batman
+@batman
+800 dim | 🦇
+800 | ( ▀_▀ ) i'm batman.
+1500 dim | ( ▀_▀ ) *gravel voice*
+
+# Spider-Man: pointing
+@spiderpoint
+800 | ( ・_・)☞
+1500 | ( ・_・)☞☜( ・_・)
+
+# Superman
+@superman
+800 | ( ・_・) it's a bird!
+800 | ( ・_・) it's a plane!
+1500 sparkle | ( ⌐■_■) it's... a bird.
+
+# Shrek
+@onion
+800 | ( ・_・) ogres are like onions.
+800 | 🧅
+1500 | ( ・_・) they have layers.
+
+# Toy Story
+@infinity
+800 | [ ・_・] to infinity...
+1500 accent2 sparkle | [ `ー´]ノ ...and beyond!
+
+# Pixar lamp
+@pixar
+repeat 3
+  300 | {⌐|⌐ }
+end
+600 | ⌐ I
+1500 | ⌐ *boing*
+
+# Frozen
+@letitgo
+800 accent2 | ❄ ( ˘o˘)
+800 accent2 | ❄ ❄ ( ˘O˘) ♪
+1500 accent2 sparkle | ❄❄❄ LET IT GO ♪
+
+# Lion King
+@lionking
+800 | ( ・_・)🦁
+800 accent2 | ☀ ⇡🦁
+1500 accent2 sparkle | ♪ naaants ingonyama...
+
+# Up: balloons
+@uphouse
+800 | 🏠
+800 | 🎈🏠
+800 | 🎈🎈🎈🏠
+1500 sparkle | 🎈🎈🎈🎈🎈 ⇡🏠 adventure is out there!
+
+# Wizard of Oz
+@ruby
+800 | ( ・_・)👠👠
+800 | ( ・_・)👠👠 *click click*
+1500 sparkle | ( ・_・) there's no place like home.
+
+# Godzilla
+@godzilla
+800 | 🏙🏙🏙
+800 danger | 🏙🏙🦖
+1500 danger | 🏙 🦖 *GRAAAWR*
+
+# Kaiju vs. robot
+@kaiju
+800 | 🦖      [▼_▼]
+600 | 🦖   [▼_▼]
+600 danger | 🦖💥[▼_▼]
+1500 accent2 sparkle | [▼_▼] pacific rim!
+
+# time travel
+@timetravel
+600 | ( ・_・) ⌛ 2026
+500 accent2 | ( ・_・) ⌛ 1985
+500 accent2 | ( ・_・) ⌛ 1066
+500 accent2 | ( ・_・) ⌛ 3000
+1500 | ( ・_・) ...where's my coffee?
+
+# parallel universe
+@multiverse
+800 | ( ・_・)
+800 | ( ・_・)( ¬‿¬)( ◕‿◕)
+1500 dim | ( ・_・) ...all of them forgot milk too.
+
+# teleporter mishap
+@teleport
+600 | ( ・_・)  ▢
+500 accent2 | ⁞ ⁞ ⁞  ▢
+500 accent2 |       ▢⁞ ⁞
+1500 | ▢( ・_・🪰) ...uh oh.
+
+# warp speed
+@warp
+600 | ✦  ✦  ✦  ✦
+500 | ━ ━ ━ ━ ━
+500 accent2 | ━━━━━━━━━━
+1500 accent2 sparkle | ( ⌐■_■) warp 9!
+
+# laser battle
+@pewpew
+repeat 3
+  250 accent2 | ( `ー´)⊃ {-  -  -|  -  -  -}
+end
+1500 | ( `ー´)⊃ pew pew!
+
+# space cat
+@spacecat
+800 | 🪐 (=^･ω･^=)
+1500 sparkle | 🪐 (=^･ω･^=)🚀 meowstronaut.
+
+# the mars rover
+@rover
+800 | [◉]⊏ mars
+800 | [◉]⊏ 🪨
+800 | [◉]⊏ 🪨 ...another rock.
+1500 sparkle | [◉]⊏ ♪ happy birthday to me.
+
+# satellite
+@satellite
+repeat 3
+  400 | {🛰  ·|  🛰 ·|    🛰}  🌍
+end
+1500 dim | 🛰 beep.

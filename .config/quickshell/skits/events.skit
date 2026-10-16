@@ -1,0 +1,195 @@
+# Reactions to things happening on the machine. Quote.qml plays these by
+# name, filling in the {values} it passes; they never play at random.
+# Format: README.md in this folder.
+
+# shell start: {greeting} is morning / afternoon / evening / night
+!hello
+600 | ( ^_^)ノ
+1800 sparkle | ( ^_^)ノ good {greeting}!
+
+# ---------------- power ----------------
+!plugged
+500 | (°o°) !
+900 accent2 | ( ˘▽˘)っ⚡
+2000 sparkle | ( ^‿^) thank you for charging me ♥
+
+!unplugged
+1000 | ( ・_・) ...unplugged?
+1800 | (ง •_•)ง running on battery: {battery}%
+
+!full
+600 accent2 | (ﾉ◕ヮ◕)ﾉ
+2000 accent2 sparkle | (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ fully charged!
+
+!critical
+500 danger | (ﾟДﾟ;)
+900 danger | (ﾟДﾟ;) {battery}%!!
+1200 danger | ( x_x) i'm fading...
+1800 danger | (ﾟДﾟ;) CHARGER. NOW.
+
+!low
+600 | (°_°;)
+900 danger | (°_°;) {battery}%...
+1000 | (｡>﹏<｡) please...
+1800 danger | (｡>﹏<｡) plug me in?
+
+!perf
+500 | (ง •_•)ง
+1600 accent2 sparkle | (ง °□°)ง POWER UP!
+
+!saver
+600 dim | ( -_-)
+1200 dim | ( -_-) power saver on.
+1600 dim | ( -_-) dimming my thoughts...
+
+!balanced
+600 | ( ・_・)⚖
+1300 | ( ・_・)⚖ perfectly balanced,
+1600 | as all things should be.
+
+# ---------------- sound ----------------
+!mute
+400 dim | ( -_-)
+1400 dim | ( -_-) shh...
+
+!unmute
+500 | ( ゜o゜) ♪
+1400 | ( ゜o゜) ♪ sound's back!
+
+# ---------------- network ----------------
+# {where} is " · <wifi name>" or empty
+!online
+400 | ( °o°)
+1800 sparkle | ( ^_^) back online{where}
+
+!offline
+600 danger | ( ;_;)
+2000 danger | (ಥ﹏ಥ) the internet is gone...
+
+!vpnup
+450 | ( •_•)
+500 | ( •_•)>⌐■-■
+1600 sparkle | (⌐■_■) tunneled in.
+
+!vpndown
+1600 dim | ( ・_・) out of the tunnel.
+
+!bluetooth
+400 | ( ˘▽˘)
+1600 sparkle | ( ˘▽˘)ノ hi, {device}
+
+# ---------------- load ----------------
+!cpu
+500 danger | (°□°;)
+1000 danger | (°□°;) CPU at {cpu}%
+1800 danger | ( >_<) it's getting hot in here
+
+!mem
+500 | ( @_@)
+2000 danger | ( @_@) RAM at {mem}%... too many tabs?
+
+# ---------------- music, recording, screenshots ----------------
+!song
+380 | (～￣▽￣)～
+380 | ～(￣▽￣～)
+380 | (～￣▽￣)～
+2400 sparkle | ♪ {track}
+
+!rec
+1400 dim | (•_•)📹 rolling...
+
+!rec-saved
+900 | (•_•)📹 ...and cut!
+1800 accent2 sparkle | (ﾉ◕ヮ◕)ﾉ that's a wrap · {clock}
+
+!rec-failed
+2200 danger | (;´・ω・) the recording didn't save
+
+!shot
+500 | ( ^_^)ノ[◉]
+900 | ( ^_^)ノ[◉] say cheese!
+900 sparkle | [◉] *click*
+
+# ---------------- toggles ----------------
+!caffeine
+500 | ( ・_・)_旦
+700 | ( ˘▽˘)っ旦 ~
+1800 accent2 sparkle | (ﾟ∀ﾟ) caffeinated. no sleep for me!
+
+!decaf
+1100 dim | ( -_-) decaf...
+1600 dim | ( -_-) zZ okay, i can nap now
+
+!dnd
+1600 dim | ( -_-)ﾉ do not disturb.
+
+!undnd
+1400 | ( ・_・) I'm listening.
+
+!night
+1600 dim | ( -_-)☾ easy on the eyes
+
+!day
+1400 | ( ・_・)☀ lights up
+
+# ---------------- fingerprints ({finger} is e.g. "right index") ----------------
+!fp-enrolled
+500 | ( •_•)☝
+600 | ( •_•)☝ boop
+2000 accent2 sparkle | (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ {finger} saved!
+
+!fp-dupe
+500 | ( ・_・)☝
+2000 | (¬_¬) i already know that finger...
+
+!fp-fail
+600 danger | ( >_<)☝
+1800 danger | ( ;_;) the reader didn't like that
+
+!fp-match
+450 | ( •_•)
+500 | ( •_•)>⌐■-■
+1600 sparkle | (⌐■_■) identity confirmed.
+
+!fp-nomatch
+600 danger | (¬_¬)
+1600 danger | (¬_¬) who are you?
+
+!fp-deleted
+500 dim | ( ・_・)ノ
+1600 dim | ( ・_・)ノ bye bye, {finger}
+
+!fp-unlock
+500 | ( ^_^)☝
+600 | ( ^_^)☝ *beep*
+1800 sparkle | ( ^‿^)ノ it's you! welcome back
+
+# ---------------- the clock and the calendar ----------------
+!midnight
+600 | ( ・_・)☾
+2000 dim | ( ・_・)☾ it's midnight... go to bed
+
+!3am
+500 | (；ﾟДﾟ)
+2000 danger | (；ﾟДﾟ) it's 3 AM. go to sleep.
+
+!noon
+500 | ( ´▽`)ﾉ
+1600 sparkle | ( ´▽`)ﾉ lunch time!
+
+!friday
+600 accent2 | \(^o^)/
+2000 accent2 sparkle | \(^o^)/ it's the weekend!
+
+# {title} is the event's name
+!cal-soon
+500 | (°o°) !
+2400 accent2 sparkle | (°o°) 5 min: {title}
+
+!cal-now
+2400 accent2 sparkle | (ง •_•)ง now: {title}
+
+# back at the desk after 5+ minutes away
+!welcome
+500 | ( ^_^)ノ
+1600 sparkle | ( ^_^)ノ welcome back!

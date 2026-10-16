@@ -1,0 +1,629 @@
+# Music, sports, art and other hobbies.
+# Format: README.md in this folder.
+
+# air guitar
+@airguitar
+repeat 3
+  250 | ( `ロ´){ノ|ゞ}🎸 ♪
+end
+1500 accent2 sparkle | ( `ロ´)🎸 *wailing solo*
+
+# drum solo
+@drums
+repeat 4
+  180 | ( `ー´)🥁 {ba|dum|tss|ba-dum}
+end
+1500 accent2 sparkle | ( `ー´)🥁 *crash*
+
+# piano
+@piano
+600 | ( ・_・)🎹
+500 | ( ・_・)🎹 ♪
+500 | ( ・_・)🎹 ♪ ♫
+1500 sparkle | ( ˘▽˘)🎹 ♪ ♫ ♪ chopsticks.
+
+# violin
+@violin
+800 | ( ˘_˘)🎻
+1500 dim | ( ˘_˘)🎻 *world's tiniest violin*
+
+# trumpet
+@trumpet
+800 | ( ・3・)🎺
+800 danger | ( °3°)🎺 BWAAAP
+1500 dim | ( ・_・)🎺 ...needs practice.
+
+# sad trombone
+@sadtrombone
+600 dim | 🎺 wah
+600 dim | 🎺 wah
+600 dim | 🎺 wah
+1500 dim | 🎺 waaaaah
+
+# kazoo
+@kazoo
+1500 sparkle | ( ・3・) *kazoo solo* ♪
+
+# karaoke
+@karaoke
+800 | ( ・_・)🎤
+800 | ( ・o・)🎤 ♪ don't stop
+800 | ( ・O・)🎤 ♪ believin'!
+1500 dim | ( ^_^;) ...off key.
+
+# headbanging
+@headbang
+repeat 5
+  200 | {( `ロ´)|( `ロ´ )ゞ} 🤘
+end
+1500 accent2 sparkle | 🤘( `ロ´)🤘 METAL
+
+# rave
+@rave
+repeat 4
+  200 accent2 | {┏(・o・)┛|┗(・o・)┓} ▁▃▅▇
+  200 | {┗(・o・)┓|┏(・o・)┛} ▇▅▃▁
+end
+1500 accent2 sparkle | *the bass drops*
+
+# the drop
+@drop
+600 | ( ・_・)🎧 build up...
+400 | ( ・_・)🎧 ▁▂▃
+400 | ( °_°)🎧 ▃▅▆
+400 | ( °_°)🎧 ▆▇█
+1500 accent2 sparkle | ( ⌐■_■)🎧 *DROP*
+
+# vinyl
+@vinyl
+repeat 4
+  300 | {◐|◓|◑|◒} ♪
+end
+1500 sparkle | ( ˘▽˘) warm sound.
+
+# cassette tape
+@cassette
+800 | ( ・_・)📼
+800 | ( ・_・)✏📼 *rewinds with pencil*
+1500 dim | ( ・_・) kids won't get it.
+
+# playlist
+@playlist
+800 | ( ・_・) shuffle
+800 | ♪ same song
+800 | ♪ same song again
+1500 dim | ( ¬_¬) "shuffle".
+
+# conductor
+@conductor
+repeat 3
+  300 | ( `ー´){ノ⌒|ゞ⌒}
+end
+1500 sparkle | ( `ー´)ノ ...bravo!
+
+# rickroll
+@rickroll
+800 | ( ・_・) a link?
+800 | ( ・_・) *click*
+1500 accent2 sparkle | ♪ never gonna give you up ♪
+
+# soccer goal
+@goal
+600 | ( `ー´)⚽
+type 50 | ( `ー´)«             »⚽|
+1500 accent2 sparkle | GOOOOOOOAL!
+
+# basketball
+@basket
+600 | ( `ー´)🏀
+500 | ( `ー´)ノ  🏀
+500 | ( `ー´)ノ     🏀
+1500 accent2 sparkle | 🏀 *swish* nothing but net.
+
+# basketball miss
+@airball
+500 | ( `ー´)ノ  🏀
+500 | ( `ー´)ノ     🏀
+1500 dim | ( ・_・) ...airball.
+
+# baseball home run
+@homerun
+600 | ( `ー´)⚾
+500 | ( `ー´)ノ⚾ *crack*
+type 40 | «               »⚾
+1500 accent2 sparkle | HOME RUN!
+
+# tennis
+@tennis
+repeat 3
+  300 | ( ・_・)🎾{•       |   •    |       •}( ・_・)
+end
+1500 | ( ・_・) 40–love.
+
+# ping pong
+@pingpong
+repeat 3
+  200 | {( ・_・)•    ( ・_・)|( ・_・)    •( ・_・)}
+end
+1500 sparkle | ( ^_^) 21!
+
+# bowling
+@bowling
+600 | ( ・_・)🎳
+type 60 | ●«             »▲▲▲
+1500 accent2 sparkle | STRIKE! ✧
+
+# gutter ball
+@gutter
+type 60 | ●«             »
+1500 dim | ( ・_・) ...gutter.
+
+# golf
+@golf
+800 | ( ・_・)🏌
+600 | ( ・_・)🏌 *thwack*
+600 | ⛳  ●
+1500 sparkle | ⛳● hole in one!
+
+# mini golf
+@minigolf
+800 | ( ・_・) 🏌 windmill hole
+800 | ⛳ 🌀 ●
+1500 dim | ( ・_・) 14 strokes.
+
+# swimming
+@swim
+repeat 3
+  400 | ≈≈( ・_・){ノ|ゞ}≈≈
+end
+1500 sparkle | ( ^_^) ≈≈ 1 lap!
+
+# diving
+@dive
+600 | ( ・_・)
+500 | ( ・_・)⇣
+500 | ≈≈ ⇣ ≈≈
+1500 accent2 sparkle | ≈≈ *splash* ≈≈ 10/10
+
+# cannonball
+@cannonball
+600 | ( ・_・)
+500 | (●)
+500 accent2 | 💦💦💦
+1500 dim | ( ・_・) everyone's wet.
+
+# surfing
+@surf
+repeat 3
+  400 | ∿∿( ・_・)∿∿{∿|≈}
+end
+1500 sparkle | ( ⌐■_■)🏄 cowabunga!
+
+# skateboard
+@skate
+type 60 | «          »( ・_・)▬
+500 | ( ・_・)↑▬ ollie!
+1500 dim | ( x_x)  ▬ ...ouch.
+
+# kickflip
+@kickflip
+500 | ( ・_・)▬
+500 | ( ・_・)↑ ⟲
+500 | ( ・_・)▬
+1500 sparkle | ( ⌐■_■) kickflip!
+
+# bicycle
+@bicycle
+type 80 | «           »( ・_・)🚲
+1500 sparkle | ( ^_^)🚲 ding ding!
+
+# skiing
+@ski
+600 | ( ・_・)🎿 ⛰
+500 | ⛰( ・_・)⇘
+500 | ⛰  ( ・_・)⇘⇘
+1500 sparkle | ( ⌐■_■)❄ fresh powder.
+
+# ice skating
+@iceskate
+600 | ( ・_・)⛸
+600 | ( ・_・)⛸ ⟳
+500 danger | ( x_x)⛸ *whump*
+1500 | ( ^_^;) i meant to do that.
+
+# hockey
+@hockey
+600 | ( `ー´)🏒 ●
+type 40 | ( `ー´)🏒«             »●
+1500 accent2 sparkle | GOAL! 🚨
+
+# boxing
+@boxing
+500 | (ง •_•)ง
+400 | (ง •_•)ว *jab*
+400 | (ว •_•)ง *jab*
+1500 accent2 sparkle | (ง `ー´)ง *uppercut*
+
+# karate
+@karate
+600 | ( `ー´)
+500 | ( `ー´)ノ▭
+500 accent2 | ( `ー´)ノ▭ ▭ HI-YAH!
+1500 sparkle | ( `ー´) the board is broken.
+
+# wrestling
+@wrestling
+800 | ( `ロ´) and his name is...
+1500 accent2 sparkle | 🎺 ♪ da da da daaa!
+
+# sumo
+@sumo
+600 | ( `ー´)     ( `ー´)
+500 | ( `ー´)( `ー´)
+1500 sparkle | ( `ー´)  ⇐ ( ・_・) out!
+
+# marathon
+@marathon
+type 200 | «       »ε=┌( ・_・)┘
+800 dim | 41 km
+1500 accent2 sparkle | ( x_x)🏅 finished!
+
+# relay race
+@relay
+type 60 | «         »ε=ε=( `ー´)ノ🥢
+600 | ( `ー´)ノ🥢( `ー´)
+1500 sparkle | ε=ε=( `ー´) go go go!
+
+# weightlifting
+@lift
+600 | ( >_<)
+500 | ( >_<)●━━━━●
+500 | ( °ロ°)⇡●━━━━●
+1500 accent2 sparkle | ( `ー´)●━━━━● new PR!
+
+# tug of war
+@tugofwar
+repeat 3
+  400 | ( >_<)━━{━━━|━━━━|━━}━━( >_<)
+end
+1500 | ( x_x)━━━━━━ *falls*
+
+# chess
+@chess
+800 | ( ・_・)♟
+800 | ( ・_・)♞ knight to e5
+800 | ( ¬‿¬)♛ ...
+1500 accent2 sparkle | ( ⌐■_■) checkmate.
+
+# chess: the pigeon
+@chesspigeon
+800 | ( ・_・)♟ good game?
+800 | (・⊝・) *knocks pieces over*
+1500 dim | (・⊝・) *struts* victory.
+
+# poker face
+@pokerface
+800 | ( ・_・)🂡🂮
+800 | ( ・_・) ...
+1500 sparkle | ( ¬‿¬) all in.
+
+# card trick
+@cardtrick
+800 | ( ・_・)🂠 pick a card
+800 | ( ・_・)🂠 any card
+1500 accent2 sparkle | ( ⌐■_■)🂡 is this your card?
+
+# jigsaw puzzle
+@jigsaw
+800 | ( ・_・)🧩 1000 pieces
+800 | ( ・_・)🧩 999 placed
+1500 dim | ( ;_;)🧩 ...the dog ate one.
+
+# rubik's cube
+@rubik
+repeat 4
+  250 | ( ・_・)▦ {↻|↺}
+end
+1500 accent2 sparkle | ( ⌐■_■)▦ solved. 47 seconds.
+
+# crossword
+@crossword
+800 | ( ・_・)✎ 7 across:
+800 | ( ・_・)✎ "a word" (4)
+1500 dim | ( ・_・)✎ W-O-R-D. genius.
+
+# sudoku
+@sudoku
+800 | ( ・_・)✎ 5 _ 3 | _ 7 _
+800 | ( ・_・)✎ 5 1 3 | _ 7 _
+1500 dim | ( ・_・)✎ ...two 5s in a row.
+
+# painting
+@painting
+600 | ( ・_・)🖌 ▢
+600 | ( ・_・)🖌 ▤
+600 | ( ・_・)🖌 ▦
+1500 sparkle | ( ^_^)🖼 a happy little tree.
+
+# happy accidents
+@bobross
+800 | ( ˘▽˘)🖌 there are no mistakes,
+1500 sparkle | ( ˘▽˘)🖌 just happy accidents.
+
+# drawing hands
+@drawhands
+800 | ( ・_・)✎ drawing hands
+800 | ( ・_・)✎ ✋ 7 fingers
+1500 dim | ( ・_・)✎ hands in pockets it is.
+
+# pixel art
+@pixelart
+600 | ▢▢▢▢
+600 | ▢▣▣▢
+600 | ▣▢▢▣
+1500 sparkle | ( ^_^) it's a face. obviously.
+
+# photography
+@photo
+800 | ( ・_・)📷 focus...
+800 | ( ・_・)📷 *click*
+1500 dim | ( ・_・)📷 my thumb.
+
+# knitting
+@knitting
+repeat 3
+  400 | ( ˘_˘)🧶 {knit|purl}
+end
+1500 sparkle | ( ^_^)🧣 a scarf! (3 years)
+
+# pottery
+@pottery
+repeat 3
+  300 | ( ・_・){◐|◓|◑} *spin*
+end
+600 danger | ( °_°) *splat*
+1500 | ( ・_・)🏺 it's modern art.
+
+# gardening
+@garden
+600 | ( ・_・)🌱
+600 | ( ・_・)🌱🌱🌱
+600 | ( ・_・)🌻🌻🌻
+1500 sparkle | ( ^_^)🍅 one tomato. worth it.
+
+# origami
+@origami
+600 | ( ・_・)📄
+600 | ( ・_・)📄 fold
+600 | ( ・_・)📄 fold fold
+1500 sparkle | ( ^_^)🦢 a crane!
+
+# woodworking
+@woodwork
+800 | ( ・_・)🪚 measure twice
+800 | ( ・_・)🪚 cut once
+1500 dim | ( ・_・)🪵 ...too short.
+
+# legos
+@legobuild
+600 | ( ・_・)🧱
+600 | ( ・_・)🧱🧱
+600 | ( ・_・)🧱🧱🧱
+1500 sparkle | ( ^_^)🏰 a castle!
+
+# model trains
+@train
+type 120 | «              »🚂🚃🚃
+1500 sparkle | 🚂 choo choo!
+
+# reading
+@reading
+800 | ( ・_・)📖
+800 | ( °o°)📖 plot twist!
+1500 sparkle | ( ;▽;)📖 ...what a book.
+
+# writing a novel
+@novel
+800 | ( ・_・)✎ chapter one
+800 | ( ・_・)✎ "it was a dark and
+1500 dim | ( ・_・)✎ ...stormy night." (stuck)
+
+# poetry
+@haiku
+900 | an old silent pond
+900 | a frog jumps into the pond
+1500 sparkle | splash! silence again.
+
+# haiku about bugs
+@bughaiku
+900 | the code compiled once
+900 | then i added one more line
+1500 dim | now nothing compiles
+
+# board game night
+@monopoly
+800 | ( ・_・)🎲 monopoly night
+800 | ( ・_・) 4 hours in...
+1500 danger | ( ╬ಠ益ಠ) friendships: ended.
+
+# D&D natural 20
+@nat20
+800 | ( ・_・)🎲 roll for persuasion
+600 | 🎲 ...
+1500 accent2 sparkle | 🎲 20! natural 20!
+
+# D&D natural 1
+@nat1
+800 | ( ・_・)🎲 roll to attack
+600 | 🎲 ...
+1500 danger | 🎲 1. you hit yourself.
+
+# D&D: the bard
+@bard
+800 | ( ¬‿¬)🪕 i seduce the dragon.
+1500 dim | DM: ( -_-) ...roll.
+
+# fishing tournament
+@bigfish
+600 | ( ・_・)ノ⌒ ~~~
+600 | ( °_°)ノ⌒ ~~!~~
+600 | ( >_<)ノ⌒ ><(((((((°>
+1500 sparkle | ( ^_^) it was THIS big.
+
+# hiking
+@hike
+600 | ( ・_・)🥾 ⛰
+600 | ⛰( ・_・)
+600 | ⛰ ( x_x) *wheeze*
+1500 sparkle | ( ^_^)🏔 the view!
+
+# rock climbing
+@climb
+500 | ▓( ・_・)
+500 | ▓
+500 | ▓( ・_・)
+1500 sparkle | ▓( ^_^)⛳ top!
+
+# kite
+@kite
+600 | ( ・_・)🪁
+500 | ( ・_・)  /🪁
+500 | ( ・_・)    /  🪁
+1500 dim | ( ・_・)🌳🪁 ...the tree has it now.
+
+# yo-yo
+@yoyo
+repeat 3
+  300 | ( ・_・){ノ●|ノ ┃●|ノ}
+end
+1500 sparkle | ( ⌐■_■) walk the dog.
+
+# frisbee
+@frisbee
+type 60 | ( ・_・)«          »⊝
+600 | U・ᴥ・U⊝
+1500 sparkle | U^ᴥ^U caught it!
+
+# hula hoop
+@hula
+repeat 4
+  250 | {(〇・_・〇)|〇( ・_・)〇}
+end
+1500 sparkle | ( ^_^) still going!
+
+# jumping rope
+@jumprope
+repeat 4
+  250 | {( ・_・)|⌒( ・_・)⌒}
+end
+1500 | ( x_x) tripped.
+
+# trampoline
+@trampoline
+repeat 3
+  300 | {( ・_・)|  ↑( ^o^)|( ・_・)}
+  300 | ▔▔▔
+end
+1500 sparkle | ( ^o^) wheee!
+
+# dance-off
+@danceoff
+600 | ( `ー´)  vs  ( `ー´)
+repeat 2
+  300 | ┏(・o・)┛  ┗(・o・)┓
+  300 | ┗(・o・)┓  ┏(・o・)┛
+end
+1500 accent2 sparkle | ( ⌐■_■) *worm*
+
+# breakdance
+@breakdance
+500 | ( ・_・)
+400 | ⟳( ・_・)
+400 | (・_・)⟳
+400 | ⟳(・_ ・)⟳
+1500 accent2 sparkle | headspin!
+
+# moonwalk
+@moonwalk
+erase 150 | «         »(・_・)ﾉ
+1500 sparkle | (・_・)ﾉ hee-hee!
+
+# macarena
+@macarena
+300 | ( ・_・)ノ
+300 | ヽ( ・_・)ノ
+300 | ( ・_・)>
+300 | <( ・_・)>
+1500 sparkle | \( ・_・)/ hey macarena!
+
+# ymca
+@ymca
+500 | \( ・_・)/ Y
+500 | ( ・_・)ノ M
+500 | (( ・_・) C
+500 | /( ・_・)\ A
+1500 sparkle | ♪ it's fun to stay at the...
+
+# cha cha slide
+@chacha
+600 | ( ・_・)← to the left
+600 | ( ・_・)→ to the right
+600 | ( ・_・)⤺ take it back now
+1500 sparkle | ( ⌐■_■) cha cha real smooth.
+
+# gaming chair
+@rgb
+300 accent2 | ( ⌐■_■)💺
+300 danger | ( ⌐■_■)💺
+300 dim | ( ⌐■_■)💺
+1500 accent2 sparkle | ( ⌐■_■) +10 FPS from RGB.
+
+# collector
+@collector
+800 | ( ・_・)📦 just one more figure
+800 | ( ・_・)📦📦📦📦
+1500 dim | ( ・_・) the shelf has given up.
+
+# stamp collection
+@stamps
+800 | ( ・_・)🔍✉
+1500 sparkle | ( ^_^)✉ a rare one!
+
+# birdwatching
+@birdwatch
+800 | ( ・_・)🔭
+800 | ( ・_・)🔭 (・θ・)
+1500 sparkle | ( ^_^)📝 lifer!
+
+# stargazing
+@stargaze
+800 | ( ・_・)🔭 ✦
+800 | ( ・_・)🔭 🪐
+1500 sparkle | ( °o°)🔭 saturn's rings!
+
+# geocaching
+@geocache
+800 | ( ・_・)📍 15m away
+800 | ( ・_・)📍 3m away
+1500 sparkle | ( ^_^)📦 found it! (a tiny pencil)
+
+# metal detecting
+@metaldetect
+repeat 3
+  300 | ( ・_・)⌐ {beep|  beep}
+end
+800 | ( ・_・)⛏
+1500 dim | ( ・_・)🥫 a bottle cap.
+
+# baking bread
+@sourdough
+800 | ( ・_・)🫙 starter: "steve"
+800 | ( ・_・)🫙 feeding steve
+1500 sparkle | ( ^_^)🍞 steve made bread.
+
+# puzzle box
+@puzzlebox
+800 | ( ・_・)▣ *click*
+800 | ( ・_・)▣ *slide*
+800 | ( ・_・)▣ *twist*
+1500 sparkle | ( °o°)▣ ...another box.

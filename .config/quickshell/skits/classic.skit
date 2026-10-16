@@ -1,0 +1,358 @@
+# The original skits, from before they moved out of Quote.qml.
+# Format: README.md in this folder.
+
+# looks left and right, smiles
+@peek
+700 | ( ◕_◕ )
+110 | ( -_- )
+350 | ( ◕_◕ )
+750 | (◕_◕  )
+750 | (  ◕_◕)
+450 | ( ◕_◕ )
+500 | ( ◕‿◕ )
+1100 sparkle | ( ^‿^ )
+
+# dozes off, snores, startles awake, salutes
+@sleepy
+700 | ( -_-)
+500 | ( -_-) z
+500 | ( -_-) zZ
+600 | ( -_-) zZz
+500 | ( -_-)  Zz
+600 | ( -_-) zZz
+450 | ( °_°)!
+500 | ( °_°)
+1100 sparkle | ( ^_^)ゞ
+
+# flips the table, thinks better of it
+@tableflip
+600 | (°_°)
+350 | (°□°)
+350 | (╯°□°)╯ ┬─┬
+1300 danger | (╯°□°)╯︵ ┻━┻
+700 | (°_°)    ┻━┻
+1300 | ┬─┬ノ(º_ºノ)
+900 sparkle | (^_^)  ┬─┬
+
+# Solaire
+@sun
+600 | ( ・_・)
+300 | ( ・_・)/
+300 | \( ・_・)/
+900 sparkle | \[T]/
+1700 sparkle | \[T]/ praise the sun!
+
+# dances to something only it can hear
+@dance
+repeat 4
+  380 | (～￣▽￣)～ ♪
+  380 | ～(￣▽￣～) ♫
+end
+1000 sparkle | (￣▽￣)ノ ♪
+
+# hacks the mainframe
+@hack
+700 | (•_•) hacking...
+gen progress 8
+1200 sparkle | [■■■■■■■■] ACCESS GRANTED
+450 | (•_•)
+600 | ( •_•)>⌐■-■
+1300 sparkle | (⌐■_■)
+
+# has no idea either
+@shrug
+600 | (・_・)
+700 | (・_・)?
+1600 | ¯\_(ツ)_/¯
+
+# a cat wanders in
+@cat
+900 | (=^･ω･^=)
+900 | (=^･ω･^=) mrrp
+600 | (=^-ω-^=)
+1000 | (=^-ω-^=) zZ
+450 | (=^･ω･^=)!
+1100 sparkle | (=^･ｪ･^=)ﾉ
+
+@pacman
+gen pacman
+1600 sparkle | Pᗣᗧ•••MᗣN
+
+# Dark Souls: rests at the bonfire
+@bonfire
+erase 260 | ( ・_・)«      »†
+500 | ( -_-)†
+260 | ( -_-)†,
+260 | ( -_-)†,'
+400 accent2 | ( -_-)†,'`
+1800 accent2 sparkle | B O N F I R E   L I T
+
+# runs across the bar, arms back
+@narutorun
+type 110 | «                »{ε=ε=┌( `ー´)┘|ε=ε=└( `ー´)┐}
+1500 sparkle |                 ( `ー´)ゞ believe it!
+
+# Gojo
+@domain
+700 | ( ¬‿¬)
+400 | ( ¬‿¬)ノ
+900 | ( ¬‿¬)ノ 領域展開
+1100 | ( ¬‿¬)ノ domain expansion...
+180 accent2 | ∞
+180 accent2 | ∞ ∞ ∞
+1800 accent2 sparkle | ∞ I N F I N I T E   V O I D ∞
+
+# Factorio
+@factory
+gen belt ⚙
+1600 sparkle | the factory must grow ⚙
+
+# types the forbidden command, thinks better of it
+@sudo
+type 90 | «$ sudo rm -rf /»▌
+700 | $ sudo rm -rf /▌
+600 danger | (°ロ°) !!
+700 | $ sudo rm -rf /^C
+1300 | (˘︹˘ ) phew
+
+# coffee break
+@coffee
+800 | ( ・_・)_旦
+350 | ( ・_・)_旦 ~
+350 | ( ・_・)_旦 ~~
+900 | ( ˘▽˘)っ旦
+1100 | ( ˘ω˘)  ahh
+900 sparkle | ( ・ω・)_旦 ~
+
+# casts, waits, lands one
+@fishing
+500 | ( ・_・)ノ
+250 | ( ・_・)ノ⌒
+250 | ( ・_・)ノ⌒ ゜
+repeat 4
+  400 | ( ・_・)ノ⌒ ~~゜~~
+  400 | ( ・_・)ノ⌒ ~゜~~~
+end
+500 | ( °_°)ノ⌒ ~~!~~
+500 | ( >_<)ノ⌒ ><(((°>
+1300 sparkle | ( ^_^)ノ ><(((°>
+
+# a snail takes its time
+@snail
+type 330 | «............»_@_y
+1400 sparkle | ............_@_y  made it
+
+# Chainsaw Man: pulls the cord
+@chainsaw
+600 | ( ・_・)
+450 | ( ・_・)ノ⌐
+500 | ( °_°)ノ⌐ *pull*
+600 | ( °_°)ノ⌐ *pull* *pull*
+260 danger | (ʘ皿ʘ) VRRRRR
+260 danger | (ʘ皿ʘ) VRRRRRRRR
+900 danger | (ʘ皿ʘ) VRRRRRRRRRRRR
+1300 | ( ・ω・) ...woof
+
+# Berserk: the Dragon Slayer
+@berserk
+700 | ( ಠ_ಠ)
+type 70 | ( ಠ_ಠ)╾«━━━━━━━━━━━━»⊳
+800 | ( ಠ_ಠ)╾━━━━━━━━━━━━⊳
+2000 dim | that thing was too big to be called a sword.
+
+# Death Note: writes a name, Ryuk laughs
+@deathnote
+600 | ( ¬‿¬)✎
+type 120 | ( ¬‿¬)✎ «L Lawliet»
+800 | ( ¬‿¬)✎ L Lawliet
+1100 danger | 40 seconds...
+1900 dim | (ﾟ∀ﾟ) hyuk hyuk... humans are so interesting
+
+# Half-Life: headcrab vs. crowbar
+@headcrab
+erase 120 | ( •_•)«          »ж
+400 danger | ( °_°)ж
+500 | ( >_<)ノ⌐ *crowbar*
+700 | ( •_•)ノ⌐    ж.
+1300 accent2 sparkle | ( •_•) λ
+
+# Gurren Lagann: the drill that pierces the heavens
+@drill
+600 | ( `ー´)ﾉ
+type 90 accent2 | ( `ー´)ﾉ«==========»≫
+900 accent2 | ( `ー´)ﾉ==========≫ GIGA DRILL
+1800 accent2 sparkle | who the hell do you think I am?!
+
+# vim: can't leave
+@vimtrap
+700 | ( ・_・) :q
+900 danger | E37: No write since last change
+600 | ( °_°) :q!
+700 | ( °_°) ^C ^C ^C
+800 | ( ;_;) ESC ESC ESC :wq
+1500 dim | ( ;_;) i live here now
+
+# Gentoo: a quick update
+@gentoo
+900 | $ emerge -avuDN @world
+500 | >>> compiling gcc...
+500 | >>> compiling llvm...
+500 | >>> compiling rust...
+500 | >>> compiling chromium...
+500 | >>> compiling qtwebengine...
+1100 dim | ( -_-) zZ  [3h 42m left]
+1300 danger | ( °_°) USE flags changed. starting over.
+1200 danger | (ﾉಥ益ಥ)ﾉ
+
+# Demon Slayer: Water Breathing
+@breathing
+900 dim | ( -_-) hhhh...
+1000 | ( -_-) total concentration...
+220 | ( `ー´)⚔ ~
+220 | ( `ー´)⚔ ~~≈
+220 | ( `ー´)⚔ ~~≈≈~~≈≈
+1800 accent2 sparkle | water breathing, first form!
+
+# Undertale: a skeleton's warning, and determination
+@determination
+500 | ( ・_・)
+700 danger | ( ・_・) ♥
+1800 dim | * you feel like you're going to have a bad time.
+500 danger | ( `_´) ♥
+1800 accent2 sparkle | * you are filled with DETERMINATION.
+
+# Metal Gear: spotted, hides in a box
+@alert
+600 | ( ・_・)
+600 danger | ( °_°) !
+700 danger | [ ! ] ALERT
+400 | ( ;_;)□
+900 |     □
+1000 |     □ ...
+1600 sparkle |     □ kept you waiting, huh?
+
+# Skyrim
+@fusrodah
+500 | ( `ー´) FUS
+500 | ( `ー´) FUS RO
+300 accent2 | ( `ロ´) FUS RO DAH!!
+300 accent2 | ( `ロ´)    ≡≡≡≡≡    ┻━┻
+300 accent2 | ( `ロ´)              ≡≡≡≡  ┻━┻
+1700 | ( ^_^) hey, you. you're finally awake.
+
+# Zelda: opens a chest
+@chest
+700 | ( ・_・) ▣
+600 | ( ・_・)ノ▣
+500 accent2 | ( °o°)ノ□ ✧
+1400 accent2 sparkle | \(°o°)/ ▲ ♪ da-na-na-naaa
+1500 sparkle | you got a heart container!
+
+# Steins;Gate: phone call to the Organization
+@steinsgate
+700 | ( ¬‿¬)ノ☎
+900 | ( ¬‿¬)ノ☎ it's me.
+1500 | ( ¬‿¬)ノ☎ the Organization is on the move.
+1200 accent2 | world line: 1.048596
+1500 sparkle | ( ¬‿¬) El Psy Kongroo.
+
+# Matrix rain, then the message
+@matrix
+gen rain
+1400 accent2 | wake up, Neo...
+1500 accent2 | follow the white rabbit.
+1400 | knock, knock. (°_°)
+
+# Noctis: building your own compiler
+@compiler
+800 | $ noctis build
+1000 danger | error: expected ';' at 1:1
+1500 | (ಠ_ಠ) ...the language doesn't have semicolons
+1000 | ( ・_・)⌨ fixing the parser...
+600 | $ noctis build
+1600 sparkle | ( ^_^)b 0 errors. it compiles itself now
+
+# N64: blows on the cartridge
+@cartridge
+600 | ( ・_・)[▤]
+800 danger | [N64] ▓▒░▒▓ ...
+600 | ( ・3・)~[▤] fwoo
+600 | ( ・3・)~~[▤] FWOOO
+500 | ( ^_^)[▤] *click*
+1400 sparkle | it's-a me! ♪
+
+# Hack The Box: owns a box
+@pwn
+900 | $ nmap -sV 10.10.11.42
+900 | 22/tcp ssh · 80/tcp http
+800 | ( ・_・)⌨ gobuster...
+900 | ( °_°) /admin.bak ?!
+800 accent2 | user.txt ✓
+800 accent2 | root.txt ✓
+1300 sparkle | (⌐■_■) pwned.
+
+# Welcome to the Game: someone at the door
+@knock
+1000 | ( ・_・)⌨ ...
+700 dim | ( ・_・)⌨ ... *knock*
+800 danger | ( °_°) ... *knock knock*
+1300 danger | (  ;°_°) lights off. mic off.
+1400 dim | ( ;-_-) ...
+1200 | ( ・_・)⌨ back to work.
+
+# deadmau5
+@mau5
+600 | ( ・_・) ♪
+repeat 6
+  260 accent2 | [◕ ◕]  ♫ ▁▃▅▇
+  260 | [◕ ◕]  ♪ ▇▅▃▁
+end
+1300 accent2 sparkle | [◕ ◕] *strobe*
+
+# ricing: one more tweak
+@rice
+1100 | ( ・_・)⌨ one more tweak...
+1000 | ( ・_・)⌨ ...padding 4px → 5px
+800 dim | ( -_-)⌨ 2 AM
+800 dim | ( -_-)⌨ 4 AM
+900 | ( ˘▽˘) perfect.
+1600 | ( ・_・) ...actually, 4px was better.
+
+# Pop Team Epic
+@popteamepic
+700 | (´・ω・`)
+600 | (´・ω・`) ?
+500 danger | (╬ Ò﹏Ó)
+800 danger | (╬ Ò皿Ó)ノ ┻━┻
+1500 | (´・ω・`) ...it's pop team epic.
+
+# TempleOS: random words from God
+@oracle
+1000 | ( •_•) asking God...
+450 accent2 | (  •_•)⊹ {?divine|intellect|compiler|640x480|holy|C|glow|temple|random|joy|simplicity|ring-0}
+450 accent2 | (  •_•)⊹ {?divine|intellect|compiler|640x480|holy|C|glow|temple|random|joy|simplicity|ring-0} {?divine|intellect|compiler|640x480|holy|C|glow|temple|random|joy|simplicity|ring-0}
+1300 accent2 | (  •_•)⊹ {?divine|intellect|compiler|640x480|holy|C|glow|temple|random|joy|simplicity|ring-0} {?divine|intellect|compiler|640x480|holy|C|glow|temple|random|joy|simplicity|ring-0} {?divine|intellect|compiler|640x480|holy|C|glow|temple|random|joy|simplicity|ring-0}
+1300 sparkle | ( ^_^) God has spoken.
+
+# Cowboy Bebop
+@cowboy
+700 dim | see you
+700 dim | see you space
+2200 dim | see you space cowboy...
+
+# fingerprint scanner bit
+@fingerprint
+500 | ( •_•)
+500 | ( •_•)☝
+450 | ( •_•)☝[▒▒]
+300 | ( •_•)☝[▓▒]
+300 | ( •_•)☝[▓▓]
+1500 sparkle | ( ^_^)b access granted
+
+# gets bodied by a boss, tries again
+@died
+800 | (ง •_•)ง
+600 | (ง •_•)ง  ⚔
+700 danger | ( x_x)
+1700 danger | Y O U   D I E D
+1200 | ( •_•) ...again.

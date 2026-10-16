@@ -1,0 +1,316 @@
+# TryHackMe, Hack The Box, and CTF life.
+# Format: README.md in this folder.
+
+# the VPN drops mid-box
+@vpndrop
+800 | ( ・_・)⌨ almost there...
+900 danger | openvpn: connection lost
+800 | ( ;_;) reconnecting...
+1500 dim | ( -_-) new IP. box reset. again.
+
+# connects to the VPN
+@vpnconnect
+800 | $ sudo openvpn lab.ovpn
+gen progress 5
+1500 accent2 sparkle | Initialization Sequence Completed ( ⌐■_■)
+
+# the rabbit hole
+@rabbithole
+800 | ( ・_・) interesting file...
+800 | ( ・_・) interesting folder...
+800 dim | ...4 hours later...
+1500 dim | ( x_x) 🐇🕳 it was a rabbit hole.
+
+# enumerate more
+@enumerate
+800 | ( ;_;) i'm stuck
+900 | forum: enumerate more.
+800 | ( ;_;) i enumerated!
+1500 dim | forum: enumerate MORE.
+
+# try harder
+@tryharder
+800 | ( ;_;) nothing works...
+1500 danger | (ง •̀_•́)ง TRY HARDER
+
+# the hint button
+@hint
+800 | ( ・_・) no hints. i got this.
+800 | ( ・_・) ...
+800 | ( ・_・)☝ ...
+1500 dim | ( -_-)☝ *click* — oh. obviously.
+
+# reads the writeup
+@writeup
+800 | ( ;_;) day 3 on this box
+800 | ( ・_・)📖 the writeup
+900 | ( °_°) step 1 was the thing i skipped.
+1500 dim | ( x_x) ...
+
+# submits the flag
+@submitflag
+800 | ( ・_・)⌨ submit flag
+600 | ...
+1500 accent2 sparkle | ✓ correct! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+
+# wrong flag format
+@flagformat
+800 | ( ⌐■_■)⌨ submit
+900 danger | ✗ incorrect
+800 | ( ಠ_ಠ) ...forgot the THM{}
+1500 accent2 sparkle | ✓ correct. ( -_-)
+
+# the flag has a trailing newline
+@newline
+800 | ( ・_・) copy... paste...
+900 danger | ✗ incorrect
+1500 dim | ( ಠ_ಠ) a trailing space. a SPACE.
+
+# user flag, then root
+@userroot
+800 accent2 | 🚩 user owned
+800 | ( ・_・) now root...
+800 dim | ...2 days later...
+1500 accent2 sparkle | 🚩 root owned ( ⌐■_■)
+
+# first blood
+@firstblood
+800 | ( ・_・)⌨ new box released
+800 | ( °_°)⌨ ...
+1500 accent2 sparkle | 🩸 FIRST BLOOD ( ⌐■_■)
+
+# seasonal leaderboard
+@leaderboard
+600 | #847
+600 | #612
+600 | #403
+1500 accent2 sparkle | #398 ( ^_^)b climbing!
+
+# rank up
+@rankup
+800 | ( ・_・) Script Kiddie
+800 | ( ・_・) Hacker
+800 | ( ・_・) Pro Hacker
+1500 accent2 sparkle | ( ⌐■_■) Elite Hacker ✧
+
+# the daily streak
+@streak
+800 | 🔥 streak: 99 days
+800 | ( -_-) 11:58 PM
+800 | ( °_°)⌨ one room, quick!
+1500 accent2 sparkle | 🔥 streak: 100 days ( ^_^)
+
+# loses the streak
+@streaklost
+800 | 🔥 streak: 213 days
+800 | ( -_-) zZ
+1500 danger | 🔥 streak: 0 ( ;_;)
+
+# a new badge
+@badge
+800 | ( ・_・) room complete
+1500 accent2 sparkle | 🏅 new badge! ( ^▽^)
+
+# box retires
+@retired
+800 | ( ・_・) still haven't rooted it
+800 dim | box status: retired
+1500 dim | ( ;_;) ...writeups are out though.
+
+# box is "easy"
+@easybox
+800 | difficulty: Easy
+800 | ( ・_・) ok!
+800 dim | ...6 hours later...
+1500 dim | ( x_x) "easy".
+
+# box is "insane"
+@insane
+800 | difficulty: Insane
+800 | ( ・_・) just looking.
+1500 dim | ( ・_・)⌨ ...closes the tab. respectfully.
+
+# the box reset vote
+@boxreset
+800 | ( ・_・) almost root
+900 danger | box reset requested by another user
+1500 dim | ( ಠ_ಠ) ...hi, other user.
+
+# someone left files behind
+@leftovers2
+800 | ( ・_・) $ ls /tmp
+800 | totally-not-the-answer.sh
+1500 dim | ( ¬_¬) shared box moments.
+
+# notes
+@notes
+800 | ( ・_・)📝 good notes
+800 | ( ・_・)📝 "port: something"
+1500 dim | ( x_x)📝 "the thing worked??"
+
+# OSCP-style
+@oscp
+800 | ( `ー´) 24-hour exam
+800 | ( -_-)☕ hour 18
+800 | ( °_°) hour 23
+1500 accent2 sparkle | ( ;▽;) PASSED.
+
+# CTF at 3 AM
+@ctf3am
+800 dim | ☾ 3 AM
+800 | ( @_@)⌨ one more challenge
+1500 sparkle | 🚩 ( ^_^) ...ok, one more.
+
+# CTF team chat
+@teamchat
+600 | 💬 "anyone on crypto?"
+600 | 💬 "anyone on web?"
+600 | 💬 "anyone awake?"
+1500 dim | ( -_-) ...just me.
+
+# CTF scoreboard freeze
+@freeze
+800 | ( ・_・) scoreboard frozen
+800 | ( ・_・) last hour...
+1500 accent2 sparkle | ( °o°) we placed 12th!
+
+# imposter syndrome
+@impostor
+800 | ( ;_;) everyone's so good
+800 | ( ・_・) 300 rooms done
+1500 sparkle | ( ・_・) ...oh. i'm one of them.
+
+# the junior helps the senior
+@learnedtoday
+800 | ( ・_・) today i learned...
+800 | ( °o°) ...that it can do THAT?
+1500 sparkle | ( ^_^)📝 new note.
+
+# terminal setup before hacking
+@setup
+800 | ( ・_・) new box!
+800 | ( ・_・) first: tmux layout
+800 | ( ・_・) then: new color scheme
+1500 dim | ( ・_・) ...box expired.
+
+# kali vs parrot
+@distrowar
+700 | ( `ー´) kali!
+700 | (`ー´ ) parrot!
+1500 dim | ( ・_・) ...my chimera has neither.
+
+# AttackBox lag
+@attackbox
+800 | ( ・_・) starting attackbox
+800 | ( ・_・)⌨ t... y... p...
+1500 dim | ( -_-) 400ms per keystroke.
+
+# the room's questions
+@questions
+800 | Q: what is the answer?
+800 | ( ・_・) ...
+900 | answer format: ****
+1500 dim | ( ・_・) four stars. thanks.
+
+# reads the room text
+@readthetext
+800 | ( ・_・) skip reading, go!
+800 | ( ;_;) stuck
+900 | ( ・_・) ...it was in the text.
+1500 dim | ( -_-) read the room. literally.
+
+# Advent of Cyber
+@advent
+800 | 🎄 day 1
+800 | 🎄 day 12
+800 | 🎄 day 24
+1500 accent2 sparkle | 🎁 certificate! ( ^▽^)
+
+# machine pwned tweet
+@shareit
+800 | ( ⌐■_■) owned it.
+800 | ( ⌐■_■)📸 screenshot
+1500 sparkle | ( ⌐■_■) "pwned!" ✧ +12 likes
+
+# respect points
+@respect2
+800 | ( ・_・) someone gave you respect
+1500 accent2 sparkle | ( ⁄⁄•⁄ω⁄•⁄⁄ ) +1 respect
+
+# the nudge on discord
+@nudge
+800 | ( ;_;) can i get a nudge?
+800 | 💬 "think about what you found."
+1500 dim | ( ・_・) ...i found nothing.
+
+# a nudge that works
+@nudge2
+800 | 💬 "look at the version."
+800 | ( ・_・) ...
+1500 sparkle | ( °o°)💡 oh. OH.
+
+# the box name pun
+@boxname
+800 | box: "Tea"
+800 | ( ・_・) ...
+1500 dim | ( ¬_¬) the name was the hint. it always is.
+
+# king of the hill
+@koth
+800 | ( `ー´) king of the hill
+800 | ( ⌐■_■)👑
+900 danger | ( x_x) ...lasted 40 seconds.
+1500 | ( `ー´) again.
+
+# legal-only reminder
+@scope
+800 | ( ・_・) stay in scope.
+1500 sparkle | ( ^_^)b hack the lab, not the planet.
+
+# finishes a learning path
+@path
+gen progress 8
+1500 accent2 sparkle | 🎓 path complete! ( ;▽;)
+
+# certificate on the wall
+@cert
+800 | ( ・_・)🖼 certificate
+1500 sparkle | ( ⌐■_■) the wall is filling up.
+
+# the machine IP changed
+@ipchanged
+800 | ( ・_・) why isn't it responding?
+800 | ( ・_・) ...
+1500 dim | ( -_-) i restarted the box. new IP.
+
+# hosts file
+@hosts
+800 | ( ・_・) site won't load
+800 | ( ・_・)📝 /etc/hosts
+1500 sparkle | ( ^_^) box.htb ✓ there it is.
+
+# going for 100%
+@completion
+600 | 97%
+600 | 98%
+600 | 99%
+1500 dim | 99% ( ;_;) one question left.
+
+# thanks the creator
+@creator
+800 | ( ^_^) great box!
+1500 sparkle | ( ^_^)👏 thanks to the creator.
+
+# the sound of a flag
+@flagdance
+repeat 3
+  300 | 🚩{( ^_^)|(^_^ )}
+end
+1500 accent2 sparkle | 🚩 the flag dance.
+
+# hacking montage music
+@montage
+600 | ( ⌐■_■)🎧 synthwave on
+600 | ( ⌐■_■)⌨ ♪
+600 | ( ⌐■_■)⌨ ♪ ♫
+1500 dim | ( ⌐■_■) +20% skill (not really)

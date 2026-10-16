@@ -1,0 +1,646 @@
+# Anime and manga.
+# Format: README.md in this folder.
+
+# Dragon Ball: over 9000
+@over9000
+700 | ( ಠ_ಠ)⌖ scouter...
+600 | ( ಠ_ಠ)⌖ 1,000...
+600 | ( ಠ_ಠ)⌖ 5,000...
+600 danger | ( °ロ°)⌖ 9,000...
+1500 danger | IT'S OVER 9000!! ⌖💥
+
+# Dragon Ball: kamehameha
+@kamehameha
+500 | ( `ー´) ka...
+500 | ( `ー´)⊂ me...
+500 | ( `ロ´)⊂⊃ ha...
+500 accent2 | ( `ロ´)⊂◉⊃ me...
+type 40 accent2 | ( `ロ´)⊃«≡≡≡≡≡≡≡≡≡≡≡≡»◉
+1300 accent2 sparkle | HAAAAA!!
+
+# Dragon Ball: powering up for 3 episodes
+@powerup
+repeat 3
+  400 accent2 | ( `ロ´) AAAA{A|AA|AAA}
+end
+800 dim | ...next episode...
+1400 dim | ( `ロ´) ...AAAAAAAAA
+
+# Dragon Ball: fusion
+@fusion
+700 | ( `ー´)   ( `ー´)
+600 | (`ー´)ノ fu-  ヽ(`ー´)
+600 | (`ー´)> sion  <(`ー´)
+900 accent2 | ( `ー´)ﾉ☝ HA!
+1500 accent2 sparkle | ( ⌐■_■) gogeta.
+
+# One Piece: the hat
+@strawhat
+800 | ( ^∀^)👒
+900 | ( ^∀^)👒 i'm gonna be
+1500 accent2 sparkle | ( `∀´)👒 KING OF THE PIRATES!
+
+# One Piece: gum gum
+@gumgum
+600 | ( `ー´)ノ gum gum...
+type 50 | ( `ー´)«━━━━━━━━━━»✊
+1400 accent2 sparkle | ...PISTOL!
+
+# One Piece: the one piece is real
+@onepiece
+800 | ( ・_・) 1,100+ episodes
+900 | ( ・_・) still going...
+1500 accent2 sparkle | THE ONE PIECE IS REAL!
+
+# Naruto: shadow clones
+@shadowclone
+600 | ( `ー´)
+600 | ( `ー´) 影分身の術!
+400 | ( `ー´)( `ー´)
+400 | ( `ー´)( `ー´)( `ー´)
+1400 sparkle | ( `ー´)( `ー´)( `ー´)( `ー´) dattebayo!
+
+# Naruto: rasengan
+@rasengan
+600 | ( `ー´)ノ
+500 accent2 | ( `ー´)ノ◌
+500 accent2 | ( `ー´)ノ◎
+500 accent2 | ( `ー´)ノ◉
+1400 accent2 sparkle | RASENGAN!
+
+# Naruto: Kakashi reads
+@kakashi
+900 | ( ー_ー)📕
+900 | ( ー_ー)📕 ...
+1000 dim | ( ー_ー)📕 sorry i'm late.
+1500 dim | ( ー_ー)📕 got lost on the road of life.
+
+# Naruto: sharingan
+@sharingan
+600 | ( -_-)
+500 danger | ( ◉_◉)
+500 danger | ( ✇_✇)
+1500 danger | ( ✇_✇) ...you lack hatred.
+
+# Bleach: bankai
+@bankai
+700 | ( ಠ_ಠ)⚔
+700 | ( ಠ_ಠ)⚔ ban...
+900 accent2 | ( ಠ_ಠ)⚔ BANKAI!
+1500 accent2 sparkle | 天鎖斬月 tensa zangetsu
+
+# Jojo: menacing
+@menacing
+600 | ( ・_・)
+400 accent2 | ( ・_・) ゴ
+400 accent2 | ( ・_・) ゴ ゴ
+400 accent2 | ( ・_・) ゴ ゴ ゴ
+1500 accent2 | ( ¬‿¬) ゴ ゴ ゴ ゴ ゴ
+
+# Jojo: ora ora
+@oraora
+500 | ( `ー´)
+repeat 3
+  200 accent2 | ( `ロ´)ﾉ✊ ORA{|ORA|ORAORA}
+end
+1500 accent2 sparkle | ( `ー´) yare yare daze.
+
+# Jojo: za warudo
+@zawarudo
+700 | ( ¬‿¬) ZA WARUDO!
+900 dim | ⏸ time has stopped.
+900 dim | ⏸ ...
+800 | ( ¬‿¬) ROAD ROLLER DA!
+1500 | ⏵ time resumes.
+
+# Jojo: to be continued
+@tbc
+800 | ( ・_・) ...
+1500 accent2 | ( ・_・)  ⇦ to be continued
+
+# Jojo: you expected
+@dio
+900 | ( ・_・) you expected the next quote?
+1500 danger | (¬‿¬) but it was me, DIO!
+
+# Attack on Titan: the wall
+@titan
+800 | ▓▓▓▓▓▓▓▓
+800 | ▓▓▓▓▓▓▓▓ (ﾟДﾟ)
+900 danger | ▓▓▓ ▓▓▓
+1500 danger | ( `ロ´) tatakae! tatakae!
+
+# Attack on Titan: Eren and the sea
+@sea
+900 | ( ・_・) ≈≈≈≈≈≈
+900 | ( ・_・) beyond the sea...
+1500 dim | ( ・_・) ...are enemies?
+
+# Attack on Titan: shinzou wo sasageyo
+@sasageyo
+800 | ( `ー´)✊
+1500 accent2 sparkle | ( `ロ´)✊ SHINZOU WO SASAGEYO!
+
+# Fullmetal Alchemist: equivalent exchange
+@exchange
+700 | ( `ー´)
+600 accent2 | ( `ー´)ﾉﾉ *clap*
+600 accent2 | ( `ー´)⊃ ⊛
+900 | ( `ー´)⚔ transmuted!
+1500 dim | equivalent exchange: lunch for a sword.
+
+# FMA: Alphonse
+@alphonse
+800 | [▢_▢] brother...
+900 | [▢_▢] i'm an empty suit of armor
+1400 | [▢_▢] ...the cats live in here.
+
+# Spirited Away: No-Face
+@noface
+800 | ( ⚪︎ ⚪︎ )
+800 | ( ⚪︎ ⚪︎ ) a...
+800 | ( ⚪︎ ⚪︎ )🪙 a...?
+1500 dim | ( ⚪︎ ⚪︎ ) ...a.
+
+# Totoro
+@totoro
+800 | ( ・_・)☂ bus stop...
+800 dim | ☁ rain
+800 | ( ・_・)☂ (◕ᴥ◕ )
+900 | ( ・_・)☂ (◕ᴥ◕ )☂
+1500 sparkle | 🐱🚌 the catbus!
+
+# Kiki's delivery
+@kiki
+type 90 | «            »🧹(・ω・)
+1500 sparkle | kiki's delivery service ♪
+
+# Sailor Moon
+@sailormoon
+700 | ( ˘▽˘)
+700 accent2 | ( ˘▽˘)☾ moon prism power...
+900 accent2 sparkle | ✧☾✧ MAKE UP!
+1500 | in the name of the moon, i'll punish you!
+
+# Evangelion: get in the robot
+@getinrobot
+800 | dad: get in the robot
+800 | ( ;_;) i mustn't run away
+800 | ( ;_;) i mustn't run away
+1500 dim | ( ;_;) ...congratulations.
+
+# Evangelion: Gendo pose
+@gendo
+900 | ( ▀▃▀ )
+1000 | (ﾉ▀▃▀)ﾉ ...
+1500 dim | ( ▀▃▀ ) all according to the scenario.
+
+# Code Geass: Lelouch
+@geass
+700 | ( ¬‿¬)
+600 danger | ( ¬‿◉)
+1500 danger | lelouch vi britannia commands you!
+
+# Death Note: potato chip
+@potatochip
+800 | ( ¬‿¬)📕 ...
+900 | ( ¬‿¬)🥔 i'll take a potato chip
+900 | ( ¬‿¬)🥔 ...AND EAT IT!
+1400 dim | the most dramatic snack.
+
+# Death Note: L's sitting
+@lsit
+800 | (◉_◉) ...
+800 | (◉_◉)🍰
+1500 | (◉_◉) i am L.
+
+# Hunter x Hunter: hiatus
+@hiatus
+800 | ( ・_・)📖 HxH chapter 390
+900 dim | ...hiatus...
+900 dim | ...hiatus...
+1500 sparkle | ( ;▽;) togashi is back!
+
+# Hunter x Hunter: Gon
+@gon
+600 | ( `ー´) jan...
+600 | ( `ー´) ken...
+1500 accent2 sparkle | ( `ロ´)✊ ROCK!
+
+# My Hero Academia: Plus Ultra
+@plusultra
+800 | ( `ー´)
+800 | ( `ー´) go beyond!
+1500 accent2 sparkle | ( `ロ´) PLUS ULTRA!
+
+# My Hero Academia: All Might
+@allmight
+800 | ( ・_・) fear not!
+900 | ( ▼皿▼ ) why?
+1500 accent2 sparkle | ( ▼皿▼ ) because i am here!
+
+# One Punch Man
+@onepunch
+700 | ( ・_・) a monster.
+600 | ( ・_・)✊
+500 danger | 💥
+1400 | ( ・_・) ...ok.
+1300 dim | ( ・_・) is there a sale today?
+
+# One Punch Man: the bald cape
+@saitama
+800 | ( ・_・) 100 push-ups
+800 | ( ・_・) 100 sit-ups
+800 | ( ・_・) 100 squats
+900 | ( ・_・) 10km run
+1500 dim | ( ・_・) ...and i went bald.
+
+# Mob Psycho
+@mobpsycho
+800 | ( ・_・) 50%
+800 accent2 | ( ・_・) 70%
+900 accent2 | ( ・_・) 100%
+1500 accent2 sparkle | ( ✧_✧) ???%
+
+# Demon Slayer: Nezuko
+@nezuko
+800 | ( ・ω・)🎋
+800 | ( ・ω・)🎋 mmh!
+1500 sparkle | ( ^ω^)🎋 mmmh!
+
+# Demon Slayer: Zenitsu
+@zenitsu
+800 | ( ;_;) i'm gonna die!
+800 | ( -_-) zZ
+600 accent2 | ( -_-)⚡
+1500 accent2 sparkle | thunderclap and flash. ⚡
+
+# Demon Slayer: Inosuke
+@inosuke
+800 | (🐗) charge!
+800 | (🐗) PIG ASSAULT!
+1500 dim | (🐗) ...what's a "door"?
+
+# Jujutsu Kaisen: nah, I'd win
+@nahidwin
+800 | ( ・_・) are you the strongest
+800 | ( ・_・) because you're gojo?
+1500 sparkle | ( ¬‿¬) nah, i'd win.
+
+# Chainsaw Man: Power
+@power
+800 | ( ˋ∀ˊ) i'm the best!
+800 | ( ˋ∀ˊ) bow before me!
+1500 dim | ( ˋ∀ˊ) ...i don't eat vegetables.
+
+# Spy x Family: Anya
+@anya
+800 | ( ¬‿¬) heh.
+800 | ( ¬‿¬) anya knows.
+1500 sparkle | ( ✧‿✧) waku waku!
+
+# Frieren
+@frieren
+800 | ( ・_・) a spell to...
+800 | ( ・_・) make flowers bloom.
+900 | ( ・_・) took 80 years
+1500 sparkle | ( ˘▽˘)🌸 worth it.
+
+# Frieren: mimic
+@frierenmimic
+800 | ( ・_・) a chest.
+800 | ( ・_・) 99% a mimic.
+800 | ( ・_・)ノ▣ ...1%
+1500 danger | ▣▼▼ ( x_x) help, fern.
+
+# Bocchi the Rock
+@bocchi
+800 | ( ;_;) people...
+800 | ( ;_;)🎸 ...
+600 dim | (   ) *vanishes into a box*
+1500 sparkle | ( ;▽;)🎸 the solo was amazing though
+
+# Haikyuu
+@haikyuu
+500 | ( `ー´) ↑
+500 | ( `ー´)ノ ●
+500 accent2 | ( `ロ´)ノ ● ⇘
+1500 accent2 sparkle | ( `ロ´) a quick! a perfect quick!
+
+# Slam Dunk
+@slamdunk
+800 | ( `ー´)🏀
+800 | ( `ー´)🏀 left hand
+1500 accent2 sparkle | ( `ー´) ...just helps. 🏀
+
+# Yu-Gi-Oh: heart of the cards
+@heartofcards
+800 | ( `ー´)🃏 draw!
+900 | ( `ー´)🃏 heart of the cards...
+1500 accent2 sparkle | ( `ー´) EXODIA! obliterate!
+
+# Yu-Gi-Oh: shadow realm
+@shadowrealm
+800 | ( ¬‿¬)🃏 trap card!
+1500 danger | ( ¬‿¬) to the shadow realm!
+
+# Digimon: digivolve
+@digivolve
+700 | ( ・ω・)
+700 accent2 | ( ・ω・) agumon digivolve to...
+1500 accent2 sparkle | ( `ロ´) GREYMON! ♪
+
+# Gundam
+@gundam
+800 | [▼_▼] amuro ray,
+900 | [▼_▼] gundam,
+1500 accent2 sparkle | [▼_▼] ikimasu! ⇗
+
+# Akira: the slide
+@akira
+type 50 | «                »🏍💨
+1500 accent2 | 🏍 (ﾟ∀ﾟ) kanedaaa!
+
+# Ghost in the Shell
+@ghostshell
+800 dim | ( ・_・) ...
+900 dim | ( ・_・) the net is vast
+1500 dim | ( ・_・) and infinite.
+
+# Trigun: love and peace
+@lovepeace
+800 | ( ^▽^)✌
+1500 sparkle | ( ^▽^)✌ love and peace!
+
+# Lucky Star
+@luckystar
+repeat 3
+  300 | ( ¬ω¬) ♪
+  300 | (¬ω¬ ) ♫
+end
+1300 dim | ( ¬ω¬) motteke! sailor fuku ♪
+
+# K-On: tea time
+@teatime
+800 | ( ・_・)🎸 practice!
+800 | ( ˘▽˘)🍰 ...tea first
+1500 sparkle | ( ˘▽˘)っ旦 ...tea forever.
+
+# Haruhi: endless eight
+@endless8
+800 | ( ・_・) summer vacation
+800 | ( ・_・) summer vacation
+800 | ( ・_・) summer vacation
+800 dim | ( ・_・) summer vacation
+1500 dim | ( x_x) 8 times.
+
+# Nichijou: the deer
+@nichijou
+800 | ( ・_・) a normal day
+800 | ( ・_・) a deer?
+600 danger | 🦌 ⇉ ( x_x)
+1500 dim | nichijou. a normal day.
+
+# Konosuba: explosion
+@explosion
+700 | ( ¬‿¬)🪄 EXPLOSION...
+500 danger | 💥
+500 danger | 💥💥💥
+1500 dim | ( x_x) ...can't move. carry me.
+
+# Konosuba: Aqua
+@aqua
+800 | (ᗒᗣᗕ) kazuma-san!
+800 | (ᗒᗣᗕ) i'm a goddess!
+1500 dim | ( ¬_¬) a useless one.
+
+# Re:Zero: return by death
+@rezero
+700 | ( ・_・) ...
+600 danger | ( x_x)
+900 dim | ↺ return by death
+1500 | ( ;_;) ...again.
+
+# Overlord
+@overlord
+800 | ( ☠ ) i am ainz ooal gown
+900 | ( ☠ ) (wait, what's a spreadsheet?)
+1500 dim | ( ☠ ) all according to plan.
+
+# Isekai truck
+@truck
+type 60 | ( ・_・)«          »🚚
+600 danger | 💥
+1000 dim | ...
+1500 sparkle | ( °o°) ...i'm a slime now?
+
+# Slime isekai
+@slime
+800 | ( ・ ε ・)
+800 | ( ・ ε ・) predator!
+1500 | ( ・ ε ・) ...ate a dragon. normal day.
+
+# Sword Art Online
+@sao
+800 | ( ・_・) link start!
+900 | ( ・_・) logout button?
+1500 danger | ( °_°) ...it's gone.
+
+# Kaguya-sama
+@kaguya
+800 | (・_・) ( ・_・)
+800 | (¬‿¬) ( ¬‿¬)
+900 | o kawaii koto
+1500 sparkle | ...love is war ♥
+
+# Tsundere
+@tsundere
+800 | ( `へ´) i-it's not like
+900 | ( `へ´) i like you or anything!
+1500 sparkle | ( ⁄⁄•⁄ω⁄•⁄⁄ ) b-baka!
+
+# Senpai notice
+@senpai
+800 | ( ⁄⁄•⁄ω⁄•⁄⁄ ) senpai...
+800 | ( ⁄⁄•⁄ω⁄•⁄⁄ ) ...senpai?
+1500 dim | ( ;_;) senpai didn't notice.
+
+# The beach episode
+@beachepisode
+800 | 🏖 episode 7
+900 | ( ・_・) ...the beach episode.
+1500 dim | ( ・_・) every season. every show.
+
+# Nosebleed
+@nosebleed
+800 | ( ・_・)
+600 | ( °_°)
+1500 danger | ( °_°)💦 *nosebleed*
+
+# Sweat drop
+@sweatdrop
+900 | ( ・_・)
+1500 | ( ・_・;)
+
+# Anime power of friendship
+@friendship
+800 | ( ;_;) i can't win...
+800 | ( ・_・) my friends...
+1500 accent2 sparkle | ( `ロ´) THE POWER OF FRIENDSHIP!
+
+# Training arc
+@trainingarc
+700 | ( ・_・) training arc
+500 | ( `ー´)⇡ push
+500 | ( `ー´)⇣ push
+500 | ( `ー´)⇡ push
+1500 accent2 sparkle | ( `ー´)💪 stronger. episode over.
+
+# The flashback
+@flashback
+800 | ( `ー´)⚔ final attack...
+900 dim | ...flashback...
+900 dim | ...flashback...
+1500 | ( `ー´)⚔ ...3 episodes later: attack.
+
+# Opening song
+@opening
+800 accent2 | ♪ ( ・_・)
+800 accent2 | ♪ (・_・ ) runs at camera
+800 accent2 | ♪ ( `ー´) rain, sky, sakura
+1500 accent2 sparkle | ♪ title drop!
+
+# Ending credits dance
+@endingdance
+repeat 4
+  300 | ♪ (∗•ω•∗)
+  300 | ♫ (∗•ω•∗)ﾉ
+end
+1300 sparkle | ( ^ω^) see you next week!
+
+# Shonen scream
+@scream
+800 | ( `ー´)
+600 accent2 | ( `ロ´) AAA
+600 accent2 | ( `ロ´) AAAAAA
+1500 accent2 sparkle | ( `ロ´) AAAAAAAAAAAAA!!
+
+# Uwu
+@uwu
+800 | (・ω・)
+800 | (・ω・) owo
+1500 dim | (・ω・) what's this?
+
+# Neko ears
+@neko
+800 | (=^･ω･^=)
+800 | ( ・_・) a catgirl?
+1500 sparkle | (=^･ω･^=) nya~
+
+# Bunny
+@usagi
+800 | (・x・)
+800 | (・x・) ...
+1500 | (・x・)🥕 *crunch*
+
+# Ramen
+@ramen
+800 | ( ・_・)🍜
+800 | ( ・_・)🍜 itadakimasu!
+800 | ( ˘▽˘)🍜 *slurp*
+1500 sparkle | ( ^_^) gochisousama!
+
+# Onigiri
+@onigiri
+800 | ( ・_・) △
+800 | ( ・_・) 🍙
+1500 | ( ˘ω˘)🍙 perfect triangle.
+
+# Bento
+@bento
+800 | ( ・_・)🍱
+800 | ( ・_・)🍱 a heart-shaped omelette?
+1500 sparkle | ( ⁄⁄•⁄ω⁄•⁄⁄ ) who made this?!
+
+# Sakura petals
+@sakura
+500 | ✿
+500 |   ✿  ✿
+500 |  ✿  ✿   ✿
+1500 sparkle | ( ˘▽˘) ✿ spring.
+
+# Cherry blossom confession
+@confession
+800 | ( ・_・)✉ under the tree...
+800 | ( ⁄⁄•⁄ω⁄•⁄⁄ ) i...
+800 dim | 🚂 *train goes by*
+1500 | ( ・_・) what did you say?
+
+# Bike to school
+@toast
+type 70 | «            »ε=ε=┌( >_<)┘🍞
+800 danger | 💥 ( °o°)
+1500 sparkle | ...new transfer student. ♥
+
+# Mecha transformation
+@transform
+600 | [▢_▢]
+400 accent2 | [▢_▢] ⊏
+400 accent2 | ⊏[▢_▢]⊐
+500 accent2 | ⊏⊏[▼_▼]⊐⊐
+1500 accent2 sparkle | COMBINE!
+
+# Kawaii desu
+@kawaii
+800 | (✿◠‿◠)
+1500 sparkle | (✿◠‿◠) kawaii desu ne~
+
+# Ganbatte
+@ganbatte
+800 | ( `ー´)✊
+1500 accent2 sparkle | ( `ー´)✊ ganbatte!
+
+# Omae wa mou
+@shindeiru
+800 | ( ಠ_ಠ) omae wa mou...
+900 | ( ಠ_ಠ) shindeiru.
+600 danger | NANI?!
+1500 danger | 💥
+
+# Gintama
+@gintama
+800 | ( ¬_¬) ...
+800 | ( ¬_¬)🍓 strawberry milk
+1500 dim | ( ¬_¬) the samurai's weakness.
+
+# Fruits Basket
+@furuba
+800 | ( ・_・) hug?
+800 dim | *poof*
+1500 | ( ・_・)🐭 ...a rat.
+
+# Natsume
+@natsume
+800 | ( ・_・)📖 book of friends
+800 | (=^•ω•^=) nyanko-sensei
+1500 sparkle | ( ˘▽˘) returning a name.
+
+# Your Name
+@yourname
+800 | ( ・_・) ...
+800 | ( ・_・) your name is...?
+1500 dim | ( ;_;) ...i forgot.
+
+# Grave of the Fireflies
+@fireflies
+900 | ( ・_・) ✧ ✧ ✧ fireflies
+1500 dim | ( ;_;) ...i'm not crying.
+
+# Steins;Gate: tuturu
+@tuturu
+1500 sparkle | ( ^‿^) tuturu~♪
+
+# Lain
+@lain
+900 dim | ( ・_・) let's all love lain
+1500 dim | ( ・_・) present day. present time.
