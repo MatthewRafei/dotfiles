@@ -24,6 +24,15 @@ import QtQuick.Window
 // main pass (statePass = 0) reads that strip as sampler2D state (binding 4,
 // nearest, one texel per index). For things worth working out once per frame
 // rather than once per pixel, like a game's history (shaders/invaders.frag).
+// A scene that asks for `feedback` gets a simulation that remembers: the same
+// shader runs with float feedbackPass = 1 on a grid of vec2 simSize texels
+// (a fraction of the screen, or the glyph grid's cells) and reads its own
+// last output as sampler2D prev (binding 5, RGBA16F); the main pass reads the
+// same texture. It runs only while the scene plays (see the feedback pass). One step per clock tick (30 a second, whatever the display
+// rate); float frame counts them from 0, so a shader seeds itself while
+// frame < 1 (shaders/life.frag, shaders/reaction.frag).
+// `glyphPx` sets the atlas text size (13, the ASCII grid's, unless a scene
+// needs bigger letters; shaders/wordclock.frag).
 Item {
     id: host
 
@@ -44,14 +53,26 @@ Item {
     // optional wallpaper textures; Screensaver.qml binds `wallpaper` to Theme
     property bool useWallpaper: false
     property string wallpaper: ""
-    // one cell of the ASCII scenes' grid (13 px text, as in Screensaver.qml)
+    // one cell of the ASCII scenes' grid (13 px text, as in Screensaver.qml),
+    // or of the scene's own glyph size
+    property int glyphPx: 13
     readonly property real cellW: Math.max(1, probe.implicitWidth / 40)
     readonly property real cellH: Math.ceil(fm.height)
 
     property real time: 0
     // a fresh random number for every scene this host starts
     property real seed: Math.random()
-    onFragChanged: seed = Math.random()
+    onFragChanged: { seed = Math.random(); frame = 0 }
+
+    // feedback: 0 = none, a fraction of the screen (0.25 = a quarter of its
+    // width and height), or -1 for one texel per glyph-grid cell
+    property real feedback: 0
+    readonly property bool useFeedback: feedback !== 0
+    readonly property size simSize: feedback < 0
+        ? Qt.size(Math.max(1, Math.floor(width / cellW)), Math.max(1, Math.floor(height / cellH)))
+        : Qt.size(Math.max(1, Math.round(width * feedback)), Math.max(1, Math.round(height * feedback)))
+    property real frame: 0
+    onFeedbackChanged: frame = 0
 
     // the time of day, as the bar shows it (12-hour)
     property vector4d clock: Qt.vector4d(12, 0, 0, 0)
@@ -73,20 +94,24 @@ Item {
             if (pending < 1 / 30) return
             host.time = (host.time + Math.min(pending, 0.1)) % 10000
             pending = 0
+            if (simPass.item) {
+                host.frame++
+                feedbackTex.scheduleUpdate()
+            }
         }
     }
 
     FontMetrics {
         id: fm
         font.family: host.fontFamily
-        font.pixelSize: 13
+        font.pixelSize: host.glyphPx
     }
     Text {
         id: probe
         visible: false
         text: "M".repeat(40)
         font.family: host.fontFamily
-        font.pixelSize: 13
+        font.pixelSize: host.glyphPx
     }
 
     // the glyphs, one per cell. Never shown directly.
@@ -102,7 +127,7 @@ Item {
                 text: host.glyphs.charAt(index)
                 color: "white"
                 font.family: host.fontFamily
-                font.pixelSize: 13
+                font.pixelSize: host.glyphPx
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 textFormat: Text.PlainText
@@ -187,6 +212,57 @@ Item {
         visible: false
     }
 
+    // the feedback pass: the same shader on the simulation grid, reading its
+    // own last output. Updated by hand, once per clock tick. Never shown directly.
+    //
+    // It only exists while the scene plays, and starts a moment after: a
+    // shader source that reads itself, alive while Quickshell rebuilds the
+    // window (it does each time the screensaver shows), crashed the shell in
+    // QQuickWindow::maybeUpdate on the old window. Stopping happens at once,
+    // during the fade-out, before the window goes; a fresh start reseeds.
+    property bool feedbackLive: false
+    onPlayingChanged: if (playing) feedbackStart.restart(); else { feedbackStart.stop(); feedbackLive = false }
+    Component.onCompleted: if (playing) feedbackStart.restart()
+    Timer { id: feedbackStart; interval: 300; onTriggered: host.feedbackLive = host.playing }
+    onFeedbackLiveChanged: frame = 0
+
+    Loader {
+        id: simPass
+        width: host.simSize.width
+        height: host.simSize.height
+        visible: false
+        active: host.useFeedback && host.feedbackLive && host.frag.toString() !== ""
+        sourceComponent: ShaderEffect {
+            fragmentShader: host.frag
+            property size size: Qt.size(host.width, host.height)
+            property real time: host.time
+            property color accent: host.accent
+            property color accent2: host.accent2
+            property color bg: host.bg
+            property color fg: host.fg
+            property size cell: Qt.size(host.cellW, host.cellH)
+            property real glyphCount: Math.max(1, host.glyphs.length)
+            property vector4d clock: host.clock
+            property real seed: host.seed
+            property real frame: host.frame
+            property size simSize: host.simSize
+            property real feedbackPass: 1
+            property variant atlas: glyphAtlas
+            property variant prev: feedbackTex
+        }
+    }
+    ShaderEffectSource {
+        id: feedbackTex
+        sourceItem: simPass.item
+        hideSource: true
+        recursive: true
+        live: false
+        format: ShaderEffectSource.RGBA16F
+        textureSize: host.simSize
+        smooth: true
+        visible: false
+    }
+
     // made only once there is a shader: an empty fragmentShader falls back to
     // Qt's default one, which warns about a missing `source`. Shaders that
     // don't declare the atlas or wallpaper members just ignore them.
@@ -212,6 +288,10 @@ Item {
             property variant fog: wallFog
             property vector4d clock: host.clock
             property real seed: host.seed
+            property real frame: host.frame
+            property size simSize: host.simSize
+            property real feedbackPass: 0
+            property variant prev: feedbackTex
         }
     }
 }

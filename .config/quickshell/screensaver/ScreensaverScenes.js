@@ -772,16 +772,21 @@ const matrix = {
 // add a shaderScene() line below. opts.glyphs: characters ShaderScene.qml lays
 // out into a glyph atlas for ASCII-style shaders (shaders/donut.frag);
 // opts.wallpaper: the shader samples the wallpaper (shaders/rain.frag);
-// opts.state: a first pass of the shader on a 128 x 1 strip (shaders/invaders.frag).
+// opts.state: a first pass of the shader on a 128 x 1 strip (shaders/invaders.frag);
+// opts.feedback: a simulation that reads its own last step, on a fraction of the
+// screen or (-1) the glyph grid (shaders/life.frag); opts.glyphPx: atlas text
+// size when 13 px is too small (shaders/wordclock.frag).
 function shaderScene(id, name, frag, opts) {
     opts = opts || {}
     return {
         id: id, name: name, frag: frag, glyphs: opts.glyphs || "", wallpaper: !!opts.wallpaper, state: !!opts.state,
+        feedback: opts.feedback || 0, glyphPx: opts.glyphPx || 13,
         shader: true,      // drawn on the GPU every frame (kind() below)
         colors: [],
         init(ctx) { newLayers(ctx, 0) },
         frame(ctx, t) {
-            ctx.native = { id: id, frag: this.frag, glyphs: this.glyphs, wallpaper: this.wallpaper, state: this.state, opacity: 1 }
+            ctx.native = { id: id, frag: this.frag, glyphs: this.glyphs, wallpaper: this.wallpaper, state: this.state,
+                           feedback: this.feedback, glyphPx: this.glyphPx, opacity: 1 }
             title(ctx, t, "", "", "#ffffff", 0, 99)
         }
     }
@@ -803,7 +808,23 @@ const shaderScenes = [
     shaderScene("pond", "Moonlit Pond", "shaders/pond.frag.qsb"),
     shaderScene("julia", "Julia", "shaders/julia.frag.qsb"),
     // digits and SCORE from the atlas; now and then Clawd stands in for the mystery ship
-    shaderScene("invaders", "Space Invaders", "shaders/invaders.frag.qsb", { glyphs: "0123456789SCORE", state: true })
+    shaderScene("invaders", "Space Invaders", "shaders/invaders.frag.qsb", { glyphs: "0123456789SCORE", state: true }),
+    shaderScene("synthwave", "Synthwave", "shaders/synthwave.frag.qsb"),
+    shaderScene("truchet", "Truchet", "shaders/truchet.frag.qsb"),
+    // the pen's trail kept on a full-size feedback canvas
+    shaderScene("spirograph", "Spirograph", "shaders/spirograph.frag.qsb", { feedback: 1 }),
+    // big letters: the atlas at 64 px
+    shaderScene("wordclock", "Word Clock", "shaders/wordclock.frag.qsb", { glyphs: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", glyphPx: 64 }),
+    // troughs to foam, and the moon
+    shaderScene("ocean", "ASCII Ocean", "shaders/ocean.frag.qsb", { glyphs: ".-~=*@" }),
+    // one feedback texel per glyph cell
+    shaderScene("life", "Game of Life", "shaders/life.frag.qsb", { glyphs: "@#*+.", feedback: -1 }),
+    shaderScene("reaction", "Reaction-Diffusion", "shaders/reaction.frag.qsb", { feedback: 0.33 }),
+    shaderScene("toasters", "Flying Toasters", "shaders/toasters.frag.qsb"),
+    // the walk worked out once per frame in the state pass
+    shaderScene("pipes", "Pipes", "shaders/pipes.frag.qsb", { state: true }),
+    shaderScene("blackhole", "Black Hole", "shaders/blackhole.frag.qsb"),
+    shaderScene("planet", "Planet", "shaders/planet.frag.qsb")
 ]
 
 // ================================================================== CRT
