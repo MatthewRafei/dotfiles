@@ -208,7 +208,7 @@ Scope {
         running: !root.sleeping
         // the lock's "process" exits with the shell (checked every 5 s), so a
         // restarted shell doesn't leave old delay locks behind
-        command: ["sh", "-c", "exec elogind-inhibit --what=sleep --mode=delay --who=quickshell "
+        command: ["sh", "-c", "exec \"$(command -v systemd-inhibit || command -v elogind-inhibit)\" --what=sleep --mode=delay --who=quickshell "
                   + "--why='Lock the screen before sleeping' sh -c 'while kill -0 \"$1\" 2>/dev/null; do sleep 5; done' sh \"$PPID\""]
     }
 

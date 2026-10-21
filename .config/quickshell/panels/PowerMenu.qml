@@ -18,12 +18,15 @@ PanelWindow {
     property int current: 0
     property int armed: -1          // index waiting for confirmation
 
+    // systemd's loginctl has no suspend/reboot/poweroff (elogind's does): systemctl first
+    function power(verb) { return ["sh", "-c", "systemctl " + verb + " 2>/dev/null || loginctl " + verb] }
+
     readonly property var actions: [
         { key: "L", label: "LOCK",      icon: "󰌾", confirm: false, cmd: ["qs", "ipc", "call", "lock", "lock"] },
-        { key: "S", label: "SUSPEND",   icon: "󰤄", confirm: false, cmd: ["loginctl", "suspend"] },
+        { key: "S", label: "SUSPEND",   icon: "󰤄", confirm: false, cmd: power("suspend") },
         { key: "E", label: "LOG OUT",   icon: "󰍃", confirm: true,  cmd: null },  // null: Compositor.quit()
-        { key: "R", label: "REBOOT",    icon: "󰜉", confirm: true,  cmd: ["loginctl", "reboot"] },
-        { key: "P", label: "SHUT DOWN", icon: "󰐥", confirm: true,  cmd: ["loginctl", "poweroff"] }
+        { key: "R", label: "REBOOT",    icon: "󰜉", confirm: true,  cmd: power("reboot") },
+        { key: "P", label: "SHUT DOWN", icon: "󰐥", confirm: true,  cmd: power("poweroff") }
     ]
 
     function show() { current = 0; armed = -1; open = true }

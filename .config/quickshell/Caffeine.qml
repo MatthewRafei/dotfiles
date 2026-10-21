@@ -18,7 +18,7 @@ Singleton {
 
     Process {
         // held until caffeine is turned off or the shell goes away
-        command: ["sh", "-c", "exec elogind-inhibit --what=idle --who=quickshell --why=caffeine "
+        command: ["sh", "-c", "exec \"$(command -v systemd-inhibit || command -v elogind-inhibit)\" --what=idle --who=quickshell --why=caffeine "
                   + "--mode=block sh -c 'while kill -0 \"$1\" 2>/dev/null; do sleep 5; done' sh \"$PPID\""]
         running: root.on
     }
