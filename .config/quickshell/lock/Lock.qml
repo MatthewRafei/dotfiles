@@ -216,8 +216,8 @@ Scope {
         id: sleepWatch
         property bool armed: false
         running: true
-        command: ["dbus-monitor", "--system",
-                  "type='signal',interface='org.freedesktop.login1.Manager',member='PrepareForSleep'"]
+        command: Session.tied(["dbus-monitor", "--system",
+                  "type='signal',interface='org.freedesktop.login1.Manager',member='PrepareForSleep'"])
         stdout: SplitParser {
             onRead: line => {
                 if (line.indexOf("member=PrepareForSleep") >= 0) {

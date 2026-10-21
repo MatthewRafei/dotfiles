@@ -110,7 +110,7 @@ Scope {
     // with partitions sends a burst)
     Process {
         running: true
-        command: ["udevadm", "monitor", "--udev", "--subsystem-match=block"]
+        command: Session.tied(["udevadm", "monitor", "--udev", "--subsystem-match=block"])
         stdout: SplitParser { onRead: line => { if (/ (add|remove|change) /.test(line)) settle.restart() } }
     }
     Timer { id: settle; interval: 500; onTriggered: root.refresh() }

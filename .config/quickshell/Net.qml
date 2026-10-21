@@ -75,7 +75,7 @@ Singleton {
     // a 5 s poll.
     Process {
         id: monitor
-        command: ["nmcli", "monitor"]
+        command: Session.tied(["nmcli", "monitor"])
         running: true
         stdout: SplitParser { onRead: settle.restart() }
         onRunningChanged: if (!running) monitorRetry.start()
