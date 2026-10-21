@@ -51,6 +51,41 @@ Column {
         onClicked: if (page.service.selfIp !== "") { page.service.copy(page.service.selfIp); copied.restart() }
     }
 
+    // off on home Wi-Fi: the switch, and whether the current network counts as home
+    Text {
+        text: "HOME WI-FI"
+        color: Theme.textFaint
+        font.family: Theme.fontFamily
+        font.pixelSize: 9
+        font.letterSpacing: 2
+        topPadding: 8
+    }
+    QuickRow {
+        icon: "󰋜"
+        label: "Off on home Wi-Fi"
+        active: page.service.homeAuto
+        detail: page.service.homeAuto ? "ON" : "OFF"
+        onClicked: page.service.setHomeAuto(!page.service.homeAuto)
+    }
+    QuickRow {
+        visible: Net.ssid !== ""
+        icon: "󰖩"
+        label: Net.ssid
+        active: page.service.atHome
+        tag: page.service.atHome ? "HOME" : ""
+        detail: page.service.atHome ? "" : "MARK AS HOME"
+        onClicked: page.service.toggleHome(Net.ssid)
+    }
+    Text {
+        visible: page.service.homeSsids.some(s => s !== Net.ssid)
+        width: parent.width
+        wrapMode: Text.Wrap
+        text: "also home: " + page.service.homeSsids.filter(s => s !== Net.ssid).join(", ")
+        color: Theme.textDim
+        font.family: Theme.fontFamily
+        font.pixelSize: 9
+    }
+
     // exit node: none + every peer that offers it
     Text {
         visible: page.service.running && page.service.peers.some(p => p.exitOption)

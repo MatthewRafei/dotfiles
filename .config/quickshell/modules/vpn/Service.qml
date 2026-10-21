@@ -33,6 +33,67 @@ Scope {
     function useExit(ip) { act("exit", ["tailscale", "set", "--exit-node=" + ip]) }
     function copy(text) { Quickshell.execDetached(["wl-copy", text]) }
 
+    // ---------------- off on home Wi-Fi ----------------
+    // Per machine (~/.cache/quickshell/vpn.json). Joining a home network takes
+    // Tailscale down; joining any other network brings it back, but only if
+    // this turned it off. Only network changes act, so turning it on by hand
+    // at home sticks until the next change.
+    property alias homeAuto: st.homeAuto
+    readonly property var homeSsids: st.homeSsids
+    readonly property bool atHome: Net.ssid !== "" && st.homeSsids.indexOf(Net.ssid) >= 0
+
+    function setHomeAuto(on) { st.homeAuto = on; homeCheck.restart() }
+    function toggleHome(ssid) {
+        if (ssid === "") return
+        const list = st.homeSsids.filter(s => s !== ssid)
+        if (list.length === st.homeSsids.length) list.push(ssid)
+        st.homeSsids = list
+        homeCheck.restart()
+    }
+
+    FileView {
+        path: Quickshell.env("HOME") + "/.cache/quickshell/vpn.json"
+        blockLoading: true
+        watchChanges: true
+        onFileChanged: reload()
+        onAdapterUpdated: writeAdapter()
+        onLoadFailed: err => { if (err === FileViewError.FileNotFound) writeAdapter() }
+
+        JsonAdapter {
+            id: st
+            property bool homeAuto: true
+            property var homeSsids: []
+            property bool autoDown: false    // down because of a home network: bring it back on leaving
+        }
+    }
+
+    // wait for the network to settle (roaming, resume) before acting
+    Connections {
+        target: Net
+        function onSsidChanged() { homeCheck.restart() }
+        function onEthIfaceChanged() { homeCheck.restart() }
+    }
+    onStateChanged: if (homeCheck.pending) homeCheck.restart()
+    Timer {
+        id: homeCheck
+        property bool pending: true          // also once at startup, when the state is known
+        interval: 4000
+        running: true
+        onTriggered: {
+            if (root.state === "" || root.busy !== "") return   // pending: retried on the next state change
+            pending = false
+            if (!st.homeAuto) return
+            const online = Net.ssid !== "" || Net.ethIface !== ""
+            if (root.atHome) {
+                if (root.running) { st.autoDown = true; root.down() }
+            } else if (online && st.autoDown) {
+                st.autoDown = false
+                if (root.state === "Stopped") root.up()
+            }
+        }
+        onRunningChanged: if (running) pending = true
+    }
+
     function act(what, cmd) {
         if (action.running) return
         busy = what
