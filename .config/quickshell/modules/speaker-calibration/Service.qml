@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Io
+import Quickshell.Services.Pipewire
 import QtQuick
 import qs
 
@@ -385,9 +386,16 @@ Scope {
     Component.onCompleted: start("cache", ["status-cache-json"])
     Component.onDestruction: if (proc.running) proc.signal(15)
 
-    // the output can move under us (headphones, an app switching it)
+    // the output can move under us (headphones, an app switching it): PipeWire
+    // says when the default sink changes; the slow timer catches anything else
+    // without starting Python twice a minute
+    Connections {
+        target: Pipewire
+        function onDefaultAudioSinkChanged() { statusSoon.restart() }
+    }
+    Timer { id: statusSoon; interval: 1500; onTriggered: root.refreshStatus() }
     Timer {
-        interval: 30000
+        interval: 300000
         repeat: true
         running: true
         onTriggered: root.refreshStatus()

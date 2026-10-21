@@ -13,7 +13,7 @@ import qs.widgets
 //
 //  - big clock with a chromatic glitch on every minute roll-over
 //  - 60-tick seconds strip
-//  - live CPU / MEM sparkline (last 60s)
+//  - live CPU / MEM sparkline (last 60 samples: 60 s, 5 min on battery)
 //  - segmented gauges for CPU, MEM, TEMP, BAT
 //
 // Toggle it from niri, e.g. in config.kdl:
@@ -48,9 +48,11 @@ PanelWindow {
     // -------------------------
     // Clock
     // -------------------------
+    // seconds only on AC (strip and blink hide on battery): a tick a second
+    // keeps the panel out of self-refresh
     SystemClock {
         id: clock
-        precision: SystemClock.Seconds
+        precision: Power.unplugged ? SystemClock.Minutes : SystemClock.Seconds
     }
 
     property int lastMinute: -1
@@ -294,7 +296,7 @@ PanelWindow {
                         color: Theme.ok
                         // blinks with the clock's seconds: one frame a second,
                         // which the seconds strip redraws anyway
-                        opacity: clock.date.getSeconds() % 2 ? 0.25 : 1
+                        opacity: !Power.unplugged && clock.date.getSeconds() % 2 ? 0.25 : 1
                     }
                     Text {
                         text: "// TELEMETRY"
@@ -413,6 +415,7 @@ PanelWindow {
             // ---- seconds strip ----
             Row {
                 id: secStrip
+                visible: !Power.unplugged
                 width: parent.width
                 height: 8
                 spacing: 1
@@ -464,7 +467,9 @@ PanelWindow {
                     anchors.right: parent.right
                     anchors.rightMargin: 4
                     anchors.verticalCenter: parent.verticalCenter
-                    text: "60s"
+                    // the window the sparkline covers: 60 samples at SysStats' rate
+                    readonly property int span: root.histLen * SysStats.interval / 1000
+                    text: span < 120 ? span + "s" : Math.round(span / 60) + "m"
                     color: Theme.textFaint
                     font.family: Theme.fontFamily
                     font.pixelSize: 9

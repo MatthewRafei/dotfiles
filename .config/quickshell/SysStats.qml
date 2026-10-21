@@ -6,12 +6,12 @@ import QtQuick
 // CPU / memory / temperature / battery / uptime, shared by the bar and the
 // telemetry HUD. Reads /proc and /sys straight through FileView instead of
 // forking a shell every tick. Samples every 2 s, or every second while some
-// consumer (the HUD) holds `fast`.
+// consumer (the HUD) holds `fast`; every 5 s on battery either way.
 Singleton {
     id: root
 
     property int fastUsers: 0
-    readonly property int interval: fastUsers > 0 ? 1000 : 2000
+    readonly property int interval: Power.unplugged ? 5000 : fastUsers > 0 ? 1000 : 2000
 
     property real cpu: 0
     property real mem: 0

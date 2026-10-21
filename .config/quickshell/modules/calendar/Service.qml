@@ -120,8 +120,9 @@ Scope {
         }
     }
 
+    // other machines' edits arrive through Syncthing; this catches them
     Timer {
-        interval: 15000
+        interval: Power.unplugged ? 60000 : 15000
         repeat: true
         running: true
         triggeredOnStart: true

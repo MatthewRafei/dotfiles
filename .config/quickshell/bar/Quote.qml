@@ -11,10 +11,13 @@ import qs
 import qs.widgets
 import "skits.js" as Skits
 
-// quote: types out a short fortune left of the clock, ticker-scrolling
-// as it goes if it doesn't fit, then eases back to the start and from
-// there scrolls a few passes like a news ticker (pauses under the mouse). New quote
-// every 5 minutes; click = next, hover = full quote in a popup.
+// quote: types out a short fortune left of the clock, picked to fit the
+// room there. One that still doesn't fit ticker-scrolls as it types, then
+// eases back to the start and from there scrolls a few passes like a news
+// ticker (pauses under the mouse). New quote every 5 minutes; click = next,
+// hover = full quote in a popup.
+// On battery nothing animates: quotes appear whole, no random skits, and an
+// event skit (low battery, charger...) shows as one still frame.
 // Now and then (1 in 3 changes, or `qs ipc call bar peek`) a little skit
 // decodes in instead: a face peeking left and right, dozing off, flipping
 // a table, praising the sun... then it dissolves and the next quote types
@@ -86,14 +89,21 @@ Item {
         if (!core || core.length === 0 || (peeking && !force)) return
         faceTimer.stop()
         quote.stopTicker()
-        let f = []
-        const first = core[0].t
-        for (let k = 0; k <= Array.from(first).length; k++) f.push({ t: scrambled(first, k), ms: 45 })
-        frames = f.concat(core).concat(dissolve(core[core.length - 1].t))
-        faceMetrics.text = core.reduce((a, fr) => fr.t.length > a.length ? fr.t : a, "")
+        const longest = core.reduce((a, fr) => fr.t.length > a.t.length ? fr : a)
+        if (Power.unplugged) {
+            // on battery: the fullest frame, still, for as long as the skit runs
+            const ms = core.reduce((a, fr) => a + fr.ms, 0)
+            frames = [{ t: longest.t, ms: Math.max(3000, ms), color: longest.color }]
+        } else {
+            let f = []
+            const first = core[0].t
+            for (let k = 0; k <= Array.from(first).length; k++) f.push({ t: scrambled(first, k), ms: 45 })
+            frames = f.concat(core).concat(dissolve(core[core.length - 1].t))
+        }
+        faceMetrics.text = longest.t
         frameIdx = 0
         face = frames[0].t
-        faceColor = ""
+        faceColor = frames[0].color || ""
         sparkle = false
         peeking = true
         faceTimer.interval = frames[0].ms
@@ -171,6 +181,17 @@ Item {
             const h = new Date().getHours()
             quote.react("hello", 1, "hello",
                         { greeting: h < 5 ? "night" : h < 12 ? "morning" : h < 18 ? "afternoon" : "evening" })
+        }
+    }
+
+    // unplugged mid-quote: finish typing and stop scrolling now
+    Connections {
+        target: Power
+        function onUnpluggedChanged() {
+            if (!Power.unplugged) return
+            quote.stopTicker()
+            quote.restX = 0
+            quote.typed = quote.body.length
         }
     }
 
@@ -442,13 +463,28 @@ Item {
     }
 
     function next() {
-        if (!fortuneProc.running)
-            fortuneProc.running = true
+        if (fortuneProc.running) return
+        // as many characters as fit the room left of the clock (the author
+        // goes on the same line, so it counts too); a narrow bar falls back
+        // to any short one and scrolls it
+        const n = room > 100 ? Math.floor((room - 20) / quoteChar.advanceWidth) : 110
+        fortuneProc.limit = Math.max(30, Math.min(110, n))
+        fortuneProc.running = true
+    }
+
+    TextMetrics {
+        id: quoteChar
+        font.family: Theme.fontFamily
+        font.pixelSize: 11
+        font.italic: true
+        text: "x"
     }
 
     Process {
         id: fortuneProc
-        command: ["sh", "-c", "fortune -s -n 110 2>/dev/null || \"$HOME/.local/bin/fortune\" -s -n 110"]
+        property int limit: 110
+        command: ["sh", "-c", "for n in \"$1\" 110; do fortune -s -n \"$n\" 2>/dev/null"
+            + " || \"$HOME/.local/bin/fortune\" -s -n \"$n\" 2>/dev/null && break; done", "sh", String(limit)]
         stdout: StdioCollector {
             onStreamFinished: {
                 var lines = text.replace(/\t/g, " ").trim().split("\n")
@@ -458,18 +494,21 @@ Item {
                 quote.stopTicker()
                 quote.author = m ? m[1].trim() : ""
                 quote.body = lines.join(" ").replace(/\s+/g, " ").trim()
-                quote.typed = 0
+                quote.typed = Power.unplugged ? quote.body.length : 0
             }
         }
     }
 
-    Component.onCompleted: next()
+    // the first quote waits for the bar to settle (chips keep appearing at
+    // startup), so it's picked to fit
+    onRoomChanged: if (body === "" && room > 100) firstQuote.restart()
+    Timer { id: firstQuote; interval: 1000; onTriggered: if (quote.body === "") quote.next() }
 
     Timer {
         interval: 5 * 60 * 1000
         repeat: true
         running: true
-        onTriggered: Math.random() < 0.33 ? quote.peek("") : quote.next()
+        onTriggered: !Power.unplugged && Math.random() < 0.33 ? quote.peek("") : quote.next()
     }
 
     IpcHandler {
@@ -504,7 +543,8 @@ Item {
             // measure on the next frame, once the author text is laid out
             if (!running && quote.body !== "")
                 Qt.callLater(() => {
-                    quote.restX = Math.min(0, quote.room - quoteRow.implicitWidth)
+                    // on battery a quote too long for the room just stays at its start
+                    quote.restX = Power.unplugged ? 0 : Math.min(0, quote.room - quoteRow.implicitWidth)
                     if (quote.restX < 0)
                         settle.restart()
                 })

@@ -323,3 +323,6 @@ binds {
     Ctrl+Alt+Delete { quit; }
     //Mod+Shift+P { power-off-monitors; }
 }
+
+// battery overrides, written by Quickshell (Power.qml) on plug/unplug; untracked
+include optional=true "power.kdl"

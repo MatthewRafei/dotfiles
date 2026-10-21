@@ -20,7 +20,7 @@ Item {
     property bool shown: true
     visible: shown
     // breathe while > 0 (ms per breath). Stepped, a few frames a second:
-    // a smooth opacity loop keeps the bar redrawing at 60 fps.
+    // a smooth opacity loop keeps the bar redrawing at 60 fps. Still on battery.
     property int pulse: 0
     property int _step: 0
     readonly property var _steps: [1, 0.85, 0.65, 0.5, 0.65, 0.85]
@@ -28,7 +28,7 @@ Item {
     Timer {
         interval: Math.max(100, chip.pulse / 6)
         repeat: true
-        running: chip.pulse > 0 && chip.visible
+        running: chip.pulse > 0 && chip.visible && !Power.unplugged
         onTriggered: chip._step = (chip._step + 1) % 6
         onRunningChanged: chip._step = 0
     }

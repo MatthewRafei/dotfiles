@@ -105,6 +105,8 @@ Singleton {
     property bool onAC: true
     property int battery: 100
     property bool hasBattery: false
+    // unplugged: the bar, the HUD, the pollers and niri all cut back
+    readonly property bool unplugged: hasBattery && !onAC
 
     // battery details (sysfs; energy in Wh, power in W)
     property string batStatus: ""
@@ -224,6 +226,24 @@ Singleton {
     onWantedChanged: applyRules()
     onAutoChanged: applyRules()
     onAvailableChanged: applyRules()
+
+    // ---------------- niri on battery ----------------
+    // config.kdl ends with `include optional=true "power.kdl"`; niri reloads it
+    // on every write. Unplugged it turns off window shadows and the terminal's
+    // background blur, both redrawn on every frame they're under.
+    readonly property string niriPower: !unplugged ? "// on AC: config.kdl as written\n"
+        : "// on battery (Power.qml): no shadows, no terminal blur\n"
+        + "layout {\n    shadow { off; }\n}\n"
+        + "window-rule {\n    match app-id=\"^Alacritty$\"\n    background-effect { blur false; }\n}\n"
+    FileView {
+        id: niriPowerFile
+        path: Quickshell.env("HOME") + "/.config/niri/power.kdl"
+    }
+    function writeNiriPower() {
+        if (Compositor.niri && niriPowerFile.text() !== niriPower) niriPowerFile.setText(niriPower)
+    }
+    onNiriPowerChanged: writeNiriPower()
+    Component.onCompleted: writeNiriPower()
 
     IpcHandler {
         target: "power-profile"

@@ -73,9 +73,10 @@ PanelWindow {
         enabled: Caffeine.on && bar.screen === Quickshell.screens[0]
     }
 
+    // seconds only on AC: a tick a second keeps the panel out of self-refresh
     SystemClock {
         id: clock
-        precision: SystemClock.Seconds
+        precision: Power.unplugged ? SystemClock.Minutes : SystemClock.Seconds
     }
 
     // -------------------------
@@ -257,7 +258,7 @@ PanelWindow {
                 font.letterSpacing: 1
             }
             Text {
-                visible: !clockItem.showDate
+                visible: !clockItem.showDate && !Power.unplugged
                 anchors.baseline: clockMain.baseline
                 text: Qt.formatDateTime(clock.date, ":ss")
                 color: Theme.textFaint
@@ -327,13 +328,14 @@ PanelWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: 2
                 height: 12
-                // stepped ~7 frames a second rather than a 60 fps animation
+                // stepped ~7 frames a second rather than a 60 fps animation;
+                // they hold still on battery
                 readonly property bool playing: bar.player !== null && bar.player.isPlaying
                 property int frame: 0
                 Timer {
                     interval: 140
                     repeat: true
-                    running: eqBars.playing && eqBars.visible
+                    running: eqBars.playing && eqBars.visible && !Power.unplugged
                     onTriggered: eqBars.frame++
                 }
                 Repeater {

@@ -103,7 +103,7 @@ Scope {
     }
 
     Timer {
-        interval: root.fast ? 2000 : 8000
+        interval: root.fast ? 2000 : Power.unplugged ? 30000 : 8000
         running: true
         repeat: true
         triggeredOnStart: true

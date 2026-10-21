@@ -129,7 +129,8 @@ Scope {
     }
 
     Timer {
-        interval: !root.installed || !root._key ? 60000 : root.busy || root.syncing ? 1500 : 6000
+        interval: !root.installed || !root._key ? 60000 : root.busy || root.syncing ? 1500
+            : Power.unplugged ? 30000 : 6000
         running: true
         repeat: true
         triggeredOnStart: true

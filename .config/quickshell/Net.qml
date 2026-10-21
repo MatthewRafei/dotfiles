@@ -71,7 +71,8 @@ Singleton {
 
     // NetworkManager tells us when something changes (`nmcli monitor`
     // prints a line per event), so the timer only needs to catch Wi-Fi
-    // signal drift. Without nmcli it falls back to a 5 s poll.
+    // signal drift (once a minute on battery). Without nmcli it falls back to
+    // a 5 s poll.
     Process {
         id: monitor
         command: ["nmcli", "monitor"]
@@ -83,7 +84,7 @@ Singleton {
     Timer { id: settle; interval: 400; onTriggered: net.refresh() }
 
     Timer {
-        interval: monitor.running ? 20000 : 5000
+        interval: !monitor.running ? 5000 : Power.unplugged ? 60000 : 20000
         repeat: true
         running: true
         triggeredOnStart: true
