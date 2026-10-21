@@ -15,7 +15,10 @@ path tokens so transcripts move between machines with different homes,
 conflict copies instead of silent overwrites). The transport is a plain folder,
 STAGE (default ~/Sync/claude, $CLAUDE_SYNC_DIR), which Syncthing shares
 between the machines. Every machine writes only STAGE/<its host>/, so no file
-there ever has two writers; pulls read everyone else's.
+there ever has two writers; pulls read everyone else's. The host is
+$CLAUDE_SYNC_HOST, else the first line of ~/.config/claude-sync/host, else the
+hostname: two machines with the same hostname need the file, or each takes the
+other's folder for its own and never pulls it.
 
 What syncs (the "sessions" scope): projects/ (transcripts, auto-memory),
 plans/, tasks/ and history.jsonl. Not settings, skills or plugins: those hold
@@ -44,7 +47,24 @@ import time
 HOME = os.path.expanduser("~")
 CLAUDE = os.environ.get("CLAUDE_CONFIG_DIR") or os.path.join(HOME, ".claude")
 STAGE = os.environ.get("CLAUDE_SYNC_DIR") or os.path.join(HOME, "Sync", "claude")
-HOST = re.sub(r"[^A-Za-z0-9_.-]", "_", os.environ.get("CLAUDE_SYNC_HOST") or socket.gethostname().split(".")[0])
+
+
+def host_id():
+    """$CLAUDE_SYNC_HOST, else ~/.config/claude-sync/host, else the hostname"""
+    if os.environ.get("CLAUDE_SYNC_HOST"):
+        return os.environ["CLAUDE_SYNC_HOST"]
+    cfg = os.environ.get("XDG_CONFIG_HOME") or os.path.join(HOME, ".config")
+    try:
+        with open(os.path.join(cfg, "claude-sync", "host")) as f:
+            name = f.readline().strip()
+        if name:
+            return name
+    except OSError:
+        pass
+    return socket.gethostname().split(".")[0]
+
+
+HOST = re.sub(r"[^A-Za-z0-9_.-]", "_", host_id())
 STATE = os.path.join(os.environ.get("XDG_STATE_HOME") or os.path.join(HOME, ".local", "state"),
                      "claude-sync", "state.json")
 SCOPE = ["projects", "plans", "tasks", "history.jsonl"]

@@ -31,7 +31,7 @@ input {
 // ── Outputs ───────────────────────────────────────────────────────────────────
 
 output "eDP-1" {
-    variable-refresh-rate
+    variable-refresh-rate on-demand=true  // VRR only for windows that ask; otherwise PSR2 (panel self-refresh) saves power
 }
 
 // ── Layout ────────────────────────────────────────────────────────────────────

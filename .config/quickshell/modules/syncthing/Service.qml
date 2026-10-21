@@ -112,11 +112,11 @@ Scope {
         else { openWhenUp = true; start() }
     }
     function start() {
-        act(["sh", "-c", "dinitctl --user start syncthing 2>/dev/null || rc-service --user syncthing start 2>/dev/null"
+        act(["sh", "-c", "dinitctl --user start syncthing 2>/dev/null || rc-service --user syncthing start 2>/dev/null || systemctl --user start syncthing 2>/dev/null"
              + " || setsid -f syncthing serve --no-browser >/dev/null 2>&1"])
     }
     function stop() {
-        act(["sh", "-c", "dinitctl --user stop syncthing 2>/dev/null || rc-service --user syncthing stop 2>/dev/null"
+        act(["sh", "-c", "dinitctl --user stop syncthing 2>/dev/null || rc-service --user syncthing stop 2>/dev/null || systemctl --user stop syncthing 2>/dev/null"
              + " || pkill -x syncthing"])
     }
     function toggle() { running ? stop() : start() }
