@@ -4,12 +4,12 @@ import Quickshell.Wayland
 import QtQuick
 import qs
 
-// Power menu: dimmed overlay with five HUD tiles.
+// Power menu: dimmed overlay with four HUD tiles.
 //
-//   L lock   S suspend   E log out   R reboot   P shut down
+//   L lock   S suspend   R reboot   P shut down
 //   ← → / Tab to move, Enter to choose, Esc or click outside to close.
 //
-// Log out / reboot / shut down need a second press to confirm.
+// Reboot / shut down need a second press to confirm.
 // Opened by the bar's ⏻ or `qs ipc call power toggle`.
 PanelWindow {
     id: root
@@ -24,7 +24,6 @@ PanelWindow {
     readonly property var actions: [
         { key: "L", label: "LOCK",      icon: "󰌾", confirm: false, cmd: ["qs", "ipc", "call", "lock", "lock"] },
         { key: "S", label: "SUSPEND",   icon: "󰤄", confirm: false, cmd: power("suspend") },
-        { key: "E", label: "LOG OUT",   icon: "󰍃", confirm: true,  cmd: null },  // null: Compositor.quit()
         { key: "R", label: "REBOOT",    icon: "󰜉", confirm: true,  cmd: power("reboot") },
         { key: "P", label: "SHUT DOWN", icon: "󰐥", confirm: true,  cmd: power("poweroff") }
     ]
@@ -50,7 +49,7 @@ PanelWindow {
         id: runLater
         property var cmd: []
         interval: 180
-        onTriggered: cmd ? Quickshell.execDetached(cmd) : Compositor.quit()
+        onTriggered: Quickshell.execDetached(cmd)
     }
 
     Timer {

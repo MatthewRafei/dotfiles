@@ -262,8 +262,8 @@ background = "{p['accent']}"
 
 [bell]
 animation = "EaseOutExpo"
-duration = 140
-color = "{p['accent']}"
+duration = 220
+color = "#000000"
 """)
 
 
