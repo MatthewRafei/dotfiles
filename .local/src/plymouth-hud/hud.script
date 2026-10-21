@@ -1,0 +1,184 @@
+// HUD boot splash: the disk passphrase prompt and boot / shutdown progress,
+// drawn like the Quickshell lock screen, in black and white. generate.py fills
+// in the colour and host name placeholders.
+
+// ---------------- palette ----------------
+@COLORS@
+
+FONT = "JetBrainsMono Nerd Font";
+HOST = "@HOST@";
+
+W = Window.GetWidth();
+H = Window.GetHeight();
+// sizes are written for a 960 px tall logical screen (1920x1200 at 1.25)
+s = H / 960;
+if (s < 1) s = 1;
+
+fun px(n) { return Math.Int(n * s); }
+fun font(size) { return FONT + " " + Math.Int(size * s); }
+// letter spacing the way the lock screen does it (byte-wise: ASCII only)
+fun spaced(str) {
+    out = "";
+    i = 0;
+    while (str.CharAt(i) != "") {
+        if (i > 0) out += " ";
+        out += str.CharAt(i);
+        i++;
+    }
+    return out;
+}
+fun label(str, col, size) {
+    return Image.Text(str, col.r, col.g, col.b, 1, font(size));
+}
+
+// ---------------- background ----------------
+Window.SetBackgroundTopColor(@BG@);
+Window.SetBackgroundBottomColor(@BG@);
+bg_image = Image("background.png");
+bg = Sprite(bg_image.Scale(W, H));
+bg.SetPosition(0, 0, -100);
+
+// ---------------- header + title ----------------
+cy = H / 2 - px(90);
+
+mark = Sprite(Image("accent.png").Scale(px(7), px(7)));
+header = Sprite();
+title = Sprite();
+
+fun set_header(str) {
+    img = label(spaced("// " + str), dim, 11);
+    header.SetImage(img);
+    x = W / 2 - img.GetWidth() / 2 + px(10);
+    header.SetPosition(x, cy - px(120), 10);
+    mark.SetPosition(x - px(20), cy - px(120) + img.GetHeight() / 2 - px(3), 10);
+}
+
+title_img = label(spaced(HOST), text, 64);
+title.SetImage(title_img);
+title.SetPosition(W / 2 - title_img.GetWidth() / 2, cy - px(80), 10);
+
+// ---------------- passphrase field ----------------
+FW = px(360);
+FH = px(50);
+fx = W / 2 - FW / 2;
+fy = cy + px(70);
+
+field_border = Sprite(Image("border.png").Scale(FW, FH));
+field_border.SetPosition(fx, fy, 20);
+field_fill = Sprite(Image("card.png").Scale(FW - 2, FH - 2));
+field_fill.SetPosition(fx + 1, fy + 1, 21);
+
+pass_img = label(spaced("PASS"), faint, 9);
+pass_label = Sprite(pass_img);
+pass_label.SetPosition(fx + px(16), fy + FH / 2 - pass_img.GetHeight() / 2, 22);
+
+enter_img = label("↵", faint, 11);
+enter_mark = Sprite(enter_img);
+enter_mark.SetPosition(fx + FW - px(16) - enter_img.GetWidth(), fy + FH / 2 - enter_img.GetHeight() / 2, 22);
+
+bx = fx + px(16) + pass_img.GetWidth() + px(16);
+BULLET = px(7);
+GAP = px(5);
+MAXB = Math.Int((fx + FW - px(40) - bx) / (BULLET + GAP));
+bullet_image = Image("accent.png").Scale(BULLET, BULLET);
+for (i = 0; i < MAXB; i++) {
+    bullet[i] = Sprite(bullet_image);
+    bullet[i].SetPosition(bx + i * (BULLET + GAP), fy + FH / 2 - BULLET / 2, 23);
+    bullet[i].SetOpacity(0);
+}
+cursor = Sprite(Image("accent.png").Scale(px(2), px(18)));
+cursor.SetPosition(bx, fy + FH / 2 - px(9), 23);
+
+hint = Sprite();
+fun set_hint_raw(str, col) {
+    img = label(str, col, 9);
+    hint.SetImage(img);
+    hint.SetPosition(W / 2 - img.GetWidth() / 2, fy + FH + px(22), 20);
+}
+fun set_hint(str, col) { set_hint_raw(spaced(str), col); }
+
+// ---------------- progress line (no prompt) ----------------
+PW = px(360);
+track = Sprite(Image("track.png").Scale(PW, px(2)));
+track.SetPosition(W / 2 - PW / 2, cy + px(95), 20);
+bar_image = Image("accent.png");
+bar = Sprite();
+bar.SetPosition(W / 2 - PW / 2, cy + px(95), 21);
+
+status = Sprite();
+fun set_status(str) {
+    img = label(spaced(str), faint, 9);
+    status.SetImage(img);
+    status.SetPosition(W / 2 - img.GetWidth() / 2, cy + px(115), 20);
+}
+
+// ---------------- modes ----------------
+global.prompting = 0;
+global.tries = 0;
+global.typed = 0;
+global.tick = 0;
+
+fun show_field(on) {
+    o = 0; if (on) o = 1;
+    field_border.SetOpacity(o); field_fill.SetOpacity(o);
+    pass_label.SetOpacity(o); enter_mark.SetOpacity(o);
+    cursor.SetOpacity(o); hint.SetOpacity(o);
+    for (i = 0; i < MAXB; i++) if (!on) bullet[i].SetOpacity(0);
+    p = 1 - o;
+    track.SetOpacity(p); bar.SetOpacity(p); status.SetOpacity(p);
+}
+
+mode = Plymouth.GetMode();
+if (mode == "shutdown") { set_header("SHUTTING DOWN"); set_status("SEE YOU"); }
+else if (mode == "reboot") { set_header("RESTARTING"); set_status("BACK IN A MOMENT"); }
+else { set_header("ENCRYPTED"); set_status("STARTING"); }
+show_field(0);
+
+fun password_cb(prompt, bullets) {
+    if (!global.prompting) {
+        set_header("ENCRYPTED");
+        // asked again without a normal screen in between: the last try was wrong
+        if (global.tries > 0 && global.typed > 0) set_hint("WRONG PASSPHRASE, TRY AGAIN", danger);
+        else set_hint("ENTER TO UNLOCK", faint);
+        global.tries++;
+    }
+    global.prompting = 1;
+    global.typed = bullets;
+    show_field(1);
+    n = bullets;
+    if (n > MAXB) n = MAXB;
+    for (i = 0; i < MAXB; i++) {
+        if (i < n) bullet[i].SetOpacity(1); else bullet[i].SetOpacity(0);
+    }
+    cursor.SetX(bx + n * (BULLET + GAP));
+}
+Plymouth.SetDisplayPasswordFunction(password_cb);
+
+fun normal_cb() {
+    if (global.prompting) { set_header("UNLOCKING"); set_status("STARTING"); }
+    global.prompting = 0;
+    show_field(0);
+}
+Plymouth.SetDisplayNormalFunction(normal_cb);
+
+fun progress_cb(duration, progress) {
+    w = Math.Int(PW * progress);
+    if (w < 1) w = 1;
+    bar.SetImage(bar_image.Scale(w, px(2)));
+}
+Plymouth.SetBootProgressFunction(progress_cb);
+
+fun message_cb(str) {
+    // systemd's own messages are long and lower-case; show them small and faint
+    if (global.prompting) set_hint_raw(str, faint);
+}
+Plymouth.SetMessageFunction(message_cb);
+
+// blinking cursor, ~1 Hz
+fun refresh_cb() {
+    global.tick++;
+    if (global.prompting) {
+        if (Math.Int(global.tick / 25) == Math.Int(global.tick / 50) * 2) cursor.SetOpacity(1); else cursor.SetOpacity(0);
+    }
+}
+Plymouth.SetRefreshFunction(refresh_cb);

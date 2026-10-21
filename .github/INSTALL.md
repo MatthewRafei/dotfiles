@@ -153,6 +153,10 @@ cp -r /usr/share/icons/Papirus /usr/share/icons/Papirus-Dark ~/.local/share/icon
 # optional, laptops only: battery charge limit (Settings > Power). Installs a root helper and a
 # doas/sudo rule that allows only that helper.
 doas sh ~/.local/src/battery-charge-limit/install.sh
+
+# optional, encrypted disk with Plymouth: the HUD boot splash (passphrase prompt, boot and
+# shutdown progress; black and white). Makes it the default theme and rebuilds the initramfs.
+doas sh ~/.local/src/plymouth-hud/install.sh
 ```
 
 ### 5. Wallpaper and first theme

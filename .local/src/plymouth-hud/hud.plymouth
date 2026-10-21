@@ -1,0 +1,10 @@
+[Plymouth Theme]
+Name=HUD
+Description=Disk passphrase prompt and boot progress in the Quickshell HUD style
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/hud
+ScriptFile=/usr/share/plymouth/themes/hud/hud.script
+Font=JetBrainsMono Nerd Font 12
+MonospaceFont=JetBrainsMono Nerd Font 12
