@@ -10,7 +10,7 @@ import qs
 // own animated ASCII scenes in random order (never the same one as another
 // monitor, when there are enough), one per minute. Any key, click or mouse movement dismisses it
 // without reaching the app underneath. The lock screen (Lock.qml) follows at
-// 5 minutes; rendering pauses while locked.
+// 5 minutes; the screensaver closes behind it, so unlocking shows the desktop.
 //
 //   qs ipc call screensaver start          start now (random scene)
 //   qs ipc call screensaver scene bebop    start on a given scene (on the focused monitor)
@@ -21,13 +21,19 @@ Scope {
 
     property bool locked: false           // bound from shell.qml
     property bool forced: false
+    // closed by the lock; stays closed after unlocking until the next input
+    // (a fingerprint unlock isn't input, and the machine is still idle)
+    property bool dismissed: false
+    onLockedChanged: dismissed = locked || idle.isIdle
     // timings and options come from Idle.qml (Settings > Screensaver)
-    readonly property bool active: (idle.isIdle && Idle.screensaver && (Idle.onBattery || Power.onAC)) || forced
+    readonly property bool active: !dismissed
+        && ((idle.isIdle && Idle.screensaver && (Idle.onBattery || Power.onAC)) || forced)
 
     IdleMonitor {
         id: idle
         timeout: Math.max(1, Idle.screensaverMin) * 60
         respectInhibitors: true
+        onIsIdleChanged: if (!isIdle && !root.locked) root.dismissed = false
     }
 
     property string pending: ""           // scene asked for by IPC / Settings, for the focused monitor
